@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Housing Data - Interactive Globe</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/topojson-client@3"></script>
     <script src="https://unpkg.com/globe.gl"></script>
 </head>
 <body>
@@ -21,8 +22,8 @@
                     <button class="layer-btn active" data-layer="deficit">
                         Housing Deficit per Capita
                     </button>
-                    <button class="layer-btn" data-layer="debt">
-                        Household Debt to GDP Ratio
+                    <button class="layer-btn" data-layer="mortgage">
+                        Mortgage to GDP Ratio
                     </button>
                     <button class="layer-btn" data-layer="expenditure">
                         Govt Housing Expenditure / GDP

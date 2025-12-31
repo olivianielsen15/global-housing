@@ -2,7 +2,7 @@
 let globe;
 let currentLayer = 'deficit';
 
-// Layer configurations (updated with real data field names)
+// Layer configurations
 const layerConfig = {
     deficit: {
         title: 'Housing Deficit per Capita',
@@ -11,9 +11,9 @@ const layerConfig = {
         scale: [0, 40],
         unit: ' units/1000 people'
     },
-    debt: {
-        title: 'Household Debt to GDP Ratio',
-        description: 'Total household debt (primarily mortgages) as percentage of GDP. Data from IMF Global Debt Database & World Bank (2024). Higher values indicate greater household leverage.',
+    mortgage: {
+        title: 'Mortgage to GDP Ratio',
+        description: 'Total mortgage debt as percentage of GDP. Data from IMF Global Debt Database & World Bank (2024). Higher values indicate greater household leverage.',
         dataKey: 'householdDebtToGDP',
         scale: [0, 135],
         unit: '% of GDP'
@@ -27,19 +27,18 @@ const layerConfig = {
     }
 };
 
-// Color scale function - improved for heat map visibility
+// Color scale function - vibrant heat map colors
 function getColor(value, minVal, maxVal) {
-    if (value === null || value === undefined) return 'rgba(150, 150, 150, 0.3)'; // Gray for no data
+    if (value === null || value === undefined) return 'rgba(150, 150, 150, 0.3)';
 
     const normalized = Math.min(Math.max((value - minVal) / (maxVal - minVal), 0), 1);
 
-    // More vibrant heat map colors
-    if (normalized < 0.15) return 'rgba(0, 204, 102, 0.9)';      // Dark Green - Very Low
-    if (normalized < 0.3) return 'rgba(102, 255, 102, 0.85)';    // Green - Low
-    if (normalized < 0.5) return 'rgba(255, 255, 0, 0.85)';      // Yellow - Medium
-    if (normalized < 0.7) return 'rgba(255, 153, 51, 0.85)';     // Orange - Medium-High
-    if (normalized < 0.85) return 'rgba(255, 69, 0, 0.9)';       // Red-Orange - High
-    return 'rgba(204, 0, 0, 0.95)';                               // Dark Red - Very High
+    if (normalized < 0.15) return 'rgba(0, 204, 102, 0.9)';
+    if (normalized < 0.3) return 'rgba(102, 255, 102, 0.85)';
+    if (normalized < 0.5) return 'rgba(255, 255, 0, 0.85)';
+    if (normalized < 0.7) return 'rgba(255, 153, 51, 0.85)';
+    if (normalized < 0.85) return 'rgba(255, 69, 0, 0.9)';
+    return 'rgba(204, 0, 0, 0.95)';
 }
 
 // Create a lookup map for fast data access by ISO code
@@ -58,119 +57,107 @@ function initGlobe() {
         .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
         .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
         .width(container.offsetWidth)
-        .height(container.offsetHeight)
+        .height(container.offsetHeight);
 
-        // Choropleth configuration - color countries based on data
-        .hexPolygonsData(fetch('//unpkg.com/world-atlas/countries-110m.json')
-            .then(res => res.json())
-            .then(countries => {
-                return countries.features;
-            })
-        )
-        .hexPolygonResolution(3)
-        .hexPolygonMargin(0.3)
-        .hexPolygonUseDots(false)
-        .hexPolygonColor(feat => {
-            const iso = feat.properties.ISO_A3;
-            const countryData = dataByISO[iso];
+    // Load and process country data for choropleth
+    fetch('//unpkg.com/world-atlas/countries-110m.json')
+        .then(res => res.json())
+        .then(countries => {
+            // Convert TopoJSON to GeoJSON features
+            const land = topojson.feature(countries, countries.objects.countries);
 
-            if (!countryData) {
-                return 'rgba(100, 100, 100, 0.15)'; // Gray for countries without data
-            }
+            globe
+                .polygonsData(land.features)
+                .polygonAltitude(0.01)
+                .polygonCapColor(feat => {
+                    const iso = feat.properties.ISO_A3 || feat.id;
+                    const countryData = dataByISO[iso];
 
-            const config = layerConfig[currentLayer];
-            const value = countryData[config.dataKey];
-            return getColor(value, config.scale[0], config.scale[1]);
-        })
-        .hexPolygonLabel(feat => {
-            const iso = feat.properties.ISO_A3;
-            const countryData = dataByISO[iso];
+                    if (!countryData) {
+                        return 'rgba(100, 100, 100, 0.15)';
+                    }
 
-            if (!countryData) {
-                return `
-                    <div style="
-                        background: rgba(0, 0, 0, 0.85);
-                        padding: 10px 14px;
-                        border-radius: 6px;
-                        border: 1px solid #666;
-                        color: white;
-                        font-family: 'Segoe UI', sans-serif;
-                    ">
-                        <div style="font-size: 14px; font-weight: bold; color: #ccc;">
-                            ${feat.properties.NAME || 'Unknown'}
+                    const config = layerConfig[currentLayer];
+                    const value = countryData[config.dataKey];
+                    return getColor(value, config.scale[0], config.scale[1]);
+                })
+                .polygonSideColor(() => 'rgba(0, 0, 0, 0.1)')
+                .polygonStrokeColor(() => '#111')
+                .polygonLabel(feat => {
+                    const iso = feat.properties.ISO_A3 || feat.id;
+                    const countryData = dataByISO[iso];
+
+                    if (!countryData) {
+                        return `
+                            <div style="
+                                background: rgba(0, 0, 0, 0.85);
+                                padding: 10px 14px;
+                                border-radius: 6px;
+                                border: 1px solid #666;
+                                color: white;
+                                font-family: 'Segoe UI', sans-serif;
+                            ">
+                                <div style="font-size: 14px; font-weight: bold; color: #ccc;">
+                                    ${feat.properties.NAME || feat.properties.ADMIN || 'Unknown'}
+                                </div>
+                                <div style="font-size: 12px; color: #999; margin-top: 4px;">
+                                    No data available
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    const config = layerConfig[currentLayer];
+                    const value = countryData[config.dataKey];
+
+                    return `
+                        <div style="
+                            background: rgba(0, 0, 0, 0.95);
+                            padding: 14px 18px;
+                            border-radius: 10px;
+                            border: 2px solid #4facfe;
+                            color: white;
+                            font-family: 'Segoe UI', sans-serif;
+                            max-width: 300px;
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+                        ">
+                            <div style="font-size: 17px; font-weight: bold; margin-bottom: 10px; color: #00f2fe;">
+                                ${countryData.country}
+                            </div>
+                            <div style="font-size: 14px; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 8px;">
+                                <div style="margin: 6px 0;">
+                                    <strong style="color: #4facfe;">Housing Deficit:</strong>
+                                    <span style="float: right; color: #fff;">${countryData.housingDeficitPerCapita.toFixed(1)} units/1000</span>
+                                </div>
+                                <div style="margin: 6px 0;">
+                                    <strong style="color: #4facfe;">Mortgage/GDP:</strong>
+                                    <span style="float: right; color: #fff;">${countryData.householdDebtToGDP.toFixed(1)}%</span>
+                                </div>
+                                <div style="margin: 6px 0;">
+                                    <strong style="color: #4facfe;">Govt Expenditure/GDP:</strong>
+                                    <span style="float: right; color: #fff;">${countryData.housingExpenditureToGDP.toFixed(2)}%</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 11px; color: #888; margin-top: 8px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.1);">
+                                <strong style="color: #00f2fe;">Current layer:</strong> ${config.title}
+                            </div>
                         </div>
-                        <div style="font-size: 12px; color: #999; margin-top: 4px;">
-                            No data available
-                        </div>
-                    </div>
-                `;
-            }
-
-            const config = layerConfig[currentLayer];
-            const value = countryData[config.dataKey];
-
-            return `
-                <div style="
-                    background: rgba(0, 0, 0, 0.95);
-                    padding: 14px 18px;
-                    border-radius: 10px;
-                    border: 2px solid #4facfe;
-                    color: white;
-                    font-family: 'Segoe UI', sans-serif;
-                    max-width: 300px;
-                    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-                ">
-                    <div style="font-size: 17px; font-weight: bold; margin-bottom: 10px; color: #00f2fe;">
-                        ${countryData.country}
-                    </div>
-                    <div style="font-size: 14px; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 8px;">
-                        <div style="margin: 6px 0;">
-                            <strong style="color: #4facfe;">Housing Deficit:</strong>
-                            <span style="float: right; color: #fff;">${countryData.housingDeficitPerCapita.toFixed(1)} units/1000</span>
-                        </div>
-                        <div style="margin: 6px 0;">
-                            <strong style="color: #4facfe;">Household Debt/GDP:</strong>
-                            <span style="float: right; color: #fff;">${countryData.householdDebtToGDP.toFixed(1)}%</span>
-                        </div>
-                        <div style="margin: 6px 0;">
-                            <strong style="color: #4facfe;">Govt Expenditure/GDP:</strong>
-                            <span style="float: right; color: #fff;">${countryData.housingExpenditureToGDP.toFixed(2)}%</span>
-                        </div>
-                    </div>
-                    <div style="font-size: 11px; color: #888; margin-top: 8px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.1);">
-                        <strong style="color: #00f2fe;">Current layer:</strong> ${config.title}
-                    </div>
-                </div>
-            `;
-        })
-        .onHexPolygonHover(feat => {
-            container.style.cursor = feat ? 'pointer' : 'default';
-            if (feat) {
-                const iso = feat.properties.ISO_A3;
-                const countryData = dataByISO[iso];
-                if (countryData) {
-                    updateStatsPanel(countryData);
-                } else {
-                    resetStatsPanel();
-                }
-            } else {
-                resetStatsPanel();
-            }
-        })
-        .onHexPolygonClick(feat => {
-            if (feat) {
-                // Get country centroid for camera positioning
-                const iso = feat.properties.ISO_A3;
-                const countryData = dataByISO[iso];
-                if (countryData) {
-                    // Simplified center calculation - you could improve this
-                    const bounds = feat.geometry.coordinates[0];
-                    let latSum = 0, lngSum = 0, count = 0;
-
-                    // This is a simplified approach
-                    globe.pointOfView({ altitude: 1.5 }, 1000);
-                }
-            }
+                    `;
+                })
+                .onPolygonHover(feat => {
+                    container.style.cursor = feat ? 'pointer' : 'default';
+                    if (feat) {
+                        const iso = feat.properties.ISO_A3 || feat.id;
+                        const countryData = dataByISO[iso];
+                        if (countryData) {
+                            updateStatsPanel(countryData);
+                        } else {
+                            resetStatsPanel();
+                        }
+                    } else {
+                        resetStatsPanel();
+                    }
+                });
         });
 
     // Auto-rotate
@@ -189,14 +176,12 @@ function updateStatsPanel(countryData) {
     const statsPanel = document.getElementById('stats-panel');
     const config = layerConfig[currentLayer];
     const currentValue = countryData[config.dataKey];
-    const normalizedValue = (currentValue - config.scale[0]) / (config.scale[1] - config.scale[0]);
-    const percentile = Math.round(normalizedValue * 100);
 
     statsPanel.innerHTML = `
         <h4>${countryData.country}</h4>
         <div class="country-stats">
             <p><strong>Housing Deficit per Capita:</strong> ${countryData.housingDeficitPerCapita.toFixed(2)} units/1000 people</p>
-            <p><strong>Household Debt to GDP:</strong> ${countryData.householdDebtToGDP.toFixed(1)}% of GDP</p>
+            <p><strong>Mortgage to GDP:</strong> ${countryData.householdDebtToGDP.toFixed(1)}% of GDP</p>
             <p><strong>Govt Housing Expenditure:</strong> ${countryData.housingExpenditureToGDP.toFixed(2)}% of GDP</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
@@ -230,8 +215,8 @@ function updateLayer(layer) {
 
     // Update globe colors
     if (globe) {
-        globe.hexPolygonColor(feat => {
-            const iso = feat.properties.ISO_A3;
+        globe.polygonCapColor(feat => {
+            const iso = feat.properties.ISO_A3 || feat.id;
             const countryData = dataByISO[iso];
 
             if (!countryData) {
@@ -264,12 +249,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function calculateStats() {
     const stats = {
         deficit: { min: Infinity, max: -Infinity, avg: 0, count: 0 },
-        debt: { min: Infinity, max: -Infinity, avg: 0, count: 0 },
+        mortgage: { min: Infinity, max: -Infinity, avg: 0, count: 0 },
         expenditure: { min: Infinity, max: -Infinity, avg: 0, count: 0 }
     };
 
     housingData.forEach(d => {
-        // Deficit stats
         if (d.housingDeficitPerCapita !== null && d.housingDeficitPerCapita !== undefined) {
             stats.deficit.min = Math.min(stats.deficit.min, d.housingDeficitPerCapita);
             stats.deficit.max = Math.max(stats.deficit.max, d.housingDeficitPerCapita);
@@ -277,15 +261,13 @@ function calculateStats() {
             stats.deficit.count++;
         }
 
-        // Debt stats
         if (d.householdDebtToGDP !== null && d.householdDebtToGDP !== undefined) {
-            stats.debt.min = Math.min(stats.debt.min, d.householdDebtToGDP);
-            stats.debt.max = Math.max(stats.debt.max, d.householdDebtToGDP);
-            stats.debt.avg += d.householdDebtToGDP;
-            stats.debt.count++;
+            stats.mortgage.min = Math.min(stats.mortgage.min, d.householdDebtToGDP);
+            stats.mortgage.max = Math.max(stats.mortgage.max, d.householdDebtToGDP);
+            stats.mortgage.avg += d.householdDebtToGDP;
+            stats.mortgage.count++;
         }
 
-        // Expenditure stats
         if (d.housingExpenditureToGDP !== null && d.housingExpenditureToGDP !== undefined) {
             stats.expenditure.min = Math.min(stats.expenditure.min, d.housingExpenditureToGDP);
             stats.expenditure.max = Math.max(stats.expenditure.max, d.housingExpenditureToGDP);
@@ -295,7 +277,7 @@ function calculateStats() {
     });
 
     if (stats.deficit.count > 0) stats.deficit.avg /= stats.deficit.count;
-    if (stats.debt.count > 0) stats.debt.avg /= stats.debt.count;
+    if (stats.mortgage.count > 0) stats.mortgage.avg /= stats.mortgage.count;
     if (stats.expenditure.count > 0) stats.expenditure.avg /= stats.expenditure.count;
 
     console.log('Global Housing Statistics:', stats);
