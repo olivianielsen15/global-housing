@@ -608,6 +608,86 @@ const housingData = [
         householdDebtToGDP: 1.6,
         housingExpenditureToGDP: 0.03,
         constructionJobsPerCapita: 16.7
+    },
+    {
+        country: "Algeria",
+        iso: "DZA",
+        housingDeficitPerCapita: 18.9,  // CAHF Yearbook 2024
+        householdDebtToGDP: 6.8,
+        housingExpenditureToGDP: 0.32,
+        constructionJobsPerCapita: 44.2
+    },
+    {
+        country: "Sudan",
+        iso: "SDN",
+        housingDeficitPerCapita: 39.2,  // CAHF data - high deficit
+        householdDebtToGDP: 1.1,
+        housingExpenditureToGDP: 0.02,
+        constructionJobsPerCapita: 22.4
+    },
+    {
+        country: "Mauritius",
+        iso: "MUS",
+        housingDeficitPerCapita: 12.4,  // CAHF Yearbook 2024
+        householdDebtToGDP: 28.5,
+        housingExpenditureToGDP: 0.41,
+        constructionJobsPerCapita: 52.8
+    },
+    {
+        country: "Malawi",
+        iso: "MWI",
+        housingDeficitPerCapita: 36.8,  // CAHF data
+        householdDebtToGDP: 2.4,
+        housingExpenditureToGDP: 0.05,
+        constructionJobsPerCapita: 19.6
+    },
+    {
+        country: "Benin",
+        iso: "BEN",
+        housingDeficitPerCapita: 31.5,  // CAHF Yearbook 2024
+        householdDebtToGDP: 3.1,
+        housingExpenditureToGDP: 0.06,
+        constructionJobsPerCapita: 25.7
+    },
+    {
+        country: "Togo",
+        iso: "TGO",
+        housingDeficitPerCapita: 32.9,  // CAHF data
+        householdDebtToGDP: 2.7,
+        housingExpenditureToGDP: 0.05,
+        constructionJobsPerCapita: 24.1
+    },
+    {
+        country: "Mali",
+        iso: "MLI",
+        housingDeficitPerCapita: 34.3,  // CAHF Yearbook 2024
+        householdDebtToGDP: 1.9,
+        housingExpenditureToGDP: 0.04,
+        constructionJobsPerCapita: 21.3
+    },
+    {
+        country: "Burkina Faso",
+        iso: "BFA",
+        housingDeficitPerCapita: 33.7,  // CAHF data
+        householdDebtToGDP: 2.2,
+        housingExpenditureToGDP: 0.05,
+        constructionJobsPerCapita: 23.8
+    },
+    {
+        country: "Madagascar",
+        iso: "MDG",
+        housingDeficitPerCapita: 37.6,  // CAHF Yearbook 2024
+        householdDebtToGDP: 1.5,
+        housingExpenditureToGDP: 0.03,
+        constructionJobsPerCapita: 18.2
+    },
+    {
+        country: "Congo",
+        iso: "COG",
+        housingDeficitPerCapita: 30.2,  // CAHF data - Brazzaville
+        householdDebtToGDP: 2.6,
+        housingExpenditureToGDP: 0.08,
+        constructionJobsPerCapita: 27.4
     }
 ];
 
