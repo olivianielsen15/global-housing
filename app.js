@@ -24,6 +24,13 @@ const layerConfig = {
         dataKey: 'housingExpenditureToGDP',
         scale: [0, 3.5],
         unit: '% of GDP'
+    },
+    construction: {
+        title: 'Construction Jobs per Capita',
+        description: 'Construction sector employment per 1,000 people. Data from ILO and national labor statistics (2024). Higher values indicate more construction activity.',
+        dataKey: 'constructionJobsPerCapita',
+        scale: [0, 160],
+        unit: ' jobs/1000 people'
     }
 };
 
@@ -193,6 +200,10 @@ function initGlobe() {
                                     <strong style="color: #4facfe;">Govt Expenditure/GDP:</strong>
                                     <span style="float: right; color: #fff;">${countryData.housingExpenditureToGDP.toFixed(2)}%</span>
                                 </div>
+                                <div style="margin: 6px 0;">
+                                    <strong style="color: #4facfe;">Construction Jobs:</strong>
+                                    <span style="float: right; color: #fff;">${countryData.constructionJobsPerCapita.toFixed(1)} jobs/1000</span>
+                                </div>
                             </div>
                             <div style="font-size: 11px; color: #888; margin-top: 8px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.1);">
                                 <strong style="color: #00f2fe;">Current layer:</strong> ${config.title}
@@ -243,6 +254,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Housing Deficit per Capita:</strong> ${countryData.housingDeficitPerCapita.toFixed(2)} units/1000 people</p>
             <p><strong>Mortgage to GDP:</strong> ${countryData.householdDebtToGDP.toFixed(1)}% of GDP</p>
             <p><strong>Govt Housing Expenditure:</strong> ${countryData.housingExpenditureToGDP.toFixed(2)}% of GDP</p>
+            <p><strong>Construction Jobs per Capita:</strong> ${countryData.constructionJobsPerCapita.toFixed(1)} jobs/1000 people</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
@@ -312,7 +324,8 @@ function calculateStats() {
     const stats = {
         deficit: { min: Infinity, max: -Infinity, avg: 0, count: 0 },
         mortgage: { min: Infinity, max: -Infinity, avg: 0, count: 0 },
-        expenditure: { min: Infinity, max: -Infinity, avg: 0, count: 0 }
+        expenditure: { min: Infinity, max: -Infinity, avg: 0, count: 0 },
+        construction: { min: Infinity, max: -Infinity, avg: 0, count: 0 }
     };
 
     housingData.forEach(d => {
@@ -336,11 +349,19 @@ function calculateStats() {
             stats.expenditure.avg += d.housingExpenditureToGDP;
             stats.expenditure.count++;
         }
+
+        if (d.constructionJobsPerCapita !== null && d.constructionJobsPerCapita !== undefined) {
+            stats.construction.min = Math.min(stats.construction.min, d.constructionJobsPerCapita);
+            stats.construction.max = Math.max(stats.construction.max, d.constructionJobsPerCapita);
+            stats.construction.avg += d.constructionJobsPerCapita;
+            stats.construction.count++;
+        }
     });
 
     if (stats.deficit.count > 0) stats.deficit.avg /= stats.deficit.count;
     if (stats.mortgage.count > 0) stats.mortgage.avg /= stats.mortgage.count;
     if (stats.expenditure.count > 0) stats.expenditure.avg /= stats.expenditure.count;
+    if (stats.construction.count > 0) stats.construction.avg /= stats.construction.count;
 
     console.log('Global Housing Statistics:', stats);
     console.log(`Data coverage: ${housingData.length} countries`);
