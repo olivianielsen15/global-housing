@@ -114,6 +114,17 @@ const numericToISO = {
     '876': 'WLF', '882': 'WSM', '887': 'YEM', '894': 'ZMB'
 };
 
+// Hide loading screen
+function hideLoadingScreen() {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        loadingScreen.classList.add('hidden');
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500);
+    }
+}
+
 // Initialize globe visualization with choropleth (heat map)
 function initGlobe() {
     const container = document.getElementById('globe-container');
@@ -248,9 +259,15 @@ function initGlobe() {
                     resetStatsPanel();
                 }
             });
+
+            // Hide loading screen once globe is ready
+            setTimeout(() => {
+                hideLoadingScreen();
+            }, 1000);
         })
         .catch(error => {
             console.error('Error loading country data:', error);
+            hideLoadingScreen(); // Hide loading screen even on error
         });
 
     // Auto-rotate

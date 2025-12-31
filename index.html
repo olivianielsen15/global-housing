@@ -27,6 +27,12 @@
     <script src="https://unpkg.com/globe.gl"></script>
 </head>
 <body>
+    <!-- Loading Indicator -->
+    <div id="loading-screen">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Loading global housing data...</p>
+    </div>
+
     <div class="container">
         <header>
             <h1>Global Housing Data Visualization</h1>
@@ -106,14 +112,24 @@
                     <li><strong>World Bank & IMF</strong> Global Debt Database (2024)</li>
                     <li><strong>CAHF</strong> Housing Finance in Africa Yearbook (2024)</li>
                     <li><strong>UN-Habitat</strong> Global Housing Reports (2024)</li>
+                    <li><strong>ILO</strong> International Labour Organization (2024)</li>
+                    <li><strong>Numbeo</strong> Cost of Living Database (2024)</li>
                 </ul>
                 <p style="font-size: 0.75em; color: #888; margin-top: 8px;">
                     Coverage: 85 countries worldwide (30 African countries)
+                </p>
+                <p style="font-size: 0.7em; color: #666; margin-top: 6px; font-style: italic;">
+                    Data last updated: December 2024
                 </p>
             </div>
         </div>
 
         <div id="globe-container"></div>
+
+        <footer class="site-footer">
+            <p>Created by <strong>Olivia Nielsen</strong></p>
+            <p class="footer-date">December 31, 2025</p>
+        </footer>
     </div>
 
     <script src="data.js"></script>
