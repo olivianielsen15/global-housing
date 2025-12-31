@@ -80,31 +80,27 @@ function initGlobe() {
             // Debug: Log our data ISO codes
             console.log('Our data ISO codes:', Object.keys(dataByISO).slice(0, 10));
 
-            // Apply polygon data and colors
-            globe.polygonsData(land.features);
+            // Set all polygon properties together
+            globe
+                .polygonsData(land.features)
+                .polygonAltitude(0.01)
+                .polygonCapColor(feat => {
+                    const iso = feat.properties.ISO_A3 || feat.id;
+                    const countryData = dataByISO[iso];
 
-            globe.polygonAltitude(0.01);
+                    if (!countryData) {
+                        console.log('No match for ISO:', iso, 'Country:', feat.properties.NAME || feat.properties.ADMIN);
+                        return '#555555';
+                    }
 
-            globe.polygonCapColor(feat => {
-                const iso = feat.properties.ISO_A3 || feat.id;
-                const countryData = dataByISO[iso];
-
-                if (!countryData) {
-                    console.log('No match for ISO:', iso, 'Country:', feat.properties.NAME || feat.properties.ADMIN);
-                    return '#555555';
-                }
-
-                const config = layerConfig[currentLayer];
-                const value = countryData[config.dataKey];
-                const color = getColor(value, config.scale[0], config.scale[1]);
-                console.log('✓ Matched:', countryData.country, 'ISO:', iso, 'Color:', color);
-                return color;
-            });
-
-            globe.polygonSideColor(() => 'rgba(0, 0, 0, 0.2)');
-            globe.polygonStrokeColor(() => '#111');
-
-            globe.polygonLabel(feat => {
+                    const config = layerConfig[currentLayer];
+                    const value = countryData[config.dataKey];
+                    const color = getColor(value, config.scale[0], config.scale[1]);
+                    console.log('✓ Matched:', countryData.country, 'ISO:', iso, 'Color:', color);
+                    return color;
+                })
+                .polygonSideColor(() => 'rgba(0, 0, 0, 0.2)')
+                .polygonStrokeColor(() => '#111')
                     const iso = feat.properties.ISO_A3 || feat.id;
                     const countryData = dataByISO[iso];
 
@@ -164,9 +160,8 @@ function initGlobe() {
                             </div>
                         </div>
                     `;
-            });
-
-            globe.onPolygonHover(feat => {
+                })
+                .onPolygonHover(feat => {
                 container.style.cursor = feat ? 'pointer' : 'default';
                 if (feat) {
                     const iso = feat.properties.ISO_A3 || feat.id;
