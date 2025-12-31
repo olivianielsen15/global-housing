@@ -71,25 +71,29 @@ function initGlobe() {
             const land = topojson.feature(countries, countries.objects.countries);
             console.log('Converted to GeoJSON, feature count:', land.features.length);
 
-            globe
-                .polygonsData(land.features)
-                .polygonAltitude(0.01)
-                .polygonCapColor(feat => {
-                    const iso = feat.properties.ISO_A3 || feat.id;
-                    const countryData = dataByISO[iso];
+            // Apply polygon data and colors
+            globe.polygonsData(land.features);
 
-                    if (!countryData) {
-                        return '#555555'; // Dark gray for countries without data
-                    }
+            globe.polygonAltitude(0.01);
 
-                    const config = layerConfig[currentLayer];
-                    const value = countryData[config.dataKey];
-                    const color = getColor(value, config.scale[0], config.scale[1]);
-                    return color;
-                })
-                .polygonSideColor(() => '#222')
-                .polygonStrokeColor(() => '#000')
-                .polygonLabel(feat => {
+            globe.polygonCapColor(feat => {
+                const iso = feat.properties.ISO_A3 || feat.id;
+                const countryData = dataByISO[iso];
+
+                if (!countryData) {
+                    return '#555555';
+                }
+
+                const config = layerConfig[currentLayer];
+                const value = countryData[config.dataKey];
+                const color = getColor(value, config.scale[0], config.scale[1]);
+                return color;
+            });
+
+            globe.polygonSideColor(() => 'rgba(0, 0, 0, 0.2)');
+            globe.polygonStrokeColor(() => '#111');
+
+            globe.polygonLabel(feat => {
                     const iso = feat.properties.ISO_A3 || feat.id;
                     const countryData = dataByISO[iso];
 
@@ -149,21 +153,22 @@ function initGlobe() {
                             </div>
                         </div>
                     `;
-                })
-                .onPolygonHover(feat => {
-                    container.style.cursor = feat ? 'pointer' : 'default';
-                    if (feat) {
-                        const iso = feat.properties.ISO_A3 || feat.id;
-                        const countryData = dataByISO[iso];
-                        if (countryData) {
-                            updateStatsPanel(countryData);
-                        } else {
-                            resetStatsPanel();
-                        }
+            });
+
+            globe.onPolygonHover(feat => {
+                container.style.cursor = feat ? 'pointer' : 'default';
+                if (feat) {
+                    const iso = feat.properties.ISO_A3 || feat.id;
+                    const countryData = dataByISO[iso];
+                    if (countryData) {
+                        updateStatsPanel(countryData);
                     } else {
                         resetStatsPanel();
                     }
-                });
+                } else {
+                    resetStatsPanel();
+                }
+            });
         })
         .catch(error => {
             console.error('Error loading country data:', error);
