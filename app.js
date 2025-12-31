@@ -53,9 +53,11 @@ function initGlobe() {
 
     globe = Globe()
         (container)
-        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
-        .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+        .globeImageUrl(null) // No base texture - use polygons for visualization
         .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+        .showAtmosphere(true)
+        .atmosphereColor('lightskyblue')
+        .atmosphereAltitude(0.15)
         .width(container.offsetWidth)
         .height(container.offsetHeight);
 
@@ -68,7 +70,7 @@ function initGlobe() {
 
             globe
                 .polygonsData(land.features)
-                .polygonAltitude(0.01)
+                .polygonAltitude(0.006)
                 .polygonCapColor(feat => {
                     const iso = feat.properties.ISO_A3 || feat.id;
                     const countryData = dataByISO[iso];
