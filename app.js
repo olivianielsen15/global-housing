@@ -27,18 +27,19 @@ const layerConfig = {
     }
 };
 
-// Color scale function - vibrant heat map colors
+// Color scale function - vibrant heat map colors with full opacity
 function getColor(value, minVal, maxVal) {
-    if (value === null || value === undefined) return 'rgba(150, 150, 150, 0.3)';
+    if (value === null || value === undefined) return '#555555'; // Dark gray for no data
 
     const normalized = Math.min(Math.max((value - minVal) / (maxVal - minVal), 0), 1);
 
-    if (normalized < 0.15) return 'rgba(0, 204, 102, 0.9)';
-    if (normalized < 0.3) return 'rgba(102, 255, 102, 0.85)';
-    if (normalized < 0.5) return 'rgba(255, 255, 0, 0.85)';
-    if (normalized < 0.7) return 'rgba(255, 153, 51, 0.85)';
-    if (normalized < 0.85) return 'rgba(255, 69, 0, 0.9)';
-    return 'rgba(204, 0, 0, 0.95)';
+    // Solid opaque colors for visibility
+    if (normalized < 0.15) return '#00cc66';  // Dark Green - Very Low
+    if (normalized < 0.3) return '#66ff66';   // Green - Low
+    if (normalized < 0.5) return '#ffff00';   // Yellow - Medium
+    if (normalized < 0.7) return '#ff9933';   // Orange - Medium-High
+    if (normalized < 0.85) return '#ff4500';  // Red-Orange - High
+    return '#cc0000';                          // Dark Red - Very High
 }
 
 // Create a lookup map for fast data access by ISO code
@@ -65,26 +66,29 @@ function initGlobe() {
     fetch('//unpkg.com/world-atlas/countries-110m.json')
         .then(res => res.json())
         .then(countries => {
+            console.log('Loaded country data:', countries);
             // Convert TopoJSON to GeoJSON features
             const land = topojson.feature(countries, countries.objects.countries);
+            console.log('Converted to GeoJSON, feature count:', land.features.length);
 
             globe
                 .polygonsData(land.features)
-                .polygonAltitude(0.006)
+                .polygonAltitude(0.01)
                 .polygonCapColor(feat => {
                     const iso = feat.properties.ISO_A3 || feat.id;
                     const countryData = dataByISO[iso];
 
                     if (!countryData) {
-                        return 'rgba(100, 100, 100, 0.15)';
+                        return '#555555'; // Dark gray for countries without data
                     }
 
                     const config = layerConfig[currentLayer];
                     const value = countryData[config.dataKey];
-                    return getColor(value, config.scale[0], config.scale[1]);
+                    const color = getColor(value, config.scale[0], config.scale[1]);
+                    return color;
                 })
-                .polygonSideColor(() => 'rgba(0, 0, 0, 0.1)')
-                .polygonStrokeColor(() => '#111')
+                .polygonSideColor(() => '#222')
+                .polygonStrokeColor(() => '#000')
                 .polygonLabel(feat => {
                     const iso = feat.properties.ISO_A3 || feat.id;
                     const countryData = dataByISO[iso];
@@ -160,6 +164,9 @@ function initGlobe() {
                         resetStatsPanel();
                     }
                 });
+        })
+        .catch(error => {
+            console.error('Error loading country data:', error);
         });
 
     // Auto-rotate
@@ -222,11 +229,12 @@ function updateLayer(layer) {
             const countryData = dataByISO[iso];
 
             if (!countryData) {
-                return 'rgba(100, 100, 100, 0.15)';
+                return '#555555';
             }
 
             const value = countryData[config.dataKey];
-            return getColor(value, config.scale[0], config.scale[1]);
+            const color = getColor(value, config.scale[0], config.scale[1]);
+            return color;
         });
     }
 
