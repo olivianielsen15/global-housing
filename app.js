@@ -45,6 +45,20 @@ const layerConfig = {
         dataKey: 'informalHousingShare',
         scale: [0, 75],
         unit: '%'
+    },
+    costBurden: {
+        title: 'Housing Cost Burden',
+        description: 'Percentage of population spending more than 40% of disposable income on housing. Data from OECD HC1.2 and Eurostat (2022-2024). Higher values indicate severe affordability crisis.',
+        dataKey: 'housingCostBurden',
+        scale: [0, 45],
+        unit: '% of population'
+    },
+    socialRental: {
+        title: 'Social Rental Housing Stock',
+        description: 'Percentage of total housing stock that is social or affordable housing. Data from OECD PH4.2 (2022-2023). Higher values indicate stronger social housing programs.',
+        dataKey: 'socialRentalHousing',
+        scale: [0, 32],
+        unit: '% of stock'
     }
 };
 
@@ -237,6 +251,14 @@ function initGlobe() {
                                     <strong style="color: #4facfe;">Informal Housing:</strong>
                                     <span style="float: right; color: #fff;">${countryData.informalHousingShare.toFixed(1)}%</span>
                                 </div>
+                                <div style="margin: 6px 0;">
+                                    <strong style="color: #4facfe;">Cost Burden:</strong>
+                                    <span style="float: right; color: #fff;">${countryData.housingCostBurden.toFixed(1)}%</span>
+                                </div>
+                                <div style="margin: 6px 0;">
+                                    <strong style="color: #4facfe;">Social Housing:</strong>
+                                    <span style="float: right; color: #fff;">${countryData.socialRentalHousing.toFixed(1)}%</span>
+                                </div>
                             </div>
                             <div style="font-size: 11px; color: #888; margin-top: 8px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.1);">
                                 <strong style="color: #00f2fe;">Current layer:</strong> ${config.title}
@@ -296,6 +318,8 @@ function updateStatsPanel(countryData) {
             <p><strong>Construction Jobs per Capita:</strong> ${countryData.constructionJobsPerCapita.toFixed(1)} jobs/1000 people</p>
             <p><strong>House Price to Income Ratio:</strong> ${countryData.housePriceToIncome.toFixed(1)}x income</p>
             <p><strong>Informal Housing Share:</strong> ${countryData.informalHousingShare.toFixed(1)}%</p>
+            <p><strong>Housing Cost Burden:</strong> ${countryData.housingCostBurden.toFixed(1)}% of population</p>
+            <p><strong>Social Rental Housing:</strong> ${countryData.socialRentalHousing.toFixed(1)}% of stock</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
@@ -368,7 +392,9 @@ function calculateStats() {
         expenditure: { min: Infinity, max: -Infinity, avg: 0, count: 0 },
         construction: { min: Infinity, max: -Infinity, avg: 0, count: 0 },
         priceToIncome: { min: Infinity, max: -Infinity, avg: 0, count: 0 },
-        informalHousing: { min: Infinity, max: -Infinity, avg: 0, count: 0 }
+        informalHousing: { min: Infinity, max: -Infinity, avg: 0, count: 0 },
+        costBurden: { min: Infinity, max: -Infinity, avg: 0, count: 0 },
+        socialRental: { min: Infinity, max: -Infinity, avg: 0, count: 0 }
     };
 
     housingData.forEach(d => {
@@ -413,6 +439,20 @@ function calculateStats() {
             stats.informalHousing.avg += d.informalHousingShare;
             stats.informalHousing.count++;
         }
+
+        if (d.housingCostBurden !== null && d.housingCostBurden !== undefined) {
+            stats.costBurden.min = Math.min(stats.costBurden.min, d.housingCostBurden);
+            stats.costBurden.max = Math.max(stats.costBurden.max, d.housingCostBurden);
+            stats.costBurden.avg += d.housingCostBurden;
+            stats.costBurden.count++;
+        }
+
+        if (d.socialRentalHousing !== null && d.socialRentalHousing !== undefined) {
+            stats.socialRental.min = Math.min(stats.socialRental.min, d.socialRentalHousing);
+            stats.socialRental.max = Math.max(stats.socialRental.max, d.socialRentalHousing);
+            stats.socialRental.avg += d.socialRentalHousing;
+            stats.socialRental.count++;
+        }
     });
 
     if (stats.deficit.count > 0) stats.deficit.avg /= stats.deficit.count;
@@ -421,6 +461,8 @@ function calculateStats() {
     if (stats.construction.count > 0) stats.construction.avg /= stats.construction.count;
     if (stats.priceToIncome.count > 0) stats.priceToIncome.avg /= stats.priceToIncome.count;
     if (stats.informalHousing.count > 0) stats.informalHousing.avg /= stats.informalHousing.count;
+    if (stats.costBurden.count > 0) stats.costBurden.avg /= stats.costBurden.count;
+    if (stats.socialRental.count > 0) stats.socialRental.avg /= stats.socialRental.count;
 
     console.log('Global Housing Statistics:', stats);
     console.log(`Data coverage: ${housingData.length} countries`);

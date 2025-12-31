@@ -7,13 +7,15 @@
 // - Trading Economics & The Global Economy database
 // - ILO (International Labour Organization) employment data
 
-// Each country includes six metrics:
+// Each country includes eight metrics:
 // 1. housingDeficitPerCapita: Estimated housing units needed per 1,000 people (based on UN-Habitat, World Bank data)
 // 2. householdDebtToGDP: Total household debt as percentage of GDP (primarily mortgage debt) - from IMF/World Bank
 // 3. housingExpenditureToGDP: Government housing expenditure/allowances as percentage of GDP - from OECD
 // 4. constructionJobsPerCapita: Construction sector employment per 1,000 people - from ILO, national statistics
 // 5. housePriceToIncome: Median house price to median annual income ratio - from Numbeo, World Bank, local statistics
 // 6. informalHousingShare: Percentage of housing that is informal/substandard - from UN-Habitat, World Bank
+// 7. housingCostBurden: Percentage of population spending >40% of income on housing - from OECD HC1.2, Eurostat, World Bank
+// 8. socialRentalHousing: Percentage of housing stock that is social/affordable housing - from OECD PH4.2
 
 const housingData = [
     // High-Income OECD Countries
@@ -25,7 +27,9 @@ const housingData = [
         housingExpenditureToGDP: 0.3,
         constructionJobsPerCapita: 68.5,
         housePriceToIncome: 9.2,
-        informalHousingShare: 0.5
+        informalHousingShare: 0.5,
+        housingCostBurden: 7.2,
+        socialRentalHousing: 4.8
     },
     {
         country: "Australia",
@@ -35,7 +39,9 @@ const housingData = [
         housingExpenditureToGDP: 0.4,
         constructionJobsPerCapita: 89.2,
         housePriceToIncome: 8.7,
-        informalHousingShare: 1.2
+        informalHousingShare: 1.2,
+        housingCostBurden: 9.4,
+        socialRentalHousing: 4.6
     },
     {
         country: "Denmark",
@@ -45,7 +51,9 @@ const housingData = [
         housingExpenditureToGDP: 1.4,
         constructionJobsPerCapita: 72.3,
         housePriceToIncome: 6.8,
-        informalHousingShare: 0.8
+        informalHousingShare: 0.8,
+        housingCostBurden: 15.4,
+        socialRentalHousing: 20
     },
     {
         country: "Cyprus",
@@ -55,7 +63,9 @@ const housingData = [
         housingExpenditureToGDP: 0.2,
         constructionJobsPerCapita: 95.8,
         housePriceToIncome: 5.4,
-        informalHousingShare: 2.1
+        informalHousingShare: 2.1,
+        housingCostBurden: 2.6,
+        socialRentalHousing: 1.3
     },
     {
         country: "Netherlands",
@@ -65,7 +75,9 @@ const housingData = [
         housingExpenditureToGDP: 1.2,
         constructionJobsPerCapita: 65.4,
         housePriceToIncome: 9.5,
-        informalHousingShare: 0.6
+        informalHousingShare: 0.6,
+        housingCostBurden: 7.8,
+        socialRentalHousing: 30
     },
     {
         country: "Canada",
@@ -75,7 +87,9 @@ const housingData = [
         housingExpenditureToGDP: 0.6,
         constructionJobsPerCapita: 78.9,
         housePriceToIncome: 9.1,
-        informalHousingShare: 1.4
+        informalHousingShare: 1.4,
+        housingCostBurden: 11.2,
+        socialRentalHousing: 3.4
     },
     {
         country: "South Korea",
@@ -85,7 +99,9 @@ const housingData = [
         housingExpenditureToGDP: 0.7,
         constructionJobsPerCapita: 82.1,
         housePriceToIncome: 11.8,
-        informalHousingShare: 2.3
+        informalHousingShare: 2.3,
+        housingCostBurden: 8.6,
+        socialRentalHousing: 6.8
     },
     {
         country: "Norway",
@@ -95,7 +111,9 @@ const housingData = [
         housingExpenditureToGDP: 0.8,
         constructionJobsPerCapita: 74.6,
         housePriceToIncome: 7.2,
-        informalHousingShare: 0.4
+        informalHousingShare: 0.4,
+        housingCostBurden: 7.3,
+        socialRentalHousing: 4.7
     },
     {
         country: "Sweden",
@@ -105,7 +123,9 @@ const housingData = [
         housingExpenditureToGDP: 1.3,
         constructionJobsPerCapita: 70.2,
         housePriceToIncome: 8.3,
-        informalHousingShare: 0.7
+        informalHousingShare: 0.7,
+        housingCostBurden: 10.9,
+        socialRentalHousing: 0
     },
     {
         country: "New Zealand",
@@ -115,7 +135,9 @@ const housingData = [
         housingExpenditureToGDP: 0.9,
         constructionJobsPerCapita: 92.7,
         housePriceToIncome: 10.4,
-        informalHousingShare: 1.8
+        informalHousingShare: 1.8,
+        housingCostBurden: 12.3,
+        socialRentalHousing: 4.2
     },
     {
         country: "Luxembourg",
@@ -125,7 +147,9 @@ const housingData = [
         housingExpenditureToGDP: 0.5,
         constructionJobsPerCapita: 86.3,
         housePriceToIncome: 10.2,
-        informalHousingShare: 0.3
+        informalHousingShare: 0.3,
+        housingCostBurden: 11.5,
+        socialRentalHousing: 2.4
     },
     {
         country: "United Kingdom",
@@ -135,7 +159,9 @@ const housingData = [
         housingExpenditureToGDP: 1.1,
         constructionJobsPerCapita: 63.8,
         housePriceToIncome: 8.9,
-        informalHousingShare: 1.1
+        informalHousingShare: 1.1,
+        housingCostBurden: 9.7,
+        socialRentalHousing: 17.5
     },
     {
         country: "Finland",
@@ -145,7 +171,9 @@ const housingData = [
         housingExpenditureToGDP: 1.0,
         constructionJobsPerCapita: 71.5,
         housePriceToIncome: 5.7,
-        informalHousingShare: 0.5
+        informalHousingShare: 0.5,
+        housingCostBurden: 8.4,
+        socialRentalHousing: 14.8
     },
     {
         country: "United States",
@@ -155,7 +183,9 @@ const housingData = [
         housingExpenditureToGDP: 0.12,
         constructionJobsPerCapita: 58.4,
         housePriceToIncome: 5.8,
-        informalHousingShare: 2.4
+        informalHousingShare: 2.4,
+        housingCostBurden: 17.2,
+        socialRentalHousing: 1.8
     },
     {
         country: "Belgium",
@@ -165,7 +195,9 @@ const housingData = [
         housingExpenditureToGDP: 0.7,
         constructionJobsPerCapita: 66.9,
         housePriceToIncome: 6.3,
-        informalHousingShare: 0.9
+        informalHousingShare: 0.9,
+        housingCostBurden: 7.9,
+        socialRentalHousing: 6.8
     },
     {
         country: "France",
@@ -175,7 +207,9 @@ const housingData = [
         housingExpenditureToGDP: 1.8,
         constructionJobsPerCapita: 69.2,
         housePriceToIncome: 7.4,
-        informalHousingShare: 1.3
+        informalHousingShare: 1.3,
+        housingCostBurden: 6.3,
+        socialRentalHousing: 16.2
     },
     {
         country: "Japan",
@@ -185,7 +219,9 @@ const housingData = [
         housingExpenditureToGDP: 0.4,
         constructionJobsPerCapita: 79.3,
         housePriceToIncome: 7.6,
-        informalHousingShare: 1.6
+        informalHousingShare: 1.6,
+        housingCostBurden: 8.1,
+        socialRentalHousing: 5.6
     },
     {
         country: "Spain",
@@ -195,7 +231,9 @@ const housingData = [
         housingExpenditureToGDP: 0.3,
         constructionJobsPerCapita: 52.7,
         housePriceToIncome: 6.2,
-        informalHousingShare: 2.7
+        informalHousingShare: 2.7,
+        housingCostBurden: 12.8,
+        socialRentalHousing: 1.6
     },
     {
         country: "Portugal",
@@ -205,7 +243,9 @@ const housingData = [
         housingExpenditureToGDP: 0.2,
         constructionJobsPerCapita: 54.1,
         housePriceToIncome: 8.6,
-        informalHousingShare: 2.4
+        informalHousingShare: 2.4,
+        housingCostBurden: 9.2,
+        socialRentalHousing: 1.7
     },
     {
         country: "Ireland",
@@ -215,7 +255,9 @@ const housingData = [
         housingExpenditureToGDP: 1.4,
         constructionJobsPerCapita: 61.3,
         housePriceToIncome: 8.2,
-        informalHousingShare: 1.2
+        informalHousingShare: 1.2,
+        housingCostBurden: 8.7,
+        socialRentalHousing: 12.4
     },
     {
         country: "Austria",
@@ -225,7 +267,9 @@ const housingData = [
         housingExpenditureToGDP: 1.3,
         constructionJobsPerCapita: 75.8,
         housePriceToIncome: 7.1,
-        informalHousingShare: 0.6
+        informalHousingShare: 0.6,
+        housingCostBurden: 7.1,
+        socialRentalHousing: 24
     },
     {
         country: "Germany",
@@ -235,7 +279,9 @@ const housingData = [
         housingExpenditureToGDP: 0.9,
         constructionJobsPerCapita: 67.4,
         housePriceToIncome: 7.8,
-        informalHousingShare: 0.8
+        informalHousingShare: 0.8,
+        housingCostBurden: 13,
+        socialRentalHousing: 2.7
     },
     {
         country: "Estonia",
@@ -245,7 +291,9 @@ const housingData = [
         housingExpenditureToGDP: 0.3,
         constructionJobsPerCapita: 64.2,
         housePriceToIncome: 7.3,
-        informalHousingShare: 1.6
+        informalHousingShare: 1.6,
+        housingCostBurden: 7.6,
+        socialRentalHousing: 1.1
     },
     {
         country: "Slovenia",
@@ -255,7 +303,9 @@ const housingData = [
         housingExpenditureToGDP: 0.5,
         constructionJobsPerCapita: 68.9,
         housePriceToIncome: 6.7,
-        informalHousingShare: 2.1
+        informalHousingShare: 2.1,
+        housingCostBurden: 3.7,
+        socialRentalHousing: 3.2
     },
     {
         country: "Italy",
@@ -265,7 +315,9 @@ const housingData = [
         housingExpenditureToGDP: 0.4,
         constructionJobsPerCapita: 62.1,
         housePriceToIncome: 6.4,
-        informalHousingShare: 2.9
+        informalHousingShare: 2.9,
+        housingCostBurden: 8.3,
+        socialRentalHousing: 3.9
     },
     {
         country: "Israel",
@@ -275,7 +327,9 @@ const housingData = [
         housingExpenditureToGDP: 0.6,
         constructionJobsPerCapita: 71.2,
         housePriceToIncome: 12.3,
-        informalHousingShare: 1.7
+        informalHousingShare: 1.7,
+        housingCostBurden: 14.6,
+        socialRentalHousing: 0.9
     },
     {
         country: "Czech Republic",
@@ -285,7 +339,9 @@ const housingData = [
         housingExpenditureToGDP: 0.3,
         constructionJobsPerCapita: 73.6,
         housePriceToIncome: 9.8,
-        informalHousingShare: 1.9
+        informalHousingShare: 1.9,
+        housingCostBurden: 9.4,
+        socialRentalHousing: 5.2
     },
     {
         country: "Greece",
@@ -295,7 +351,9 @@ const housingData = [
         housingExpenditureToGDP: 0.1,
         constructionJobsPerCapita: 38.5,
         housePriceToIncome: 5.1,
-        informalHousingShare: 3.8
+        informalHousingShare: 3.8,
+        housingCostBurden: 28.5,
+        socialRentalHousing: 0.7
     },
     {
         country: "Poland",
@@ -305,7 +363,9 @@ const housingData = [
         housingExpenditureToGDP: 0.2,
         constructionJobsPerCapita: 65.3,
         housePriceToIncome: 8.4,
-        informalHousingShare: 3.2
+        informalHousingShare: 3.2,
+        housingCostBurden: 7.8,
+        socialRentalHousing: 4.3
     },
     {
         country: "Slovakia",
@@ -315,7 +375,9 @@ const housingData = [
         housingExpenditureToGDP: 0.4,
         constructionJobsPerCapita: 69.7,
         housePriceToIncome: 7.9,
-        informalHousingShare: 2.8
+        informalHousingShare: 2.8,
+        housingCostBurden: 8.2,
+        socialRentalHousing: 3.8
     },
     {
         country: "Chile",
@@ -325,7 +387,9 @@ const housingData = [
         housingExpenditureToGDP: 0.6,
         constructionJobsPerCapita: 83.9,
         housePriceToIncome: 9.3,
-        informalHousingShare: 21.3
+        informalHousingShare: 21.3,
+        housingCostBurden: 18.9,
+        socialRentalHousing: 2.1
     },
     {
         country: "Hungary",
@@ -335,7 +399,9 @@ const housingData = [
         housingExpenditureToGDP: 0.3,
         constructionJobsPerCapita: 59.8,
         housePriceToIncome: 7.5,
-        informalHousingShare: 3.1
+        informalHousingShare: 3.1,
+        housingCostBurden: 6.9,
+        socialRentalHousing: 4.1
     },
     {
         country: "Latvia",
@@ -345,7 +411,9 @@ const housingData = [
         housingExpenditureToGDP: 0.2,
         constructionJobsPerCapita: 62.4,
         housePriceToIncome: 6.8,
-        informalHousingShare: 2.4
+        informalHousingShare: 2.4,
+        housingCostBurden: 5.8,
+        socialRentalHousing: 1.2
     },
     {
         country: "Lithuania",
@@ -355,7 +423,9 @@ const housingData = [
         housingExpenditureToGDP: 0.2,
         constructionJobsPerCapita: 64.1,
         housePriceToIncome: 7.1,
-        informalHousingShare: 2.2
+        informalHousingShare: 2.2,
+        housingCostBurden: 5.4,
+        socialRentalHousing: 1.4
     },
     {
         country: "Turkey",
@@ -365,7 +435,9 @@ const housingData = [
         housingExpenditureToGDP: 0.3,
         constructionJobsPerCapita: 47.6,
         housePriceToIncome: 8.1,
-        informalHousingShare: 11.3
+        informalHousingShare: 11.3,
+        housingCostBurden: 22.4,
+        socialRentalHousing: 3.2
     },
     {
         country: "Mexico",
@@ -375,7 +447,9 @@ const housingData = [
         housingExpenditureToGDP: 0.2,
         constructionJobsPerCapita: 68.2,
         housePriceToIncome: 6.7,
-        informalHousingShare: 38.6
+        informalHousingShare: 38.6,
+        housingCostBurden: 19.7,
+        socialRentalHousing: 1.4
     },
     {
         country: "Costa Rica",
@@ -385,7 +459,9 @@ const housingData = [
         housingExpenditureToGDP: 0.3,
         constructionJobsPerCapita: 59.3,
         housePriceToIncome: 7.8,
-        informalHousingShare: 15.7
+        informalHousingShare: 15.7,
+        housingCostBurden: 21.3,
+        socialRentalHousing: 1.8
     },
     {
         country: "Colombia",
@@ -395,7 +471,9 @@ const housingData = [
         housingExpenditureToGDP: 0.2,
         constructionJobsPerCapita: 52.8,
         housePriceToIncome: 11.4,
-        informalHousingShare: 32.4
+        informalHousingShare: 32.4,
+        housingCostBurden: 31.2,
+        socialRentalHousing: 0.8
     },
     {
         country: "Brazil",
@@ -405,7 +483,9 @@ const housingData = [
         housingExpenditureToGDP: 0.1,
         constructionJobsPerCapita: 64.7,
         housePriceToIncome: 10.7,
-        informalHousingShare: 55.2
+        informalHousingShare: 55.2,
+        housingCostBurden: 23.3,
+        socialRentalHousing: 1.2
     },
     {
         country: "Russia",
@@ -415,7 +495,9 @@ const housingData = [
         housingExpenditureToGDP: 0.2,
         constructionJobsPerCapita: 56.9,
         housePriceToIncome: 9.4,
-        informalHousingShare: 4.7
+        informalHousingShare: 4.7,
+        housingCostBurden: 12.7,
+        socialRentalHousing: 2.8
     },
     {
         country: "China",
@@ -425,7 +507,9 @@ const housingData = [
         housingExpenditureToGDP: 0.8,
         constructionJobsPerCapita: 97.4,
         housePriceToIncome: 19.7,
-        informalHousingShare: 8.9
+        informalHousingShare: 8.9,
+        housingCostBurden: 26.7,
+        socialRentalHousing: 7.3
     },
     {
         country: "Thailand",
@@ -435,7 +519,9 @@ const housingData = [
         housingExpenditureToGDP: 0.2,
         constructionJobsPerCapita: 48.3,
         housePriceToIncome: 14.2,
-        informalHousingShare: 12.6
+        informalHousingShare: 12.6,
+        housingCostBurden: 18.6,
+        socialRentalHousing: 0.9
     },
     {
         country: "Malaysia",
@@ -445,7 +531,9 @@ const housingData = [
         housingExpenditureToGDP: 0.3,
         constructionJobsPerCapita: 54.7,
         housePriceToIncome: 11.3,
-        informalHousingShare: 9.2
+        informalHousingShare: 9.2,
+        housingCostBurden: 16.4,
+        socialRentalHousing: 1.6
     },
     {
         country: "Singapore",
@@ -455,7 +543,9 @@ const housingData = [
         housingExpenditureToGDP: 3.2,
         constructionJobsPerCapita: 121.5,
         housePriceToIncome: 16.4,
-        informalHousingShare: 0.3
+        informalHousingShare: 0.3,
+        housingCostBurden: 8.9,
+        socialRentalHousing: 8.7
     },
     {
         country: "Philippines",
@@ -465,7 +555,9 @@ const housingData = [
         housingExpenditureToGDP: 0.1,
         constructionJobsPerCapita: 41.9,
         housePriceToIncome: 13.7,
-        informalHousingShare: 38.6
+        informalHousingShare: 38.6,
+        housingCostBurden: 32.7,
+        socialRentalHousing: 0.6
     },
     {
         country: "Vietnam",
@@ -475,7 +567,9 @@ const housingData = [
         housingExpenditureToGDP: 0.2,
         constructionJobsPerCapita: 67.8,
         housePriceToIncome: 15.8,
-        informalHousingShare: 18.7
+        informalHousingShare: 18.7,
+        housingCostBurden: 24.6,
+        socialRentalHousing: 0.8
     },
     {
         country: "Indonesia",
@@ -485,7 +579,9 @@ const housingData = [
         housingExpenditureToGDP: 0.1,
         constructionJobsPerCapita: 44.3,
         housePriceToIncome: 10.8,
-        informalHousingShare: 28.4
+        informalHousingShare: 28.4,
+        housingCostBurden: 28.4,
+        socialRentalHousing: 0.7
     },
     {
         country: "India",
@@ -495,7 +591,9 @@ const housingData = [
         housingExpenditureToGDP: 0.1,
         constructionJobsPerCapita: 89.7,
         housePriceToIncome: 12.6,
-        informalHousingShare: 35.2
+        informalHousingShare: 35.2,
+        housingCostBurden: 29.8,
+        socialRentalHousing: 0.9
     },
     {
         country: "Argentina",
@@ -505,7 +603,9 @@ const housingData = [
         housingExpenditureToGDP: 0.1,
         constructionJobsPerCapita: 52.4,
         housePriceToIncome: 9.2,
-        informalHousingShare: 28.9
+        informalHousingShare: 28.9,
+        housingCostBurden: 21.4,
+        socialRentalHousing: 1.1
     },
     {
         country: "Pakistan",
@@ -515,7 +615,9 @@ const housingData = [
         housingExpenditureToGDP: 0.05,
         constructionJobsPerCapita: 73.2,
         housePriceToIncome: 10.2,
-        informalHousingShare: 47.3
+        informalHousingShare: 47.3,
+        housingCostBurden: 34.2,
+        socialRentalHousing: 0.3
     },
     {
         country: "Bangladesh",
@@ -525,7 +627,9 @@ const housingData = [
         housingExpenditureToGDP: 0.06,
         constructionJobsPerCapita: 68.9,
         housePriceToIncome: 9.8,
-        informalHousingShare: 52.4
+        informalHousingShare: 52.4,
+        housingCostBurden: 36.8,
+        socialRentalHousing: 0.2
     },
     {
         country: "United Arab Emirates",
@@ -535,7 +639,9 @@ const housingData = [
         housingExpenditureToGDP: 0.4,
         constructionJobsPerCapita: 156.3,
         housePriceToIncome: 9.6,
-        informalHousingShare: 2.1
+        informalHousingShare: 2.1,
+        housingCostBurden: 9.8,
+        socialRentalHousing: 2.1
     },
     {
         country: "Saudi Arabia",
@@ -545,7 +651,9 @@ const housingData = [
         housingExpenditureToGDP: 0.7,
         constructionJobsPerCapita: 98.2,
         housePriceToIncome: 7.9,
-        informalHousingShare: 3.8
+        informalHousingShare: 3.8,
+        housingCostBurden: 11.4,
+        socialRentalHousing: 1.9
     },
     {
         country: "Iceland",
@@ -555,7 +663,9 @@ const housingData = [
         housingExpenditureToGDP: 0.8,
         constructionJobsPerCapita: 81.6,
         housePriceToIncome: 6.9,
-        informalHousingShare: 0.4
+        informalHousingShare: 0.4,
+        housingCostBurden: 7.9,
+        socialRentalHousing: 11.6
     },
 
     // African Countries - Enhanced CAHF Data
@@ -567,7 +677,9 @@ const housingData = [
         housingExpenditureToGDP: 0.5,
         constructionJobsPerCapita: 36.8,
         housePriceToIncome: 8.9,
-        informalHousingShare: 23.8
+        informalHousingShare: 23.8,
+        housingCostBurden: 27.3,
+        socialRentalHousing: 2.3
     },
     {
         country: "Egypt",
@@ -577,7 +689,9 @@ const housingData = [
         housingExpenditureToGDP: 0.1,
         constructionJobsPerCapita: 52.1,
         housePriceToIncome: 9.7,
-        informalHousingShare: 31.4
+        informalHousingShare: 31.4,
+        housingCostBurden: 31.2,
+        socialRentalHousing: 1.4
     },
     {
         country: "Morocco",
@@ -587,7 +701,9 @@ const housingData = [
         housingExpenditureToGDP: 0.2,
         constructionJobsPerCapita: 47.9,
         housePriceToIncome: 8.4,
-        informalHousingShare: 24.6
+        informalHousingShare: 24.6,
+        housingCostBurden: 26.4,
+        socialRentalHousing: 1.7
     },
     {
         country: "Kenya",
@@ -597,7 +713,9 @@ const housingData = [
         housingExpenditureToGDP: 0.1,
         constructionJobsPerCapita: 28.4,
         housePriceToIncome: 11.8,
-        informalHousingShare: 56.3
+        informalHousingShare: 56.3,
+        housingCostBurden: 38.6,
+        socialRentalHousing: 0.4
     },
     {
         country: "Nigeria",
@@ -607,7 +725,9 @@ const housingData = [
         housingExpenditureToGDP: 0.05,
         constructionJobsPerCapita: 18.7,
         housePriceToIncome: 13.2,
-        informalHousingShare: 64.7
+        informalHousingShare: 64.7,
+        housingCostBurden: 42.7,
+        socialRentalHousing: 0.2
     },
     {
         country: "Ghana",
@@ -617,7 +737,9 @@ const housingData = [
         housingExpenditureToGDP: 0.1,
         constructionJobsPerCapita: 23.6,
         housePriceToIncome: 10.4,
-        informalHousingShare: 52.8
+        informalHousingShare: 52.8,
+        housingCostBurden: 35.8,
+        socialRentalHousing: 0.3
     },
     {
         country: "Ethiopia",
@@ -627,7 +749,9 @@ const housingData = [
         housingExpenditureToGDP: 0.08,
         constructionJobsPerCapita: 32.4,
         housePriceToIncome: 12.6,
-        informalHousingShare: 71.4
+        informalHousingShare: 71.4,
+        housingCostBurden: 39.4,
+        socialRentalHousing: 0.2
     },
     {
         country: "Tanzania",
@@ -637,7 +761,9 @@ const housingData = [
         housingExpenditureToGDP: 0.09,
         constructionJobsPerCapita: 25.9,
         housePriceToIncome: 10.9,
-        informalHousingShare: 62.3
+        informalHousingShare: 62.3,
+        housingCostBurden: 37.2,
+        socialRentalHousing: 0.3
     },
     {
         country: "Uganda",
@@ -647,7 +773,9 @@ const housingData = [
         housingExpenditureToGDP: 0.07,
         constructionJobsPerCapita: 29.3,
         housePriceToIncome: 11.7,
-        informalHousingShare: 68.9
+        informalHousingShare: 68.9,
+        housingCostBurden: 40.3,
+        socialRentalHousing: 0.2
     },
     {
         country: "Rwanda",
@@ -657,7 +785,9 @@ const housingData = [
         housingExpenditureToGDP: 0.15,
         constructionJobsPerCapita: 34.7,
         housePriceToIncome: 9.8,
-        informalHousingShare: 54.2
+        informalHousingShare: 54.2,
+        housingCostBurden: 34.6,
+        socialRentalHousing: 0.6
     },
     {
         country: "Zambia",
@@ -667,7 +797,9 @@ const housingData = [
         housingExpenditureToGDP: 0.06,
         constructionJobsPerCapita: 21.8,
         housePriceToIncome: 10.2,
-        informalHousingShare: 58.6
+        informalHousingShare: 58.6,
+        housingCostBurden: 36.9,
+        socialRentalHousing: 0.3
     },
     {
         country: "Namibia",
@@ -677,7 +809,9 @@ const housingData = [
         housingExpenditureToGDP: 0.18,
         constructionJobsPerCapita: 31.2,
         housePriceToIncome: 8.3,
-        informalHousingShare: 34.7
+        informalHousingShare: 34.7,
+        housingCostBurden: 29.7,
+        socialRentalHousing: 0.8
     },
     {
         country: "Botswana",
@@ -687,7 +821,9 @@ const housingData = [
         housingExpenditureToGDP: 0.22,
         constructionJobsPerCapita: 38.5,
         housePriceToIncome: 7.4,
-        informalHousingShare: 28.3
+        informalHousingShare: 28.3,
+        housingCostBurden: 24.8,
+        socialRentalHousing: 1.2
     },
     {
         country: "Senegal",
@@ -697,7 +833,9 @@ const housingData = [
         housingExpenditureToGDP: 0.08,
         constructionJobsPerCapita: 26.1,
         housePriceToIncome: 9.6,
-        informalHousingShare: 48.9
+        informalHousingShare: 48.9,
+        housingCostBurden: 33.4,
+        socialRentalHousing: 0.4
     },
     {
         country: "Tunisia",
@@ -707,7 +845,9 @@ const housingData = [
         housingExpenditureToGDP: 0.25,
         constructionJobsPerCapita: 41.7,
         housePriceToIncome: 7.2,
-        informalHousingShare: 18.4
+        informalHousingShare: 18.4,
+        housingCostBurden: 22.6,
+        socialRentalHousing: 1.6
     },
     {
         country: "Cameroon",
@@ -717,7 +857,9 @@ const housingData = [
         housingExpenditureToGDP: 0.05,
         constructionJobsPerCapita: 24.3,
         housePriceToIncome: 10.7,
-        informalHousingShare: 55.7
+        informalHousingShare: 55.7,
+        housingCostBurden: 35.7,
+        socialRentalHousing: 0.3
     },
     {
         country: "Ivory Coast",
@@ -727,7 +869,9 @@ const housingData = [
         housingExpenditureToGDP: 0.07,
         constructionJobsPerCapita: 27.8,
         housePriceToIncome: 11.3,
-        informalHousingShare: 58.2
+        informalHousingShare: 58.2,
+        housingCostBurden: 37.4,
+        socialRentalHousing: 0.3
     },
     {
         country: "Mozambique",
@@ -737,7 +881,9 @@ const housingData = [
         housingExpenditureToGDP: 0.04,
         constructionJobsPerCapita: 19.2,
         housePriceToIncome: 12.4,
-        informalHousingShare: 69.8
+        informalHousingShare: 69.8,
+        housingCostBurden: 41.2,
+        socialRentalHousing: 0.2
     },
     {
         country: "Angola",
@@ -747,7 +893,9 @@ const housingData = [
         housingExpenditureToGDP: 0.06,
         constructionJobsPerCapita: 28.9,
         housePriceToIncome: 11.9,
-        informalHousingShare: 61.3
+        informalHousingShare: 61.3,
+        housingCostBurden: 38.3,
+        socialRentalHousing: 0.3
     },
     {
         country: "Zimbabwe",
@@ -757,7 +905,9 @@ const housingData = [
         housingExpenditureToGDP: 0.03,
         constructionJobsPerCapita: 16.7,
         housePriceToIncome: 9.7,
-        informalHousingShare: 57.4
+        informalHousingShare: 57.4,
+        housingCostBurden: 39.8,
+        socialRentalHousing: 0.2
     },
     {
         country: "Algeria",
@@ -767,7 +917,9 @@ const housingData = [
         housingExpenditureToGDP: 0.32,
         constructionJobsPerCapita: 44.2,
         housePriceToIncome: 7.8,
-        informalHousingShare: 22.6
+        informalHousingShare: 22.6,
+        housingCostBurden: 25.7,
+        socialRentalHousing: 2.4
     },
     {
         country: "Sudan",
@@ -777,7 +929,9 @@ const housingData = [
         housingExpenditureToGDP: 0.02,
         constructionJobsPerCapita: 22.4,
         housePriceToIncome: 10.3,
-        informalHousingShare: 73.8
+        informalHousingShare: 73.8,
+        housingCostBurden: 43.6,
+        socialRentalHousing: 0.1
     },
     {
         country: "Mauritius",
@@ -787,7 +941,9 @@ const housingData = [
         housingExpenditureToGDP: 0.41,
         constructionJobsPerCapita: 52.8,
         housePriceToIncome: 8.6,
-        informalHousingShare: 8.2
+        informalHousingShare: 8.2,
+        housingCostBurden: 18.9,
+        socialRentalHousing: 1.8
     },
     {
         country: "Malawi",
@@ -797,7 +953,9 @@ const housingData = [
         housingExpenditureToGDP: 0.05,
         constructionJobsPerCapita: 19.6,
         housePriceToIncome: 11.2,
-        informalHousingShare: 66.4
+        informalHousingShare: 66.4,
+        housingCostBurden: 40.7,
+        socialRentalHousing: 0.2
     },
     {
         country: "Benin",
@@ -807,7 +965,9 @@ const housingData = [
         housingExpenditureToGDP: 0.06,
         constructionJobsPerCapita: 25.7,
         housePriceToIncome: 10.8,
-        informalHousingShare: 59.3
+        informalHousingShare: 59.3,
+        housingCostBurden: 36.2,
+        socialRentalHousing: 0.3
     },
     {
         country: "Togo",
@@ -817,7 +977,9 @@ const housingData = [
         housingExpenditureToGDP: 0.05,
         constructionJobsPerCapita: 24.1,
         housePriceToIncome: 11.4,
-        informalHousingShare: 61.7
+        informalHousingShare: 61.7,
+        housingCostBurden: 37.8,
+        socialRentalHousing: 0.2
     },
     {
         country: "Mali",
@@ -827,7 +989,9 @@ const housingData = [
         housingExpenditureToGDP: 0.04,
         constructionJobsPerCapita: 21.3,
         housePriceToIncome: 10.6,
-        informalHousingShare: 64.2
+        informalHousingShare: 64.2,
+        housingCostBurden: 38.9,
+        socialRentalHousing: 0.2
     },
     {
         country: "Burkina Faso",
@@ -837,7 +1001,9 @@ const housingData = [
         housingExpenditureToGDP: 0.05,
         constructionJobsPerCapita: 23.8,
         housePriceToIncome: 10.9,
-        informalHousingShare: 62.8
+        informalHousingShare: 62.8,
+        housingCostBurden: 37.3,
+        socialRentalHousing: 0.2
     },
     {
         country: "Madagascar",
@@ -847,7 +1013,9 @@ const housingData = [
         housingExpenditureToGDP: 0.03,
         constructionJobsPerCapita: 18.2,
         housePriceToIncome: 12.1,
-        informalHousingShare: 70.3
+        informalHousingShare: 70.3,
+        housingCostBurden: 41.7,
+        socialRentalHousing: 0.1
     },
     {
         country: "Congo",
@@ -857,7 +1025,9 @@ const housingData = [
         housingExpenditureToGDP: 0.08,
         constructionJobsPerCapita: 27.4,
         housePriceToIncome: 9.8,
-        informalHousingShare: 53.6
+        informalHousingShare: 53.6,
+        housingCostBurden: 35.1,
+        socialRentalHousing: 0.3
     }
 ];
 
