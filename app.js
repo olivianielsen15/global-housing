@@ -75,6 +75,7 @@ function initGlobe() {
             console.log('Sample feature ISO codes:');
             land.features.slice(0, 5).forEach(feat => {
                 console.log('  Feature:', feat.properties.NAME, 'ISO_A3:', feat.properties.ISO_A3, 'id:', feat.id);
+                console.log('  All properties:', Object.keys(feat.properties));
             });
 
             // Debug: Log our data ISO codes
