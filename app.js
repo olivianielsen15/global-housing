@@ -86,7 +86,8 @@ function initGlobe() {
                 .polygonsData(land.features)
                 .polygonAltitude(0.01)
                 .polygonCapColor(feat => {
-                    const iso = feat.properties.ISO_A3 || feat.id;
+                    // Try multiple property names for ISO code
+                    const iso = feat.properties.ISO_A3 || feat.properties.iso_a3 || feat.properties.ADM0_A3 || feat.id;
                     const countryData = dataByISO[iso];
 
                     if (!countryData) {
@@ -103,7 +104,7 @@ function initGlobe() {
                 .polygonSideColor(() => 'rgba(0, 0, 0, 0.2)')
                 .polygonStrokeColor(() => '#111')
                 .polygonLabel(feat => {
-                    const iso = feat.properties.ISO_A3 || feat.id;
+                    const iso = feat.properties.ISO_A3 || feat.properties.iso_a3 || feat.properties.ADM0_A3 || feat.id;
                     const countryData = dataByISO[iso];
 
                     if (!countryData) {
@@ -166,7 +167,7 @@ function initGlobe() {
                 .onPolygonHover(feat => {
                 container.style.cursor = feat ? 'pointer' : 'default';
                 if (feat) {
-                    const iso = feat.properties.ISO_A3 || feat.id;
+                    const iso = feat.properties.ISO_A3 || feat.properties.iso_a3 || feat.properties.ADM0_A3 || feat.id;
                     const countryData = dataByISO[iso];
                     if (countryData) {
                         updateStatsPanel(countryData);
@@ -238,7 +239,7 @@ function updateLayer(layer) {
     // Update globe colors
     if (globe) {
         globe.polygonCapColor(feat => {
-            const iso = feat.properties.ISO_A3 || feat.id;
+            const iso = feat.properties.ISO_A3 || feat.properties.iso_a3 || feat.properties.ADM0_A3 || feat.id;
             const countryData = dataByISO[iso];
 
             if (!countryData) {
