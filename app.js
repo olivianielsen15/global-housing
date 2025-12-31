@@ -263,7 +263,7 @@ function initGlobe() {
             // Hide loading screen once globe is ready
             setTimeout(() => {
                 hideLoadingScreen();
-            }, 1000);
+            }, 300);
         })
         .catch(error => {
             console.error('Error loading country data:', error);
