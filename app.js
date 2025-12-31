@@ -62,20 +62,17 @@ function initGlobe() {
         .width(container.offsetWidth)
         .height(container.offsetHeight);
 
-    // Load and process country data for choropleth
-    fetch('//unpkg.com/world-atlas/countries-110m.json')
+    // Load and process country data for choropleth - using geojson with ISO codes
+    fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
         .then(res => res.json())
-        .then(countries => {
-            console.log('Loaded country data:', countries);
-            // Convert TopoJSON to GeoJSON features
-            const land = topojson.feature(countries, countries.objects.countries);
-            console.log('Converted to GeoJSON, feature count:', land.features.length);
+        .then(geoData => {
+            console.log('Loaded GeoJSON country data');
+            console.log('Feature count:', geoData.features.length);
 
-            // Debug: Log first few features to see ISO codes
-            console.log('Sample feature ISO codes:');
-            land.features.slice(0, 5).forEach(feat => {
-                console.log('  Feature:', feat.properties.NAME, 'ISO_A3:', feat.properties.ISO_A3, 'id:', feat.id);
-                console.log('  All properties:', Object.keys(feat.properties));
+            // Log first few features
+            console.log('Sample features:');
+            geoData.features.slice(0, 3).forEach(feat => {
+                console.log('  Country:', feat.properties.ADMIN, 'ISO_A3:', feat.properties.ISO_A3);
             });
 
             // Debug: Log our data ISO codes
@@ -83,7 +80,7 @@ function initGlobe() {
 
             // Set all polygon properties together
             globe
-                .polygonsData(land.features)
+                .polygonsData(geoData.features)
                 .polygonAltitude(0.01)
                 .polygonCapColor(feat => {
                     // Try multiple property names for ISO code
