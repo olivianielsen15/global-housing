@@ -315,11 +315,25 @@ function initGlobe() {
     });
 }
 
+// Helper function to get policy activity description
+function getPolicyActivityLabel(score) {
+    const labels = {
+        0: 'No Reforms',
+        1: 'Minimal Activity',
+        2: 'Low-Moderate Activity',
+        3: 'Moderate Activity',
+        4: 'High Activity',
+        5: 'Exceptional Activity'
+    };
+    return labels[score] || 'Unknown';
+}
+
 // Update stats panel with country information
 function updateStatsPanel(countryData) {
     const statsPanel = document.getElementById('stats-panel');
     const config = layerConfig[currentLayer];
     const currentValue = countryData[config.dataKey];
+    const policyLabel = getPolicyActivityLabel(countryData.policyActivityScore);
 
     statsPanel.classList.add('has-data');
     statsPanel.innerHTML = `
@@ -333,6 +347,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Informal Housing Share:</strong> ${countryData.informalHousingShare.toFixed(1)}%</p>
             <p><strong>Housing Cost Burden:</strong> ${countryData.housingCostBurden.toFixed(1)}% of population</p>
             <p><strong>Social Rental Housing:</strong> ${countryData.socialRentalHousing.toFixed(1)}% of stock</p>
+            <p><strong>Policy Activity 2020-24:</strong> ${countryData.policyActivityScore}/5 (${policyLabel})</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
