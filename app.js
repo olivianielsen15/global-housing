@@ -321,6 +321,7 @@ function updateStatsPanel(countryData) {
     const config = layerConfig[currentLayer];
     const currentValue = countryData[config.dataKey];
 
+    statsPanel.classList.add('has-data');
     statsPanel.innerHTML = `
         <h4>${countryData.country}</h4>
         <div class="country-stats">
@@ -342,7 +343,38 @@ function updateStatsPanel(countryData) {
 // Reset stats panel
 function resetStatsPanel() {
     const statsPanel = document.getElementById('stats-panel');
-    statsPanel.innerHTML = '<h4>Hover over a country for details</h4>';
+    statsPanel.classList.remove('has-data');
+    statsPanel.innerHTML = `
+        <svg class="empty-illustration" width="120" height="120" viewBox="0 0 120 120">
+            <!-- Isometric house in blueprint style -->
+            <g transform="translate(60, 40)">
+                <!-- Base -->
+                <path d="M 0,-20 L 25,0 L 25,30 L 0,50 L -25,30 L -25,0 Z"
+                      fill="none" stroke="#4facfe" stroke-width="1" opacity="0.4"/>
+                <!-- Left wall -->
+                <path d="M -25,0 L -25,30 L 0,50 L 0,20 Z"
+                      fill="none" stroke="#4facfe" stroke-width="1.5"/>
+                <!-- Right wall -->
+                <path d="M 25,0 L 25,30 L 0,50 L 0,20 Z"
+                      fill="none" stroke="#00f2fe" stroke-width="1.5"/>
+                <!-- Roof left -->
+                <path d="M -25,0 L 0,-20 L 0,20 Z"
+                      fill="none" stroke="#4facfe" stroke-width="1.5" stroke-dasharray="3,2"/>
+                <!-- Roof right -->
+                <path d="M 25,0 L 0,-20 L 0,20 Z"
+                      fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-dasharray="3,2"/>
+                <!-- Door -->
+                <rect x="-5" y="35" width="10" height="15"
+                      fill="none" stroke="#00f2fe" stroke-width="1"/>
+                <!-- Windows -->
+                <rect x="-18" y="8" width="6" height="6"
+                      fill="none" stroke="#4facfe" stroke-width="1"/>
+                <rect x="12" y="8" width="6" height="6"
+                      fill="none" stroke="#00f2fe" stroke-width="1"/>
+            </g>
+        </svg>
+        <h4 class="empty-text">Hover over a country for details</h4>
+    `;
 }
 
 // Update layer display
