@@ -395,10 +395,30 @@ header h1 {
         padding: 14px 16px;
         font-size: 0.9em;
         text-align: center;
+        gap: 8px;
+    }
+
+    .btn-icon {
+        width: 14px;
+        height: 14px;
     }
 
     .layer-btn:hover {
         transform: translateX(0);
+    }
+
+    .empty-illustration {
+        width: 100px;
+        height: 100px;
+    }
+
+    .loading-house {
+        width: 70px;
+        height: 70px;
+    }
+
+    .loading-text {
+        font-size: 1em;
     }
 
     #globe-container {
@@ -487,6 +507,12 @@ header h1 {
     .layer-btn {
         padding: 12px 14px;
         font-size: 0.85em;
+        gap: 6px;
+    }
+
+    .btn-icon {
+        width: 12px;
+        height: 12px;
     }
 
     #globe-container {
@@ -500,5 +526,23 @@ header h1 {
 
     .country-stats p {
         font-size: 0.8em;
+    }
+
+    .empty-illustration {
+        width: 80px;
+        height: 80px;
+    }
+
+    .loading-house {
+        width: 60px;
+        height: 60px;
+    }
+
+    .loading-text {
+        font-size: 0.9em;
+    }
+
+    .empty-text {
+        font-size: 0.9em;
     }
 }
