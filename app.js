@@ -71,6 +71,15 @@ function initGlobe() {
             const land = topojson.feature(countries, countries.objects.countries);
             console.log('Converted to GeoJSON, feature count:', land.features.length);
 
+            // Debug: Log first few features to see ISO codes
+            console.log('Sample feature ISO codes:');
+            land.features.slice(0, 5).forEach(feat => {
+                console.log('  Feature:', feat.properties.NAME, 'ISO_A3:', feat.properties.ISO_A3, 'id:', feat.id);
+            });
+
+            // Debug: Log our data ISO codes
+            console.log('Our data ISO codes:', Object.keys(dataByISO).slice(0, 10));
+
             // Apply polygon data and colors
             globe.polygonsData(land.features);
 
@@ -81,12 +90,14 @@ function initGlobe() {
                 const countryData = dataByISO[iso];
 
                 if (!countryData) {
+                    console.log('No match for ISO:', iso, 'Country:', feat.properties.NAME || feat.properties.ADMIN);
                     return '#555555';
                 }
 
                 const config = layerConfig[currentLayer];
                 const value = countryData[config.dataKey];
                 const color = getColor(value, config.scale[0], config.scale[1]);
+                console.log('✓ Matched:', countryData.country, 'ISO:', iso, 'Color:', color);
                 return color;
             });
 
