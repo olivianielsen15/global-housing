@@ -23,14 +23,16 @@ const layerConfig = {
         description: 'Government spending on housing and allowances as percentage of GDP. From OECD Affordable Housing Database (2024-2025). Higher values show greater public investment.',
         dataKey: 'housingExpenditureToGDP',
         scale: [0, 3.5],
-        unit: '% of GDP'
+        unit: '% of GDP',
+        reversed: true  // Higher is better - green for high values
     },
     construction: {
         title: 'Construction Jobs per Capita',
         description: 'Construction sector employment per 1,000 people. Data from ILO and national labor statistics (2024). Higher values indicate more construction activity.',
         dataKey: 'constructionJobsPerCapita',
         scale: [0, 160],
-        unit: ' jobs/1000 people'
+        unit: ' jobs/1000 people',
+        reversed: true  // Higher is better - green for high values
     },
     priceToIncome: {
         title: 'House Price to Income Ratio',
@@ -58,23 +60,33 @@ const layerConfig = {
         description: 'Percentage of total housing stock that is social or affordable housing. Data from OECD PH4.2 (2022-2023). Higher values indicate stronger social housing programs.',
         dataKey: 'socialRentalHousing',
         scale: [0, 32],
-        unit: '% of stock'
+        unit: '% of stock',
+        reversed: true  // Higher is better - green for high values
     }
 };
 
 // Color scale function - vibrant heat map colors with full opacity
-function getColor(value, minVal, maxVal) {
+// For negative indicators: green = low (good), red = high (bad)
+// For positive indicators (reversed): green = high (good), red = low (bad)
+function getColor(value, minVal, maxVal, reversed = false) {
     if (value === null || value === undefined) return '#555555'; // Dark gray for no data
 
-    const normalized = Math.min(Math.max((value - minVal) / (maxVal - minVal), 0), 1);
+    let normalized = Math.min(Math.max((value - minVal) / (maxVal - minVal), 0), 1);
+
+    // Reverse the scale for positive indicators (higher = better)
+    if (reversed) {
+        normalized = 1 - normalized;
+    }
 
     // Solid opaque colors for visibility
-    if (normalized < 0.15) return '#00cc66';  // Dark Green - Very Low
-    if (normalized < 0.3) return '#66ff66';   // Green - Low
+    // Low values (green) = good for negative indicators OR high values for positive indicators
+    // High values (red) = bad for negative indicators OR low values for positive indicators
+    if (normalized < 0.15) return '#00cc66';  // Dark Green - Very Good
+    if (normalized < 0.3) return '#66ff66';   // Green - Good
     if (normalized < 0.5) return '#ffff00';   // Yellow - Medium
-    if (normalized < 0.7) return '#ff9933';   // Orange - Medium-High
-    if (normalized < 0.85) return '#ff4500';  // Red-Orange - High
-    return '#cc0000';                          // Dark Red - Very High
+    if (normalized < 0.7) return '#ff9933';   // Orange - Medium-Bad
+    if (normalized < 0.85) return '#ff4500';  // Red-Orange - Bad
+    return '#cc0000';                          // Dark Red - Very Bad
 }
 
 // Create a lookup map for fast data access by ISO code
@@ -180,7 +192,7 @@ function initGlobe() {
 
                     const config = layerConfig[currentLayer];
                     const value = countryData[config.dataKey];
-                    return getColor(value, config.scale[0], config.scale[1]);
+                    return getColor(value, config.scale[0], config.scale[1], config.reversed);
                 })
                 .polygonSideColor(() => 'rgba(0, 0, 0, 0.2)')
                 .polygonStrokeColor(() => '#111')
@@ -362,7 +374,7 @@ function updateLayer(layer) {
             }
 
             const value = countryData[config.dataKey];
-            const color = getColor(value, config.scale[0], config.scale[1]);
+            const color = getColor(value, config.scale[0], config.scale[1], config.reversed);
             return color;
         });
     }

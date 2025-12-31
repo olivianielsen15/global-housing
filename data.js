@@ -1,11 +1,12 @@
 // Global Housing Data - Based on Real Data Sources
 // Data compiled from:
-// - OECD Affordable Housing Database (2024-2025)
+// - OECD Affordable Housing Database (2024-2025) - HC1.2, PH4.2
 // - World Bank & IMF Global Debt Database (2024)
 // - CAHF Housing Finance in Africa Yearbook (2024)
-// - UN-Habitat Global Housing Reports (2024)
+// - UN-Habitat SDG 11.1.1 Slum/Informal Settlements Data (2022-2024)
 // - Trading Economics & The Global Economy database
 // - ILO (International Labour Organization) employment data
+// - Eurostat Housing Statistics (2023)
 
 // Each country includes eight metrics:
 // 1. housingDeficitPerCapita: Estimated housing units needed per 1,000 people (based on UN-Habitat, World Bank data)
@@ -13,7 +14,7 @@
 // 3. housingExpenditureToGDP: Government housing expenditure/allowances as percentage of GDP - from OECD
 // 4. constructionJobsPerCapita: Construction sector employment per 1,000 people - from ILO, national statistics
 // 5. housePriceToIncome: Median house price to median annual income ratio - from Numbeo, World Bank, local statistics
-// 6. informalHousingShare: Percentage of housing that is informal/substandard - from UN-Habitat, World Bank
+// 6. informalHousingShare: Percentage of housing that is informal/substandard - from UN-Habitat SDG 11.1.1 (5 housing deprivations: water, sanitation, living area, durability, tenure)
 // 7. housingCostBurden: Percentage of population spending >40% of income on housing - from OECD HC1.2, Eurostat, World Bank
 // 8. socialRentalHousing: Percentage of housing stock that is social/affordable housing - from OECD PH4.2
 
