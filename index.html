@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Housing Data - Interactive Globe</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/globe.gl"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Global Housing Data Visualization</h1>
+            <p class="subtitle">Explore housing metrics across the world</p>
+        </header>
+
+        <div class="controls-panel">
+            <div class="layer-controls">
+                <h3>Select Data Layer:</h3>
+                <div class="button-group">
+                    <button class="layer-btn active" data-layer="deficit">
+                        Housing Deficit per Capita
+                    </button>
+                    <button class="layer-btn" data-layer="mortgage">
+                        Mortgage to GDP Ratio
+                    </button>
+                    <button class="layer-btn" data-layer="expenditure">
+                        Govt Housing Expenditure / GDP
+                    </button>
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <h3 id="current-layer-title">Housing Deficit per Capita</h3>
+                <p id="current-layer-description">
+                    Number of housing units needed per 1,000 people to meet demand
+                </p>
+                <div class="legend" id="legend">
+                    <div class="legend-item">
+                        <span class="color-box" style="background: #ff0000;"></span>
+                        <span>High</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="color-box" style="background: #ff6600;"></span>
+                        <span>Medium-High</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="color-box" style="background: #ffcc00;"></span>
+                        <span>Medium</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="color-box" style="background: #66ff66;"></span>
+                        <span>Low</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="color-box" style="background: #00cc00;"></span>
+                        <span>Very Low</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-panel" id="stats-panel">
+                <h4>Hover over a country for details</h4>
+            </div>
+        </div>
+
+        <div id="globe-container"></div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
