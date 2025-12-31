@@ -21,8 +21,8 @@
                     <button class="layer-btn active" data-layer="deficit">
                         Housing Deficit per Capita
                     </button>
-                    <button class="layer-btn" data-layer="mortgage">
-                        Mortgage to GDP Ratio
+                    <button class="layer-btn" data-layer="debt">
+                        Household Debt to GDP Ratio
                     </button>
                     <button class="layer-btn" data-layer="expenditure">
                         Govt Housing Expenditure / GDP
@@ -37,30 +37,51 @@
                 </p>
                 <div class="legend" id="legend">
                     <div class="legend-item">
-                        <span class="color-box" style="background: #ff0000;"></span>
+                        <span class="color-box" style="background: rgba(204, 0, 0, 0.95);"></span>
+                        <span>Very High</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="color-box" style="background: rgba(255, 69, 0, 0.9);"></span>
                         <span>High</span>
                     </div>
                     <div class="legend-item">
-                        <span class="color-box" style="background: #ff6600;"></span>
+                        <span class="color-box" style="background: rgba(255, 153, 51, 0.85);"></span>
                         <span>Medium-High</span>
                     </div>
                     <div class="legend-item">
-                        <span class="color-box" style="background: #ffcc00;"></span>
+                        <span class="color-box" style="background: rgba(255, 255, 0, 0.85);"></span>
                         <span>Medium</span>
                     </div>
                     <div class="legend-item">
-                        <span class="color-box" style="background: #66ff66;"></span>
+                        <span class="color-box" style="background: rgba(102, 255, 102, 0.85);"></span>
                         <span>Low</span>
                     </div>
                     <div class="legend-item">
-                        <span class="color-box" style="background: #00cc00;"></span>
+                        <span class="color-box" style="background: rgba(0, 204, 102, 0.9);"></span>
                         <span>Very Low</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="color-box" style="background: rgba(100, 100, 100, 0.15);"></span>
+                        <span>No Data</span>
                     </div>
                 </div>
             </div>
 
             <div class="stats-panel" id="stats-panel">
                 <h4>Hover over a country for details</h4>
+            </div>
+
+            <div class="data-sources">
+                <h4>Data Sources</h4>
+                <ul>
+                    <li><strong>OECD</strong> Affordable Housing Database (2024-2025)</li>
+                    <li><strong>World Bank & IMF</strong> Global Debt Database (2024)</li>
+                    <li><strong>CAHF</strong> Housing Finance in Africa Yearbook (2024)</li>
+                    <li><strong>UN-Habitat</strong> Global Housing Reports (2024)</li>
+                </ul>
+                <p style="font-size: 0.75em; color: #888; margin-top: 8px;">
+                    Coverage: 64 countries worldwide
+                </p>
             </div>
         </div>
 

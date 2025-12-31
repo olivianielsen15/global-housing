@@ -194,6 +194,46 @@ header h1 {
     background: rgba(79, 172, 254, 0.7);
 }
 
+.data-sources {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border-top: 1px solid rgba(79, 172, 254, 0.3);
+}
+
+.data-sources h4 {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #00f2fe;
+}
+
+.data-sources ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.data-sources li {
+    font-size: 0.85em;
+    color: #b0c4d4;
+    margin: 6px 0;
+    padding-left: 12px;
+    position: relative;
+}
+
+.data-sources li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4facfe;
+}
+
+.data-sources strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     header h1 {
