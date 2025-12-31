@@ -101,6 +101,7 @@ function initGlobe() {
                 })
                 .polygonSideColor(() => 'rgba(0, 0, 0, 0.2)')
                 .polygonStrokeColor(() => '#111')
+                .polygonLabel(feat => {
                     const iso = feat.properties.ISO_A3 || feat.id;
                     const countryData = dataByISO[iso];
 
