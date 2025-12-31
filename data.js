@@ -325,7 +325,7 @@ const housingData = [
         housingExpenditureToGDP: 0.6,
         constructionJobsPerCapita: 83.9,
         housePriceToIncome: 9.3,
-        informalHousingShare: 8.7
+        informalHousingShare: 21.3
     },
     {
         country: "Hungary",
@@ -375,7 +375,7 @@ const housingData = [
         housingExpenditureToGDP: 0.2,
         constructionJobsPerCapita: 68.2,
         housePriceToIncome: 6.7,
-        informalHousingShare: 14.2
+        informalHousingShare: 38.6
     },
     {
         country: "Costa Rica",
@@ -385,7 +385,7 @@ const housingData = [
         housingExpenditureToGDP: 0.3,
         constructionJobsPerCapita: 59.3,
         housePriceToIncome: 7.8,
-        informalHousingShare: 9.4
+        informalHousingShare: 15.7
     },
     {
         country: "Colombia",
@@ -395,7 +395,7 @@ const housingData = [
         housingExpenditureToGDP: 0.2,
         constructionJobsPerCapita: 52.8,
         housePriceToIncome: 11.4,
-        informalHousingShare: 16.8
+        informalHousingShare: 32.4
     },
     {
         country: "Brazil",
@@ -405,7 +405,7 @@ const housingData = [
         housingExpenditureToGDP: 0.1,
         constructionJobsPerCapita: 64.7,
         housePriceToIncome: 10.7,
-        informalHousingShare: 22.4
+        informalHousingShare: 55.2
     },
     {
         country: "Russia",
@@ -505,7 +505,7 @@ const housingData = [
         housingExpenditureToGDP: 0.1,
         constructionJobsPerCapita: 52.4,
         housePriceToIncome: 9.2,
-        informalHousingShare: 18.3
+        informalHousingShare: 28.9
     },
     {
         country: "Pakistan",
