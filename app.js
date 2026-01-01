@@ -161,8 +161,8 @@ function initGlobe() {
     globe = Globe()
         (container)
         .globeImageUrl('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cmFkaWFsR3JhZGllbnQgaWQ9Im9jZWFuIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWY1NTkwO3N0b3Atb3BhY2l0eToxIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxNjNkNzA7c3RvcC1vcGFjaXR5OjEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwZDJhNGY7c3RvcC1vcGFjaXR5OjEiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI29jZWFuKSIvPjwvc3ZnPgo=') // Brighter blue ocean gradient
-        .backgroundImageUrl(isMobile ? null : '//unpkg.com/three-globe/example/img/night-sky.png') // Skip background on mobile
-        .showAtmosphere(!isMobile) // Disable atmosphere on mobile for performance
+        .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png') // Stars background
+        .showAtmosphere(true) // Show atmosphere
         .atmosphereColor('#4facfe')
         .atmosphereAltitude(0.18)
         .width(container.offsetWidth)
