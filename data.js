@@ -1210,7 +1210,7 @@ const housingData = [
         housePriceToIncome: 6.2,  // Eurostat data 2024
         informalHousingShare: 15.0,  // Estimate
         housingCostBurden: 25.0,  // Estimate
-        socialRentalHousing: 2.0,  // Estimate
+        socialRentalHousing: 0.8,  // Estimate - minimal social housing after privatization
         policyActivityScore: 2,
         disasterRiskIndex: 8.6  // WorldRiskIndex 2024
     },
@@ -1224,7 +1224,7 @@ const housingData = [
         housePriceToIncome: 5.8,  // Eurostat - housing costs 44% below EU average
         informalHousingShare: 18.0,  // Estimate
         housingCostBurden: 22.0,  // Estimate
-        socialRentalHousing: 3.0,  // Estimate
+        socialRentalHousing: 0.6,  // Estimate - very low after post-communist privatization
         policyActivityScore: 2,
         disasterRiskIndex: 9.2  // WorldRiskIndex 2024
     },
@@ -1238,7 +1238,7 @@ const housingData = [
         housePriceToIncome: 7.1,  // Estimate
         informalHousingShare: 12.0,  // Estimate
         housingCostBurden: 3.0,  // Eurostat - very low cost burden
-        socialRentalHousing: 4.0,  // Estimate
+        socialRentalHousing: 1.2,  // Estimate - low social housing stock
         policyActivityScore: 2,
         disasterRiskIndex: 10.8  // WorldRiskIndex 2024
     },
