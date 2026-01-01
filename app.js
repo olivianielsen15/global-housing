@@ -1,5 +1,5 @@
-// Detect mobile device for performance optimization
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+// Detect mobile device for performance optimization (user agent only, not window size)
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 // Initialize the globe
 let globe;
