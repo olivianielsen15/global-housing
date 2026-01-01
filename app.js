@@ -65,6 +65,13 @@ const layerConfig = {
         scale: [0, 32],
         unit: '% of stock',
         reversed: true  // Higher is better - green for high values
+    },
+    disasterRisk: {
+        title: 'Natural Disaster Risk',
+        description: 'WorldRiskIndex 2024 score measuring disaster risk from earthquakes, floods, cyclones, droughts, and sea-level rise. From WorldRiskReport 2024 by Bündnis Entwicklung Hilft & IFHV. Higher values indicate greater disaster exposure and vulnerability.',
+        dataKey: 'disasterRiskIndex',
+        scale: [0, 50],
+        unit: ' risk score'
     }
 };
 
@@ -355,6 +362,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Housing Cost Burden:</strong> ${countryData.housingCostBurden.toFixed(1)}% of population</p>
             <p><strong>Social Rental Housing:</strong> ${countryData.socialRentalHousing.toFixed(1)}% of stock</p>
             <p><strong>Policy Activity 2020-24:</strong> ${countryData.policyActivityScore}/5 (${policyLabel})</p>
+            <p><strong>Natural Disaster Risk:</strong> ${countryData.disasterRiskIndex.toFixed(1)}/50 (WorldRiskIndex 2024)</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>

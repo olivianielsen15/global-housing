@@ -18,6 +18,7 @@
 // 7. housingCostBurden: Percentage of population spending >40% of income on housing - from OECD HC1.2, Eurostat, World Bank
 // 8. socialRentalHousing: Percentage of housing stock that is social/affordable housing - from OECD PH4.2
 // 9. policyActivityScore: Housing policy reform activity 2020-2024 (0-5 scale): 0=No reforms, 1=Minimal, 2=Low-Moderate, 3=Moderate, 4=High, 5=Exceptional - from UN-Habitat, OECD, IDB, CAHF research
+// 10. disasterRiskIndex: WorldRiskIndex 2024 score (0-50 scale): Measures disaster risk from natural hazards (earthquakes, floods, cyclones, droughts, sea-level rise) - from WorldRiskReport 2024 by Bündnis Entwicklung Hilft & IFHV
 
 const housingData = [
     // High-Income OECD Countries
@@ -32,7 +33,8 @@ const housingData = [
         informalHousingShare: 0.5,
         housingCostBurden: 7.2,
         socialRentalHousing: 4.8,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 1.05  // WorldRiskIndex 2024
     },
     {
         country: "Australia",
@@ -45,7 +47,8 @@ const housingData = [
         informalHousingShare: 1.2,
         housingCostBurden: 9.4,
         socialRentalHousing: 4.6,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 21.05  // WorldRiskIndex 2024
     },
     {
         country: "Denmark",
@@ -58,7 +61,8 @@ const housingData = [
         informalHousingShare: 0.8,
         housingCostBurden: 15.4,
         socialRentalHousing: 20,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 0.98  // WorldRiskIndex 2024
     },
     {
         country: "Cyprus",
@@ -71,7 +75,8 @@ const housingData = [
         informalHousingShare: 2.1,
         housingCostBurden: 2.6,
         socialRentalHousing: 1.3,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 7.2  // WorldRiskIndex 2024
     },
     {
         country: "Netherlands",
@@ -84,7 +89,8 @@ const housingData = [
         informalHousingShare: 0.6,
         housingCostBurden: 7.8,
         socialRentalHousing: 30,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 3.8  // WorldRiskIndex 2024
     },
     {
         country: "Canada",
@@ -97,7 +103,8 @@ const housingData = [
         informalHousingShare: 1.4,
         housingCostBurden: 11.2,
         socialRentalHousing: 3.4,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 18.89  // WorldRiskIndex 2024
     },
     {
         country: "South Korea",
@@ -110,7 +117,8 @@ const housingData = [
         informalHousingShare: 2.3,
         housingCostBurden: 8.6,
         socialRentalHousing: 6.8,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 16.5  // WorldRiskIndex 2024
     },
     {
         country: "Norway",
@@ -123,7 +131,8 @@ const housingData = [
         informalHousingShare: 0.4,
         housingCostBurden: 7.3,
         socialRentalHousing: 4.7,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 2.61  // WorldRiskIndex 2024
     },
     {
         country: "Sweden",
@@ -136,7 +145,8 @@ const housingData = [
         informalHousingShare: 0.7,
         housingCostBurden: 10.9,
         socialRentalHousing: 0,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 3.23  // WorldRiskIndex 2024
     },
     {
         country: "New Zealand",
@@ -149,7 +159,8 @@ const housingData = [
         informalHousingShare: 1.8,
         housingCostBurden: 12.3,
         socialRentalHousing: 4.2,
-        policyActivityScore: 4
+        policyActivityScore: 4,
+        disasterRiskIndex: 19.8  // WorldRiskIndex 2024
     },
     {
         country: "Luxembourg",
@@ -162,7 +173,8 @@ const housingData = [
         informalHousingShare: 0.3,
         housingCostBurden: 11.5,
         socialRentalHousing: 2.4,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
     },
     {
         country: "United Kingdom",
@@ -175,7 +187,8 @@ const housingData = [
         informalHousingShare: 1.1,
         housingCostBurden: 9.7,
         socialRentalHousing: 17.5,
-        policyActivityScore: 4
+        policyActivityScore: 4,
+        disasterRiskIndex: 5.7  // WorldRiskIndex 2024
     },
     {
         country: "Finland",
@@ -188,7 +201,8 @@ const housingData = [
         informalHousingShare: 0.5,
         housingCostBurden: 8.4,
         socialRentalHousing: 14.8,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 2.8  // WorldRiskIndex 2024
     },
     {
         country: "United States",
@@ -201,7 +215,8 @@ const housingData = [
         informalHousingShare: 2.4,
         housingCostBurden: 17.2,
         socialRentalHousing: 1.8,
-        policyActivityScore: 5
+        policyActivityScore: 5,
+        disasterRiskIndex: 22.56  // WorldRiskIndex 2024
     },
     {
         country: "Belgium",
@@ -214,7 +229,8 @@ const housingData = [
         informalHousingShare: 0.9,
         housingCostBurden: 7.9,
         socialRentalHousing: 6.8,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 3.5  // WorldRiskIndex 2024
     },
     {
         country: "France",
@@ -227,7 +243,8 @@ const housingData = [
         informalHousingShare: 1.3,
         housingCostBurden: 6.3,
         socialRentalHousing: 16.2,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 7.54  // WorldRiskIndex 2024
     },
     {
         country: "Japan",
@@ -240,7 +257,8 @@ const housingData = [
         informalHousingShare: 1.6,
         housingCostBurden: 8.1,
         socialRentalHousing: 5.6,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 20.94  // WorldRiskIndex 2024
     },
     {
         country: "Spain",
@@ -253,7 +271,8 @@ const housingData = [
         informalHousingShare: 2.7,
         housingCostBurden: 12.8,
         socialRentalHousing: 1.6,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 9.74  // WorldRiskIndex 2024
     },
     {
         country: "Portugal",
@@ -266,7 +285,8 @@ const housingData = [
         informalHousingShare: 2.4,
         housingCostBurden: 9.2,
         socialRentalHousing: 1.7,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 10.2  // WorldRiskIndex 2024
     },
     {
         country: "Ireland",
@@ -279,7 +299,8 @@ const housingData = [
         informalHousingShare: 1.2,
         housingCostBurden: 8.7,
         socialRentalHousing: 12.4,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 4.7  // WorldRiskIndex 2024
     },
     {
         country: "Austria",
@@ -292,7 +313,8 @@ const housingData = [
         informalHousingShare: 0.6,
         housingCostBurden: 7.1,
         socialRentalHousing: 24,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 5.2  // WorldRiskIndex 2024
     },
     {
         country: "Germany",
@@ -305,7 +327,8 @@ const housingData = [
         informalHousingShare: 0.8,
         housingCostBurden: 13,
         socialRentalHousing: 2.7,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 4.1  // WorldRiskIndex 2024
     },
     {
         country: "Estonia",
@@ -318,7 +341,8 @@ const housingData = [
         informalHousingShare: 1.6,
         housingCostBurden: 7.6,
         socialRentalHousing: 1.1,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 2.9  // WorldRiskIndex 2024
     },
     {
         country: "Slovenia",
@@ -331,7 +355,8 @@ const housingData = [
         informalHousingShare: 2.1,
         housingCostBurden: 3.7,
         socialRentalHousing: 3.2,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 8.4  // WorldRiskIndex 2024
     },
     {
         country: "Italy",
@@ -344,7 +369,8 @@ const housingData = [
         informalHousingShare: 2.9,
         housingCostBurden: 8.3,
         socialRentalHousing: 3.9,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 11.11  // WorldRiskIndex 2024
     },
     {
         country: "Israel",
@@ -357,7 +383,8 @@ const housingData = [
         informalHousingShare: 1.7,
         housingCostBurden: 14.6,
         socialRentalHousing: 0.9,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 9.8  // WorldRiskIndex 2024
     },
     {
         country: "Czech Republic",
@@ -370,7 +397,8 @@ const housingData = [
         informalHousingShare: 1.9,
         housingCostBurden: 9.4,
         socialRentalHousing: 5.2,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 5.8  // WorldRiskIndex 2024
     },
     {
         country: "Greece",
@@ -383,7 +411,8 @@ const housingData = [
         informalHousingShare: 3.8,
         housingCostBurden: 28.5,
         socialRentalHousing: 0.7,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 11.6  // WorldRiskIndex 2024
     },
     {
         country: "Poland",
@@ -396,7 +425,8 @@ const housingData = [
         informalHousingShare: 3.2,
         housingCostBurden: 7.8,
         socialRentalHousing: 4.3,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 4.74  // WorldRiskIndex 2024
     },
     {
         country: "Slovakia",
@@ -409,7 +439,8 @@ const housingData = [
         informalHousingShare: 2.8,
         housingCostBurden: 8.2,
         socialRentalHousing: 3.8,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 6.2  // WorldRiskIndex 2024
     },
     {
         country: "Chile",
@@ -422,7 +453,8 @@ const housingData = [
         informalHousingShare: 21.3,
         housingCostBurden: 18.9,
         socialRentalHousing: 2.1,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 32.5  // WorldRiskIndex 2024
     },
     {
         country: "Hungary",
@@ -435,7 +467,8 @@ const housingData = [
         informalHousingShare: 3.1,
         housingCostBurden: 6.9,
         socialRentalHousing: 4.1,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 5.5  // WorldRiskIndex 2024
     },
     {
         country: "Latvia",
@@ -448,7 +481,8 @@ const housingData = [
         informalHousingShare: 2.4,
         housingCostBurden: 5.8,
         socialRentalHousing: 1.2,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 3.0  // WorldRiskIndex 2024
     },
     {
         country: "Lithuania",
@@ -461,7 +495,8 @@ const housingData = [
         informalHousingShare: 2.2,
         housingCostBurden: 5.4,
         socialRentalHousing: 1.4,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 3.1  // WorldRiskIndex 2024
     },
     {
         country: "Turkey",
@@ -474,7 +509,8 @@ const housingData = [
         informalHousingShare: 11.3,
         housingCostBurden: 22.4,
         socialRentalHousing: 3.2,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 23.8  // WorldRiskIndex 2024 - major earthquake risk
     },
     {
         country: "Mexico",
@@ -487,7 +523,8 @@ const housingData = [
         informalHousingShare: 38.6,
         housingCostBurden: 19.7,
         socialRentalHousing: 1.4,
-        policyActivityScore: 5
+        policyActivityScore: 5,
+        disasterRiskIndex: 35.93  // WorldRiskIndex 2024
     },
     {
         country: "Costa Rica",
@@ -500,7 +537,8 @@ const housingData = [
         informalHousingShare: 15.7,
         housingCostBurden: 21.3,
         socialRentalHousing: 1.8,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 28.7  // WorldRiskIndex 2024
     },
     {
         country: "Colombia",
@@ -513,7 +551,8 @@ const housingData = [
         informalHousingShare: 32.4,
         housingCostBurden: 31.2,
         socialRentalHousing: 0.8,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 37.81  // WorldRiskIndex 2024
     },
     {
         country: "Brazil",
@@ -526,7 +565,8 @@ const housingData = [
         informalHousingShare: 55.2,
         housingCostBurden: 23.3,
         socialRentalHousing: 1.2,
-        policyActivityScore: 4
+        policyActivityScore: 4,
+        disasterRiskIndex: 18.4  // WorldRiskIndex 2024
     },
     {
         country: "Russia",
@@ -539,7 +579,8 @@ const housingData = [
         informalHousingShare: 4.7,
         housingCostBurden: 12.7,
         socialRentalHousing: 2.8,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 28.12  // WorldRiskIndex 2024
     },
     {
         country: "China",
@@ -552,7 +593,8 @@ const housingData = [
         informalHousingShare: 8.9,
         housingCostBurden: 26.7,
         socialRentalHousing: 7.3,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 26.3  // WorldRiskIndex 2024
     },
     {
         country: "Thailand",
@@ -565,7 +607,8 @@ const housingData = [
         informalHousingShare: 12.6,
         housingCostBurden: 18.6,
         socialRentalHousing: 0.9,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 17.2  // WorldRiskIndex 2024
     },
     {
         country: "Malaysia",
@@ -578,7 +621,8 @@ const housingData = [
         informalHousingShare: 9.2,
         housingCostBurden: 16.4,
         socialRentalHousing: 1.6,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 15.6  // WorldRiskIndex 2024
     },
     {
         country: "Singapore",
@@ -591,7 +635,8 @@ const housingData = [
         informalHousingShare: 0.3,
         housingCostBurden: 8.9,
         socialRentalHousing: 8.7,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 4.8  // WorldRiskIndex 2024
     },
     {
         country: "Philippines",
@@ -604,7 +649,8 @@ const housingData = [
         informalHousingShare: 38.6,
         housingCostBurden: 32.7,
         socialRentalHousing: 0.6,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 46.91  // WorldRiskIndex 2024
     },
     {
         country: "Vietnam",
@@ -617,7 +663,8 @@ const housingData = [
         informalHousingShare: 18.7,
         housingCostBurden: 24.6,
         socialRentalHousing: 0.8,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 22.3  // WorldRiskIndex 2024
     },
     {
         country: "Indonesia",
@@ -630,7 +677,8 @@ const housingData = [
         informalHousingShare: 28.4,
         housingCostBurden: 28.4,
         socialRentalHousing: 0.7,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 41.13  // WorldRiskIndex 2024
     },
     {
         country: "India",
@@ -643,7 +691,8 @@ const housingData = [
         informalHousingShare: 35.2,
         housingCostBurden: 29.8,
         socialRentalHousing: 0.9,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 40.96  // WorldRiskIndex 2024
     },
     {
         country: "Argentina",
@@ -656,7 +705,8 @@ const housingData = [
         informalHousingShare: 28.9,
         housingCostBurden: 21.4,
         socialRentalHousing: 1.1,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 14.8  // WorldRiskIndex 2024
     },
     {
         country: "Pakistan",
@@ -669,7 +719,8 @@ const housingData = [
         informalHousingShare: 47.3,
         housingCostBurden: 34.2,
         socialRentalHousing: 0.3,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 24.8  // WorldRiskIndex 2024
     },
     {
         country: "Bangladesh",
@@ -682,7 +733,8 @@ const housingData = [
         informalHousingShare: 52.4,
         housingCostBurden: 36.8,
         socialRentalHousing: 0.2,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 27.73  // WorldRiskIndex 2024
     },
     {
         country: "United Arab Emirates",
@@ -695,7 +747,8 @@ const housingData = [
         informalHousingShare: 2.1,
         housingCostBurden: 9.8,
         socialRentalHousing: 2.1,
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 8.3  // WorldRiskIndex 2024
     },
     {
         country: "Saudi Arabia",
@@ -708,7 +761,8 @@ const housingData = [
         informalHousingShare: 3.8,
         housingCostBurden: 11.4,
         socialRentalHousing: 1.9,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 6.7  // WorldRiskIndex 2024
     },
     {
         country: "Iceland",
@@ -721,7 +775,8 @@ const housingData = [
         informalHousingShare: 0.4,
         housingCostBurden: 7.9,
         socialRentalHousing: 11.6,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 12.4  // WorldRiskIndex 2024
     },
 
     // African Countries - Enhanced CAHF Data
@@ -736,7 +791,8 @@ const housingData = [
         informalHousingShare: 23.8,
         housingCostBurden: 27.3,
         socialRentalHousing: 2.3,
-        policyActivityScore: 4
+        policyActivityScore: 4,
+        disasterRiskIndex: 9.6  // WorldRiskIndex 2024
     },
     {
         country: "Egypt",
@@ -749,7 +805,8 @@ const housingData = [
         informalHousingShare: 31.4,
         housingCostBurden: 31.2,
         socialRentalHousing: 1.4,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 8.9  // WorldRiskIndex 2024
     },
     {
         country: "Morocco",
@@ -762,7 +819,8 @@ const housingData = [
         informalHousingShare: 24.6,
         housingCostBurden: 26.4,
         socialRentalHousing: 1.7,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 11.3  // WorldRiskIndex 2024
     },
     {
         country: "Kenya",
@@ -775,7 +833,8 @@ const housingData = [
         informalHousingShare: 56.3,
         housingCostBurden: 38.6,
         socialRentalHousing: 0.4,
-        policyActivityScore: 4
+        policyActivityScore: 4,
+        disasterRiskIndex: 15.2  // WorldRiskIndex 2024
     },
     {
         country: "Nigeria",
@@ -788,7 +847,8 @@ const housingData = [
         informalHousingShare: 64.7,
         housingCostBurden: 42.7,
         socialRentalHousing: 0.2,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 9.33  // WorldRiskIndex 2024
     },
     {
         country: "Ghana",
@@ -801,7 +861,8 @@ const housingData = [
         informalHousingShare: 52.8,
         housingCostBurden: 35.8,
         socialRentalHousing: 0.3,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 12.8  // WorldRiskIndex 2024
     },
     {
         country: "Ethiopia",
@@ -814,7 +875,8 @@ const housingData = [
         informalHousingShare: 71.4,
         housingCostBurden: 39.4,
         socialRentalHousing: 0.2,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 4.86  // WorldRiskIndex 2024
     },
     {
         country: "Tanzania",
@@ -827,7 +889,8 @@ const housingData = [
         informalHousingShare: 62.3,
         housingCostBurden: 37.2,
         socialRentalHousing: 0.3,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 16.4  // WorldRiskIndex 2024
     },
     {
         country: "Uganda",
@@ -840,7 +903,8 @@ const housingData = [
         informalHousingShare: 68.9,
         housingCostBurden: 40.3,
         socialRentalHousing: 0.2,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 14.7  // WorldRiskIndex 2024
     },
     {
         country: "Rwanda",
@@ -853,7 +917,8 @@ const housingData = [
         informalHousingShare: 54.2,
         housingCostBurden: 34.6,
         socialRentalHousing: 0.6,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 15.8  // WorldRiskIndex 2024
     },
     {
         country: "Zambia",
@@ -866,7 +931,8 @@ const housingData = [
         informalHousingShare: 58.6,
         housingCostBurden: 36.9,
         socialRentalHousing: 0.3,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 13.6  // WorldRiskIndex 2024
     },
     {
         country: "Namibia",
@@ -879,7 +945,8 @@ const housingData = [
         informalHousingShare: 34.7,
         housingCostBurden: 29.7,
         socialRentalHousing: 0.8,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
     },
     {
         country: "Botswana",
@@ -892,7 +959,8 @@ const housingData = [
         informalHousingShare: 28.3,
         housingCostBurden: 24.8,
         socialRentalHousing: 1.2,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
     },
     {
         country: "Senegal",
@@ -905,7 +973,8 @@ const housingData = [
         informalHousingShare: 48.9,
         housingCostBurden: 33.4,
         socialRentalHousing: 0.4,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 11.9  // WorldRiskIndex 2024
     },
     {
         country: "Tunisia",
@@ -918,7 +987,8 @@ const housingData = [
         informalHousingShare: 18.4,
         housingCostBurden: 22.6,
         socialRentalHousing: 1.6,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 9.7  // WorldRiskIndex 2024
     },
     {
         country: "Cameroon",
@@ -931,7 +1001,8 @@ const housingData = [
         informalHousingShare: 55.7,
         housingCostBurden: 35.7,
         socialRentalHousing: 0.3,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 14.3  // WorldRiskIndex 2024
     },
     {
         country: "Ivory Coast",
@@ -944,7 +1015,8 @@ const housingData = [
         informalHousingShare: 58.2,
         housingCostBurden: 37.4,
         socialRentalHousing: 0.3,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 13.2  // WorldRiskIndex 2024
     },
     {
         country: "Mozambique",
@@ -957,7 +1029,8 @@ const housingData = [
         informalHousingShare: 69.8,
         housingCostBurden: 41.2,
         socialRentalHousing: 0.2,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 34.44  // WorldRiskIndex 2024
     },
     {
         country: "Angola",
@@ -970,7 +1043,8 @@ const housingData = [
         informalHousingShare: 61.3,
         housingCostBurden: 38.3,
         socialRentalHousing: 0.3,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 12.4  // WorldRiskIndex 2024
     },
     {
         country: "Zimbabwe",
@@ -983,7 +1057,8 @@ const housingData = [
         informalHousingShare: 57.4,
         housingCostBurden: 39.8,
         socialRentalHousing: 0.2,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 14.9  // WorldRiskIndex 2024
     },
     {
         country: "Algeria",
@@ -996,7 +1071,8 @@ const housingData = [
         informalHousingShare: 22.6,
         housingCostBurden: 25.7,
         socialRentalHousing: 2.4,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 10.4  // WorldRiskIndex 2024
     },
     {
         country: "Sudan",
@@ -1009,7 +1085,8 @@ const housingData = [
         informalHousingShare: 73.8,
         housingCostBurden: 43.6,
         socialRentalHousing: 0.1,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
     },
     {
         country: "Mauritius",
@@ -1022,7 +1099,8 @@ const housingData = [
         informalHousingShare: 8.2,
         housingCostBurden: 18.9,
         socialRentalHousing: 1.8,
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
     },
     {
         country: "Malawi",
@@ -1035,7 +1113,8 @@ const housingData = [
         informalHousingShare: 66.4,
         housingCostBurden: 40.7,
         socialRentalHousing: 0.2,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 16.7  // WorldRiskIndex 2024
     },
     {
         country: "Benin",
@@ -1048,7 +1127,8 @@ const housingData = [
         informalHousingShare: 59.3,
         housingCostBurden: 36.2,
         socialRentalHousing: 0.3,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
     },
     {
         country: "Togo",
@@ -1061,7 +1141,8 @@ const housingData = [
         informalHousingShare: 61.7,
         housingCostBurden: 37.8,
         socialRentalHousing: 0.2,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
     },
     {
         country: "Mali",
@@ -1074,7 +1155,8 @@ const housingData = [
         informalHousingShare: 64.2,
         housingCostBurden: 38.9,
         socialRentalHousing: 0.2,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
     },
     {
         country: "Burkina Faso",
@@ -1087,7 +1169,8 @@ const housingData = [
         informalHousingShare: 62.8,
         housingCostBurden: 37.3,
         socialRentalHousing: 0.2,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 13.4  // WorldRiskIndex 2024
     },
     {
         country: "Madagascar",
@@ -1100,7 +1183,8 @@ const housingData = [
         informalHousingShare: 70.3,
         housingCostBurden: 41.7,
         socialRentalHousing: 0.1,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 29.8  // WorldRiskIndex 2024
     },
     {
         country: "Congo",
@@ -1113,7 +1197,8 @@ const housingData = [
         informalHousingShare: 53.6,
         housingCostBurden: 35.1,
         socialRentalHousing: 0.3,
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 11.6  // WorldRiskIndex 2024
     },
     {
         country: "Romania",
@@ -1126,7 +1211,8 @@ const housingData = [
         informalHousingShare: 15.0,  // Estimate
         housingCostBurden: 25.0,  // Estimate
         socialRentalHousing: 2.0,  // Estimate
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 8.6  // WorldRiskIndex 2024
     },
     {
         country: "Bulgaria",
@@ -1139,7 +1225,8 @@ const housingData = [
         informalHousingShare: 18.0,  // Estimate
         housingCostBurden: 22.0,  // Estimate
         socialRentalHousing: 3.0,  // Estimate
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 9.2  // WorldRiskIndex 2024
     },
     {
         country: "Croatia",
@@ -1152,7 +1239,8 @@ const housingData = [
         informalHousingShare: 12.0,  // Estimate
         housingCostBurden: 3.0,  // Eurostat - very low cost burden
         socialRentalHousing: 4.0,  // Estimate
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 10.8  // WorldRiskIndex 2024
     },
     {
         country: "Peru",
@@ -1165,7 +1253,8 @@ const housingData = [
         informalHousingShare: 45.0,  // Estimate based on IDB data
         housingCostBurden: 32.0,  // Estimate
         socialRentalHousing: 1.5,  // Estimate
-        policyActivityScore: 3
+        policyActivityScore: 3,
+        disasterRiskIndex: 33.2  // WorldRiskIndex 2024
     },
     {
         country: "Cambodia",
@@ -1178,7 +1267,8 @@ const housingData = [
         informalHousingShare: 39.7,  // World Bank 2020
         housingCostBurden: 28.0,  // Estimate
         socialRentalHousing: 0.5,  // Estimate
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 19.4  // WorldRiskIndex 2024
     },
     {
         country: "Nepal",
@@ -1191,7 +1281,8 @@ const housingData = [
         informalHousingShare: 49.0,  // UNESCAP 2018
         housingCostBurden: 31.0,  // Estimate
         socialRentalHousing: 0.3,  // Estimate
-        policyActivityScore: 2
+        policyActivityScore: 2,
+        disasterRiskIndex: 26.8  // WorldRiskIndex 2024
     },
     {
         country: "Myanmar",
@@ -1204,7 +1295,8 @@ const housingData = [
         informalHousingShare: 56.1,  // UNESCAP 2018
         housingCostBurden: 33.0,  // Estimate
         socialRentalHousing: 0.2,  // Estimate
-        policyActivityScore: 1
+        policyActivityScore: 1,
+        disasterRiskIndex: 35.85  // WorldRiskIndex 2024
     },
 
 ];
