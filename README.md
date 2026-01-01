@@ -1,6 +1,6 @@
 # Global Housing Data Visualization
 
-An interactive 3D globe heat map visualization showcasing real housing data from authoritative international sources for 64 countries worldwide.
+An interactive 3D globe heat map visualization showcasing real housing data from authoritative international sources for 91 countries worldwide.
 
 ## Data Sources
 
@@ -11,10 +11,11 @@ All data compiled from authoritative 2024-2025 sources:
 - **CAHF** Housing Finance in Africa Yearbook (2024)
 - **UN-Habitat** Global Housing Reports (2024)
 - **Trading Economics** & The Global Economy database
+- **WorldRiskReport 2024** by Bündnis Entwicklung Hilft & IFHV - Natural disaster risk assessment
 
 ## Features
 
-### Three Data Layers (Choropleth Heat Map)
+### Nine Data Layers (Choropleth Heat Map)
 
 1. **Housing Deficit per Capita**
    - Estimated housing units needed per 1,000 people
@@ -34,11 +35,47 @@ All data compiled from authoritative 2024-2025 sources:
    - Reveals public investment priorities in housing
    - Range: 0.05% to 3.2% (Singapore)
 
+4. **Construction Jobs per Capita**
+   - Construction sector employment per 1,000 people
+   - From ILO and national labor statistics
+   - Higher values indicate more construction activity
+   - Range: 16.7 to 156.3 jobs per 1,000 people
+
+5. **House Price to Income Ratio**
+   - Median house price divided by median annual income
+   - From Numbeo, World Bank, and national statistics
+   - Higher values indicate less affordable housing
+   - Range: 5.1x to 19.7x income
+
+6. **Informal/Substandard Housing Share**
+   - Percentage of housing that is informal or substandard
+   - From UN-Habitat SDG 11.1.1 indicators
+   - Higher values indicate more precarious housing
+   - Range: 0.3% to 73.8%
+
+7. **Housing Cost Burden**
+   - Percentage of population spending >40% of income on housing
+   - From OECD HC1.2 and Eurostat
+   - Higher values indicate severe affordability crisis
+   - Range: 2.6% to 43.6%
+
+8. **Social Rental Housing Stock**
+   - Percentage of housing stock that is social/affordable
+   - From OECD PH4.2
+   - Higher values indicate stronger social housing programs
+   - Range: 0.1% to 30%
+
+9. **Natural Disaster Risk**
+   - WorldRiskIndex 2024 score (0-50 scale)
+   - Measures risk from earthquakes, floods, cyclones, droughts, sea-level rise
+   - From WorldRiskReport 2024 by Bündnis Entwicklung Hilft & IFHV
+   - Range: 0.98 (Denmark) to 46.91 (Philippines)
+
 ### Interactive Features
 
 - **Choropleth Heat Map**: Countries are colored as polygons based on data values
-- **Layer Switching**: Click buttons to switch between data layers with real-time updates
-- **Country Details**: Hover over any country to see all three metrics simultaneously
+- **Layer Switching**: Click buttons to switch between nine data layers with real-time updates
+- **Country Details**: Hover over any country to see all nine metrics simultaneously
 - **Globe Navigation**:
   - Click and drag to rotate the globe
   - Scroll to zoom in/out
@@ -62,23 +99,26 @@ All data compiled from authoritative 2024-2025 sources:
 
 ## Data Coverage
 
-The visualization includes real data for **64 countries** across all continents:
+The visualization includes real data for **91 countries** across all continents:
 
 ### Geographic Coverage
-- **Europe**: 25 countries (comprehensive OECD data)
-- **Asia**: 15 countries (East, Southeast, South, and West Asia)
-- **Africa**: 9 countries (data from CAHF Yearbook 2024)
+- **Europe**: 28 countries (comprehensive OECD and Eurostat data)
+- **Asia**: 18 countries (East, Southeast, South, and West Asia)
+- **Africa**: 26 countries (data from CAHF Yearbook 2024)
 - **North America**: 3 countries
-- **South America**: 6 countries
+- **South America**: 7 countries
 - **Oceania**: 2 countries
 - **Middle East**: 4 countries
+- Plus additional countries from Eastern Europe and Latin America
 
 ### Data Quality Notes
 - Household debt data primarily from IMF Global Debt Database and World Bank (2024)
 - Housing deficit estimates from UN-Habitat, OECD, World Bank, and CAHF reports
 - Government expenditure from OECD Affordable Housing Database and national sources
+- Natural disaster risk from WorldRiskIndex 2024 (193 countries assessed globally)
 - OECD countries have the most comprehensive data coverage
 - African data enhanced by CAHF's specialized research
+- Eastern European data from Eurostat 2024-2025
 - Some values are estimates where direct data is unavailable
 
 ## Technology Stack

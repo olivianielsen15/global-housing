@@ -1306,6 +1306,8 @@ const housingData = [
 // - Housing deficit estimates compiled from UN-Habitat, OECD, World Bank, and CAHF reports
 // - Government expenditure from OECD Affordable Housing Database and national sources
 // - Construction jobs data from ILO, national labor statistics, and World Bank employment data
+// - Natural disaster risk from WorldRiskIndex 2024 by Bündnis Entwicklung Hilft & IFHV (covers 193 countries globally)
 // - African housing data significantly enhanced from CAHF Housing Finance in Africa Yearbook (2024 - 15th Edition)
+// - Eastern European data from Eurostat 2024-2025 (Romania, Bulgaria, Croatia)
 // - CAHF provides the most comprehensive and reliable housing data for African countries
 // - Some values are estimates where direct data is unavailable
