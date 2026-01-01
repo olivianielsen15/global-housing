@@ -1115,7 +1115,98 @@ const housingData = [
         socialRentalHousing: 0.3,
         policyActivityScore: 1
     },
-    
+    {
+        country: "Romania",
+        iso: "ROU",
+        housingDeficitPerCapita: 3.5,  // Estimate based on Eurostat 2024-2025 overcrowding data (41%)
+        householdDebtToGDP: 12.5,  // Eurostat 2024-2025
+        housingExpenditureToGDP: 0.8,  // Estimate (EU member state)
+        constructionJobsPerCapita: 65.0,  // Estimate based on 8.3% of GVA (Eurostat)
+        housePriceToIncome: 6.2,  // Eurostat data 2024
+        informalHousingShare: 15.0,  // Estimate
+        housingCostBurden: 25.0,  // Estimate
+        socialRentalHousing: 2.0,  // Estimate
+        policyActivityScore: 2
+    },
+    {
+        country: "Bulgaria",
+        iso: "BGR",
+        housingDeficitPerCapita: 4.2,  // Estimate based on Eurostat overcrowding 34%
+        householdDebtToGDP: 20.0,  // Eurostat estimate 2024-2025
+        housingExpenditureToGDP: 0.6,  // Estimate
+        constructionJobsPerCapita: 55.0,  // Estimate
+        housePriceToIncome: 5.8,  // Eurostat - housing costs 44% below EU average
+        informalHousingShare: 18.0,  // Estimate
+        housingCostBurden: 22.0,  // Estimate
+        socialRentalHousing: 3.0,  // Estimate
+        policyActivityScore: 2
+    },
+    {
+        country: "Croatia",
+        iso: "HRV",
+        housingDeficitPerCapita: 3.8,  // Estimate based on Eurostat overcrowding 31.7%
+        householdDebtToGDP: 32.6,  // Eurostat 2024-2025
+        housingExpenditureToGDP: 0.7,  // Estimate
+        constructionJobsPerCapita: 58.0,  // Estimate
+        housePriceToIncome: 7.1,  // Estimate
+        informalHousingShare: 12.0,  // Estimate
+        housingCostBurden: 3.0,  // Eurostat - very low cost burden
+        socialRentalHousing: 4.0,  // Estimate
+        policyActivityScore: 2
+    },
+    {
+        country: "Peru",
+        iso: "PER",
+        housingDeficitPerCapita: 18.5,  // IDB/World Bank 2024 - qualitative housing deficit 23-68%
+        householdDebtToGDP: 12.0,  // Estimate
+        housingExpenditureToGDP: 0.4,  // Estimate
+        constructionJobsPerCapita: 45.0,  // Estimate
+        housePriceToIncome: 8.2,  // Estimate
+        informalHousingShare: 45.0,  // Estimate based on IDB data
+        housingCostBurden: 32.0,  // Estimate
+        socialRentalHousing: 1.5,  // Estimate
+        policyActivityScore: 3
+    },
+    {
+        country: "Cambodia",
+        iso: "KHM",
+        housingDeficitPerCapita: 25.3,  // Estimate based on 39.7% informal housing (World Bank 2020)
+        householdDebtToGDP: 18.0,  // Estimate
+        housingExpenditureToGDP: 0.2,  // Estimate
+        constructionJobsPerCapita: 38.0,  // Estimate
+        housePriceToIncome: 9.7,  // Estimate
+        informalHousingShare: 39.7,  // World Bank 2020
+        housingCostBurden: 28.0,  // Estimate
+        socialRentalHousing: 0.5,  // Estimate
+        policyActivityScore: 2
+    },
+    {
+        country: "Nepal",
+        iso: "NPL",
+        housingDeficitPerCapita: 27.8,  // Estimate based on 49% informal housing (UNESCAP 2018)
+        householdDebtToGDP: 8.0,  // Estimate
+        housingExpenditureToGDP: 0.15,  // Estimate
+        constructionJobsPerCapita: 35.0,  // Estimate
+        housePriceToIncome: 10.3,  // Estimate
+        informalHousingShare: 49.0,  // UNESCAP 2018
+        housingCostBurden: 31.0,  // Estimate
+        socialRentalHousing: 0.3,  // Estimate
+        policyActivityScore: 2
+    },
+    {
+        country: "Myanmar",
+        iso: "MMR",
+        housingDeficitPerCapita: 29.6,  // Estimate based on 56.1% informal housing (UNESCAP 2018)
+        householdDebtToGDP: 6.0,  // Estimate
+        housingExpenditureToGDP: 0.1,  // Estimate
+        constructionJobsPerCapita: 32.0,  // Estimate
+        housePriceToIncome: 11.2,  // Estimate
+        informalHousingShare: 56.1,  // UNESCAP 2018
+        housingCostBurden: 33.0,  // Estimate
+        socialRentalHousing: 0.2,  // Estimate
+        policyActivityScore: 1
+    },
+
 ];
 
 // Data quality notes:
