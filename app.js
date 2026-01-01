@@ -156,7 +156,9 @@ function hideLoadingScreen() {
 
 // Initialize globe visualization with choropleth (heat map)
 function initGlobe() {
+    console.log('initGlobe called');
     const container = document.getElementById('globe-container');
+    console.log('Globe container:', container);
 
     globe = Globe()
         (container)
@@ -439,7 +441,12 @@ function updateLayer(layer) {
 
 // Event listeners for layer buttons
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded fired');
+    console.log('isMobile:', isMobile);
+    console.log('User agent:', navigator.userAgent);
+
     if (isMobile) {
+        console.log('Mobile detected - showing load button');
         // On mobile, show lazy load button instead of auto-loading globe
         const loadGlobeBtn = document.getElementById('load-globe-btn');
         loadGlobeBtn.style.display = 'block';
@@ -453,6 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hide loading screen immediately on mobile
         hideLoadingScreen();
     } else {
+        console.log('Desktop detected - loading globe immediately');
         // On desktop, load globe immediately
         initGlobe();
     }
