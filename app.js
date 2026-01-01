@@ -1,3 +1,6 @@
+// Detect mobile device for performance optimization
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+
 // Initialize the globe
 let globe;
 let currentLayer = 'deficit';
@@ -158,15 +161,19 @@ function initGlobe() {
     globe = Globe()
         (container)
         .globeImageUrl('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cmFkaWFsR3JhZGllbnQgaWQ9Im9jZWFuIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWY1NTkwO3N0b3Atb3BhY2l0eToxIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxNjNkNzA7c3RvcC1vcGFjaXR5OjEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwZDJhNGY7c3RvcC1vcGFjaXR5OjEiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI29jZWFuKSIvPjwvc3ZnPgo=') // Brighter blue ocean gradient
-        .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-        .showAtmosphere(true)
+        .backgroundImageUrl(isMobile ? null : '//unpkg.com/three-globe/example/img/night-sky.png') // Skip background on mobile
+        .showAtmosphere(!isMobile) // Disable atmosphere on mobile for performance
         .atmosphereColor('#4facfe')
         .atmosphereAltitude(0.18)
         .width(container.offsetWidth)
         .height(container.offsetHeight);
 
-    // Load world-atlas TopoJSON (uses numeric UN codes)
-    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json')
+    // Load world-atlas TopoJSON - use lower resolution on mobile
+    const topoJsonUrl = isMobile
+        ? 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'  // Lower res for mobile
+        : 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json';  // Higher res for desktop
+
+    fetch(topoJsonUrl)
         .then(res => res.json())
         .then(topology => {
             console.log('Loaded TopoJSON data');
@@ -176,10 +183,10 @@ function initGlobe() {
             console.log('Feature count:', countries.features.length);
             console.log('Our data coverage:', Object.keys(dataByISO).length, 'countries');
 
-            // Set all polygon properties together
+            // Set all polygon properties together (reduce altitude on mobile for performance)
             globe
                 .polygonsData(countries.features)
-                .polygonAltitude(0.01)
+                .polygonAltitude(isMobile ? 0.005 : 0.01)
                 .polygonCapColor(feat => {
                     // Convert numeric ID to ISO code
                     const numericId = String(feat.id).padStart(3, '0');
@@ -304,9 +311,9 @@ function initGlobe() {
             hideLoadingScreen(); // Hide loading screen even on error
         });
 
-    // Auto-rotate
+    // Auto-rotate (slower on mobile to reduce GPU load)
     globe.controls().autoRotate = true;
-    globe.controls().autoRotateSpeed = 0.35;
+    globe.controls().autoRotateSpeed = isMobile ? 0.2 : 0.35;
 
     // Handle window resize
     window.addEventListener('resize', () => {
