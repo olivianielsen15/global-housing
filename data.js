@@ -33,7 +33,7 @@ const housingData = [
         housingCostBurden: 7.2,
         socialRentalHousing: 4.8,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Australia",
         iso: "AUS",
@@ -46,7 +46,7 @@ const housingData = [
         housingCostBurden: 9.4,
         socialRentalHousing: 4.6,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Denmark",
         iso: "DNK",
@@ -59,7 +59,7 @@ const housingData = [
         housingCostBurden: 15.4,
         socialRentalHousing: 20,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Cyprus",
         iso: "CYP",
@@ -72,7 +72,7 @@ const housingData = [
         housingCostBurden: 2.6,
         socialRentalHousing: 1.3,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Netherlands",
         iso: "NLD",
@@ -85,7 +85,7 @@ const housingData = [
         housingCostBurden: 7.8,
         socialRentalHousing: 30,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Canada",
         iso: "CAN",
@@ -98,7 +98,7 @@ const housingData = [
         housingCostBurden: 11.2,
         socialRentalHousing: 3.4,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "South Korea",
         iso: "KOR",
@@ -111,7 +111,7 @@ const housingData = [
         housingCostBurden: 8.6,
         socialRentalHousing: 6.8,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Norway",
         iso: "NOR",
@@ -124,7 +124,7 @@ const housingData = [
         housingCostBurden: 7.3,
         socialRentalHousing: 4.7,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Sweden",
         iso: "SWE",
@@ -137,7 +137,7 @@ const housingData = [
         housingCostBurden: 10.9,
         socialRentalHousing: 0,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "New Zealand",
         iso: "NZL",
@@ -150,7 +150,7 @@ const housingData = [
         housingCostBurden: 12.3,
         socialRentalHousing: 4.2,
         policyActivityScore: 4
-    ,
+    },
     {
         country: "Luxembourg",
         iso: "LUX",
@@ -163,7 +163,7 @@ const housingData = [
         housingCostBurden: 11.5,
         socialRentalHousing: 2.4,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "United Kingdom",
         iso: "GBR",
@@ -176,7 +176,7 @@ const housingData = [
         housingCostBurden: 9.7,
         socialRentalHousing: 17.5,
         policyActivityScore: 4
-    ,
+    },
     {
         country: "Finland",
         iso: "FIN",
@@ -189,7 +189,7 @@ const housingData = [
         housingCostBurden: 8.4,
         socialRentalHousing: 14.8,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "United States",
         iso: "USA",
@@ -202,7 +202,7 @@ const housingData = [
         housingCostBurden: 17.2,
         socialRentalHousing: 1.8,
         policyActivityScore: 5
-    ,
+    },
     {
         country: "Belgium",
         iso: "BEL",
@@ -215,7 +215,7 @@ const housingData = [
         housingCostBurden: 7.9,
         socialRentalHousing: 6.8,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "France",
         iso: "FRA",
@@ -228,7 +228,7 @@ const housingData = [
         housingCostBurden: 6.3,
         socialRentalHousing: 16.2,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Japan",
         iso: "JPN",
@@ -241,7 +241,7 @@ const housingData = [
         housingCostBurden: 8.1,
         socialRentalHousing: 5.6,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Spain",
         iso: "ESP",
@@ -254,7 +254,7 @@ const housingData = [
         housingCostBurden: 12.8,
         socialRentalHousing: 1.6,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Portugal",
         iso: "PRT",
@@ -267,7 +267,7 @@ const housingData = [
         housingCostBurden: 9.2,
         socialRentalHousing: 1.7,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Ireland",
         iso: "IRL",
@@ -280,7 +280,7 @@ const housingData = [
         housingCostBurden: 8.7,
         socialRentalHousing: 12.4,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Austria",
         iso: "AUT",
@@ -293,7 +293,7 @@ const housingData = [
         housingCostBurden: 7.1,
         socialRentalHousing: 24,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Germany",
         iso: "DEU",
@@ -306,7 +306,7 @@ const housingData = [
         housingCostBurden: 13,
         socialRentalHousing: 2.7,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Estonia",
         iso: "EST",
@@ -319,7 +319,7 @@ const housingData = [
         housingCostBurden: 7.6,
         socialRentalHousing: 1.1,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Slovenia",
         iso: "SVN",
@@ -332,7 +332,7 @@ const housingData = [
         housingCostBurden: 3.7,
         socialRentalHousing: 3.2,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Italy",
         iso: "ITA",
@@ -345,7 +345,7 @@ const housingData = [
         housingCostBurden: 8.3,
         socialRentalHousing: 3.9,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Israel",
         iso: "ISR",
@@ -358,7 +358,7 @@ const housingData = [
         housingCostBurden: 14.6,
         socialRentalHousing: 0.9,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Czech Republic",
         iso: "CZE",
@@ -371,7 +371,7 @@ const housingData = [
         housingCostBurden: 9.4,
         socialRentalHousing: 5.2,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Greece",
         iso: "GRC",
@@ -384,7 +384,7 @@ const housingData = [
         housingCostBurden: 28.5,
         socialRentalHousing: 0.7,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Poland",
         iso: "POL",
@@ -397,7 +397,7 @@ const housingData = [
         housingCostBurden: 7.8,
         socialRentalHousing: 4.3,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Slovakia",
         iso: "SVK",
@@ -410,7 +410,7 @@ const housingData = [
         housingCostBurden: 8.2,
         socialRentalHousing: 3.8,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Chile",
         iso: "CHL",
@@ -423,7 +423,7 @@ const housingData = [
         housingCostBurden: 18.9,
         socialRentalHousing: 2.1,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Hungary",
         iso: "HUN",
@@ -436,7 +436,7 @@ const housingData = [
         housingCostBurden: 6.9,
         socialRentalHousing: 4.1,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Latvia",
         iso: "LVA",
@@ -449,7 +449,7 @@ const housingData = [
         housingCostBurden: 5.8,
         socialRentalHousing: 1.2,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Lithuania",
         iso: "LTU",
@@ -462,7 +462,7 @@ const housingData = [
         housingCostBurden: 5.4,
         socialRentalHousing: 1.4,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Turkey",
         iso: "TUR",
@@ -475,7 +475,7 @@ const housingData = [
         housingCostBurden: 22.4,
         socialRentalHousing: 3.2,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Mexico",
         iso: "MEX",
@@ -488,7 +488,7 @@ const housingData = [
         housingCostBurden: 19.7,
         socialRentalHousing: 1.4,
         policyActivityScore: 5
-    ,
+    },
     {
         country: "Costa Rica",
         iso: "CRI",
@@ -501,7 +501,7 @@ const housingData = [
         housingCostBurden: 21.3,
         socialRentalHousing: 1.8,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Colombia",
         iso: "COL",
@@ -514,7 +514,7 @@ const housingData = [
         housingCostBurden: 31.2,
         socialRentalHousing: 0.8,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Brazil",
         iso: "BRA",
@@ -527,7 +527,7 @@ const housingData = [
         housingCostBurden: 23.3,
         socialRentalHousing: 1.2,
         policyActivityScore: 4
-    ,
+    },
     {
         country: "Russia",
         iso: "RUS",
@@ -540,7 +540,7 @@ const housingData = [
         housingCostBurden: 12.7,
         socialRentalHousing: 2.8,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "China",
         iso: "CHN",
@@ -553,7 +553,7 @@ const housingData = [
         housingCostBurden: 26.7,
         socialRentalHousing: 7.3,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Thailand",
         iso: "THA",
@@ -566,7 +566,7 @@ const housingData = [
         housingCostBurden: 18.6,
         socialRentalHousing: 0.9,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Malaysia",
         iso: "MYS",
@@ -579,7 +579,7 @@ const housingData = [
         housingCostBurden: 16.4,
         socialRentalHousing: 1.6,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Singapore",
         iso: "SGP",
@@ -592,7 +592,7 @@ const housingData = [
         housingCostBurden: 8.9,
         socialRentalHousing: 8.7,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Philippines",
         iso: "PHL",
@@ -605,7 +605,7 @@ const housingData = [
         housingCostBurden: 32.7,
         socialRentalHousing: 0.6,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Vietnam",
         iso: "VNM",
@@ -618,7 +618,7 @@ const housingData = [
         housingCostBurden: 24.6,
         socialRentalHousing: 0.8,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Indonesia",
         iso: "IDN",
@@ -631,7 +631,7 @@ const housingData = [
         housingCostBurden: 28.4,
         socialRentalHousing: 0.7,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "India",
         iso: "IND",
@@ -644,7 +644,7 @@ const housingData = [
         housingCostBurden: 29.8,
         socialRentalHousing: 0.9,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Argentina",
         iso: "ARG",
@@ -657,7 +657,7 @@ const housingData = [
         housingCostBurden: 21.4,
         socialRentalHousing: 1.1,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Pakistan",
         iso: "PAK",
@@ -670,7 +670,7 @@ const housingData = [
         housingCostBurden: 34.2,
         socialRentalHousing: 0.3,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Bangladesh",
         iso: "BGD",
@@ -683,7 +683,7 @@ const housingData = [
         housingCostBurden: 36.8,
         socialRentalHousing: 0.2,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "United Arab Emirates",
         iso: "ARE",
@@ -696,7 +696,7 @@ const housingData = [
         housingCostBurden: 9.8,
         socialRentalHousing: 2.1,
         policyActivityScore: 3
-    ,
+    },
     {
         country: "Saudi Arabia",
         iso: "SAU",
@@ -709,7 +709,7 @@ const housingData = [
         housingCostBurden: 11.4,
         socialRentalHousing: 1.9,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Iceland",
         iso: "ISL",
@@ -722,7 +722,7 @@ const housingData = [
         housingCostBurden: 7.9,
         socialRentalHousing: 11.6,
         policyActivityScore: 2
-    ,
+    },
 
     // African Countries - Enhanced CAHF Data
     {
@@ -737,7 +737,7 @@ const housingData = [
         housingCostBurden: 27.3,
         socialRentalHousing: 2.3,
         policyActivityScore: 4
-    ,
+    },
     {
         country: "Egypt",
         iso: "EGY",
@@ -750,7 +750,7 @@ const housingData = [
         housingCostBurden: 31.2,
         socialRentalHousing: 1.4,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Morocco",
         iso: "MAR",
@@ -763,7 +763,7 @@ const housingData = [
         housingCostBurden: 26.4,
         socialRentalHousing: 1.7,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Kenya",
         iso: "KEN",
@@ -776,7 +776,7 @@ const housingData = [
         housingCostBurden: 38.6,
         socialRentalHousing: 0.4,
         policyActivityScore: 4
-    ,
+    },
     {
         country: "Nigeria",
         iso: "NGA",
@@ -789,7 +789,7 @@ const housingData = [
         housingCostBurden: 42.7,
         socialRentalHousing: 0.2,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Ghana",
         iso: "GHA",
@@ -802,7 +802,7 @@ const housingData = [
         housingCostBurden: 35.8,
         socialRentalHousing: 0.3,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Ethiopia",
         iso: "ETH",
@@ -815,7 +815,7 @@ const housingData = [
         housingCostBurden: 39.4,
         socialRentalHousing: 0.2,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Tanzania",
         iso: "TZA",
@@ -828,7 +828,7 @@ const housingData = [
         housingCostBurden: 37.2,
         socialRentalHousing: 0.3,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Uganda",
         iso: "UGA",
@@ -841,7 +841,7 @@ const housingData = [
         housingCostBurden: 40.3,
         socialRentalHousing: 0.2,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Rwanda",
         iso: "RWA",
@@ -854,7 +854,7 @@ const housingData = [
         housingCostBurden: 34.6,
         socialRentalHousing: 0.6,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Zambia",
         iso: "ZMB",
@@ -867,7 +867,7 @@ const housingData = [
         housingCostBurden: 36.9,
         socialRentalHousing: 0.3,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Namibia",
         iso: "NAM",
@@ -880,7 +880,7 @@ const housingData = [
         housingCostBurden: 29.7,
         socialRentalHousing: 0.8,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Botswana",
         iso: "BWA",
@@ -893,7 +893,7 @@ const housingData = [
         housingCostBurden: 24.8,
         socialRentalHousing: 1.2,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Senegal",
         iso: "SEN",
@@ -906,7 +906,7 @@ const housingData = [
         housingCostBurden: 33.4,
         socialRentalHousing: 0.4,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Tunisia",
         iso: "TUN",
@@ -919,7 +919,7 @@ const housingData = [
         housingCostBurden: 22.6,
         socialRentalHousing: 1.6,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Cameroon",
         iso: "CMR",
@@ -932,7 +932,7 @@ const housingData = [
         housingCostBurden: 35.7,
         socialRentalHousing: 0.3,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Ivory Coast",
         iso: "CIV",
@@ -945,7 +945,7 @@ const housingData = [
         housingCostBurden: 37.4,
         socialRentalHousing: 0.3,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Mozambique",
         iso: "MOZ",
@@ -958,7 +958,7 @@ const housingData = [
         housingCostBurden: 41.2,
         socialRentalHousing: 0.2,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Angola",
         iso: "AGO",
@@ -971,7 +971,7 @@ const housingData = [
         housingCostBurden: 38.3,
         socialRentalHousing: 0.3,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Zimbabwe",
         iso: "ZWE",
@@ -984,7 +984,7 @@ const housingData = [
         housingCostBurden: 39.8,
         socialRentalHousing: 0.2,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Algeria",
         iso: "DZA",
@@ -997,7 +997,7 @@ const housingData = [
         housingCostBurden: 25.7,
         socialRentalHousing: 2.4,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Sudan",
         iso: "SDN",
@@ -1010,7 +1010,7 @@ const housingData = [
         housingCostBurden: 43.6,
         socialRentalHousing: 0.1,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Mauritius",
         iso: "MUS",
@@ -1023,7 +1023,7 @@ const housingData = [
         housingCostBurden: 18.9,
         socialRentalHousing: 1.8,
         policyActivityScore: 2
-    ,
+    },
     {
         country: "Malawi",
         iso: "MWI",
@@ -1036,7 +1036,7 @@ const housingData = [
         housingCostBurden: 40.7,
         socialRentalHousing: 0.2,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Benin",
         iso: "BEN",
@@ -1049,7 +1049,7 @@ const housingData = [
         housingCostBurden: 36.2,
         socialRentalHousing: 0.3,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Togo",
         iso: "TGO",
@@ -1062,7 +1062,7 @@ const housingData = [
         housingCostBurden: 37.8,
         socialRentalHousing: 0.2,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Mali",
         iso: "MLI",
@@ -1075,7 +1075,7 @@ const housingData = [
         housingCostBurden: 38.9,
         socialRentalHousing: 0.2,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Burkina Faso",
         iso: "BFA",
@@ -1088,7 +1088,7 @@ const housingData = [
         housingCostBurden: 37.3,
         socialRentalHousing: 0.2,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Madagascar",
         iso: "MDG",
@@ -1101,7 +1101,7 @@ const housingData = [
         housingCostBurden: 41.7,
         socialRentalHousing: 0.1,
         policyActivityScore: 1
-    ,
+    },
     {
         country: "Congo",
         iso: "COG",
@@ -1114,6 +1114,7 @@ const housingData = [
         housingCostBurden: 35.1,
         socialRentalHousing: 0.3,
         policyActivityScore: 1
+    },
     
 ];
 
