@@ -407,6 +407,33 @@ function resetStatsPanel() {
     `;
 }
 
+// Update legend labels based on metric type
+function updateLegend(reversed = false) {
+    const legend = document.getElementById('legend');
+    if (!legend) return;
+
+    // Get all legend item labels
+    const labels = legend.querySelectorAll('.legend-item span:last-child');
+
+    if (reversed) {
+        // For positive indicators (higher = better): reverse the labels
+        labels[0].textContent = 'Very Low';   // Dark red = very low (worst)
+        labels[1].textContent = 'Low';
+        labels[2].textContent = 'Medium-Low';
+        labels[3].textContent = 'Medium';
+        labels[4].textContent = 'High';
+        labels[5].textContent = 'Very High';  // Dark green = very high (best)
+    } else {
+        // For negative indicators (higher = worse): normal labels
+        labels[0].textContent = 'Very High';  // Dark red = very high (worst)
+        labels[1].textContent = 'High';
+        labels[2].textContent = 'Medium-High';
+        labels[3].textContent = 'Medium';
+        labels[4].textContent = 'Low';
+        labels[5].textContent = 'Very Low';   // Dark green = very low (best)
+    }
+}
+
 // Update layer display
 function updateLayer(layer) {
     currentLayer = layer;
@@ -415,6 +442,9 @@ function updateLayer(layer) {
     // Update UI
     document.getElementById('current-layer-title').textContent = config.title;
     document.getElementById('current-layer-description').textContent = config.description;
+
+    // Update legend based on metric type
+    updateLegend(config.reversed);
 
     // Update button states
     document.querySelectorAll('.layer-btn').forEach(btn => {
