@@ -439,8 +439,23 @@ function updateLayer(layer) {
 
 // Event listeners for layer buttons
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize globe
-    initGlobe();
+    if (isMobile) {
+        // On mobile, show lazy load button instead of auto-loading globe
+        const loadGlobeBtn = document.getElementById('load-globe-btn');
+        loadGlobeBtn.style.display = 'block';
+
+        // Load globe when button clicked
+        loadGlobeBtn.querySelector('.load-globe-button').addEventListener('click', () => {
+            loadGlobeBtn.style.display = 'none';
+            initGlobe();
+        });
+
+        // Hide loading screen immediately on mobile
+        hideLoadingScreen();
+    } else {
+        // On desktop, load globe immediately
+        initGlobe();
+    }
 
     // Add click handlers to layer buttons
     document.querySelectorAll('.layer-btn').forEach(btn => {

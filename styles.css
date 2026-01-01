@@ -255,6 +255,49 @@ header h1 {
     outline: none;
 }
 
+/* Lazy load button for mobile */
+#load-globe-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.load-globe-button {
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(79, 172, 254, 0.4);
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+.load-globe-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(79, 172, 254, 0.6);
+}
+
+.load-globe-button:active {
+    transform: scale(0.98);
+}
+
+.load-globe-hint {
+    margin-top: 16px;
+    color: #b0c4d4;
+    font-size: 0.95em;
+    opacity: 0.8;
+}
+
 /* Scrollbar styling */
 .controls-panel::-webkit-scrollbar {
     width: 8px;
