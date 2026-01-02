@@ -403,10 +403,13 @@ header h1 {
     .container {
         height: auto;
         min-height: 100vh;
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
 
+    /* Reorder elements: header → globe → controls → footer */
     header {
+        order: 1;
         padding: 15px 10px;
     }
 
@@ -421,6 +424,7 @@ header h1 {
 
     /* Globe container - simple and visible */
     #globe-container {
+        order: 2;
         width: 100%;
         height: 500px;
         position: relative;
@@ -436,6 +440,7 @@ header h1 {
 
     /* Controls panel - regular block element, not fixed */
     .controls-panel {
+        order: 3;
         position: static;
         width: 100%;
         max-width: 100%;
@@ -538,13 +543,32 @@ header h1 {
         font-size: 1em;
     }
 
-    /* Hide data sources on mobile */
+    /* Show data sources on mobile */
     .data-sources {
-        display: none;
+        display: block;
+        padding: 15px 0;
+        margin-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .data-sources h4 {
+        font-size: 1em;
+        margin-bottom: 10px;
+        color: #00f2fe;
+    }
+
+    .data-sources ul {
+        font-size: 0.85em;
+        line-height: 1.6;
+    }
+
+    .data-sources li {
+        margin-bottom: 8px;
     }
 
     /* Footer adjustments */
     .site-footer {
+        order: 4;
         position: relative;
         right: 0;
         width: 100%;
