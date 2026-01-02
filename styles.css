@@ -548,15 +548,7 @@ header h1 {
     }
 
     .data-sources {
-        padding: 12px;
-    }
-
-    .data-sources h4 {
-        font-size: 0.95em;
-    }
-
-    .data-sources li {
-        font-size: 0.8em;
+        display: none;
     }
 
     .controls-panel h3 {
