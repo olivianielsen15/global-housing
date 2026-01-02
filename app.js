@@ -165,6 +165,10 @@ function hideLoadingScreen() {
 function initGlobe() {
     const container = document.getElementById('globe-container');
 
+    // Calculate dimensions with fallback for mobile
+    const containerWidth = container.offsetWidth || window.innerWidth;
+    const containerHeight = container.offsetHeight || Math.max(400, window.innerHeight * 0.6);
+
     globe = Globe()
         (container)
         .globeImageUrl('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cmFkaWFsR3JhZGllbnQgaWQ9Im9jZWFuIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWY1NTkwO3N0b3Atb3BhY2l0eToxIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxNjNkNzA7c3RvcC1vcGFjaXR5OjEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwZDJhNGY7c3RvcC1vcGFjaXR5OjEiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI29jZWFuKSIvPjwvc3ZnPgo=') // Brighter blue ocean gradient
@@ -172,8 +176,8 @@ function initGlobe() {
         .showAtmosphere(true) // Show atmosphere
         .atmosphereColor('#4facfe')
         .atmosphereAltitude(0.18)
-        .width(container.offsetWidth)
-        .height(container.offsetHeight);
+        .width(containerWidth)
+        .height(containerHeight);
 
     // Load world-atlas TopoJSON - use lower resolution on mobile
     const topoJsonUrl = isMobile
