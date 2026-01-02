@@ -493,7 +493,6 @@ header h1 {
         min-height: 400px;
         order: -1;
         touch-action: pan-y pinch-zoom;
-        margin-bottom: 140px;
     }
 
     .empty-illustration {
@@ -510,14 +509,9 @@ header h1 {
         font-size: 1em;
     }
 
-    #globe-container {
-        height: 60vh;
-        min-height: 400px;
-        order: -1;
-    }
-
     .info-panel {
         padding: 12px;
+        margin-bottom: 150px;
     }
 
     #current-layer-title {
@@ -618,7 +612,10 @@ header h1 {
     #globe-container {
         height: 50vh;
         min-height: 350px;
-        margin-bottom: 130px;
+    }
+
+    .info-panel {
+        margin-bottom: 140px;
     }
 
     .legend {
