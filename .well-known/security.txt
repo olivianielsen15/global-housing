@@ -1,0 +1,10 @@
+Contact: https://github.com/olivianielsen15/global-housing/security/advisories/new
+Preferred-Languages: en
+Canonical: https://globalhousingdatabase.com/.well-known/security.txt
+Policy: https://github.com/olivianielsen15/global-housing/blob/main/SECURITY.md
+Acknowledgments: https://github.com/olivianielsen15/global-housing/blob/main/SECURITY.md#acknowledgments
+
+# Security Policy
+# This site visualizes housing data from reputable sources (OECD, World Bank, UN-Habitat, etc.)
+# All data is public and non-sensitive
+# No user data is collected or stored
