@@ -10,6 +10,7 @@ const layerConfig = {
     deficit: {
         title: 'Housing Deficit per Capita',
         description: 'Estimated housing units needed per 1,000 people. Based on UN-Habitat and World Bank data (2024). Higher values indicate severe housing shortages.',
+        detailedDefinition: 'This metric measures the gap between housing supply and demand, expressed as the number of housing units needed per 1,000 residents. It accounts for overcrowding, homelessness, and substandard housing. A value of 10 means 10 additional housing units are needed per 1,000 people to meet basic housing needs. Countries with rapid urbanization, population growth, or post-conflict recovery typically show higher deficits. This is a critical indicator for urban planning and housing policy prioritization.',
         dataKey: 'housingDeficitPerCapita',
         scale: [0, 40],
         unit: ' units/1000 people'
@@ -17,6 +18,7 @@ const layerConfig = {
     mortgage: {
         title: 'Mortgage to GDP Ratio',
         description: 'Total mortgage debt as percentage of GDP. Data from IMF Global Debt Database & World Bank (2024). Higher values indicate greater household leverage.',
+        detailedDefinition: 'This ratio measures the total outstanding residential mortgage debt relative to a country\'s economic output (GDP). It reflects how much households have borrowed to finance housing relative to the size of the economy. High ratios (>80%) can indicate financial vulnerability, as seen before the 2008 financial crisis. Low ratios may suggest underdeveloped housing finance systems or reliance on cash purchases. Developed economies typically show higher ratios due to mature mortgage markets, while emerging economies often have lower ratios.',
         dataKey: 'householdDebtToGDP',
         scale: [0, 135],
         unit: '% of GDP'
@@ -24,6 +26,7 @@ const layerConfig = {
     expenditure: {
         title: 'Government Housing Expenditure / GDP',
         description: 'Government spending on housing and allowances as percentage of GDP. From OECD Affordable Housing Database (2024-2025). Higher values show greater public investment.',
+        detailedDefinition: 'This measures public spending on housing programs including social housing construction, rent subsidies, housing allowances, and homelessness prevention as a share of GDP. It reflects government commitment to housing as a public good. Northern European countries often spend 1-2% of GDP, while many countries spend less than 0.5%. Higher expenditure typically correlates with lower homelessness and better housing affordability. This excludes tax expenditures like mortgage interest deductions.',
         dataKey: 'housingExpenditureToGDP',
         scale: [0, 3.5],
         unit: '% of GDP',
@@ -32,6 +35,7 @@ const layerConfig = {
     construction: {
         title: 'Construction Jobs per Capita',
         description: 'Construction sector employment per 1,000 people. Data from ILO and national labor statistics (2024). Higher values indicate more construction activity.',
+        detailedDefinition: 'This indicator measures the number of people employed in the construction sector per 1,000 residents. It serves as a proxy for construction activity and housing development momentum. High values (>80 jobs/1000) suggest active building sectors, potentially addressing housing shortages. Low values may indicate stagnant construction, restrictive regulations, or economic constraints. This metric also reflects labor market opportunities and can signal overheating housing markets when values spike rapidly.',
         dataKey: 'constructionJobsPerCapita',
         scale: [0, 160],
         unit: ' jobs/1000 people',
@@ -40,6 +44,7 @@ const layerConfig = {
     priceToIncome: {
         title: 'House Price to Income Ratio',
         description: 'Median house price divided by median annual household income. Data from Numbeo, World Bank, and national statistics (2024). Higher values indicate less affordable housing.',
+        detailedDefinition: 'This ratio divides median house prices by median annual household income, showing how many years of income are needed to purchase a median home. A ratio of 3-4 is considered affordable, 5-7 is moderately unaffordable, and above 8 indicates severe unaffordability. For example, a ratio of 12 means it would take 12 years of gross household income to buy a median home. This is a key metric for first-time homebuyers and reflects housing market accessibility. Cities like Hong Kong and Vancouver show ratios above 20.',
         dataKey: 'housePriceToIncome',
         scale: [0, 24],
         unit: 'x income'
@@ -47,6 +52,7 @@ const layerConfig = {
     informalHousing: {
         title: 'Informal/Substandard Housing Share',
         description: 'Percentage of housing that is informal or substandard. Data from UN-Habitat and World Bank (2024). Higher values indicate more precarious housing conditions.',
+        detailedDefinition: 'This measures the proportion of housing that lacks legal recognition, secure tenure, or basic services (water, sanitation, electricity). It includes slums, squatter settlements, and substandard dwellings. High percentages indicate inadequate housing policies, rapid urbanization, or inequality. Informal housing residents face eviction risks, limited access to credit, and poor living conditions. Many sub-Saharan African and South Asian cities show rates above 50%. Reducing informal housing is a key UN Sustainable Development Goal (SDG 11.1).',
         dataKey: 'informalHousingShare',
         scale: [0, 75],
         unit: '%'
@@ -54,6 +60,7 @@ const layerConfig = {
     costBurden: {
         title: 'Housing Cost Burden',
         description: 'Percentage of population spending more than 40% of disposable income on housing. Data from OECD HC1.2 and Eurostat (2022-2024). Higher values indicate severe affordability crisis.',
+        detailedDefinition: 'Housing cost burden measures the share of households spending more than 40% of their disposable income on housing costs (rent or mortgage payments plus utilities). This threshold is internationally recognized as "severe housing cost overburden." Households above this threshold often struggle to afford other essentials like food, healthcare, and education. High values indicate affordability crises, often concentrated among low-income renters. This metric is particularly important for understanding housing poverty and the need for rent assistance programs.',
         dataKey: 'housingCostBurden',
         scale: [0, 45],
         unit: '% of population'
@@ -61,6 +68,7 @@ const layerConfig = {
     socialRental: {
         title: 'Social Rental Housing Stock',
         description: 'Percentage of total housing stock that is social or affordable housing. Data from OECD PH4.2 (2022-2023). Higher values indicate stronger social housing programs.',
+        detailedDefinition: 'This measures the share of housing units that are publicly owned or subsidized social/affordable housing. It includes council housing, housing associations, and non-profit rental housing with below-market rents. Countries like the Netherlands (30%) and Austria (23%) have large social housing sectors that provide affordable alternatives to private markets. Low values suggest greater reliance on market-based housing, which can exacerbate affordability issues. Social housing serves as a buffer against homelessness and provides stable housing for vulnerable populations.',
         dataKey: 'socialRentalHousing',
         scale: [0, 32],
         unit: '% of stock',
@@ -69,6 +77,7 @@ const layerConfig = {
     disasterRisk: {
         title: 'Natural Disaster Risk',
         description: 'WorldRiskIndex 2024 score measuring disaster risk from earthquakes, floods, cyclones, droughts, and sea-level rise. From WorldRiskReport 2024 by Bündnis Entwicklung Hilft & IFHV. Higher values indicate greater disaster exposure and vulnerability.',
+        detailedDefinition: 'The WorldRiskIndex combines exposure to natural hazards (earthquakes, floods, cyclones, droughts, sea-level rise) with societal vulnerability and coping capacity. Scores range from 0-50, with higher values indicating greater risk. The index considers both the likelihood of disasters and a country\'s ability to respond and recover. High-risk countries often require disaster-resilient building codes, insurance systems, and climate adaptation strategies. Island nations and countries in seismically active zones typically score highest. This metric is increasingly important for housing policy as climate change intensifies extreme weather events.',
         dataKey: 'disasterRiskIndex',
         scale: [0, 50],
         unit: ' risk score'
@@ -446,6 +455,7 @@ function updateLayer(layer) {
     // Update UI
     document.getElementById('current-layer-title').textContent = config.title;
     document.getElementById('current-layer-description').textContent = config.description;
+    document.getElementById('detailed-definition').textContent = config.detailedDefinition;
 
     // Update legend based on metric type
     updateLegend(config.reversed);

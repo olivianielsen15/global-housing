@@ -197,6 +197,30 @@ header h1 {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.metric-definition {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 120, 215, 0.1);
+    border-left: 3px solid #4facfe;
+    border-radius: 6px;
+}
+
+.metric-definition h4 {
+    color: #00f2fe;
+    font-size: 0.9em;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.metric-definition p {
+    color: #e0e9f0;
+    font-size: 0.85em;
+    line-height: 1.7;
+    margin: 0;
+}
+
 .stats-panel {
     padding: 15px;
     background: rgba(0, 0, 0, 0.3);
@@ -516,6 +540,20 @@ header h1 {
     .color-box {
         width: 25px;
         height: 18px;
+    }
+
+    .metric-definition {
+        margin-top: 15px;
+        padding: 12px;
+    }
+
+    .metric-definition h4 {
+        font-size: 0.85em;
+    }
+
+    .metric-definition p {
+        font-size: 0.8em;
+        line-height: 1.6;
     }
 
     /* Stats panel */
