@@ -491,8 +491,14 @@ header h1 {
     #globe-container {
         height: 60vh;
         min-height: 400px;
+        max-height: 60vh;
         order: -1;
         touch-action: pan-y pinch-zoom;
+        position: relative;
+        width: 100%;
+        display: block;
+        overflow: visible;
+        margin-bottom: 20px;
     }
 
     .empty-illustration {
@@ -604,6 +610,12 @@ header h1 {
     #globe-container {
         height: 50vh;
         min-height: 350px;
+        max-height: 50vh;
+        position: relative;
+        width: 100%;
+        display: block;
+        overflow: visible;
+        margin-bottom: 20px;
     }
 
     .info-panel {
