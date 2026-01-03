@@ -19,6 +19,7 @@
 // 8. socialRentalHousing: Percentage of housing stock that is social/affordable housing - from OECD PH4.2
 // 9. policyActivityScore: Housing policy reform activity 2020-2024 (0-5 scale): 0=No reforms, 1=Minimal, 2=Low-Moderate, 3=Moderate, 4=High, 5=Exceptional - from UN-Habitat, OECD, IDB, CAHF research
 // 10. disasterRiskIndex: WorldRiskIndex 2024 score (0-50 scale): Measures disaster risk from natural hazards (earthquakes, floods, cyclones, droughts, sea-level rise) - from WorldRiskReport 2024 by Bündnis Entwicklung Hilft & IFHV
+// 11. housingInvestmentOpportunity: Conservative estimate of affordable housing market size in USD billions - calculated as middle-class households (25th-75th income percentile) × affordable home price (3.5x median income), excluding base of pyramid
 
 const housingData = [
     // High-Income OECD Countries
@@ -34,7 +35,8 @@ const housingData = [
         housingCostBurden: 7.2,
         socialRentalHousing: 4.8,
         policyActivityScore: 2,
-        disasterRiskIndex: 1.05  // WorldRiskIndex 2024
+        disasterRiskIndex: 1.05,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 85.2  // Pop: 8.8M, GDP/cap: $87k PPP, middle-class market
     },
     {
         country: "Australia",
@@ -48,7 +50,8 @@ const housingData = [
         housingCostBurden: 9.4,
         socialRentalHousing: 4.6,
         policyActivityScore: 2,
-        disasterRiskIndex: 21.05  // WorldRiskIndex 2024
+        disasterRiskIndex: 21.05,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 182.6  // Pop: 26.6M, GDP/cap: $62k PPP, middle-class market
     },
     {
         country: "Denmark",
@@ -62,7 +65,8 @@ const housingData = [
         housingCostBurden: 15.4,
         socialRentalHousing: 20,
         policyActivityScore: 3,
-        disasterRiskIndex: 0.98  // WorldRiskIndex 2024
+        disasterRiskIndex: 0.98,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 47.3  // Pop: 5.9M, GDP/cap: $72k PPP, middle-class market
     },
     {
         country: "Cyprus",
@@ -76,7 +80,8 @@ const housingData = [
         housingCostBurden: 2.6,
         socialRentalHousing: 1.3,
         policyActivityScore: 2,
-        disasterRiskIndex: 7.2  // WorldRiskIndex 2024
+        disasterRiskIndex: 7.2,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 7.6  // Pop: 1.25M, GDP/cap: $55k PPP, middle-class market
     },
     {
         country: "Netherlands",
@@ -90,7 +95,8 @@ const housingData = [
         housingCostBurden: 7.8,
         socialRentalHousing: 30,
         policyActivityScore: 3,
-        disasterRiskIndex: 3.8  // WorldRiskIndex 2024
+        disasterRiskIndex: 3.8,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 137.9  // Pop: 17.6M, GDP/cap: $70k PPP, middle-class market
     },
     {
         country: "Canada",
@@ -104,7 +110,8 @@ const housingData = [
         housingCostBurden: 11.2,
         socialRentalHousing: 3.4,
         policyActivityScore: 2,
-        disasterRiskIndex: 18.89  // WorldRiskIndex 2024
+        disasterRiskIndex: 18.89,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 256.5  // Pop: 39.5M, GDP/cap: $58k PPP, middle-class market
     },
     {
         country: "South Korea",
@@ -118,7 +125,8 @@ const housingData = [
         housingCostBurden: 8.6,
         socialRentalHousing: 6.8,
         policyActivityScore: 3,
-        disasterRiskIndex: 16.5  // WorldRiskIndex 2024
+        disasterRiskIndex: 16.5,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 312.6  // Pop: 51.7M, GDP/cap: $54k PPP, middle-class market
     },
     {
         country: "Norway",
@@ -132,7 +140,8 @@ const housingData = [
         housingCostBurden: 7.3,
         socialRentalHousing: 4.7,
         policyActivityScore: 3,
-        disasterRiskIndex: 2.61  // WorldRiskIndex 2024
+        disasterRiskIndex: 2.61,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 51.4  // Pop: 5.6M, GDP/cap: $82k PPP, middle-class market
     },
     {
         country: "Sweden",
@@ -146,7 +155,8 @@ const housingData = [
         housingCostBurden: 10.9,
         socialRentalHousing: 0,
         policyActivityScore: 3,
-        disasterRiskIndex: 3.23  // WorldRiskIndex 2024
+        disasterRiskIndex: 3.23,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 78.6  // Pop: 10.5M, GDP/cap: $67k PPP, middle-class market
     },
     {
         country: "New Zealand",
@@ -160,7 +170,8 @@ const housingData = [
         housingCostBurden: 12.3,
         socialRentalHousing: 4.2,
         policyActivityScore: 4,
-        disasterRiskIndex: 19.8  // WorldRiskIndex 2024
+        disasterRiskIndex: 19.8,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 32.6  // Pop: 5.2M, GDP/cap: $56k PPP, middle-class market
     },
     {
         country: "Luxembourg",
@@ -174,7 +185,8 @@ const housingData = [
         housingCostBurden: 11.5,
         socialRentalHousing: 2.4,
         policyActivityScore: 2,
-        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
+        disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 9.9  // Pop: 0.66M, GDP/cap: $135k PPP, middle-class market
     },
     {
         country: "United Kingdom",
@@ -188,7 +200,8 @@ const housingData = [
         housingCostBurden: 9.7,
         socialRentalHousing: 17.5,
         policyActivityScore: 4,
-        disasterRiskIndex: 5.7  // WorldRiskIndex 2024
+        disasterRiskIndex: 5.7,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 429.2  // Pop: 68.5M, GDP/cap: $56k PPP, middle-class market
     },
     {
         country: "Finland",
@@ -202,7 +215,8 @@ const housingData = [
         housingCostBurden: 8.4,
         socialRentalHousing: 14.8,
         policyActivityScore: 3,
-        disasterRiskIndex: 2.8  // WorldRiskIndex 2024
+        disasterRiskIndex: 2.8,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 38.2  // Pop: 5.6M, GDP/cap: $61k PPP, middle-class market
     },
     {
         country: "United States",
@@ -216,7 +230,8 @@ const housingData = [
         housingCostBurden: 17.2,
         socialRentalHousing: 1.8,
         policyActivityScore: 5,
-        disasterRiskIndex: 22.56  // WorldRiskIndex 2024
+        disasterRiskIndex: 22.56,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 2550.4  // Pop: 340M, GDP/cap: $67k PPP, middle-class market
     },
     {
         country: "Belgium",
@@ -230,7 +245,8 @@ const housingData = [
         housingCostBurden: 7.9,
         socialRentalHousing: 6.8,
         policyActivityScore: 3,
-        disasterRiskIndex: 3.5  // WorldRiskIndex 2024
+        disasterRiskIndex: 3.5,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 86.2  // Pop: 11.7M, GDP/cap: $66k PPP, middle-class market
     },
     {
         country: "France",
@@ -244,7 +260,8 @@ const housingData = [
         housingCostBurden: 6.3,
         socialRentalHousing: 16.2,
         policyActivityScore: 3,
-        disasterRiskIndex: 7.54  // WorldRiskIndex 2024
+        disasterRiskIndex: 7.54,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 441.7  // Pop: 65.8M, GDP/cap: $60k PPP, middle-class market
     },
     {
         country: "Japan",
@@ -258,7 +275,8 @@ const housingData = [
         housingCostBurden: 8.1,
         socialRentalHousing: 5.6,
         policyActivityScore: 3,
-        disasterRiskIndex: 20.94  // WorldRiskIndex 2024
+        disasterRiskIndex: 20.94,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 746.6  // Pop: 123.7M, GDP/cap: $54k PPP, middle-class market
     },
     {
         country: "Spain",
@@ -272,7 +290,8 @@ const housingData = [
         housingCostBurden: 12.8,
         socialRentalHousing: 1.6,
         policyActivityScore: 3,
-        disasterRiskIndex: 9.74  // WorldRiskIndex 2024
+        disasterRiskIndex: 9.74,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 280.8  // Pop: 48.3M, GDP/cap: $52k PPP, middle-class market
     },
     {
         country: "Portugal",
@@ -286,7 +305,8 @@ const housingData = [
         housingCostBurden: 9.2,
         socialRentalHousing: 1.7,
         policyActivityScore: 3,
-        disasterRiskIndex: 10.2  // WorldRiskIndex 2024
+        disasterRiskIndex: 10.2,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 55.8  // Pop: 10.4M, GDP/cap: $48k PPP, middle-class market
     },
     {
         country: "Ireland",
@@ -300,7 +320,8 @@ const housingData = [
         housingCostBurden: 8.7,
         socialRentalHousing: 12.4,
         policyActivityScore: 2,
-        disasterRiskIndex: 4.7  // WorldRiskIndex 2024
+        disasterRiskIndex: 4.7,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 65.1  // Pop: 5.2M, GDP/cap: $112k PPP, middle-class market
     },
     {
         country: "Austria",
@@ -314,7 +335,8 @@ const housingData = [
         housingCostBurden: 7.1,
         socialRentalHousing: 24,
         policyActivityScore: 3,
-        disasterRiskIndex: 5.2  // WorldRiskIndex 2024
+        disasterRiskIndex: 5.2,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 73.3  // Pop: 9.1M, GDP/cap: $72k PPP, middle-class market
     },
     {
         country: "Germany",
@@ -328,7 +350,8 @@ const housingData = [
         housingCostBurden: 13,
         socialRentalHousing: 2.7,
         policyActivityScore: 3,
-        disasterRiskIndex: 4.1  // WorldRiskIndex 2024
+        disasterRiskIndex: 4.1,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 642.9  // Pop: 84.5M, GDP/cap: $68k PPP, middle-class market
     },
     {
         country: "Estonia",
@@ -342,7 +365,8 @@ const housingData = [
         housingCostBurden: 7.6,
         socialRentalHousing: 1.1,
         policyActivityScore: 2,
-        disasterRiskIndex: 2.9  // WorldRiskIndex 2024
+        disasterRiskIndex: 2.9,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 7.6  // Pop: 1.36M, GDP/cap: $50k PPP, middle-class market
     },
     {
         country: "Slovenia",
@@ -356,7 +380,8 @@ const housingData = [
         housingCostBurden: 3.7,
         socialRentalHousing: 3.2,
         policyActivityScore: 2,
-        disasterRiskIndex: 8.4  // WorldRiskIndex 2024
+        disasterRiskIndex: 8.4,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 12.9  // Pop: 2.1M, GDP/cap: $55k PPP, middle-class market
     },
     {
         country: "Italy",
@@ -370,7 +395,8 @@ const housingData = [
         housingCostBurden: 8.3,
         socialRentalHousing: 3.9,
         policyActivityScore: 3,
-        disasterRiskIndex: 11.11  // WorldRiskIndex 2024
+        disasterRiskIndex: 11.11,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 382.1  // Pop: 58.9M, GDP/cap: $58k PPP, middle-class market
     },
     {
         country: "Israel",
@@ -384,7 +410,8 @@ const housingData = [
         housingCostBurden: 14.6,
         socialRentalHousing: 0.9,
         policyActivityScore: 2,
-        disasterRiskIndex: 9.8  // WorldRiskIndex 2024
+        disasterRiskIndex: 9.8,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 60.3  // Pop: 9.8M, GDP/cap: $55k PPP, middle-class market
     },
     {
         country: "Czech Republic",
@@ -398,7 +425,8 @@ const housingData = [
         housingCostBurden: 9.4,
         socialRentalHousing: 5.2,
         policyActivityScore: 2,
-        disasterRiskIndex: 5.8  // WorldRiskIndex 2024
+        disasterRiskIndex: 5.8,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 64.6  // Pop: 10.5M, GDP/cap: $55k PPP, middle-class market
     },
     {
         country: "Greece",
@@ -412,7 +440,8 @@ const housingData = [
         housingCostBurden: 28.5,
         socialRentalHousing: 0.7,
         policyActivityScore: 2,
-        disasterRiskIndex: 11.6  // WorldRiskIndex 2024
+        disasterRiskIndex: 11.6,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 49.5  // Pop: 10.3M, GDP/cap: $43k PPP, middle-class market
     },
     {
         country: "Poland",
@@ -426,7 +455,8 @@ const housingData = [
         housingCostBurden: 7.8,
         socialRentalHousing: 4.3,
         policyActivityScore: 2,
-        disasterRiskIndex: 4.74  // WorldRiskIndex 2024
+        disasterRiskIndex: 4.74,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 204.0  // Pop: 38.0M, GDP/cap: $48k PPP, middle-class market
     },
     {
         country: "Slovakia",
@@ -440,7 +470,8 @@ const housingData = [
         housingCostBurden: 8.2,
         socialRentalHousing: 3.8,
         policyActivityScore: 2,
-        disasterRiskIndex: 6.2  // WorldRiskIndex 2024
+        disasterRiskIndex: 6.2,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 25.8  // Pop: 5.5M, GDP/cap: $42k PPP, middle-class market
     },
     {
         country: "Chile",
@@ -454,7 +485,8 @@ const housingData = [
         housingCostBurden: 18.9,
         socialRentalHousing: 2.1,
         policyActivityScore: 3,
-        disasterRiskIndex: 32.5  // WorldRiskIndex 2024
+        disasterRiskIndex: 32.5,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 70.1  // Pop: 19.6M, GDP/cap: $32k PPP, middle-class market
     },
     {
         country: "Hungary",
@@ -468,7 +500,8 @@ const housingData = [
         housingCostBurden: 6.9,
         socialRentalHousing: 4.1,
         policyActivityScore: 1,
-        disasterRiskIndex: 5.5  // WorldRiskIndex 2024
+        disasterRiskIndex: 5.5,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 49.4  // Pop: 9.6M, GDP/cap: $46k PPP, middle-class market
     },
     {
         country: "Latvia",
@@ -482,7 +515,8 @@ const housingData = [
         housingCostBurden: 5.8,
         socialRentalHousing: 1.2,
         policyActivityScore: 2,
-        disasterRiskIndex: 3.0  // WorldRiskIndex 2024
+        disasterRiskIndex: 3.0,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 9.2  // Pop: 1.87M, GDP/cap: $44k PPP, middle-class market
     },
     {
         country: "Lithuania",
@@ -496,7 +530,8 @@ const housingData = [
         housingCostBurden: 5.4,
         socialRentalHousing: 1.4,
         policyActivityScore: 2,
-        disasterRiskIndex: 3.1  // WorldRiskIndex 2024
+        disasterRiskIndex: 3.1,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 16.3  // Pop: 2.85M, GDP/cap: $51k PPP, middle-class market
     },
     {
         country: "Turkey",
@@ -510,7 +545,8 @@ const housingData = [
         housingCostBurden: 22.4,
         socialRentalHousing: 3.2,
         policyActivityScore: 2,
-        disasterRiskIndex: 23.8  // WorldRiskIndex 2024 - major earthquake risk
+        disasterRiskIndex: 23.8,  // WorldRiskIndex 2024 - major earthquake risk
+        housingInvestmentOpportunity: 403.2  // Pop: 85.8M, GDP/cap: $42k PPP, middle-class market
     },
     {
         country: "Mexico",
@@ -524,7 +560,8 @@ const housingData = [
         housingCostBurden: 19.7,
         socialRentalHousing: 1.4,
         policyActivityScore: 5,
-        disasterRiskIndex: 35.93  // WorldRiskIndex 2024
+        disasterRiskIndex: 35.93,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 345.2  // Pop: 128.5M, GDP/cap: $24k PPP, middle-class market
     },
     {
         country: "Costa Rica",
@@ -538,7 +575,8 @@ const housingData = [
         housingCostBurden: 21.3,
         socialRentalHousing: 1.8,
         policyActivityScore: 2,
-        disasterRiskIndex: 28.7  // WorldRiskIndex 2024
+        disasterRiskIndex: 28.7,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 16.3  // Pop: 5.2M, GDP/cap: $28k PPP, middle-class market
     },
     {
         country: "Colombia",
@@ -552,7 +590,8 @@ const housingData = [
         housingCostBurden: 31.2,
         socialRentalHousing: 0.8,
         policyActivityScore: 2,
-        disasterRiskIndex: 37.81  // WorldRiskIndex 2024
+        disasterRiskIndex: 37.81,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 116.6  // Pop: 52.1M, GDP/cap: $20k PPP, middle-class market
     },
     {
         country: "Brazil",
@@ -566,7 +605,8 @@ const housingData = [
         housingCostBurden: 23.3,
         socialRentalHousing: 1.2,
         policyActivityScore: 4,
-        disasterRiskIndex: 18.4  // WorldRiskIndex 2024
+        disasterRiskIndex: 18.4,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 437.0  // Pop: 217M, GDP/cap: $18k PPP, middle-class market
     },
     {
         country: "Russia",
@@ -580,7 +620,8 @@ const housingData = [
         housingCostBurden: 12.7,
         socialRentalHousing: 2.8,
         policyActivityScore: 1,
-        disasterRiskIndex: 28.12  // WorldRiskIndex 2024
+        disasterRiskIndex: 28.12,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 564.5  // Pop: 144M, GDP/cap: $35k PPP, middle-class market
     },
     {
         country: "China",
@@ -594,7 +635,8 @@ const housingData = [
         housingCostBurden: 26.7,
         socialRentalHousing: 7.3,
         policyActivityScore: 2,
-        disasterRiskIndex: 26.3  // WorldRiskIndex 2024
+        disasterRiskIndex: 26.3,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 3192.0  // Pop: 1425M, GDP/cap: $20k PPP, middle-class market
     },
     {
         country: "Thailand",
@@ -608,7 +650,8 @@ const housingData = [
         housingCostBurden: 18.6,
         socialRentalHousing: 0.9,
         policyActivityScore: 2,
-        disasterRiskIndex: 17.2  // WorldRiskIndex 2024
+        disasterRiskIndex: 17.2,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 176.8  // Pop: 71.8M, GDP/cap: $22k PPP, middle-class market
     },
     {
         country: "Malaysia",
@@ -622,7 +665,8 @@ const housingData = [
         housingCostBurden: 16.4,
         socialRentalHousing: 1.6,
         policyActivityScore: 2,
-        disasterRiskIndex: 15.6  // WorldRiskIndex 2024
+        disasterRiskIndex: 15.6,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 134.3  // Pop: 34.3M, GDP/cap: $35k PPP, middle-class market
     },
     {
         country: "Singapore",
@@ -636,7 +680,8 @@ const housingData = [
         housingCostBurden: 8.9,
         socialRentalHousing: 8.7,
         policyActivityScore: 3,
-        disasterRiskIndex: 4.8  // WorldRiskIndex 2024
+        disasterRiskIndex: 4.8,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 76.6  // Pop: 5.9M, GDP/cap: $116k PPP, middle-class market
     },
     {
         country: "Philippines",
@@ -650,7 +695,8 @@ const housingData = [
         housingCostBurden: 32.7,
         socialRentalHousing: 0.6,
         policyActivityScore: 2,
-        disasterRiskIndex: 46.91  // WorldRiskIndex 2024
+        disasterRiskIndex: 46.91,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 132.8  // Pop: 118.6M, GDP/cap: $10k PPP, middle-class market
     },
     {
         country: "Vietnam",
@@ -664,7 +710,8 @@ const housingData = [
         housingCostBurden: 24.6,
         socialRentalHousing: 0.8,
         policyActivityScore: 1,
-        disasterRiskIndex: 22.3  // WorldRiskIndex 2024
+        disasterRiskIndex: 22.3,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 168.0  // Pop: 100M, GDP/cap: $15k PPP, middle-class market
     },
     {
         country: "Indonesia",
@@ -678,7 +725,8 @@ const housingData = [
         housingCostBurden: 28.4,
         socialRentalHousing: 0.7,
         policyActivityScore: 2,
-        disasterRiskIndex: 41.13  // WorldRiskIndex 2024
+        disasterRiskIndex: 41.13,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 468.7  // Pop: 279M, GDP/cap: $15k PPP, middle-class market
     },
     {
         country: "India",
@@ -692,7 +740,8 @@ const housingData = [
         housingCostBurden: 29.8,
         socialRentalHousing: 0.9,
         policyActivityScore: 3,
-        disasterRiskIndex: 40.96  // WorldRiskIndex 2024
+        disasterRiskIndex: 40.96,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 1615.0  // Pop: 1442M, GDP/cap: $10k PPP, middle-class market
     },
     {
         country: "Argentina",
@@ -706,7 +755,8 @@ const housingData = [
         housingCostBurden: 21.4,
         socialRentalHousing: 1.1,
         policyActivityScore: 3,
-        disasterRiskIndex: 14.8  // WorldRiskIndex 2024
+        disasterRiskIndex: 14.8,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 124.1  // Pop: 46.2M, GDP/cap: $24k PPP, middle-class market
     },
     {
         country: "Pakistan",
@@ -720,7 +770,8 @@ const housingData = [
         housingCostBurden: 34.2,
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
-        disasterRiskIndex: 24.8  // WorldRiskIndex 2024
+        disasterRiskIndex: 24.8,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 188.4  // Pop: 240.5M, GDP/cap: $7k PPP, middle-class market
     },
     {
         country: "Bangladesh",
@@ -734,7 +785,8 @@ const housingData = [
         housingCostBurden: 36.8,
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
-        disasterRiskIndex: 27.73  // WorldRiskIndex 2024
+        disasterRiskIndex: 27.73,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 135.5  // Pop: 173M, GDP/cap: $7k PPP, middle-class market
     },
     {
         country: "United Arab Emirates",
@@ -748,7 +800,8 @@ const housingData = [
         housingCostBurden: 9.8,
         socialRentalHousing: 2.1,
         policyActivityScore: 3,
-        disasterRiskIndex: 8.3  // WorldRiskIndex 2024
+        disasterRiskIndex: 8.3,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 99.5  // Pop: 10.1M, GDP/cap: $88k PPP, middle-class market
     },
     {
         country: "Saudi Arabia",
@@ -762,7 +815,8 @@ const housingData = [
         housingCostBurden: 11.4,
         socialRentalHousing: 1.9,
         policyActivityScore: 2,
-        disasterRiskIndex: 6.7  // WorldRiskIndex 2024
+        disasterRiskIndex: 6.7,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 280.9  // Pop: 36.9M, GDP/cap: $68k PPP, middle-class market
     },
     {
         country: "Iceland",
@@ -776,7 +830,8 @@ const housingData = [
         housingCostBurden: 7.9,
         socialRentalHousing: 11.6,
         policyActivityScore: 2,
-        disasterRiskIndex: 12.4  // WorldRiskIndex 2024
+        disasterRiskIndex: 12.4,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 3.0  // Pop: 0.39M, GDP/cap: $68k PPP, middle-class market
     },
 
     // African Countries - Enhanced CAHF Data
@@ -792,7 +847,8 @@ const housingData = [
         housingCostBurden: 27.3,
         socialRentalHousing: 2.3,
         policyActivityScore: 4,
-        disasterRiskIndex: 9.6  // WorldRiskIndex 2024
+        disasterRiskIndex: 9.6,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 108.5  // Pop: 60.6M, GDP/cap: $16k PPP, middle-class market
     },
     {
         country: "Egypt",
@@ -806,7 +862,8 @@ const housingData = [
         housingCostBurden: 31.2,
         socialRentalHousing: 1.4,
         policyActivityScore: 2,
-        disasterRiskIndex: 8.9  // WorldRiskIndex 2024
+        disasterRiskIndex: 8.9,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 240.3  // Pop: 113M, GDP/cap: $19k PPP, middle-class market
     },
     {
         country: "Morocco",
@@ -820,7 +877,8 @@ const housingData = [
         housingCostBurden: 26.4,
         socialRentalHousing: 1.7,
         policyActivityScore: 2,
-        disasterRiskIndex: 11.3  // WorldRiskIndex 2024
+        disasterRiskIndex: 11.3,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 42.3  // Pop: 37.8M, GDP/cap: $10k PPP, middle-class market
     },
     {
         country: "Kenya",
@@ -834,7 +892,8 @@ const housingData = [
         housingCostBurden: 38.6,
         socialRentalHousing: 0.4,
         policyActivityScore: 4,
-        disasterRiskIndex: 15.2  // WorldRiskIndex 2024
+        disasterRiskIndex: 15.2,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 37.7  // Pop: 56.2M, GDP/cap: $6k PPP, middle-class market
     },
     {
         country: "Nigeria",
@@ -848,7 +907,8 @@ const housingData = [
         housingCostBurden: 42.7,
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
-        disasterRiskIndex: 9.33  // WorldRiskIndex 2024
+        disasterRiskIndex: 9.33,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 179.5  // Pop: 229M, GDP/cap: $7k PPP, middle-class market
     },
     {
         country: "Ghana",
@@ -862,7 +922,8 @@ const housingData = [
         housingCostBurden: 35.8,
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
-        disasterRiskIndex: 12.8  // WorldRiskIndex 2024
+        disasterRiskIndex: 12.8,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 26.7  // Pop: 34.1M, GDP/cap: $7k PPP, middle-class market
     },
     {
         country: "Ethiopia",
@@ -876,7 +937,8 @@ const housingData = [
         housingCostBurden: 39.4,
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
-        disasterRiskIndex: 4.86  // WorldRiskIndex 2024
+        disasterRiskIndex: 4.86,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 57.3  // Pop: 128M, GDP/cap: $4k PPP, middle-class market
     },
     {
         country: "Tanzania",
@@ -890,7 +952,8 @@ const housingData = [
         housingCostBurden: 37.2,
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
-        disasterRiskIndex: 16.4  // WorldRiskIndex 2024
+        disasterRiskIndex: 16.4,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 30.2  // Pop: 67.4M, GDP/cap: $4k PPP, middle-class market
     },
     {
         country: "Uganda",
@@ -904,7 +967,8 @@ const housingData = [
         housingCostBurden: 40.3,
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
-        disasterRiskIndex: 14.7  // WorldRiskIndex 2024
+        disasterRiskIndex: 14.7,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 16.5  // Pop: 49.1M, GDP/cap: $3k PPP, middle-class market
     },
     {
         country: "Rwanda",
@@ -918,7 +982,8 @@ const housingData = [
         housingCostBurden: 34.6,
         socialRentalHousing: 0.6,
         policyActivityScore: 2,
-        disasterRiskIndex: 15.8  // WorldRiskIndex 2024
+        disasterRiskIndex: 15.8,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 4.7  // Pop: 14.1M, GDP/cap: $3k PPP, middle-class market
     },
     {
         country: "Zambia",
@@ -932,7 +997,8 @@ const housingData = [
         housingCostBurden: 36.9,
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
-        disasterRiskIndex: 13.6  // WorldRiskIndex 2024
+        disasterRiskIndex: 13.6,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 9.2  // Pop: 20.6M, GDP/cap: $4k PPP, middle-class market
     },
     {
         country: "Namibia",
@@ -946,7 +1012,8 @@ const housingData = [
         housingCostBurden: 29.7,
         socialRentalHousing: 0.8,
         policyActivityScore: 2,
-        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
+        disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 3.2  // Pop: 2.64M, GDP/cap: $11k PPP, middle-class market
     },
     {
         country: "Botswana",
@@ -960,7 +1027,8 @@ const housingData = [
         housingCostBurden: 24.8,
         socialRentalHousing: 1.2,
         policyActivityScore: 2,
-        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
+        disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 6.0  // Pop: 2.7M, GDP/cap: $20k PPP, middle-class market
     },
     {
         country: "Senegal",
@@ -974,7 +1042,8 @@ const housingData = [
         housingCostBurden: 33.4,
         socialRentalHousing: 0.4,
         policyActivityScore: 1,
-        disasterRiskIndex: 11.9  // WorldRiskIndex 2024
+        disasterRiskIndex: 11.9,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 8.2  // Pop: 18.3M, GDP/cap: $4k PPP, middle-class market
     },
     {
         country: "Tunisia",
@@ -988,7 +1057,8 @@ const housingData = [
         housingCostBurden: 22.6,
         socialRentalHousing: 1.6,
         policyActivityScore: 2,
-        disasterRiskIndex: 9.7  // WorldRiskIndex 2024
+        disasterRiskIndex: 9.7,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 18.2  // Pop: 12.5M, GDP/cap: $13k PPP, middle-class market
     },
     {
         country: "Cameroon",
@@ -1002,7 +1072,8 @@ const housingData = [
         housingCostBurden: 35.7,
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
-        disasterRiskIndex: 14.3  // WorldRiskIndex 2024
+        disasterRiskIndex: 14.3,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 13.1  // Pop: 29.3M, GDP/cap: $4k PPP, middle-class market
     },
     {
         country: "Ivory Coast",
@@ -1016,7 +1087,8 @@ const housingData = [
         housingCostBurden: 37.4,
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
-        disasterRiskIndex: 13.2  // WorldRiskIndex 2024
+        disasterRiskIndex: 13.2,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 19.7  // Pop: 29.4M, GDP/cap: $6k PPP, middle-class market
     },
     {
         country: "Mozambique",
@@ -1030,7 +1102,8 @@ const housingData = [
         housingCostBurden: 41.2,
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
-        disasterRiskIndex: 34.44  // WorldRiskIndex 2024
+        disasterRiskIndex: 34.44,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 7.7  // Pop: 34.3M, GDP/cap: $2k PPP, middle-class market
     },
     {
         country: "Angola",
@@ -1044,7 +1117,8 @@ const housingData = [
         housingCostBurden: 38.3,
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
-        disasterRiskIndex: 12.4  // WorldRiskIndex 2024
+        disasterRiskIndex: 12.4,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 25.0  // Pop: 37.2M, GDP/cap: $6k PPP, middle-class market
     },
     {
         country: "Zimbabwe",
@@ -1058,7 +1132,8 @@ const housingData = [
         housingCostBurden: 39.8,
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
-        disasterRiskIndex: 14.9  // WorldRiskIndex 2024
+        disasterRiskIndex: 14.9,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 5.6  // Pop: 16.7M, GDP/cap: $3k PPP, middle-class market
     },
     {
         country: "Algeria",
@@ -1072,7 +1147,8 @@ const housingData = [
         housingCostBurden: 25.7,
         socialRentalHousing: 2.4,
         policyActivityScore: 1,
-        disasterRiskIndex: 10.4  // WorldRiskIndex 2024
+        disasterRiskIndex: 10.4,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 82.4  // Pop: 46.0M, GDP/cap: $16k PPP, middle-class market
     },
     {
         country: "Sudan",
@@ -1086,7 +1162,8 @@ const housingData = [
         housingCostBurden: 43.6,
         socialRentalHousing: 0.1,
         policyActivityScore: 1,
-        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
+        disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 27.5  // Pop: 49.1M, GDP/cap: $5k PPP, middle-class market
     },
     {
         country: "Mauritius",
@@ -1100,7 +1177,8 @@ const housingData = [
         housingCostBurden: 18.9,
         socialRentalHousing: 1.8,
         policyActivityScore: 2,
-        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
+        disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 4.2  // Pop: 1.3M, GDP/cap: $29k PPP, middle-class market
     },
     {
         country: "Malawi",
@@ -1114,7 +1192,8 @@ const housingData = [
         housingCostBurden: 40.7,
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
-        disasterRiskIndex: 16.7  // WorldRiskIndex 2024
+        disasterRiskIndex: 16.7,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 4.7  // Pop: 21.0M, GDP/cap: $2k PPP, middle-class market
     },
     {
         country: "Benin",
@@ -1128,7 +1207,8 @@ const housingData = [
         housingCostBurden: 36.2,
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
-        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
+        disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 6.1  // Pop: 13.7M, GDP/cap: $4k PPP, middle-class market
     },
     {
         country: "Togo",
@@ -1142,7 +1222,8 @@ const housingData = [
         housingCostBurden: 37.8,
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
-        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
+        disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 3.1  // Pop: 9.1M, GDP/cap: $3k PPP, middle-class market
     },
     {
         country: "Mali",
@@ -1156,7 +1237,8 @@ const housingData = [
         housingCostBurden: 38.9,
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
-        disasterRiskIndex: 10.0  // WorldRiskIndex 2024
+        disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 7.8  // Pop: 23.3M, GDP/cap: $3k PPP, middle-class market
     },
     {
         country: "Burkina Faso",
@@ -1170,7 +1252,8 @@ const housingData = [
         housingCostBurden: 37.3,
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
-        disasterRiskIndex: 13.4  // WorldRiskIndex 2024
+        disasterRiskIndex: 13.4,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 7.8  // Pop: 23.3M, GDP/cap: $3k PPP, middle-class market
     },
     {
         country: "Madagascar",
@@ -1184,7 +1267,8 @@ const housingData = [
         housingCostBurden: 41.7,
         socialRentalHousing: 0.1,
         policyActivityScore: 1,
-        disasterRiskIndex: 29.8  // WorldRiskIndex 2024
+        disasterRiskIndex: 29.8,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 6.8  // Pop: 30.3M, GDP/cap: $2k PPP, middle-class market
     },
     {
         country: "Congo",
@@ -1198,7 +1282,8 @@ const housingData = [
         housingCostBurden: 35.1,
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
-        disasterRiskIndex: 11.6  // WorldRiskIndex 2024
+        disasterRiskIndex: 11.6,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 4.2  // Pop: 6.2M, GDP/cap: $6k PPP, middle-class market
     },
     {
         country: "Romania",
@@ -1212,7 +1297,8 @@ const housingData = [
         housingCostBurden: 25.0,  // Estimate
         socialRentalHousing: 0.8,  // Estimate - minimal social housing after privatization
         policyActivityScore: 2,
-        disasterRiskIndex: 8.6  // WorldRiskIndex 2024
+        disasterRiskIndex: 8.6,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 96.2  // Pop: 19.1M, GDP/cap: $45k PPP, middle-class market
     },
     {
         country: "Bulgaria",
@@ -1226,7 +1312,8 @@ const housingData = [
         housingCostBurden: 22.0,  // Estimate
         socialRentalHousing: 0.6,  // Estimate - very low after post-communist privatization
         policyActivityScore: 2,
-        disasterRiskIndex: 9.2  // WorldRiskIndex 2024
+        disasterRiskIndex: 9.2,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 24.3  // Pop: 6.4M, GDP/cap: $34k PPP, middle-class market
     },
     {
         country: "Croatia",
@@ -1240,7 +1327,8 @@ const housingData = [
         housingCostBurden: 3.0,  // Eurostat - very low cost burden
         socialRentalHousing: 1.2,  // Estimate - low social housing stock
         policyActivityScore: 2,
-        disasterRiskIndex: 10.8  // WorldRiskIndex 2024
+        disasterRiskIndex: 10.8,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 18.3  // Pop: 3.9M, GDP/cap: $42k PPP, middle-class market
     },
     {
         country: "Peru",
@@ -1254,7 +1342,8 @@ const housingData = [
         housingCostBurden: 32.0,  // Estimate
         socialRentalHousing: 1.5,  // Estimate
         policyActivityScore: 3,
-        disasterRiskIndex: 33.2  // WorldRiskIndex 2024
+        disasterRiskIndex: 33.2,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 65.4  // Pop: 34.4M, GDP/cap: $17k PPP, middle-class market
     },
     {
         country: "Cambodia",
@@ -1268,7 +1357,8 @@ const housingData = [
         housingCostBurden: 28.0,  // Estimate
         socialRentalHousing: 0.5,  // Estimate
         policyActivityScore: 2,
-        disasterRiskIndex: 19.4  // WorldRiskIndex 2024
+        disasterRiskIndex: 19.4,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 11.4  // Pop: 17.0M, GDP/cap: $6k PPP, middle-class market
     },
     {
         country: "Nepal",
@@ -1282,7 +1372,8 @@ const housingData = [
         housingCostBurden: 31.0,  // Estimate
         socialRentalHousing: 0.3,  // Estimate
         policyActivityScore: 2,
-        disasterRiskIndex: 26.8  // WorldRiskIndex 2024
+        disasterRiskIndex: 26.8,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 17.3  // Pop: 30.9M, GDP/cap: $5k PPP, middle-class market
     },
     {
         country: "Myanmar",
@@ -1296,7 +1387,8 @@ const housingData = [
         housingCostBurden: 33.0,  // Estimate
         socialRentalHousing: 0.2,  // Estimate
         policyActivityScore: 1,
-        disasterRiskIndex: 35.85  // WorldRiskIndex 2024
+        disasterRiskIndex: 35.85,  // WorldRiskIndex 2024
+        housingInvestmentOpportunity: 36.7  // Pop: 54.6M, GDP/cap: $6k PPP, middle-class market
     },
 
 ];

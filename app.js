@@ -81,6 +81,15 @@ const layerConfig = {
         dataKey: 'disasterRiskIndex',
         scale: [0, 50],
         unit: ' risk score'
+    },
+    investmentOpportunity: {
+        title: 'Housing Investment Opportunity',
+        description: 'Conservative estimate of affordable housing market size in USD billions. Calculated as middle-class households (25th-75th percentile) × affordable home price (3.5x median income). Excludes base of pyramid. Higher values indicate larger investment opportunities.',
+        detailedDefinition: 'This metric estimates the total addressable market for affordable housing development, focusing conservatively on middle-income households. It multiplies the number of middle-class households (those between 25th-75th income percentile) by the price of an affordable home (3.5 times median household income). This excludes the base of the pyramid (bottom 25%) who require subsidized social housing rather than market-rate affordable housing. Values are expressed in billions USD. Large markets like India and Indonesia show high values due to population size, while smaller wealthy nations show moderate values. This metric helps investors and developers identify market opportunities for affordable housing projects.',
+        dataKey: 'housingInvestmentOpportunity',
+        scale: [0, 1000],
+        unit: ' billion USD',
+        reversed: true  // Higher is better - larger market opportunity
     }
 };
 
