@@ -21,7 +21,8 @@ const layerConfig = {
         detailedDefinition: 'This ratio measures the total outstanding residential mortgage debt relative to a country\'s economic output (GDP). It reflects how much households have borrowed to finance housing relative to the size of the economy. High ratios (>80%) can indicate financial vulnerability, as seen before the 2008 financial crisis. Low ratios may suggest underdeveloped housing finance systems or reliance on cash purchases. Developed economies typically show higher ratios due to mature mortgage markets, while emerging economies often have lower ratios.',
         dataKey: 'householdDebtToGDP',
         scale: [0, 135],
-        unit: '% of GDP'
+        unit: '% of GDP',
+        reversed: true  // Higher indicates developed mortgage markets - green for high values
     },
     expenditure: {
         title: 'Government Housing Expenditure / GDP',
@@ -342,7 +343,7 @@ function initGlobe() {
 
     // Auto-rotate (slower on mobile to reduce GPU load)
     globe.controls().autoRotate = true;
-    globe.controls().autoRotateSpeed = isMobile ? 0.2 : 0.35;
+    globe.controls().autoRotateSpeed = isMobile ? 0.15 : 0.25;  // Reduced from 0.2/0.35 for smoother initial rotation
 
     // Handle window resize
     window.addEventListener('resize', () => {
