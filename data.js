@@ -848,7 +848,7 @@ const housingData = [
         socialRentalHousing: 2.3,
         policyActivityScore: 4,
         disasterRiskIndex: 9.6,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 240  // Pop: 60M, formal market development, growing urban middle class
+        housingInvestmentOpportunity: 260  // CAHF 2024: Pop 60M, most developed African market, formal mortgage sector (10-yr outlook)
     },
     {
         country: "Egypt",
@@ -863,7 +863,7 @@ const housingData = [
         socialRentalHousing: 1.4,
         policyActivityScore: 2,
         disasterRiskIndex: 8.9,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 420  // Pop: 110M, urban growth, government housing initiatives (10-yr outlook)
+        housingInvestmentOpportunity: 450  // CAHF 2024: Pop 110M, massive urbanization, government mega-projects (10-yr outlook)
     },
     {
         country: "Morocco",
@@ -876,9 +876,9 @@ const housingData = [
         informalHousingShare: 24.6,
         housingCostBurden: 26.4,
         socialRentalHousing: 1.7,
-        policyActivityScore: 2,
+        policyActivityScore: 3,  // CAHF 2024: Cities Without Slums program reforms
         disasterRiskIndex: 11.3,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 80  // Pop: 38M, stable investment climate, urban growth (10-yr outlook)
+        housingInvestmentOpportunity: 87.5  // CAHF 2024: Pop 38M, stable investment climate, urban slum upgrading (10-yr outlook)
     },
     {
         country: "Kenya",
@@ -891,14 +891,14 @@ const housingData = [
         informalHousingShare: 56.3,
         housingCostBurden: 38.6,
         socialRentalHousing: 0.4,
-        policyActivityScore: 4,
+        policyActivityScore: 4,  // CAHF 2024: Affordable housing program, strong reforms
         disasterRiskIndex: 15.2,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 95  // Pop: 55M, East Africa economic hub, M-Pesa economy (10-yr outlook)
+        housingInvestmentOpportunity: 107.5  // CAHF 2024: Pop 55M, East Africa hub, M-Pesa fintech economy (10-yr outlook)
     },
     {
         country: "Nigeria",
         iso: "NGA",
-        housingDeficitPerCapita: 35.2,  // CAHF - severe deficit
+        housingDeficitPerCapita: 35.2,  // CAHF 2024: severe deficit
         householdDebtToGDP: 1.2,
         housingExpenditureToGDP: 0.05,
         constructionJobsPerCapita: 18.7,
@@ -906,9 +906,9 @@ const housingData = [
         informalHousingShare: 64.7,
         housingCostBurden: 42.7,
         socialRentalHousing: 0.2,
-        policyActivityScore: 1,
+        policyActivityScore: 2,  // CAHF 2024: recent mortgage market reforms
         disasterRiskIndex: 9.33,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 380  // Pop: 229M, rapid urbanization, expanding middle class (10-yr outlook)
+        housingInvestmentOpportunity: 400  // CAHF 2024: Pop 229M, Africa's largest market, rapid urbanization (10-yr outlook)
     },
     {
         country: "Ghana",
@@ -923,12 +923,12 @@ const housingData = [
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
         disasterRiskIndex: 12.8,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 45  // Pop: 34M, stable democracy, growing middle class (10-yr outlook)
+        housingInvestmentOpportunity: 52.5  // CAHF 2024: Pop 34M, stable democracy, Accra expansion (10-yr outlook)
     },
     {
         country: "Ethiopia",
         iso: "ETH",
-        housingDeficitPerCapita: 38.6,  // CAHF data
+        housingDeficitPerCapita: 38.6,  // CAHF 2024 data
         householdDebtToGDP: 2.1,
         housingExpenditureToGDP: 0.08,
         constructionJobsPerCapita: 32.4,
@@ -938,7 +938,7 @@ const housingData = [
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
         disasterRiskIndex: 4.86,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 85  // Pop: 126M, fastest-growing economy in region, urbanization (10-yr outlook)
+        housingInvestmentOpportunity: 97.5  // CAHF 2024: Pop 126M, 2nd largest African population, rapid urbanization (10-yr outlook)
     },
     {
         country: "Tanzania",
@@ -953,12 +953,12 @@ const housingData = [
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
         disasterRiskIndex: 16.4,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 30.2  // Pop: 67.4M, GDP/cap: $4k PPP, middle-class market
+        housingInvestmentOpportunity: 92.5  // CAHF 2024: Pop 65M, Dar es Salaam boom, rapid urbanization (10-yr outlook)
     },
     {
         country: "Uganda",
         iso: "UGA",
-        housingDeficitPerCapita: 36.7,  // CAHF data
+        housingDeficitPerCapita: 36.7,  // CAHF 2024 data
         householdDebtToGDP: 3.2,
         housingExpenditureToGDP: 0.07,
         constructionJobsPerCapita: 29.3,
@@ -968,7 +968,7 @@ const housingData = [
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
         disasterRiskIndex: 14.7,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 16.5  // Pop: 49.1M, GDP/cap: $3k PPP, middle-class market
+        housingInvestmentOpportunity: 60  // CAHF 2024: Pop 48M, young demographics, Kampala growth (10-yr outlook)
     },
     {
         country: "Rwanda",
@@ -981,14 +981,14 @@ const housingData = [
         informalHousingShare: 54.2,
         housingCostBurden: 34.6,
         socialRentalHousing: 0.6,
-        policyActivityScore: 2,
+        policyActivityScore: 4,  // CAHF 2024: exceptional housing reforms, Kigali master plan, fastest progress in Africa
         disasterRiskIndex: 15.8,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 4.7  // Pop: 14.1M, GDP/cap: $3k PPP, middle-class market
+        housingInvestmentOpportunity: 23  // CAHF 2024: Pop 14M, Kigali boom, best business climate in Africa (10-yr outlook)
     },
     {
         country: "Zambia",
         iso: "ZMB",
-        housingDeficitPerCapita: 34.2,  // CAHF data
+        housingDeficitPerCapita: 34.2,  // CAHF 2024 data
         householdDebtToGDP: 3.8,
         housingExpenditureToGDP: 0.06,
         constructionJobsPerCapita: 21.8,
@@ -998,7 +998,7 @@ const housingData = [
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
         disasterRiskIndex: 13.6,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 9.2  // Pop: 20.6M, GDP/cap: $4k PPP, middle-class market
+        housingInvestmentOpportunity: 28.5  // CAHF 2024: Pop 20M, copper economy recovery, Lusaka expansion (10-yr outlook)
     },
     {
         country: "Namibia",
@@ -1013,12 +1013,12 @@ const housingData = [
         socialRentalHousing: 0.8,
         policyActivityScore: 2,
         disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 3.2  // Pop: 2.64M, GDP/cap: $11k PPP, middle-class market
+        housingInvestmentOpportunity: 14  // CAHF 2024: Pop 2.6M, mining wealth, stable governance (10-yr outlook)
     },
     {
         country: "Botswana",
         iso: "BWA",
-        housingDeficitPerCapita: 21.3,  // CAHF data
+        housingDeficitPerCapita: 21.3,  // CAHF 2024 data
         householdDebtToGDP: 9.4,
         housingExpenditureToGDP: 0.22,
         constructionJobsPerCapita: 38.5,
@@ -1028,7 +1028,7 @@ const housingData = [
         socialRentalHousing: 1.2,
         policyActivityScore: 2,
         disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 6.0  // Pop: 2.7M, GDP/cap: $20k PPP, middle-class market
+        housingInvestmentOpportunity: 16  // CAHF 2024: Pop 2.6M, diamond economy, highest credit rating in Africa (10-yr outlook)
     },
     {
         country: "Senegal",
@@ -1043,12 +1043,12 @@ const housingData = [
         socialRentalHousing: 0.4,
         policyActivityScore: 1,
         disasterRiskIndex: 11.9,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 8.2  // Pop: 18.3M, GDP/cap: $4k PPP, middle-class market
+        housingInvestmentOpportunity: 35  // CAHF 2024: Pop 18M, Dakar expansion, West Africa gateway (10-yr outlook)
     },
     {
         country: "Tunisia",
         iso: "TUN",
-        housingDeficitPerCapita: 16.2,  // CAHF data
+        housingDeficitPerCapita: 16.2,  // CAHF 2024 data
         householdDebtToGDP: 11.3,
         housingExpenditureToGDP: 0.25,
         constructionJobsPerCapita: 41.7,
@@ -1056,9 +1056,9 @@ const housingData = [
         informalHousingShare: 18.4,
         housingCostBurden: 22.6,
         socialRentalHousing: 1.6,
-        policyActivityScore: 2,
+        policyActivityScore: 3,  // CAHF 2024: post-revolution housing reforms, tourism recovery
         disasterRiskIndex: 9.7,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 18.2  // Pop: 12.5M, GDP/cap: $13k PPP, middle-class market
+        housingInvestmentOpportunity: 42.5  // CAHF 2024: Pop 12M, tourism recovery, North Africa stability (10-yr outlook)
     },
     {
         country: "Cameroon",
@@ -1073,12 +1073,12 @@ const housingData = [
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
         disasterRiskIndex: 14.3,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 13.1  // Pop: 29.3M, GDP/cap: $4k PPP, middle-class market
+        housingInvestmentOpportunity: 47.5  // CAHF 2024: Pop 28M, Central Africa hub, Douala-Yaoundé corridor (10-yr outlook)
     },
     {
         country: "Ivory Coast",
         iso: "CIV",
-        housingDeficitPerCapita: 30.7,  // CAHF data
+        housingDeficitPerCapita: 30.7,  // CAHF 2024 data
         householdDebtToGDP: 3.4,
         housingExpenditureToGDP: 0.07,
         constructionJobsPerCapita: 27.8,
@@ -1088,7 +1088,7 @@ const housingData = [
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
         disasterRiskIndex: 13.2,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 19.7  // Pop: 29.4M, GDP/cap: $6k PPP, middle-class market
+        housingInvestmentOpportunity: 55  // CAHF 2024: Pop 28M, cocoa economy, Abidjan mega-growth (10-yr outlook)
     },
     {
         country: "Mozambique",
@@ -1103,12 +1103,12 @@ const housingData = [
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
         disasterRiskIndex: 34.44,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 7.7  // Pop: 34.3M, GDP/cap: $2k PPP, middle-class market
+        housingInvestmentOpportunity: 31.5  // CAHF 2024: Pop 33M, natural gas boom, Maputo corridor development (10-yr outlook)
     },
     {
         country: "Angola",
         iso: "AGO",
-        housingDeficitPerCapita: 33.6,  // CAHF data
+        housingDeficitPerCapita: 33.6,  // CAHF 2024 data
         householdDebtToGDP: 2.3,
         housingExpenditureToGDP: 0.06,
         constructionJobsPerCapita: 28.9,
@@ -1118,7 +1118,7 @@ const housingData = [
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
         disasterRiskIndex: 12.4,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 25.0  // Pop: 37.2M, GDP/cap: $6k PPP, middle-class market
+        housingInvestmentOpportunity: 65  // CAHF 2024: Pop 35M, post-conflict recovery, oil wealth, Luanda rebuild (10-yr outlook)
     },
     {
         country: "Zimbabwe",
@@ -1133,7 +1133,7 @@ const housingData = [
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
         disasterRiskIndex: 14.9,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 5.6  // Pop: 16.7M, GDP/cap: $3k PPP, middle-class market
+        housingInvestmentOpportunity: 24  // CAHF 2024: Pop 16M, economic stabilization potential, dollarization (10-yr outlook)
     },
     {
         country: "Algeria",
@@ -1148,7 +1148,7 @@ const housingData = [
         socialRentalHousing: 2.4,
         policyActivityScore: 1,
         disasterRiskIndex: 10.4,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 82.4  // Pop: 46.0M, GDP/cap: $16k PPP, middle-class market
+        housingInvestmentOpportunity: 200  // CAHF 2024: Pop 45M, oil wealth, government housing programs (10-yr outlook)
     },
     {
         country: "Sudan",
@@ -1178,12 +1178,12 @@ const housingData = [
         socialRentalHousing: 1.8,
         policyActivityScore: 2,
         disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 4.2  // Pop: 1.3M, GDP/cap: $29k PPP, middle-class market
+        housingInvestmentOpportunity: 15  // CAHF 2024: Pop 1.3M, high GDP/cap, financial hub, tourism (10-yr outlook)
     },
     {
         country: "Malawi",
         iso: "MWI",
-        housingDeficitPerCapita: 36.8,  // CAHF data
+        housingDeficitPerCapita: 36.8,  // CAHF 2024 data
         householdDebtToGDP: 2.4,
         housingExpenditureToGDP: 0.05,
         constructionJobsPerCapita: 19.6,
@@ -1193,7 +1193,7 @@ const housingData = [
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
         disasterRiskIndex: 16.7,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 4.7  // Pop: 21.0M, GDP/cap: $2k PPP, middle-class market
+        housingInvestmentOpportunity: 16  // CAHF 2024: Pop 20M, large population base, Lilongwe-Blantyre growth (10-yr outlook)
     },
     {
         country: "Benin",
@@ -1208,7 +1208,7 @@ const housingData = [
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
         disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 6.1  // Pop: 13.7M, GDP/cap: $4k PPP, middle-class market
+        housingInvestmentOpportunity: 28.5  // CAHF 2024: Pop 13M, Cotonou port economy, West Africa trade hub (10-yr outlook)
     },
     {
         country: "Togo",
@@ -1238,12 +1238,12 @@ const housingData = [
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
         disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 7.8  // Pop: 23.3M, GDP/cap: $3k PPP, middle-class market
+        housingInvestmentOpportunity: 26  // CAHF 2024: Pop 22M, Bamako expansion, Sahel urbanization (10-yr outlook)
     },
     {
         country: "Burkina Faso",
         iso: "BFA",
-        housingDeficitPerCapita: 33.7,  // CAHF data
+        housingDeficitPerCapita: 33.7,  // CAHF 2024 data
         householdDebtToGDP: 2.2,
         housingExpenditureToGDP: 0.05,
         constructionJobsPerCapita: 23.8,
@@ -1253,7 +1253,7 @@ const housingData = [
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
         disasterRiskIndex: 13.4,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 7.8  // Pop: 23.3M, GDP/cap: $3k PPP, middle-class market
+        housingInvestmentOpportunity: 23  // CAHF 2024: Pop 23M, Ouagadougou growth, young demographics (10-yr outlook)
     },
     {
         country: "Madagascar",
@@ -1268,7 +1268,7 @@ const housingData = [
         socialRentalHousing: 0.1,
         policyActivityScore: 1,
         disasterRiskIndex: 29.8,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 6.8  // Pop: 30.3M, GDP/cap: $2k PPP, middle-class market
+        housingInvestmentOpportunity: 23  // CAHF 2024: Pop 30M, large population base, Antananarivo expansion (10-yr outlook)
     },
     {
         country: "Congo",
