@@ -546,7 +546,7 @@ const housingData = [
         socialRentalHousing: 3.2,
         policyActivityScore: 2,
         disasterRiskIndex: 23.8,  // WorldRiskIndex 2024 - major earthquake risk
-        housingInvestmentOpportunity: 403.2  // Pop: 85.8M, GDP/cap: $42k PPP, middle-class market
+        housingInvestmentOpportunity: 520  // Pop: 86M, construction sector strength, refugee integration (10-yr outlook)
     },
     {
         country: "Mexico",
@@ -561,7 +561,7 @@ const housingData = [
         socialRentalHousing: 1.4,
         policyActivityScore: 5,
         disasterRiskIndex: 35.93,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 345.2  // Pop: 128.5M, GDP/cap: $24k PPP, middle-class market
+        housingInvestmentOpportunity: 480  // Pop: 130M, nearshoring boom, US proximity (10-yr outlook)
     },
     {
         country: "Costa Rica",
@@ -591,7 +591,7 @@ const housingData = [
         socialRentalHousing: 0.8,
         policyActivityScore: 2,
         disasterRiskIndex: 37.81,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 116.6  // Pop: 52.1M, GDP/cap: $20k PPP, middle-class market
+        housingInvestmentOpportunity: 210  // Pop: 52M, peace dividend, urban growth (10-yr outlook)
     },
     {
         country: "Brazil",
@@ -606,7 +606,7 @@ const housingData = [
         socialRentalHousing: 1.2,
         policyActivityScore: 4,
         disasterRiskIndex: 18.4,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 437.0  // Pop: 217M, GDP/cap: $18k PPP, middle-class market
+        housingInvestmentOpportunity: 580  // Pop: 216M, urban consolidation, middle-class recovery (10-yr outlook)
     },
     {
         country: "Russia",
@@ -696,7 +696,7 @@ const housingData = [
         socialRentalHousing: 0.6,
         policyActivityScore: 2,
         disasterRiskIndex: 46.91,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 132.8  // Pop: 118.6M, GDP/cap: $10k PPP, middle-class market
+        housingInvestmentOpportunity: 290  // Pop: 117M, young population, remittance economy (10-yr outlook)
     },
     {
         country: "Vietnam",
@@ -711,7 +711,7 @@ const housingData = [
         socialRentalHousing: 0.8,
         policyActivityScore: 1,
         disasterRiskIndex: 22.3,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 168.0  // Pop: 100M, GDP/cap: $15k PPP, middle-class market
+        housingInvestmentOpportunity: 280  // Pop: 100M, rapid economic growth, manufacturing hub (10-yr outlook)
     },
     {
         country: "Indonesia",
@@ -726,7 +726,7 @@ const housingData = [
         socialRentalHousing: 0.7,
         policyActivityScore: 2,
         disasterRiskIndex: 41.13,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 468.7  // Pop: 279M, GDP/cap: $15k PPP, middle-class market
+        housingInvestmentOpportunity: 720  // Pop: 280M, 4th largest population, urban transition (10-yr outlook)
     },
     {
         country: "India",
@@ -741,7 +741,7 @@ const housingData = [
         socialRentalHousing: 0.9,
         policyActivityScore: 3,
         disasterRiskIndex: 40.96,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 1615.0  // Pop: 1442M, GDP/cap: $10k PPP, middle-class market
+        housingInvestmentOpportunity: 2400  // Pop: 1.4B, massive urbanization, housing-for-all programs (10-yr outlook)
     },
     {
         country: "Argentina",
@@ -786,7 +786,7 @@ const housingData = [
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
         disasterRiskIndex: 27.73,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 135.5  // Pop: 173M, GDP/cap: $7k PPP, middle-class market
+        housingInvestmentOpportunity: 245  // Pop: 173M, garment industry growth, Dhaka expansion (10-yr outlook)
     },
     {
         country: "United Arab Emirates",
@@ -848,7 +848,7 @@ const housingData = [
         socialRentalHousing: 2.3,
         policyActivityScore: 4,
         disasterRiskIndex: 9.6,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 108.5  // Pop: 60.6M, GDP/cap: $16k PPP, middle-class market
+        housingInvestmentOpportunity: 240  // Pop: 60M, formal market development, growing urban middle class
     },
     {
         country: "Egypt",
@@ -863,7 +863,7 @@ const housingData = [
         socialRentalHousing: 1.4,
         policyActivityScore: 2,
         disasterRiskIndex: 8.9,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 240.3  // Pop: 113M, GDP/cap: $19k PPP, middle-class market
+        housingInvestmentOpportunity: 420  // Pop: 110M, urban growth, government housing initiatives (10-yr outlook)
     },
     {
         country: "Morocco",
@@ -878,7 +878,7 @@ const housingData = [
         socialRentalHousing: 1.7,
         policyActivityScore: 2,
         disasterRiskIndex: 11.3,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 42.3  // Pop: 37.8M, GDP/cap: $10k PPP, middle-class market
+        housingInvestmentOpportunity: 80  // Pop: 38M, stable investment climate, urban growth (10-yr outlook)
     },
     {
         country: "Kenya",
@@ -893,7 +893,7 @@ const housingData = [
         socialRentalHousing: 0.4,
         policyActivityScore: 4,
         disasterRiskIndex: 15.2,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 37.7  // Pop: 56.2M, GDP/cap: $6k PPP, middle-class market
+        housingInvestmentOpportunity: 95  // Pop: 55M, East Africa economic hub, M-Pesa economy (10-yr outlook)
     },
     {
         country: "Nigeria",
@@ -908,7 +908,7 @@ const housingData = [
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
         disasterRiskIndex: 9.33,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 179.5  // Pop: 229M, GDP/cap: $7k PPP, middle-class market
+        housingInvestmentOpportunity: 380  // Pop: 229M, rapid urbanization, expanding middle class (10-yr outlook)
     },
     {
         country: "Ghana",
@@ -923,7 +923,7 @@ const housingData = [
         socialRentalHousing: 0.3,
         policyActivityScore: 1,
         disasterRiskIndex: 12.8,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 26.7  // Pop: 34.1M, GDP/cap: $7k PPP, middle-class market
+        housingInvestmentOpportunity: 45  // Pop: 34M, stable democracy, growing middle class (10-yr outlook)
     },
     {
         country: "Ethiopia",
@@ -938,7 +938,7 @@ const housingData = [
         socialRentalHousing: 0.2,
         policyActivityScore: 1,
         disasterRiskIndex: 4.86,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 57.3  // Pop: 128M, GDP/cap: $4k PPP, middle-class market
+        housingInvestmentOpportunity: 85  // Pop: 126M, fastest-growing economy in region, urbanization (10-yr outlook)
     },
     {
         country: "Tanzania",
@@ -1343,7 +1343,7 @@ const housingData = [
         socialRentalHousing: 1.5,  // Estimate
         policyActivityScore: 3,
         disasterRiskIndex: 33.2,  // WorldRiskIndex 2024
-        housingInvestmentOpportunity: 65.4  // Pop: 34.4M, GDP/cap: $17k PPP, middle-class market
+        housingInvestmentOpportunity: 105  // Pop: 34M, mining wealth, Lima expansion (10-yr outlook)
     },
     {
         country: "Cambodia",
