@@ -100,6 +100,14 @@ const layerConfig = {
         scale: [1.5, 5.5],
         unit: 'x income',
         reversed: true  // Higher is better - can afford more expensive homes
+    },
+    housingMismatch: {
+        title: 'Housing Supply-Demand Mismatch',
+        description: 'Index measuring gap between housing being built (often luxury) versus what is needed (affordable). Combines price unaffordability, housing deficits, informal housing, and lack of social housing. Higher scores = severe mismatch where luxury construction coexists with affordable housing crisis.',
+        detailedDefinition: 'This index measures the misalignment between housing market supply (what developers build) and actual demand (what people need and can afford). High mismatch occurs when countries have BOTH expensive housing markets AND large affordable housing shortages - indicating construction focuses on luxury/high-end units while middle and low-income needs go unmet. Calculated from: (1) Affordability crisis signals - high price-to-income ratios (>8) and cost burden (>20%), (2) Unmet affordable demand - high housing deficits (>20 units/1000) and informal housing (>30%), (3) Lack of affordable alternatives - low social housing (<5%). Score 0-100: Low (0-30) = balanced supply across segments; Medium (30-50) = moderate mismatch; High (50-70) = severe mismatch with luxury focus while affordable shortage persists; Extreme (70-100) = crisis-level mismatch. Examples of extreme mismatch: China with ghost cities of empty luxury apartments while migrant workers lack housing, Kenya/Nigeria with luxury gated estates for elites alongside massive informal settlements, India with Mumbai luxury towers while slums expand. Low mismatch: Austria, Netherlands (strong social housing diversifies supply), Japan (efficient construction serves all price points).',
+        dataKey: 'housingMismatchIndex',
+        scale: [0, 100],
+        unit: ' mismatch'
     }
 };
 
@@ -397,6 +405,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Natural Disaster Risk:</strong> ${countryData.disasterRiskIndex.toFixed(1)}/50 (WorldRiskIndex 2024)</p>
             <p><strong>Investment Opportunity:</strong> $${countryData.housingInvestmentOpportunity.toFixed(1)}B (affordable housing market)</p>
             <p><strong>Affordable Home Price:</strong> ${countryData.affordableHomePriceRatio.toFixed(1)}x income (at current mortgage rates)</p>
+            <p><strong>Housing Mismatch:</strong> ${countryData.housingMismatchIndex.toFixed(1)}/100 mismatch index</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>

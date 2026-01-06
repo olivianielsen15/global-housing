@@ -21,6 +21,7 @@
 // 10. disasterRiskIndex: WorldRiskIndex 2024 score (0-50 scale): Measures disaster risk from natural hazards (earthquakes, floods, cyclones, droughts, sea-level rise) - from WorldRiskReport 2024 by Bündnis Entwicklung Hilft & IFHV
 // 11. housingInvestmentOpportunity: Conservative estimate of affordable housing market size in USD billions - calculated as middle-class households (25th-75th income percentile) × affordable home price (3.5x median income), excluding base of pyramid
 // 12. affordableHomePriceRatio: Maximum affordable home price as multiple of annual income - based on 30% income rule at current mortgage rates for 30-year loan (lower rates = higher affordability capacity)
+// 13. housingMismatchIndex: Supply-demand mismatch score (0-100): Measures gap between luxury construction and affordable housing needs. Combines affordability crisis (price/income, cost burden), unmet demand (deficit, informal housing), lack of alternatives (low social housing). High scores = luxury focus with affordable crisis.
 
 const housingData = [
     // High-Income OECD Countries
@@ -38,7 +39,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 1.05,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 85.2,  // Pop: 8.8M, GDP/cap: $87k PPP, middle-class market
-        affordableHomePriceRatio: 4.8  // 2.5-3% mortgage rate
+        affordableHomePriceRatio: 4.8,  // 2.5-3% mortgage rate
+        housingMismatchIndex: 29.6  // Low mismatch (balanced supply)
     },
     {
         country: "Australia",
@@ -54,7 +56,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 21.05,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 182.6,  // Pop: 26.6M, GDP/cap: $62k PPP, middle-class market
-        affordableHomePriceRatio: 4.0  // 4-5% mortgage rate
+        affordableHomePriceRatio: 4.0,  // 4-5% mortgage rate
+        housingMismatchIndex: 31.4  // Medium mismatch
     },
     {
         country: "Denmark",
@@ -70,7 +73,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 0.98,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 47.3,  // Pop: 5.9M, GDP/cap: $72k PPP, middle-class market
-        affordableHomePriceRatio: 4.8  // 2.5-3% mortgage rate
+        affordableHomePriceRatio: 4.8,  // 2.5-3% mortgage rate
+        housingMismatchIndex: 14.8  // Low mismatch (balanced supply)
     },
     {
         country: "Cyprus",
@@ -86,7 +90,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 7.2,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 7.6,  // Pop: 1.25M, GDP/cap: $55k PPP, middle-class market
-        affordableHomePriceRatio: 4.3  // 3-4.5% mortgage rate
+        affordableHomePriceRatio: 4.3,  // 3-4.5% mortgage rate
+        housingMismatchIndex: 28.4  // Low mismatch (balanced supply)
     },
     {
         country: "Netherlands",
@@ -102,7 +107,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 3.8,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 137.9,  // Pop: 17.6M, GDP/cap: $70k PPP, middle-class market
-        affordableHomePriceRatio: 4.5  // 3-4% mortgage rate
+        affordableHomePriceRatio: 4.5,  // 3-4% mortgage rate
+        housingMismatchIndex: 19.8  // Low mismatch (balanced supply)
     },
     {
         country: "Canada",
@@ -118,7 +124,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 18.89,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 256.5,  // Pop: 39.5M, GDP/cap: $58k PPP, middle-class market
-        affordableHomePriceRatio: 4.0  // 4-5.5% mortgage rate
+        affordableHomePriceRatio: 4.0,  // 4-5.5% mortgage rate
+        housingMismatchIndex: 37.2  // Medium mismatch
     },
     {
         country: "South Korea",
@@ -134,7 +141,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 16.5,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 312.6,  // Pop: 51.7M, GDP/cap: $54k PPP, middle-class market
-        affordableHomePriceRatio: 3.8  // 4-6% mortgage rate
+        affordableHomePriceRatio: 3.8,  // 4-6% mortgage rate
+        housingMismatchIndex: 34.4  // Medium mismatch
     },
     {
         country: "Norway",
@@ -150,7 +158,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 2.61,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 51.4,  // Pop: 5.6M, GDP/cap: $82k PPP, middle-class market
-        affordableHomePriceRatio: 4.5  // 3-4% mortgage rate
+        affordableHomePriceRatio: 4.5,  // 3-4% mortgage rate
+        housingMismatchIndex: 25.5  // Low mismatch (balanced supply)
     },
     {
         country: "Sweden",
@@ -166,7 +175,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 3.23,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 78.6,  // Pop: 10.5M, GDP/cap: $67k PPP, middle-class market
-        affordableHomePriceRatio: 4.5  // 3-4% mortgage rate
+        affordableHomePriceRatio: 4.5,  // 3-4% mortgage rate
+        housingMismatchIndex: 42.6  // Medium mismatch
     },
     {
         country: "New Zealand",
@@ -182,7 +192,8 @@ const housingData = [
         policyActivityScore: 4,
         disasterRiskIndex: 19.8,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 32.6,  // Pop: 5.2M, GDP/cap: $56k PPP, middle-class market
-        affordableHomePriceRatio: 4.0  // 4-5.5% mortgage rate
+        affordableHomePriceRatio: 4.0,  // 4-5.5% mortgage rate
+        housingMismatchIndex: 39.8  // Medium mismatch
     },
     {
         country: "Luxembourg",
@@ -198,7 +209,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 9.9,  // Pop: 0.66M, GDP/cap: $135k PPP, middle-class market
-        affordableHomePriceRatio: 4.5  // 3-4% mortgage rate
+        affordableHomePriceRatio: 4.5,  // 3-4% mortgage rate
+        housingMismatchIndex: 41.3  // Medium mismatch
     },
     {
         country: "United Kingdom",
@@ -214,7 +226,8 @@ const housingData = [
         policyActivityScore: 4,
         disasterRiskIndex: 5.7,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 429.2,  // Pop: 68.5M, GDP/cap: $56k PPP, middle-class market
-        affordableHomePriceRatio: 4.0  // 4-5.5% mortgage rate
+        affordableHomePriceRatio: 4.0,  // 4-5.5% mortgage rate
+        housingMismatchIndex: 20.5  // Low mismatch (balanced supply)
     },
     {
         country: "Finland",
@@ -230,7 +243,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 2.8,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 38.2,  // Pop: 5.6M, GDP/cap: $61k PPP, middle-class market
-        affordableHomePriceRatio: 4.5  // 3-4% mortgage rate
+        affordableHomePriceRatio: 4.5,  // 3-4% mortgage rate
+        housingMismatchIndex: 8.8  // Low mismatch (balanced supply)
     },
     {
         country: "United States",
@@ -246,7 +260,8 @@ const housingData = [
         policyActivityScore: 5,
         disasterRiskIndex: 22.56,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 2550.4,  // Pop: 340M, GDP/cap: $67k PPP, middle-class market
-        affordableHomePriceRatio: 4.0  // 4-5.5% mortgage rate
+        affordableHomePriceRatio: 4.0,  // 4-5.5% mortgage rate
+        housingMismatchIndex: 34.4  // Medium mismatch
     },
     {
         country: "Belgium",
@@ -262,7 +277,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 3.5,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 86.2,  // Pop: 11.7M, GDP/cap: $66k PPP, middle-class market
-        affordableHomePriceRatio: 4.5  // 3-4% mortgage rate
+        affordableHomePriceRatio: 4.5,  // 3-4% mortgage rate
+        housingMismatchIndex: 18.6  // Low mismatch (balanced supply)
     },
     {
         country: "France",
@@ -278,7 +294,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 7.54,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 441.7,  // Pop: 65.8M, GDP/cap: $60k PPP, middle-class market
-        affordableHomePriceRatio: 4.0  // 4-5.5% mortgage rate
+        affordableHomePriceRatio: 4.0,  // 4-5.5% mortgage rate
+        housingMismatchIndex: 12.7  // Low mismatch (balanced supply)
     },
     {
         country: "Japan",
@@ -294,7 +311,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 20.94,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 746.6,  // Pop: 123.7M, GDP/cap: $54k PPP, middle-class market
-        affordableHomePriceRatio: 4.8  // 2.5-3% mortgage rate
+        affordableHomePriceRatio: 4.8,  // 2.5-3% mortgage rate
+        housingMismatchIndex: 24.2  // Low mismatch (balanced supply)
     },
     {
         country: "Spain",
@@ -310,7 +328,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 9.74,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 280.8,  // Pop: 48.3M, GDP/cap: $52k PPP, middle-class market
-        affordableHomePriceRatio: 4.3  // 3-4.5% mortgage rate
+        affordableHomePriceRatio: 4.3,  // 3-4.5% mortgage rate
+        housingMismatchIndex: 33.5  // Medium mismatch
     },
     {
         country: "Portugal",
@@ -326,7 +345,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 10.2,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 55.8,  // Pop: 10.4M, GDP/cap: $48k PPP, middle-class market
-        affordableHomePriceRatio: 4.3  // 3-4.5% mortgage rate
+        affordableHomePriceRatio: 4.3,  // 3-4.5% mortgage rate
+        housingMismatchIndex: 38.2  // Medium mismatch
     },
     {
         country: "Ireland",
@@ -342,7 +362,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 4.7,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 65.1,  // Pop: 5.2M, GDP/cap: $112k PPP, middle-class market
-        affordableHomePriceRatio: 4.3  // 3-4.5% mortgage rate
+        affordableHomePriceRatio: 4.3,  // 3-4.5% mortgage rate
+        housingMismatchIndex: 18.8  // Low mismatch (balanced supply)
     },
     {
         country: "Austria",
@@ -358,7 +379,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 5.2,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 73.3,  // Pop: 9.1M, GDP/cap: $72k PPP, middle-class market
-        affordableHomePriceRatio: 4.5  // 3-4% mortgage rate
+        affordableHomePriceRatio: 4.5,  // 3-4% mortgage rate
+        housingMismatchIndex: 11.8  // Low mismatch (balanced supply)
     },
     {
         country: "Germany",
@@ -374,7 +396,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 4.1,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 642.9,  // Pop: 84.5M, GDP/cap: $68k PPP, middle-class market
-        affordableHomePriceRatio: 4.5  // 3-4% mortgage rate
+        affordableHomePriceRatio: 4.5,  // 3-4% mortgage rate
+        housingMismatchIndex: 34.7  // Medium mismatch
     },
     {
         country: "Estonia",
@@ -390,7 +413,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 2.9,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 7.6,  // Pop: 1.36M, GDP/cap: $50k PPP, middle-class market
-        affordableHomePriceRatio: 3.4  // 6-7.5% mortgage rate
+        affordableHomePriceRatio: 3.4,  // 6-7.5% mortgage rate
+        housingMismatchIndex: 35.7  // Medium mismatch
     },
     {
         country: "Slovenia",
@@ -406,7 +430,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 8.4,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 12.9,  // Pop: 2.1M, GDP/cap: $55k PPP, middle-class market
-        affordableHomePriceRatio: 4.3  // 3-4.5% mortgage rate
+        affordableHomePriceRatio: 4.3,  // 3-4.5% mortgage rate
+        housingMismatchIndex: 27.2  // Low mismatch (balanced supply)
     },
     {
         country: "Italy",
@@ -422,7 +447,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 11.11,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 382.1,  // Pop: 58.9M, GDP/cap: $58k PPP, middle-class market
-        affordableHomePriceRatio: 4.3  // 3-4.5% mortgage rate
+        affordableHomePriceRatio: 4.3,  // 3-4.5% mortgage rate
+        housingMismatchIndex: 26.4  // Low mismatch (balanced supply)
     },
     {
         country: "Israel",
@@ -438,7 +464,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 9.8,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 60.3,  // Pop: 9.8M, GDP/cap: $55k PPP, middle-class market
-        affordableHomePriceRatio: 3.8  // 4.5-5.5% mortgage rate
+        affordableHomePriceRatio: 3.8,  // 4.5-5.5% mortgage rate
+        housingMismatchIndex: 53.6  // High mismatch (luxury focus, affordable shortage)
     },
     {
         country: "Czech Republic",
@@ -454,7 +481,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 5.8,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 64.6,  // Pop: 10.5M, GDP/cap: $55k PPP, middle-class market
-        affordableHomePriceRatio: 3.4  // 6-7.5% mortgage rate
+        affordableHomePriceRatio: 3.4,  // 6-7.5% mortgage rate
+        housingMismatchIndex: 33.2  // Medium mismatch
     },
     {
         country: "Greece",
@@ -470,7 +498,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 11.6,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 49.5,  // Pop: 10.3M, GDP/cap: $43k PPP, middle-class market
-        affordableHomePriceRatio: 4.3  // 3-4.5% mortgage rate
+        affordableHomePriceRatio: 4.3,  // 3-4.5% mortgage rate
+        housingMismatchIndex: 40  // Medium mismatch
     },
     {
         country: "Poland",
@@ -486,7 +515,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 4.74,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 204.0,  // Pop: 38.0M, GDP/cap: $48k PPP, middle-class market
-        affordableHomePriceRatio: 3.4  // 6-7.5% mortgage rate
+        affordableHomePriceRatio: 3.4,  // 6-7.5% mortgage rate
+        housingMismatchIndex: 32.8  // Medium mismatch
     },
     {
         country: "Slovakia",
@@ -502,7 +532,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 6.2,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 25.8,  // Pop: 5.5M, GDP/cap: $42k PPP, middle-class market
-        affordableHomePriceRatio: 4.3  // 3-4.5% mortgage rate (Eurozone)
+        affordableHomePriceRatio: 4.3,  // 3-4.5% mortgage rate (Eurozone)
+        housingMismatchIndex: 31.8  // Medium mismatch
     },
     {
         country: "Chile",
@@ -518,7 +549,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 32.5,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 70.1,  // Pop: 19.6M, GDP/cap: $32k PPP, middle-class market
-        affordableHomePriceRatio: 3.6  // 5-6.5% mortgage rate
+        affordableHomePriceRatio: 3.6,  // 5-6.5% mortgage rate
+        housingMismatchIndex: 49.6  // Medium mismatch
     },
     {
         country: "Hungary",
@@ -534,7 +566,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 5.5,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 49.4,  // Pop: 9.6M, GDP/cap: $46k PPP, middle-class market
-        affordableHomePriceRatio: 3.4  // 6-7.5% mortgage rate
+        affordableHomePriceRatio: 3.4,  // 6-7.5% mortgage rate
+        housingMismatchIndex: 29.4  // Low mismatch (balanced supply)
     },
     {
         country: "Latvia",
@@ -550,7 +583,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 3.0,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 9.2,  // Pop: 1.87M, GDP/cap: $44k PPP, middle-class market
-        affordableHomePriceRatio: 3.4  // 6-7.5% mortgage rate
+        affordableHomePriceRatio: 3.4,  // 6-7.5% mortgage rate
+        housingMismatchIndex: 34.1  // Medium mismatch
     },
     {
         country: "Lithuania",
@@ -566,7 +600,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 3.1,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 16.3,  // Pop: 2.85M, GDP/cap: $51k PPP, middle-class market
-        affordableHomePriceRatio: 3.4  // 6-7.5% mortgage rate
+        affordableHomePriceRatio: 3.4,  // 6-7.5% mortgage rate
+        housingMismatchIndex: 33.9  // Medium mismatch
     },
     {
         country: "Turkey",
@@ -582,7 +617,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 23.8,  // WorldRiskIndex 2024 - major earthquake risk
         housingInvestmentOpportunity: 520,  // Pop: 86M, construction sector strength, refugee integration (10-yr outlook)
-        affordableHomePriceRatio: 1.3  // 35-45% mortgage rate
+        affordableHomePriceRatio: 1.3,  // 35-45% mortgage rate
+        housingMismatchIndex: 44.7  // Medium mismatch
     },
     {
         country: "Mexico",
@@ -598,7 +634,8 @@ const housingData = [
         policyActivityScore: 5,
         disasterRiskIndex: 35.93,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 480,  // Pop: 130M, nearshoring boom, US proximity (10-yr outlook)
-        affordableHomePriceRatio: 2.6  // 9-11% mortgage rate
+        affordableHomePriceRatio: 2.6,  // 9-11% mortgage rate
+        housingMismatchIndex: 52.6  // High mismatch (luxury focus, affordable shortage)
     },
     {
         country: "Costa Rica",
@@ -614,7 +651,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 28.7,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 16.3,  // Pop: 5.2M, GDP/cap: $28k PPP, middle-class market
-        affordableHomePriceRatio: 2.6  // 9-11% mortgage rate
+        affordableHomePriceRatio: 2.6,  // 9-11% mortgage rate
+        housingMismatchIndex: 47.3  // Medium mismatch
     },
     {
         country: "Colombia",
@@ -630,7 +668,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 37.81,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 210,  // Pop: 52M, peace dividend, urban growth (10-yr outlook)
-        affordableHomePriceRatio: 2.6  // 9-11% mortgage rate
+        affordableHomePriceRatio: 2.6,  // 9-11% mortgage rate
+        housingMismatchIndex: 70.2  // Extreme mismatch (crisis level)
     },
     {
         country: "Brazil",
@@ -646,7 +685,8 @@ const housingData = [
         policyActivityScore: 4,
         disasterRiskIndex: 18.4,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 580,  // Pop: 216M, urban consolidation, middle-class recovery (10-yr outlook)
-        affordableHomePriceRatio: 2.5  // 10-12% mortgage rate
+        affordableHomePriceRatio: 2.5,  // 10-12% mortgage rate
+        housingMismatchIndex: 71.3  // Extreme mismatch (crisis level)
     },
     {
         country: "Russia",
@@ -662,7 +702,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 28.12,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 564.5,  // Pop: 144M, GDP/cap: $35k PPP, middle-class market
-        affordableHomePriceRatio: 2.1  // 13-16% mortgage rate
+        affordableHomePriceRatio: 2.1,  // 13-16% mortgage rate
+        housingMismatchIndex: 42.1  // Medium mismatch
     },
     {
         country: "China",
@@ -678,7 +719,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 26.3,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 3192.0,  // Pop: 1425M, GDP/cap: $20k PPP, middle-class market
-        affordableHomePriceRatio: 3.8  // 4-6% mortgage rate
+        affordableHomePriceRatio: 3.8,  // 4-6% mortgage rate
+        housingMismatchIndex: 49.6  // Medium mismatch
     },
     {
         country: "Thailand",
@@ -694,7 +736,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 17.2,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 176.8,  // Pop: 71.8M, GDP/cap: $22k PPP, middle-class market
-        affordableHomePriceRatio: 3.6  // 5-7% mortgage rate
+        affordableHomePriceRatio: 3.6,  // 5-7% mortgage rate
+        housingMismatchIndex: 64.2  // High mismatch (luxury focus, affordable shortage)
     },
     {
         country: "Malaysia",
@@ -710,7 +753,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 15.6,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 134.3,  // Pop: 34.3M, GDP/cap: $35k PPP, middle-class market
-        affordableHomePriceRatio: 3.6  // 5-7% mortgage rate
+        affordableHomePriceRatio: 3.6,  // 5-7% mortgage rate
+        housingMismatchIndex: 52.7  // High mismatch (luxury focus, affordable shortage)
     },
     {
         country: "Singapore",
@@ -726,7 +770,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 4.8,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 76.6,  // Pop: 5.9M, GDP/cap: $116k PPP, middle-class market
-        affordableHomePriceRatio: 3.8  // 4-6% mortgage rate
+        affordableHomePriceRatio: 3.8,  // 4-6% mortgage rate
+        housingMismatchIndex: 38.3  // Medium mismatch
     },
     {
         country: "Philippines",
@@ -742,7 +787,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 46.91,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 290,  // Pop: 117M, young population, remittance economy (10-yr outlook)
-        affordableHomePriceRatio: 2.8  // 8-10% mortgage rate
+        affordableHomePriceRatio: 2.8,  // 8-10% mortgage rate
+        housingMismatchIndex: 80.5  // Extreme mismatch (crisis level)
     },
     {
         country: "Vietnam",
@@ -758,7 +804,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 22.3,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 280,  // Pop: 100M, rapid economic growth, manufacturing hub (10-yr outlook)
-        affordableHomePriceRatio: 3.6  // 5-7% mortgage rate
+        affordableHomePriceRatio: 3.6,  // 5-7% mortgage rate
+        housingMismatchIndex: 72.5  // Extreme mismatch (crisis level)
     },
     {
         country: "Indonesia",
@@ -774,7 +821,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 41.13,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 720,  // Pop: 280M, 4th largest population, urban transition (10-yr outlook)
-        affordableHomePriceRatio: 2.8  // 8-10% mortgage rate
+        affordableHomePriceRatio: 2.8,  // 8-10% mortgage rate
+        housingMismatchIndex: 72.1  // Extreme mismatch (crisis level)
     },
     {
         country: "India",
@@ -790,7 +838,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 40.96,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 2400,  // Pop: 1.4B, massive urbanization, housing-for-all programs (10-yr outlook)
-        affordableHomePriceRatio: 2.8  // 8-10% mortgage rate
+        affordableHomePriceRatio: 2.8,  // 8-10% mortgage rate
+        housingMismatchIndex: 80.7  // Extreme mismatch (crisis level)
     },
     {
         country: "Argentina",
@@ -806,7 +855,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 14.8,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 124.1,  // Pop: 46.2M, GDP/cap: $24k PPP, middle-class market
-        affordableHomePriceRatio: 1.2  // 70%+ mortgage rate
+        affordableHomePriceRatio: 1.2,  // 70%+ mortgage rate
+        housingMismatchIndex: 58.4  // High mismatch (luxury focus, affordable shortage)
     },
     {
         country: "Pakistan",
@@ -822,7 +872,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 24.8,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 188.4,  // Pop: 240.5M, GDP/cap: $7k PPP, middle-class market
-        affordableHomePriceRatio: 2.8  // 8-10% mortgage rate
+        affordableHomePriceRatio: 2.8,  // 8-10% mortgage rate
+        housingMismatchIndex: 79.9  // Extreme mismatch (crisis level)
     },
     {
         country: "Bangladesh",
@@ -838,7 +889,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 27.73,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 245,  // Pop: 173M, garment industry growth, Dhaka expansion (10-yr outlook)
-        affordableHomePriceRatio: 2.8  // 8-10% mortgage rate
+        affordableHomePriceRatio: 2.8,  // 8-10% mortgage rate
+        housingMismatchIndex: 83.9  // Extreme mismatch (crisis level)
     },
     {
         country: "United Arab Emirates",
@@ -854,7 +906,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 8.3,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 99.5,  // Pop: 10.1M, GDP/cap: $88k PPP, middle-class market
-        affordableHomePriceRatio: 3.6  // 5-7% mortgage rate
+        affordableHomePriceRatio: 3.6,  // 5-7% mortgage rate
+        housingMismatchIndex: 40.9  // Medium mismatch
     },
     {
         country: "Saudi Arabia",
@@ -870,7 +923,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 6.7,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 280.9,  // Pop: 36.9M, GDP/cap: $68k PPP, middle-class market
-        affordableHomePriceRatio: 3.6  // 5-7% mortgage rate
+        affordableHomePriceRatio: 3.6,  // 5-7% mortgage rate
+        housingMismatchIndex: 41.8  // Medium mismatch
     },
     {
         country: "Iceland",
@@ -886,7 +940,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 12.4,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 3.0,  // Pop: 0.39M, GDP/cap: $68k PPP, middle-class market
-        affordableHomePriceRatio: 4.5  // 3-4% mortgage rate
+        affordableHomePriceRatio: 4.5,  // 3-4% mortgage rate
+        housingMismatchIndex: 12.4  // Low mismatch (balanced supply)
     },
 
     // African Countries - Enhanced CAHF Data
@@ -904,7 +959,8 @@ const housingData = [
         policyActivityScore: 4,
         disasterRiskIndex: 9.6,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 260,  // CAHF 2024: Pop 60M, most developed African market, formal mortgage sector (10-yr outlook)
-        affordableHomePriceRatio: 2.4  // 11-12% mortgage rate
+        affordableHomePriceRatio: 2.4,  // 11-12% mortgage rate
+        housingMismatchIndex: 59.6  // High mismatch (luxury focus, affordable shortage)
     },
     {
         country: "Egypt",
@@ -920,7 +976,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 8.9,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 450,  // CAHF 2024: Pop 110M, massive urbanization, government mega-projects (10-yr outlook)
-        affordableHomePriceRatio: 1.7  // 18-22% mortgage rate
+        affordableHomePriceRatio: 1.7,  // 18-22% mortgage rate
+        housingMismatchIndex: 65.9  // High mismatch (luxury focus, affordable shortage)
     },
     {
         country: "Morocco",
@@ -936,7 +993,8 @@ const housingData = [
         policyActivityScore: 3,  // CAHF 2024: Cities Without Slums program reforms
         disasterRiskIndex: 11.3,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 87.5,  // CAHF 2024: Pop 38M, stable investment climate, urban slum upgrading (10-yr outlook)
-        affordableHomePriceRatio: 3.3  // 6-8% mortgage rate
+        affordableHomePriceRatio: 3.3,  // 6-8% mortgage rate
+        housingMismatchIndex: 57.1  // High mismatch (luxury focus, affordable shortage)
     },
     {
         country: "Kenya",
@@ -952,7 +1010,8 @@ const housingData = [
         policyActivityScore: 4,  // CAHF 2024: Affordable housing program, strong reforms
         disasterRiskIndex: 15.2,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 107.5,  // CAHF 2024: Pop 55M, East Africa hub, M-Pesa fintech economy (10-yr outlook)
-        affordableHomePriceRatio: 2.2  // 12-15% mortgage rate
+        affordableHomePriceRatio: 2.2,  // 12-15% mortgage rate
+        housingMismatchIndex: 86.6  // Extreme mismatch (crisis level)
     },
     {
         country: "Nigeria",
@@ -968,7 +1027,8 @@ const housingData = [
         policyActivityScore: 2,  // CAHF 2024: recent mortgage market reforms
         disasterRiskIndex: 9.33,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 400,  // CAHF 2024: Pop 229M, Africa's largest market, rapid urbanization (10-yr outlook)
-        affordableHomePriceRatio: 1.9  // 15-20% mortgage rate
+        affordableHomePriceRatio: 1.9,  // 15-20% mortgage rate
+        housingMismatchIndex: 93.3  // Extreme mismatch (crisis level)
     },
     {
         country: "Ghana",
@@ -984,7 +1044,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 12.8,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 52.5,  // CAHF 2024: Pop 34M, stable democracy, Accra expansion (10-yr outlook)
-        affordableHomePriceRatio: 2.2  // 12-15% mortgage rate
+        affordableHomePriceRatio: 2.2,  // 12-15% mortgage rate
+        housingMismatchIndex: 82.7  // Extreme mismatch (crisis level)
     },
     {
         country: "Ethiopia",
@@ -1000,7 +1061,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 4.86,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 97.5,  // CAHF 2024: Pop 126M, 2nd largest African population, rapid urbanization (10-yr outlook)
-        affordableHomePriceRatio: 1.8  // 18-25% mortgage rate
+        affordableHomePriceRatio: 1.8,  // 18-25% mortgage rate
+        housingMismatchIndex: 96.7  // Extreme mismatch (crisis level)
     },
     {
         country: "Tanzania",
@@ -1016,7 +1078,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 16.4,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 92.5,  // CAHF 2024: Pop 65M, Dar es Salaam boom, rapid urbanization (10-yr outlook)
-        affordableHomePriceRatio: 1.9  // 15-20% mortgage rate
+        affordableHomePriceRatio: 1.9,  // 15-20% mortgage rate
+        housingMismatchIndex: 88.7  // Extreme mismatch (crisis level)
     },
     {
         country: "Uganda",
@@ -1032,7 +1095,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 14.7,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 60,  // CAHF 2024: Pop 48M, young demographics, Kampala growth (10-yr outlook)
-        affordableHomePriceRatio: 1.9  // 15-20% mortgage rate
+        affordableHomePriceRatio: 1.9,  // 15-20% mortgage rate
+        housingMismatchIndex: 95.1  // Extreme mismatch (crisis level)
     },
     {
         country: "Rwanda",
@@ -1048,7 +1112,8 @@ const housingData = [
         policyActivityScore: 4,  // CAHF 2024: exceptional housing reforms, Kigali master plan, fastest progress in Africa
         disasterRiskIndex: 15.8,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 23,  // CAHF 2024: Pop 14M, Kigali boom, best business climate in Africa (10-yr outlook)
-        affordableHomePriceRatio: 2.2  // 12-15% mortgage rate
+        affordableHomePriceRatio: 2.2,  // 12-15% mortgage rate
+        housingMismatchIndex: 81.3  // Extreme mismatch (crisis level)
     },
     {
         country: "Zambia",
@@ -1064,7 +1129,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 13.6,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 28.5,  // CAHF 2024: Pop 20M, copper economy recovery, Lusaka expansion (10-yr outlook)
-        affordableHomePriceRatio: 1.6  // 20-25% mortgage rate
+        affordableHomePriceRatio: 1.6,  // 20-25% mortgage rate
+        housingMismatchIndex: 86.3  // Extreme mismatch (crisis level)
     },
     {
         country: "Namibia",
@@ -1080,7 +1146,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 14,  // CAHF 2024: Pop 2.6M, mining wealth, stable governance (10-yr outlook)
-        affordableHomePriceRatio: 2.9  // 8-10% mortgage rate
+        affordableHomePriceRatio: 2.9,  // 8-10% mortgage rate
+        housingMismatchIndex: 66.6  // High mismatch (luxury focus, affordable shortage)
     },
     {
         country: "Botswana",
@@ -1096,7 +1163,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 16,  // CAHF 2024: Pop 2.6M, diamond economy, highest credit rating in Africa (10-yr outlook)
-        affordableHomePriceRatio: 2.9  // 8-10% mortgage rate
+        affordableHomePriceRatio: 2.9,  // 8-10% mortgage rate
+        housingMismatchIndex: 58.1  // High mismatch (luxury focus, affordable shortage)
     },
     {
         country: "Senegal",
@@ -1112,7 +1180,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 11.9,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 35,  // CAHF 2024: Pop 18M, Dakar expansion, West Africa gateway (10-yr outlook)
-        affordableHomePriceRatio: 3.0  // 7-10% mortgage rate
+        affordableHomePriceRatio: 3.0,  // 7-10% mortgage rate
+        housingMismatchIndex: 78  // Extreme mismatch (crisis level)
     },
     {
         country: "Tunisia",
@@ -1128,7 +1197,8 @@ const housingData = [
         policyActivityScore: 3,  // CAHF 2024: post-revolution housing reforms, tourism recovery
         disasterRiskIndex: 9.7,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 42.5,  // CAHF 2024: Pop 12M, tourism recovery, North Africa stability (10-yr outlook)
-        affordableHomePriceRatio: 3.3  // 6-8% mortgage rate
+        affordableHomePriceRatio: 3.3,  // 6-8% mortgage rate
+        housingMismatchIndex: 50.7  // High mismatch (luxury focus, affordable shortage)
     },
     {
         country: "Cameroon",
@@ -1144,7 +1214,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 14.3,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 47.5,  // CAHF 2024: Pop 28M, Central Africa hub, Douala-Yaoundé corridor (10-yr outlook)
-        affordableHomePriceRatio: 3.0  // 7-10% mortgage rate
+        affordableHomePriceRatio: 3.0,  // 7-10% mortgage rate
+        housingMismatchIndex: 85.5  // Extreme mismatch (crisis level)
     },
     {
         country: "Ivory Coast",
@@ -1160,7 +1231,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 13.2,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 55,  // CAHF 2024: Pop 28M, cocoa economy, Abidjan mega-growth (10-yr outlook)
-        affordableHomePriceRatio: 3.0  // 7-10% mortgage rate
+        affordableHomePriceRatio: 3.0,  // 7-10% mortgage rate
+        housingMismatchIndex: 87.4  // Extreme mismatch (crisis level)
     },
     {
         country: "Mozambique",
@@ -1176,7 +1248,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 34.44,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 31.5,  // CAHF 2024: Pop 33M, natural gas boom, Maputo corridor development (10-yr outlook)
-        affordableHomePriceRatio: 1.8  // 18-25% mortgage rate
+        affordableHomePriceRatio: 1.8,  // 18-25% mortgage rate
+        housingMismatchIndex: 95.5  // Extreme mismatch (crisis level)
     },
     {
         country: "Angola",
@@ -1192,7 +1265,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 12.4,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 65,  // CAHF 2024: Pop 35M, post-conflict recovery, oil wealth, Luanda rebuild (10-yr outlook)
-        affordableHomePriceRatio: 1.8  // 18-25% mortgage rate
+        affordableHomePriceRatio: 1.8,  // 18-25% mortgage rate
+        housingMismatchIndex: 91.4  // Extreme mismatch (crisis level)
     },
     {
         country: "Zimbabwe",
@@ -1208,7 +1282,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 14.9,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 24,  // CAHF 2024: Pop 16M, economic stabilization potential, dollarization (10-yr outlook)
-        affordableHomePriceRatio: 1.6  // 20-25% mortgage rate
+        affordableHomePriceRatio: 1.6,  // 20-25% mortgage rate
+        housingMismatchIndex: 86.7  // Extreme mismatch (crisis level)
     },
     {
         country: "Algeria",
@@ -1224,7 +1299,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 10.4,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 200,  // CAHF 2024: Pop 45M, oil wealth, government housing programs (10-yr outlook)
-        affordableHomePriceRatio: 3.0  // 7-10% mortgage rate
+        affordableHomePriceRatio: 3.0,  // 7-10% mortgage rate
+        housingMismatchIndex: 53.9  // High mismatch (luxury focus, affordable shortage)
     },
     {
         country: "Sudan",
@@ -1240,7 +1316,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 27.5,  // Pop: 49.1M, GDP/cap: $5k PPP, middle-class market
-        affordableHomePriceRatio: 1.9  // 15-20% mortgage rate
+        affordableHomePriceRatio: 1.9,  // 15-20% mortgage rate
+        housingMismatchIndex: 96  // Extreme mismatch (crisis level)
     },
     {
         country: "Mauritius",
@@ -1256,7 +1333,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 15,  // CAHF 2024: Pop 1.3M, high GDP/cap, financial hub, tourism (10-yr outlook)
-        affordableHomePriceRatio: 3.4  // 6-7% mortgage rate
+        affordableHomePriceRatio: 3.4,  // 6-7% mortgage rate
+        housingMismatchIndex: 47.8  // Medium mismatch
     },
     {
         country: "Malawi",
@@ -1272,7 +1350,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 16.7,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 16,  // CAHF 2024: Pop 20M, large population base, Lilongwe-Blantyre growth (10-yr outlook)
-        affordableHomePriceRatio: 1.8  // 18-25% mortgage rate
+        affordableHomePriceRatio: 1.8,  // 18-25% mortgage rate
+        housingMismatchIndex: 93.8  // Extreme mismatch (crisis level)
     },
     {
         country: "Benin",
@@ -1288,7 +1367,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 28.5,  // CAHF 2024: Pop 13M, Cotonou port economy, West Africa trade hub (10-yr outlook)
-        affordableHomePriceRatio: 2.4  // 10-15% mortgage rate
+        affordableHomePriceRatio: 2.4,  // 10-15% mortgage rate
+        housingMismatchIndex: 86.3  // Extreme mismatch (crisis level)
     },
     {
         country: "Togo",
@@ -1304,7 +1384,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 3.1,  // Pop: 9.1M, GDP/cap: $3k PPP, middle-class market
-        affordableHomePriceRatio: 2.4  // 10-15% mortgage rate
+        affordableHomePriceRatio: 2.4,  // 10-15% mortgage rate
+        housingMismatchIndex: 90  // Extreme mismatch (crisis level)
     },
     {
         country: "Mali",
@@ -1320,7 +1401,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 10.0,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 26,  // CAHF 2024: Pop 22M, Bamako expansion, Sahel urbanization (10-yr outlook)
-        affordableHomePriceRatio: 2.4  // 10-15% mortgage rate
+        affordableHomePriceRatio: 2.4,  // 10-15% mortgage rate
+        housingMismatchIndex: 89.8  // Extreme mismatch (crisis level)
     },
     {
         country: "Burkina Faso",
@@ -1336,7 +1418,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 13.4,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 23,  // CAHF 2024: Pop 23M, Ouagadougou growth, young demographics (10-yr outlook)
-        affordableHomePriceRatio: 2.4  // 10-15% mortgage rate
+        affordableHomePriceRatio: 2.4,  // 10-15% mortgage rate
+        housingMismatchIndex: 89.2  // Extreme mismatch (crisis level)
     },
     {
         country: "Madagascar",
@@ -1352,7 +1435,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 29.8,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 23,  // CAHF 2024: Pop 30M, large population base, Antananarivo expansion (10-yr outlook)
-        affordableHomePriceRatio: 2.4  // 10-15% mortgage rate
+        affordableHomePriceRatio: 2.4,  // 10-15% mortgage rate
+        housingMismatchIndex: 96.1  // Extreme mismatch (crisis level)
     },
     {
         country: "Congo",
@@ -1368,7 +1452,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 11.6,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 4.2,  // Pop: 6.2M, GDP/cap: $6k PPP, middle-class market
-        affordableHomePriceRatio: 3.0  // 7-10% mortgage rate
+        affordableHomePriceRatio: 3.0,  // 7-10% mortgage rate
+        housingMismatchIndex: 81.3  // Extreme mismatch (crisis level)
     },
     {
         country: "Romania",
@@ -1384,7 +1469,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 8.6,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 96.2,  // Pop: 19.1M, GDP/cap: $45k PPP, middle-class market
-        affordableHomePriceRatio: 3.4  // 6-8% mortgage rate
+        affordableHomePriceRatio: 3.4,  // 6-8% mortgage rate
+        housingMismatchIndex: 44  // Medium mismatch
     },
     {
         country: "Bulgaria",
@@ -1400,7 +1486,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 9.2,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 24.3,  // Pop: 6.4M, GDP/cap: $34k PPP, middle-class market
-        affordableHomePriceRatio: 3.4  // 6-8% mortgage rate
+        affordableHomePriceRatio: 3.4,  // 6-8% mortgage rate
+        housingMismatchIndex: 43.4  // Medium mismatch
     },
     {
         country: "Croatia",
@@ -1416,7 +1503,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 10.8,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 18.3,  // Pop: 3.9M, GDP/cap: $42k PPP, middle-class market
-        affordableHomePriceRatio: 3.4  // 6-8% mortgage rate
+        affordableHomePriceRatio: 3.4,  // 6-8% mortgage rate
+        housingMismatchIndex: 35.9  // Medium mismatch
     },
     {
         country: "Peru",
@@ -1432,7 +1520,8 @@ const housingData = [
         policyActivityScore: 3,
         disasterRiskIndex: 33.2,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 105,  // Pop: 34M, mining wealth, Lima expansion (10-yr outlook)
-        affordableHomePriceRatio: 2.6  // 9-11% mortgage rate
+        affordableHomePriceRatio: 2.6,  // 9-11% mortgage rate
+        housingMismatchIndex: 65.1  // High mismatch (luxury focus, affordable shortage)
     },
     {
         country: "Cambodia",
@@ -1448,7 +1537,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 19.4,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 11.4,  // Pop: 17.0M, GDP/cap: $6k PPP, middle-class market
-        affordableHomePriceRatio: 2.8  // 8-10% mortgage rate
+        affordableHomePriceRatio: 2.8,  // 8-10% mortgage rate
+        housingMismatchIndex: 71.8  // Extreme mismatch (crisis level)
     },
     {
         country: "Nepal",
@@ -1464,7 +1554,8 @@ const housingData = [
         policyActivityScore: 2,
         disasterRiskIndex: 26.8,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 17.3,  // Pop: 30.9M, GDP/cap: $5k PPP, middle-class market
-        affordableHomePriceRatio: 2.8  // 8-10% mortgage rate
+        affordableHomePriceRatio: 2.8,  // 8-10% mortgage rate
+        housingMismatchIndex: 78.6  // Extreme mismatch (crisis level)
     },
     {
         country: "Myanmar",
@@ -1480,7 +1571,8 @@ const housingData = [
         policyActivityScore: 1,
         disasterRiskIndex: 35.85,  // WorldRiskIndex 2024
         housingInvestmentOpportunity: 36.7,  // Pop: 54.6M, GDP/cap: $6k PPP, middle-class market
-        affordableHomePriceRatio: 2.8  // 8-10% mortgage rate
+        affordableHomePriceRatio: 2.8,  // 8-10% mortgage rate
+        housingMismatchIndex: 84.5  // Extreme mismatch (crisis level)
     },
 
 ];
