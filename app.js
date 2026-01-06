@@ -91,6 +91,15 @@ const layerConfig = {
         scale: [0, 1000],
         unit: ' billion USD',
         reversed: true  // Higher is better - larger market opportunity
+    },
+    affordablePrice: {
+        title: 'Affordable Home Price',
+        description: 'Maximum affordable home price as multiple of annual income, based on 30% of gross income for housing at current mortgage rates. Uses 30-year mortgage assumption. Lower values indicate affordability constraints from high interest rates.',
+        detailedDefinition: 'This metric calculates what a median household can afford to pay for a home using the standard 30% income rule (no more than 30% of gross income should go to housing costs). It factors in current mortgage interest rates to determine the maximum affordable home price, expressed as a multiple of annual income. For example, 4.0x means a household can afford a home priced at 4 times their annual income. Higher values indicate better affordability capacity - at lower interest rates (3-4%), households can afford 4.5-5x income, while at high rates (10-15%), they can only afford 2-2.5x income. This differs from actual price-to-income ratios, showing what SHOULD be affordable versus market reality. Countries with low values face double challenges: high interest rates limit borrowing capacity even when household incomes exist.',
+        dataKey: 'affordableHomePriceRatio',
+        scale: [1.5, 5.5],
+        unit: 'x income',
+        reversed: true  // Higher is better - can afford more expensive homes
     }
 };
 
