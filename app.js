@@ -395,6 +395,8 @@ function updateStatsPanel(countryData) {
             <p><strong>Social Rental Housing:</strong> ${countryData.socialRentalHousing.toFixed(1)}% of stock</p>
             <p><strong>Policy Activity 2020-24:</strong> ${countryData.policyActivityScore}/5 (${policyLabel})</p>
             <p><strong>Natural Disaster Risk:</strong> ${countryData.disasterRiskIndex.toFixed(1)}/50 (WorldRiskIndex 2024)</p>
+            <p><strong>Investment Opportunity:</strong> $${countryData.housingInvestmentOpportunity.toFixed(1)}B (affordable housing market)</p>
+            <p><strong>Affordable Home Price:</strong> ${countryData.affordableHomePriceRatio.toFixed(1)}x income (at current mortgage rates)</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
