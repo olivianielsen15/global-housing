@@ -125,7 +125,7 @@ const layerConfig = {
         dataKey: 'deficitProjection2034',
         scale: [-15, 15],
         unit: ' units/1000',
-        reversed: true  // Negative is better (deficit decreasing)
+        reversed: false  // Lower (negative) is better - deficit decreasing = green, deficit increasing = red
     },
     buildingCodeRecency: {
         title: 'Building Code Recency',
