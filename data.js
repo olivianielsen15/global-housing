@@ -41,7 +41,7 @@ const housingData = [
         housingInvestmentOpportunity: 85.2,
         affordableHomePriceRatio: 4.8,
         housingMismatchIndex: 29.6,
-        policyAchievementIndex: 25.3
+        policyAchievementIndex: 29.5
     },
     {
         country: "Australia",
@@ -59,7 +59,7 @@ const housingData = [
         housingInvestmentOpportunity: 182.6,
         affordableHomePriceRatio: 4,
         housingMismatchIndex: 31.4,
-        policyAchievementIndex: 27.8
+        policyAchievementIndex: 32.6
     },
     {
         country: "Denmark",
@@ -95,7 +95,7 @@ const housingData = [
         housingInvestmentOpportunity: 7.6,
         affordableHomePriceRatio: 4.3,
         housingMismatchIndex: 28.4,
-        policyAchievementIndex: 28.4
+        policyAchievementIndex: 35.7
     },
     {
         country: "Netherlands",
@@ -113,7 +113,7 @@ const housingData = [
         housingInvestmentOpportunity: 137.9,
         affordableHomePriceRatio: 4.5,
         housingMismatchIndex: 19.8,
-        policyAchievementIndex: 56.1
+        policyAchievementIndex: 52.1
     },
     {
         country: "Canada",
@@ -131,7 +131,7 @@ const housingData = [
         housingInvestmentOpportunity: 256.5,
         affordableHomePriceRatio: 4,
         housingMismatchIndex: 37.2,
-        policyAchievementIndex: 27.3
+        policyAchievementIndex: 31.9
     },
     {
         country: "South Korea",
@@ -149,7 +149,7 @@ const housingData = [
         housingInvestmentOpportunity: 312.6,
         affordableHomePriceRatio: 3.8,
         housingMismatchIndex: 34.4,
-        policyAchievementIndex: 36
+        policyAchievementIndex: 40.5
     },
     {
         country: "Norway",
@@ -167,7 +167,7 @@ const housingData = [
         housingInvestmentOpportunity: 51.4,
         affordableHomePriceRatio: 4.5,
         housingMismatchIndex: 25.5,
-        policyAchievementIndex: 38.4
+        policyAchievementIndex: 44.1
     },
     {
         country: "Sweden",
@@ -185,7 +185,7 @@ const housingData = [
         housingInvestmentOpportunity: 78.6,
         affordableHomePriceRatio: 4.5,
         housingMismatchIndex: 42.6,
-        policyAchievementIndex: 33.9
+        policyAchievementIndex: 39.2
     },
     {
         country: "New Zealand",
@@ -203,7 +203,7 @@ const housingData = [
         housingInvestmentOpportunity: 32.6,
         affordableHomePriceRatio: 4,
         housingMismatchIndex: 39.8,
-        policyAchievementIndex: 41.4
+        policyAchievementIndex: 47.7
     },
     {
         country: "Luxembourg",
@@ -221,7 +221,7 @@ const housingData = [
         housingInvestmentOpportunity: 9.9,
         affordableHomePriceRatio: 4.5,
         housingMismatchIndex: 41.3,
-        policyAchievementIndex: 26.5
+        policyAchievementIndex: 31.8
     },
     {
         country: "United Kingdom",
@@ -239,7 +239,7 @@ const housingData = [
         housingInvestmentOpportunity: 429.2,
         affordableHomePriceRatio: 4,
         housingMismatchIndex: 20.5,
-        policyAchievementIndex: 50.5
+        policyAchievementIndex: 51.5
     },
     {
         country: "Finland",
@@ -257,7 +257,7 @@ const housingData = [
         housingInvestmentOpportunity: 38.2,
         affordableHomePriceRatio: 4.5,
         housingMismatchIndex: 8.8,
-        policyAchievementIndex: 47.4
+        policyAchievementIndex: 49.6
     },
     {
         country: "United States",
@@ -275,7 +275,7 @@ const housingData = [
         housingInvestmentOpportunity: 2550.4,
         affordableHomePriceRatio: 4,
         housingMismatchIndex: 34.4,
-        policyAchievementIndex: 39.7
+        policyAchievementIndex: 48.8
     },
     {
         country: "Belgium",
@@ -293,7 +293,7 @@ const housingData = [
         housingInvestmentOpportunity: 86.2,
         affordableHomePriceRatio: 4.5,
         housingMismatchIndex: 18.6,
-        policyAchievementIndex: 38.6
+        policyAchievementIndex: 43.6
     },
     {
         country: "France",
@@ -311,7 +311,7 @@ const housingData = [
         housingInvestmentOpportunity: 441.7,
         affordableHomePriceRatio: 4,
         housingMismatchIndex: 12.7,
-        policyAchievementIndex: 54
+        policyAchievementIndex: 54.5
     },
     {
         country: "Japan",
@@ -329,7 +329,7 @@ const housingData = [
         housingInvestmentOpportunity: 746.6,
         affordableHomePriceRatio: 4.8,
         housingMismatchIndex: 24.2,
-        policyAchievementIndex: 36.7
+        policyAchievementIndex: 42.8
     },
     {
         country: "Spain",
@@ -347,7 +347,7 @@ const housingData = [
         housingInvestmentOpportunity: 280.8,
         affordableHomePriceRatio: 4.3,
         housingMismatchIndex: 33.5,
-        policyAchievementIndex: 30.3
+        policyAchievementIndex: 37.1
     },
     {
         country: "Portugal",
@@ -365,7 +365,7 @@ const housingData = [
         housingInvestmentOpportunity: 55.8,
         affordableHomePriceRatio: 4.3,
         housingMismatchIndex: 38.2,
-        policyAchievementIndex: 25.8
+        policyAchievementIndex: 31.7
     },
     {
         country: "Ireland",
@@ -383,7 +383,7 @@ const housingData = [
         housingInvestmentOpportunity: 65.1,
         affordableHomePriceRatio: 4.3,
         housingMismatchIndex: 18.8,
-        policyAchievementIndex: 38.4
+        policyAchievementIndex: 38.5
     },
     {
         country: "Austria",
@@ -401,7 +401,7 @@ const housingData = [
         housingInvestmentOpportunity: 73.3,
         affordableHomePriceRatio: 4.5,
         housingMismatchIndex: 11.8,
-        policyAchievementIndex: 57.1
+        policyAchievementIndex: 56.2
     },
     {
         country: "Germany",
@@ -419,7 +419,7 @@ const housingData = [
         housingInvestmentOpportunity: 642.9,
         affordableHomePriceRatio: 4.5,
         housingMismatchIndex: 34.7,
-        policyAchievementIndex: 36.9
+        policyAchievementIndex: 42.8
     },
     {
         country: "Estonia",
@@ -437,7 +437,7 @@ const housingData = [
         housingInvestmentOpportunity: 7.6,
         affordableHomePriceRatio: 3.4,
         housingMismatchIndex: 35.7,
-        policyAchievementIndex: 26
+        policyAchievementIndex: 32.3
     },
     {
         country: "Slovenia",
@@ -455,7 +455,7 @@ const housingData = [
         housingInvestmentOpportunity: 12.9,
         affordableHomePriceRatio: 4.3,
         housingMismatchIndex: 27.2,
-        policyAchievementIndex: 29.5
+        policyAchievementIndex: 35
     },
     {
         country: "Italy",
@@ -473,7 +473,7 @@ const housingData = [
         housingInvestmentOpportunity: 382.1,
         affordableHomePriceRatio: 4.3,
         housingMismatchIndex: 26.4,
-        policyAchievementIndex: 33.7
+        policyAchievementIndex: 39.9
     },
     {
         country: "Israel",
@@ -491,7 +491,7 @@ const housingData = [
         housingInvestmentOpportunity: 60.3,
         affordableHomePriceRatio: 3.8,
         housingMismatchIndex: 53.6,
-        policyAchievementIndex: 21.7
+        policyAchievementIndex: 24.8
     },
     {
         country: "Czech Republic",
@@ -509,7 +509,7 @@ const housingData = [
         housingInvestmentOpportunity: 64.6,
         affordableHomePriceRatio: 3.4,
         housingMismatchIndex: 33.2,
-        policyAchievementIndex: 26.1
+        policyAchievementIndex: 30.4
     },
     {
         country: "Greece",
@@ -527,7 +527,7 @@ const housingData = [
         housingInvestmentOpportunity: 49.5,
         affordableHomePriceRatio: 4.3,
         housingMismatchIndex: 40,
-        policyAchievementIndex: 21.9
+        policyAchievementIndex: 27.7
     },
     {
         country: "Poland",
@@ -545,7 +545,7 @@ const housingData = [
         housingInvestmentOpportunity: 204,
         affordableHomePriceRatio: 3.4,
         housingMismatchIndex: 32.8,
-        policyAchievementIndex: 23.9
+        policyAchievementIndex: 28.3
     },
     {
         country: "Slovakia",
@@ -563,7 +563,7 @@ const housingData = [
         housingInvestmentOpportunity: 25.8,
         affordableHomePriceRatio: 4.3,
         housingMismatchIndex: 31.8,
-        policyAchievementIndex: 29.4
+        policyAchievementIndex: 34.8
     },
     {
         country: "Chile",
@@ -581,7 +581,7 @@ const housingData = [
         housingInvestmentOpportunity: 70.1,
         affordableHomePriceRatio: 3.6,
         housingMismatchIndex: 49.6,
-        policyAchievementIndex: 31.8
+        policyAchievementIndex: 37.9
     },
     {
         country: "Hungary",
@@ -599,7 +599,7 @@ const housingData = [
         housingInvestmentOpportunity: 49.4,
         affordableHomePriceRatio: 3.4,
         housingMismatchIndex: 29.4,
-        policyAchievementIndex: 23
+        policyAchievementIndex: 27.1
     },
     {
         country: "Latvia",
@@ -617,7 +617,7 @@ const housingData = [
         housingInvestmentOpportunity: 9.2,
         affordableHomePriceRatio: 3.4,
         housingMismatchIndex: 34.1,
-        policyAchievementIndex: 25.2
+        policyAchievementIndex: 31.5
     },
     {
         country: "Lithuania",
@@ -635,7 +635,7 @@ const housingData = [
         housingInvestmentOpportunity: 16.3,
         affordableHomePriceRatio: 3.4,
         housingMismatchIndex: 33.9,
-        policyAchievementIndex: 25.5
+        policyAchievementIndex: 31.8
     },
     {
         country: "Turkey",
@@ -653,7 +653,7 @@ const housingData = [
         housingInvestmentOpportunity: 520,
         affordableHomePriceRatio: 1.3,
         housingMismatchIndex: 44.7,
-        policyAchievementIndex: 22.1
+        policyAchievementIndex: 26.2
     },
     {
         country: "Mexico",
@@ -671,7 +671,7 @@ const housingData = [
         housingInvestmentOpportunity: 480,
         affordableHomePriceRatio: 2.6,
         housingMismatchIndex: 52.6,
-        policyAchievementIndex: 40.9
+        policyAchievementIndex: 50.3
     },
     {
         country: "Costa Rica",
@@ -689,7 +689,7 @@ const housingData = [
         housingInvestmentOpportunity: 16.3,
         affordableHomePriceRatio: 2.6,
         housingMismatchIndex: 47.3,
-        policyAchievementIndex: 26.1
+        policyAchievementIndex: 32
     },
     {
         country: "Colombia",
@@ -707,7 +707,7 @@ const housingData = [
         housingInvestmentOpportunity: 210,
         affordableHomePriceRatio: 2.6,
         housingMismatchIndex: 70.2,
-        policyAchievementIndex: 20
+        policyAchievementIndex: 25.1
     },
     {
         country: "Brazil",
@@ -725,7 +725,7 @@ const housingData = [
         housingInvestmentOpportunity: 580,
         affordableHomePriceRatio: 2.5,
         housingMismatchIndex: 71.3,
-        policyAchievementIndex: 30.7
+        policyAchievementIndex: 38.2
     },
     {
         country: "Russia",
@@ -743,7 +743,7 @@ const housingData = [
         housingInvestmentOpportunity: 564.5,
         affordableHomePriceRatio: 2.1,
         housingMismatchIndex: 42.1,
-        policyAchievementIndex: 17
+        policyAchievementIndex: 20.6
     },
     {
         country: "China",
@@ -761,7 +761,7 @@ const housingData = [
         housingInvestmentOpportunity: 3192,
         affordableHomePriceRatio: 3.8,
         housingMismatchIndex: 49.6,
-        policyAchievementIndex: 30.5
+        policyAchievementIndex: 32.2
     },
     {
         country: "Thailand",
@@ -779,7 +779,7 @@ const housingData = [
         housingInvestmentOpportunity: 176.8,
         affordableHomePriceRatio: 3.6,
         housingMismatchIndex: 64.2,
-        policyAchievementIndex: 16.7
+        policyAchievementIndex: 19.6
     },
     {
         country: "Malaysia",
@@ -797,7 +797,7 @@ const housingData = [
         housingInvestmentOpportunity: 134.3,
         affordableHomePriceRatio: 3.6,
         housingMismatchIndex: 52.7,
-        policyAchievementIndex: 21.5
+        policyAchievementIndex: 26.3
     },
     {
         country: "Singapore",
@@ -815,7 +815,7 @@ const housingData = [
         housingInvestmentOpportunity: 76.6,
         affordableHomePriceRatio: 3.8,
         housingMismatchIndex: 38.3,
-        policyAchievementIndex: 56
+        policyAchievementIndex: 55.6
     },
     {
         country: "Philippines",
@@ -833,7 +833,7 @@ const housingData = [
         housingInvestmentOpportunity: 290,
         affordableHomePriceRatio: 2.8,
         housingMismatchIndex: 80.5,
-        policyAchievementIndex: 15.1
+        policyAchievementIndex: 18.1
     },
     {
         country: "Vietnam",
@@ -851,7 +851,7 @@ const housingData = [
         housingInvestmentOpportunity: 280,
         affordableHomePriceRatio: 3.6,
         housingMismatchIndex: 72.5,
-        policyAchievementIndex: 13.4
+        policyAchievementIndex: 16
     },
     {
         country: "Indonesia",
@@ -869,7 +869,7 @@ const housingData = [
         housingInvestmentOpportunity: 720,
         affordableHomePriceRatio: 2.8,
         housingMismatchIndex: 72.1,
-        policyAchievementIndex: 18.4
+        policyAchievementIndex: 23.4
     },
     {
         country: "India",
@@ -887,7 +887,7 @@ const housingData = [
         housingInvestmentOpportunity: 2400,
         affordableHomePriceRatio: 2.8,
         housingMismatchIndex: 80.7,
-        policyAchievementIndex: 24.8
+        policyAchievementIndex: 30.2
     },
     {
         country: "Argentina",
@@ -905,7 +905,7 @@ const housingData = [
         housingInvestmentOpportunity: 124.1,
         affordableHomePriceRatio: 1.2,
         housingMismatchIndex: 58.4,
-        policyAchievementIndex: 24.5
+        policyAchievementIndex: 30.6
     },
     {
         country: "Pakistan",
@@ -923,7 +923,7 @@ const housingData = [
         housingInvestmentOpportunity: 188.4,
         affordableHomePriceRatio: 2.8,
         housingMismatchIndex: 79.9,
-        policyAchievementIndex: 15.5
+        policyAchievementIndex: 20.6
     },
     {
         country: "Bangladesh",
@@ -941,7 +941,7 @@ const housingData = [
         housingInvestmentOpportunity: 245,
         affordableHomePriceRatio: 2.8,
         housingMismatchIndex: 83.9,
-        policyAchievementIndex: 15
+        policyAchievementIndex: 20
     },
     {
         country: "United Arab Emirates",
@@ -959,7 +959,7 @@ const housingData = [
         housingInvestmentOpportunity: 99.5,
         affordableHomePriceRatio: 3.6,
         housingMismatchIndex: 40.9,
-        policyAchievementIndex: 37.2
+        policyAchievementIndex: 45.8
     },
     {
         country: "Saudi Arabia",
@@ -977,7 +977,7 @@ const housingData = [
         housingInvestmentOpportunity: 280.9,
         affordableHomePriceRatio: 3.6,
         housingMismatchIndex: 41.8,
-        policyAchievementIndex: 32.7
+        policyAchievementIndex: 39.2
     },
     {
         country: "Iceland",
@@ -995,7 +995,7 @@ const housingData = [
         housingInvestmentOpportunity: 3,
         affordableHomePriceRatio: 4.5,
         housingMismatchIndex: 12.4,
-        policyAchievementIndex: 39.4
+        policyAchievementIndex: 42.2
     },
     {
         country: "South Africa",
@@ -1013,7 +1013,7 @@ const housingData = [
         housingInvestmentOpportunity: 260,
         affordableHomePriceRatio: 2.4,
         housingMismatchIndex: 59.6,
-        policyAchievementIndex: 31.8
+        policyAchievementIndex: 37.5
     },
     {
         country: "Egypt",
@@ -1031,7 +1031,7 @@ const housingData = [
         housingInvestmentOpportunity: 450,
         affordableHomePriceRatio: 1.7,
         housingMismatchIndex: 65.9,
-        policyAchievementIndex: 19.7
+        policyAchievementIndex: 24.7
     },
     {
         country: "Morocco",
@@ -1049,7 +1049,7 @@ const housingData = [
         housingInvestmentOpportunity: 87.5,
         affordableHomePriceRatio: 3.3,
         housingMismatchIndex: 57.1,
-        policyAchievementIndex: 25.2
+        policyAchievementIndex: 30.9
     },
     {
         country: "Kenya",
@@ -1067,7 +1067,7 @@ const housingData = [
         housingInvestmentOpportunity: 107.5,
         affordableHomePriceRatio: 2.2,
         housingMismatchIndex: 86.6,
-        policyAchievementIndex: 26.7
+        policyAchievementIndex: 33.3
     },
     {
         country: "Nigeria",
@@ -1085,7 +1085,7 @@ const housingData = [
         housingInvestmentOpportunity: 400,
         affordableHomePriceRatio: 1.9,
         housingMismatchIndex: 93.3,
-        policyAchievementIndex: 12.3
+        policyAchievementIndex: 14.7
     },
     {
         country: "Ghana",
@@ -1103,7 +1103,7 @@ const housingData = [
         housingInvestmentOpportunity: 52.5,
         affordableHomePriceRatio: 2.2,
         housingMismatchIndex: 82.7,
-        policyAchievementIndex: 11.2
+        policyAchievementIndex: 14.7
     },
     {
         country: "Ethiopia",
@@ -1121,7 +1121,7 @@ const housingData = [
         housingInvestmentOpportunity: 97.5,
         affordableHomePriceRatio: 1.8,
         housingMismatchIndex: 96.7,
-        policyAchievementIndex: 8.8
+        policyAchievementIndex: 10.6
     },
     {
         country: "Tanzania",
@@ -1139,7 +1139,7 @@ const housingData = [
         housingInvestmentOpportunity: 92.5,
         affordableHomePriceRatio: 1.9,
         housingMismatchIndex: 88.7,
-        policyAchievementIndex: 11.3
+        policyAchievementIndex: 14.9
     },
     {
         country: "Uganda",
@@ -1157,7 +1157,7 @@ const housingData = [
         housingInvestmentOpportunity: 60,
         affordableHomePriceRatio: 1.9,
         housingMismatchIndex: 95.1,
-        policyAchievementIndex: 11.4
+        policyAchievementIndex: 15.2
     },
     {
         country: "Rwanda",
@@ -1175,7 +1175,7 @@ const housingData = [
         housingInvestmentOpportunity: 23,
         affordableHomePriceRatio: 2.2,
         housingMismatchIndex: 81.3,
-        policyAchievementIndex: 27.8
+        policyAchievementIndex: 34.5
     },
     {
         country: "Zambia",
@@ -1193,7 +1193,7 @@ const housingData = [
         housingInvestmentOpportunity: 28.5,
         affordableHomePriceRatio: 1.6,
         housingMismatchIndex: 86.3,
-        policyAchievementIndex: 10.7
+        policyAchievementIndex: 14.2
     },
     {
         country: "Namibia",
@@ -1211,7 +1211,7 @@ const housingData = [
         housingInvestmentOpportunity: 14,
         affordableHomePriceRatio: 2.9,
         housingMismatchIndex: 66.6,
-        policyAchievementIndex: 17.8
+        policyAchievementIndex: 22.3
     },
     {
         country: "Botswana",
@@ -1229,7 +1229,7 @@ const housingData = [
         housingInvestmentOpportunity: 16,
         affordableHomePriceRatio: 2.9,
         housingMismatchIndex: 58.1,
-        policyAchievementIndex: 23.1
+        policyAchievementIndex: 28.6
     },
     {
         country: "Senegal",
@@ -1247,7 +1247,7 @@ const housingData = [
         housingInvestmentOpportunity: 35,
         affordableHomePriceRatio: 3,
         housingMismatchIndex: 78,
-        policyAchievementIndex: 11.3
+        policyAchievementIndex: 14.9
     },
     {
         country: "Tunisia",
@@ -1265,7 +1265,7 @@ const housingData = [
         housingInvestmentOpportunity: 42.5,
         affordableHomePriceRatio: 3.3,
         housingMismatchIndex: 50.7,
-        policyAchievementIndex: 28.9
+        policyAchievementIndex: 35.4
     },
     {
         country: "Cameroon",
@@ -1283,7 +1283,7 @@ const housingData = [
         housingInvestmentOpportunity: 47.5,
         affordableHomePriceRatio: 3,
         housingMismatchIndex: 85.5,
-        policyAchievementIndex: 10.9
+        policyAchievementIndex: 14.5
     },
     {
         country: "Ivory Coast",
@@ -1301,7 +1301,7 @@ const housingData = [
         housingInvestmentOpportunity: 55,
         affordableHomePriceRatio: 3,
         housingMismatchIndex: 87.4,
-        policyAchievementIndex: 11.3
+        policyAchievementIndex: 15
     },
     {
         country: "Mozambique",
@@ -1319,7 +1319,7 @@ const housingData = [
         housingInvestmentOpportunity: 31.5,
         affordableHomePriceRatio: 1.8,
         housingMismatchIndex: 95.5,
-        policyAchievementIndex: 7.2
+        policyAchievementIndex: 8.7
     },
     {
         country: "Angola",
@@ -1337,7 +1337,7 @@ const housingData = [
         housingInvestmentOpportunity: 65,
         affordableHomePriceRatio: 1.8,
         housingMismatchIndex: 91.4,
-        policyAchievementIndex: 11.4
+        policyAchievementIndex: 15.1
     },
     {
         country: "Zimbabwe",
@@ -1355,7 +1355,7 @@ const housingData = [
         housingInvestmentOpportunity: 24,
         affordableHomePriceRatio: 1.6,
         housingMismatchIndex: 86.7,
-        policyAchievementIndex: 9.9
+        policyAchievementIndex: 13.4
     },
     {
         country: "Algeria",
@@ -1373,7 +1373,7 @@ const housingData = [
         housingInvestmentOpportunity: 200,
         affordableHomePriceRatio: 3,
         housingMismatchIndex: 53.9,
-        policyAchievementIndex: 20.3
+        policyAchievementIndex: 24.5
     },
     {
         country: "Sudan",
@@ -1391,7 +1391,7 @@ const housingData = [
         housingInvestmentOpportunity: 27.5,
         affordableHomePriceRatio: 1.9,
         housingMismatchIndex: 96,
-        policyAchievementIndex: 10.3
+        policyAchievementIndex: 14
     },
     {
         country: "Mauritius",
@@ -1409,7 +1409,7 @@ const housingData = [
         housingInvestmentOpportunity: 15,
         affordableHomePriceRatio: 3.4,
         housingMismatchIndex: 47.8,
-        policyAchievementIndex: 22.3
+        policyAchievementIndex: 26.8
     },
     {
         country: "Malawi",
@@ -1427,7 +1427,7 @@ const housingData = [
         housingInvestmentOpportunity: 16,
         affordableHomePriceRatio: 1.8,
         housingMismatchIndex: 93.8,
-        policyAchievementIndex: 10.4
+        policyAchievementIndex: 13.8
     },
     {
         country: "Benin",
@@ -1445,7 +1445,7 @@ const housingData = [
         housingInvestmentOpportunity: 28.5,
         affordableHomePriceRatio: 2.4,
         housingMismatchIndex: 86.3,
-        policyAchievementIndex: 11.1
+        policyAchievementIndex: 14.7
     },
     {
         country: "Togo",
@@ -1463,7 +1463,7 @@ const housingData = [
         housingInvestmentOpportunity: 3.1,
         affordableHomePriceRatio: 2.4,
         housingMismatchIndex: 90,
-        policyAchievementIndex: 10.8
+        policyAchievementIndex: 14.4
     },
     {
         country: "Mali",
@@ -1481,7 +1481,7 @@ const housingData = [
         housingInvestmentOpportunity: 26,
         affordableHomePriceRatio: 2.4,
         housingMismatchIndex: 89.8,
-        policyAchievementIndex: 10.4
+        policyAchievementIndex: 14
     },
     {
         country: "Burkina Faso",
@@ -1499,7 +1499,7 @@ const housingData = [
         housingInvestmentOpportunity: 23,
         affordableHomePriceRatio: 2.4,
         housingMismatchIndex: 89.2,
-        policyAchievementIndex: 10.7
+        policyAchievementIndex: 14.4
     },
     {
         country: "Madagascar",
@@ -1517,7 +1517,7 @@ const housingData = [
         housingInvestmentOpportunity: 23,
         affordableHomePriceRatio: 2.4,
         housingMismatchIndex: 96.1,
-        policyAchievementIndex: 7
+        policyAchievementIndex: 8.5
     },
     {
         country: "Congo",
@@ -1535,7 +1535,7 @@ const housingData = [
         housingInvestmentOpportunity: 4.2,
         affordableHomePriceRatio: 3,
         housingMismatchIndex: 81.3,
-        policyAchievementIndex: 11.4
+        policyAchievementIndex: 15
     },
     {
         country: "Romania",
@@ -1553,7 +1553,7 @@ const housingData = [
         housingInvestmentOpportunity: 96.2,
         affordableHomePriceRatio: 3.4,
         housingMismatchIndex: 44,
-        policyAchievementIndex: 29.4
+        policyAchievementIndex: 35.1
     },
     {
         country: "Bulgaria",
@@ -1571,7 +1571,7 @@ const housingData = [
         housingInvestmentOpportunity: 24.3,
         affordableHomePriceRatio: 3.4,
         housingMismatchIndex: 43.4,
-        policyAchievementIndex: 26.9
+        policyAchievementIndex: 32.6
     },
     {
         country: "Croatia",
@@ -1589,7 +1589,7 @@ const housingData = [
         housingInvestmentOpportunity: 18.3,
         affordableHomePriceRatio: 3.4,
         housingMismatchIndex: 35.9,
-        policyAchievementIndex: 28.4
+        policyAchievementIndex: 33.8
     },
     {
         country: "Peru",
@@ -1607,7 +1607,7 @@ const housingData = [
         housingInvestmentOpportunity: 105,
         affordableHomePriceRatio: 2.6,
         housingMismatchIndex: 65.1,
-        policyAchievementIndex: 26.2
+        policyAchievementIndex: 31.6
     },
     {
         country: "Cambodia",
@@ -1625,7 +1625,7 @@ const housingData = [
         housingInvestmentOpportunity: 11.4,
         affordableHomePriceRatio: 2.8,
         housingMismatchIndex: 71.8,
-        policyAchievementIndex: 18.4
+        policyAchievementIndex: 23.1
     },
     {
         country: "Nepal",
@@ -1643,7 +1643,7 @@ const housingData = [
         housingInvestmentOpportunity: 17.3,
         affordableHomePriceRatio: 2.8,
         housingMismatchIndex: 78.6,
-        policyAchievementIndex: 17.6
+        policyAchievementIndex: 22.4
     },
     {
         country: "Myanmar",
@@ -1661,7 +1661,7 @@ const housingData = [
         housingInvestmentOpportunity: 36.7,
         affordableHomePriceRatio: 2.8,
         housingMismatchIndex: 84.5,
-        policyAchievementIndex: 11.9
+        policyAchievementIndex: 15.7
     }
 ];
 
