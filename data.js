@@ -720,12 +720,12 @@ const housingData = [
         informalHousingShare: 55.2,
         housingCostBurden: 23.3,
         socialRentalHousing: 1.2,
-        policyActivityScore: 4,
+        policyActivityScore: 5,
         disasterRiskIndex: 18.4,
         housingInvestmentOpportunity: 580,
         affordableHomePriceRatio: 2.5,
         housingMismatchIndex: 71.3,
-        policyAchievementIndex: 38.2
+        policyAchievementIndex: 44.2
     },
     {
         country: "Russia",
@@ -864,12 +864,12 @@ const housingData = [
         informalHousingShare: 28.4,
         housingCostBurden: 28.4,
         socialRentalHousing: 0.7,
-        policyActivityScore: 2,
+        policyActivityScore: 4,
         disasterRiskIndex: 41.13,
         housingInvestmentOpportunity: 720,
         affordableHomePriceRatio: 2.8,
         housingMismatchIndex: 72.1,
-        policyAchievementIndex: 23.4
+        policyAchievementIndex: 35.4
     },
     {
         country: "India",
@@ -882,12 +882,12 @@ const housingData = [
         informalHousingShare: 35.2,
         housingCostBurden: 29.8,
         socialRentalHousing: 0.9,
-        policyActivityScore: 3,
+        policyActivityScore: 5,
         disasterRiskIndex: 40.96,
         housingInvestmentOpportunity: 2400,
         affordableHomePriceRatio: 2.8,
         housingMismatchIndex: 80.7,
-        policyAchievementIndex: 30.2
+        policyAchievementIndex: 42.2
     },
     {
         country: "Argentina",
