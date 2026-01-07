@@ -8,8 +8,7 @@
 // - ILO (International Labour Organization) employment data
 // - Eurostat Housing Statistics (2023)
 
-// Each country includes nine metrics:
-// 15. deficitProjection2034: 10-year housing deficit change projection per 1,000 people (2024-2034). Combines construction supply effect, policy acceleration, urbanization pressure, affordability drag, and baseline deficit inertia. Negative = improving, Positive = worsening. Rounded to 1 decimal place.
+// Each country includes metrics:
 // 1. housingDeficitPerCapita: Estimated housing units needed per 1,000 people (based on UN-Habitat, World Bank data)
 // 2. householdDebtToGDP: Total household debt as percentage of GDP (primarily mortgage debt) - from IMF/World Bank
 // 3. housingExpenditureToGDP: Government housing expenditure/allowances as percentage of GDP - from OECD
@@ -24,6 +23,8 @@
 // 12. affordableHomePriceRatio: Maximum affordable home price as multiple of annual income - based on 30% income rule at current mortgage rates for 30-year loan (lower rates = higher affordability capacity)
 // 13. policyAchievementIndex: Composite policy effectiveness score (0-100): Measures success of housing policies across five dimensions - Policy Activity (0-25), Public Investment (0-25), Affordable Supply (0-25), Construction Momentum (0-15), Affordability Achievement (0-10). Higher scores indicate comprehensive, well-funded housing policies with demonstrated results.
 // 14. housingMismatchIndex: Supply-demand mismatch score (0-100): Measures gap between luxury construction and affordable housing needs. Combines affordability crisis (price/income, cost burden), unmet demand (deficit, informal housing), lack of alternatives (low social housing). High scores = luxury focus with affordable crisis.
+// 15. deficitProjection2034: 10-year housing deficit change projection per 1,000 people (2024-2034). Combines construction supply effect, policy acceleration, urbanization pressure, affordability drag, and baseline deficit inertia. Negative = improving, Positive = worsening. Rounded to 1 decimal place.
+// 16. landAffordabilityIndex: Number of months of average income needed to buy 1 m² of urban residential land in the primary economic city. Calculated as (Urban residential land price per m² in USD) / (Monthly GDP per capita in USD). Based on 2025 data from Global Property Guide, Numbeo, Savills, Knight Frank, JLL, CBRE, and national statistics. Low values (0-3 months) indicate abundant/affordable land; medium (3-8) moderate affordability; high (8-15) expensive land; very high (15-30) severely constrained markets; extreme (30+) indicates extreme speculation or geographic limitations like Hong Kong, Monaco, Singapore.
 
 const housingData = [
     {
@@ -44,7 +45,8 @@ const housingData = [
         "housingMismatchIndex": 29.6,
         "policyAchievementIndex": 29.5,
         "deficitProjection2034": -6.8,
-    "buildingCodeYearsSinceUpdate": 2
+        "buildingCodeYearsSinceUpdate": 2,
+        "landAffordabilityIndex": 2.3
     },
     {
         "country": "Australia",
@@ -64,7 +66,8 @@ const housingData = [
         "housingMismatchIndex": 31.4,
         "policyAchievementIndex": 32.6,
         "deficitProjection2034": -8.4,
-    "buildingCodeYearsSinceUpdate": 5
+    "buildingCodeYearsSinceUpdate": 5,
+        "landAffordabilityIndex": 2.3
     },
     {
         "country": "Denmark",
@@ -84,7 +87,8 @@ const housingData = [
         "housingMismatchIndex": 14.8,
         "policyAchievementIndex": 54.4,
         "deficitProjection2034": -8,
-    "buildingCodeYearsSinceUpdate": 4
+    "buildingCodeYearsSinceUpdate": 4,
+        "landAffordabilityIndex": 3.2
     },
     {
         "country": "Cyprus",
@@ -104,7 +108,8 @@ const housingData = [
         "housingMismatchIndex": 28.4,
         "policyAchievementIndex": 35.7,
         "deficitProjection2034": -9,
-    "buildingCodeYearsSinceUpdate": 14
+    "buildingCodeYearsSinceUpdate": 14,
+        "landAffordabilityIndex": 1.4
     },
     {
         "country": "Netherlands",
@@ -124,7 +129,8 @@ const housingData = [
         "housingMismatchIndex": 19.8,
         "policyAchievementIndex": 52.1,
         "deficitProjection2034": -7.1,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 1.2
     },
     {
         "country": "Canada",
@@ -144,7 +150,8 @@ const housingData = [
         "housingMismatchIndex": 37.2,
         "policyAchievementIndex": 31.9,
         "deficitProjection2034": -7.3,
-    "buildingCodeYearsSinceUpdate": 4
+    "buildingCodeYearsSinceUpdate": 4,
+        "landAffordabilityIndex": 2.1
     },
     {
         "country": "South Korea",
@@ -164,7 +171,8 @@ const housingData = [
         "housingMismatchIndex": 34.4,
         "policyAchievementIndex": 40.5,
         "deficitProjection2034": -6.5,
-    "buildingCodeYearsSinceUpdate": 8
+    "buildingCodeYearsSinceUpdate": 8,
+        "landAffordabilityIndex": 1.5
     },
     {
         "country": "Norway",
@@ -184,7 +192,8 @@ const housingData = [
         "housingMismatchIndex": 25.5,
         "policyAchievementIndex": 44.1,
         "deficitProjection2034": -8.3,
-    "buildingCodeYearsSinceUpdate": 7
+    "buildingCodeYearsSinceUpdate": 7,
+        "landAffordabilityIndex": 2.2
     },
     {
         "country": "Sweden",
@@ -204,7 +213,8 @@ const housingData = [
         "housingMismatchIndex": 42.6,
         "policyAchievementIndex": 39.2,
         "deficitProjection2034": -7.7,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 1.3
     },
     {
         "country": "New Zealand",
@@ -224,7 +234,8 @@ const housingData = [
         "housingMismatchIndex": 39.8,
         "policyAchievementIndex": 47.7,
         "deficitProjection2034": -8.9,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 1.7
     },
     {
         "country": "Luxembourg",
@@ -244,7 +255,8 @@ const housingData = [
         "housingMismatchIndex": 41.3,
         "policyAchievementIndex": 31.8,
         "deficitProjection2034": -6.2,
-    "buildingCodeYearsSinceUpdate": 14
+    "buildingCodeYearsSinceUpdate": 14,
+        "landAffordabilityIndex": 1.9
     },
     {
         "country": "United Kingdom",
@@ -264,7 +276,8 @@ const housingData = [
         "housingMismatchIndex": 20.5,
         "policyAchievementIndex": 51.5,
         "deficitProjection2034": -8.2,
-    "buildingCodeYearsSinceUpdate": 11
+    "buildingCodeYearsSinceUpdate": 11,
+        "landAffordabilityIndex": 1.0
     },
     {
         "country": "Finland",
@@ -284,7 +297,8 @@ const housingData = [
         "housingMismatchIndex": 8.8,
         "policyAchievementIndex": 49.6,
         "deficitProjection2034": -8,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 4.1
     },
     {
         "country": "United States",
@@ -304,7 +318,8 @@ const housingData = [
         "housingMismatchIndex": 34.4,
         "policyAchievementIndex": 48.8,
         "deficitProjection2034": -9.9,
-    "buildingCodeYearsSinceUpdate": 0
+    "buildingCodeYearsSinceUpdate": 0,
+        "landAffordabilityIndex": 1.1
     },
     {
         "country": "Belgium",
@@ -324,7 +339,8 @@ const housingData = [
         "housingMismatchIndex": 18.6,
         "policyAchievementIndex": 43.6,
         "deficitProjection2034": -7.5,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 0.9
     },
     {
         "country": "France",
@@ -344,7 +360,8 @@ const housingData = [
         "housingMismatchIndex": 12.7,
         "policyAchievementIndex": 54.5,
         "deficitProjection2034": -7.6,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 1.1
     },
     {
         "country": "Japan",
@@ -364,7 +381,8 @@ const housingData = [
         "housingMismatchIndex": 24.2,
         "policyAchievementIndex": 42.8,
         "deficitProjection2034": -8.7,
-    "buildingCodeYearsSinceUpdate": 4
+    "buildingCodeYearsSinceUpdate": 4,
+        "landAffordabilityIndex": 3.3
     },
     {
         "country": "Spain",
@@ -384,7 +402,8 @@ const housingData = [
         "housingMismatchIndex": 33.5,
         "policyAchievementIndex": 37.1,
         "deficitProjection2034": -6,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 1.9
     },
     {
         "country": "Portugal",
@@ -404,7 +423,8 @@ const housingData = [
         "housingMismatchIndex": 38.2,
         "policyAchievementIndex": 31.7,
         "deficitProjection2034": -6.1,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 1.4
     },
     {
         "country": "Ireland",
@@ -424,7 +444,8 @@ const housingData = [
         "housingMismatchIndex": 18.8,
         "policyAchievementIndex": 38.5,
         "deficitProjection2034": -5.4,
-    "buildingCodeYearsSinceUpdate": 12
+    "buildingCodeYearsSinceUpdate": 12,
+        "landAffordabilityIndex": 1.4
     },
     {
         "country": "Austria",
@@ -444,7 +465,8 @@ const housingData = [
         "housingMismatchIndex": 11.8,
         "policyAchievementIndex": 56.2,
         "deficitProjection2034": -8.4,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 0.8
     },
     {
         "country": "Germany",
@@ -464,7 +486,8 @@ const housingData = [
         "housingMismatchIndex": 34.7,
         "policyAchievementIndex": 42.8,
         "deficitProjection2034": -7.5,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 1.6
     },
     {
         "country": "Estonia",
@@ -484,7 +507,8 @@ const housingData = [
         "housingMismatchIndex": 35.7,
         "policyAchievementIndex": 32.3,
         "deficitProjection2034": -6.1,
-    "buildingCodeYearsSinceUpdate": 14
+    "buildingCodeYearsSinceUpdate": 14,
+        "landAffordabilityIndex": 1.8
     },
     {
         "country": "Slovenia",
@@ -504,7 +528,8 @@ const housingData = [
         "housingMismatchIndex": 27.2,
         "policyAchievementIndex": 35,
         "deficitProjection2034": -6.5,
-    "buildingCodeYearsSinceUpdate": 14
+    "buildingCodeYearsSinceUpdate": 14,
+        "landAffordabilityIndex": 1.5
     },
     {
         "country": "Italy",
@@ -524,7 +549,8 @@ const housingData = [
         "housingMismatchIndex": 26.4,
         "policyAchievementIndex": 39.9,
         "deficitProjection2034": -6.8,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 1.3
     },
     {
         "country": "Israel",
@@ -544,7 +570,8 @@ const housingData = [
         "housingMismatchIndex": 53.6,
         "policyAchievementIndex": 24.8,
         "deficitProjection2034": -3.4,
-    "buildingCodeYearsSinceUpdate": 10
+    "buildingCodeYearsSinceUpdate": 10,
+        "landAffordabilityIndex": 1.9
     },
     {
         "country": "Czech Republic",
@@ -564,7 +591,8 @@ const housingData = [
         "housingMismatchIndex": 33.2,
         "policyAchievementIndex": 30.4,
         "deficitProjection2034": -6.8,
-    "buildingCodeYearsSinceUpdate": 14
+    "buildingCodeYearsSinceUpdate": 14,
+        "landAffordabilityIndex": 1.9
     },
     {
         "country": "Greece",
@@ -584,7 +612,8 @@ const housingData = [
         "housingMismatchIndex": 40,
         "policyAchievementIndex": 27.7,
         "deficitProjection2034": -3.5,
-    "buildingCodeYearsSinceUpdate": 14
+    "buildingCodeYearsSinceUpdate": 14,
+        "landAffordabilityIndex": 2.2
     },
     {
         "country": "Poland",
@@ -604,7 +633,8 @@ const housingData = [
         "housingMismatchIndex": 32.8,
         "policyAchievementIndex": 28.3,
         "deficitProjection2034": -5.7,
-    "buildingCodeYearsSinceUpdate": 14
+    "buildingCodeYearsSinceUpdate": 14,
+        "landAffordabilityIndex": 1.6
     },
     {
         "country": "Slovakia",
@@ -624,7 +654,8 @@ const housingData = [
         "housingMismatchIndex": 31.8,
         "policyAchievementIndex": 34.8,
         "deficitProjection2034": -6.4,
-    "buildingCodeYearsSinceUpdate": 14
+    "buildingCodeYearsSinceUpdate": 14,
+        "landAffordabilityIndex": 2.4
     },
     {
         "country": "Chile",
@@ -644,7 +675,8 @@ const housingData = [
         "housingMismatchIndex": 49.6,
         "policyAchievementIndex": 37.9,
         "deficitProjection2034": -6.5,
-    "buildingCodeYearsSinceUpdate": 5
+    "buildingCodeYearsSinceUpdate": 5,
+        "landAffordabilityIndex": 1.5
     },
     {
         "country": "Hungary",
@@ -664,7 +696,8 @@ const housingData = [
         "housingMismatchIndex": 29.4,
         "policyAchievementIndex": 27.1,
         "deficitProjection2034": -4.9,
-    "buildingCodeYearsSinceUpdate": 14
+    "buildingCodeYearsSinceUpdate": 14,
+        "landAffordabilityIndex": 1.9
     },
     {
         "country": "Latvia",
@@ -684,7 +717,8 @@ const housingData = [
         "housingMismatchIndex": 34.1,
         "policyAchievementIndex": 31.5,
         "deficitProjection2034": -5.8,
-    "buildingCodeYearsSinceUpdate": 14
+    "buildingCodeYearsSinceUpdate": 14,
+        "landAffordabilityIndex": 1.9
     },
     {
         "country": "Lithuania",
@@ -704,7 +738,8 @@ const housingData = [
         "housingMismatchIndex": 33.9,
         "policyAchievementIndex": 31.8,
         "deficitProjection2034": -6,
-    "buildingCodeYearsSinceUpdate": 14
+    "buildingCodeYearsSinceUpdate": 14,
+        "landAffordabilityIndex": 1.5
     },
     {
         "country": "Turkey",
@@ -724,7 +759,8 @@ const housingData = [
         "housingMismatchIndex": 44.7,
         "policyAchievementIndex": 26.2,
         "deficitProjection2034": -2.9,
-    "buildingCodeYearsSinceUpdate": 0
+    "buildingCodeYearsSinceUpdate": 0,
+        "landAffordabilityIndex": 1.5
     },
     {
         "country": "Mexico",
@@ -744,7 +780,8 @@ const housingData = [
         "housingMismatchIndex": 52.6,
         "policyAchievementIndex": 50.3,
         "deficitProjection2034": -6.2,
-    "buildingCodeYearsSinceUpdate": 20
+    "buildingCodeYearsSinceUpdate": 20,
+        "landAffordabilityIndex": 3.2
     },
     {
         "country": "Costa Rica",
@@ -764,7 +801,8 @@ const housingData = [
         "housingMismatchIndex": 47.3,
         "policyAchievementIndex": 32,
         "deficitProjection2034": -3.6,
-    "buildingCodeYearsSinceUpdate": 25
+    "buildingCodeYearsSinceUpdate": 25,
+        "landAffordabilityIndex": 2.7
     },
     {
         "country": "Colombia",
@@ -784,7 +822,8 @@ const housingData = [
         "housingMismatchIndex": 70.2,
         "policyAchievementIndex": 25.1,
         "deficitProjection2034": 1.2,
-    "buildingCodeYearsSinceUpdate": 30
+    "buildingCodeYearsSinceUpdate": 30,
+        "landAffordabilityIndex": 1.8
     },
     {
         "country": "Brazil",
@@ -804,7 +843,8 @@ const housingData = [
         "housingMismatchIndex": 71.3,
         "policyAchievementIndex": 44.2,
         "deficitProjection2034": -1.8,
-    "buildingCodeYearsSinceUpdate": 10
+    "buildingCodeYearsSinceUpdate": 10,
+        "landAffordabilityIndex": 3.4
     },
     {
         "country": "Russia",
@@ -824,7 +864,8 @@ const housingData = [
         "housingMismatchIndex": 42.1,
         "policyAchievementIndex": 20.6,
         "deficitProjection2034": -4.2,
-    "buildingCodeYearsSinceUpdate": 0
+    "buildingCodeYearsSinceUpdate": 0,
+        "landAffordabilityIndex": 2.7
     },
     {
         "country": "China",
@@ -844,7 +885,8 @@ const housingData = [
         "housingMismatchIndex": 49.6,
         "policyAchievementIndex": 32.2,
         "deficitProjection2034": -2.8,
-    "buildingCodeYearsSinceUpdate": 0
+    "buildingCodeYearsSinceUpdate": 0,
+        "landAffordabilityIndex": 3.0
     },
     {
         "country": "Thailand",
@@ -864,7 +906,8 @@ const housingData = [
         "housingMismatchIndex": 64.2,
         "policyAchievementIndex": 19.6,
         "deficitProjection2034": 0.1,
-    "buildingCodeYearsSinceUpdate": 19
+    "buildingCodeYearsSinceUpdate": 19,
+        "landAffordabilityIndex": 3.7
     },
     {
         "country": "Malaysia",
@@ -884,7 +927,8 @@ const housingData = [
         "housingMismatchIndex": 52.7,
         "policyAchievementIndex": 26.3,
         "deficitProjection2034": -2,
-    "buildingCodeYearsSinceUpdate": 12
+    "buildingCodeYearsSinceUpdate": 12,
+        "landAffordabilityIndex": 7.2
     },
     {
         "country": "Singapore",
@@ -904,7 +948,8 @@ const housingData = [
         "housingMismatchIndex": 38.3,
         "policyAchievementIndex": 55.6,
         "deficitProjection2034": -7.8,
-    "buildingCodeYearsSinceUpdate": 0
+    "buildingCodeYearsSinceUpdate": 0,
+        "landAffordabilityIndex": 3.0
     },
     {
         "country": "Philippines",
@@ -924,7 +969,8 @@ const housingData = [
         "housingMismatchIndex": 80.5,
         "policyAchievementIndex": 18.1,
         "deficitProjection2034": 4.5,
-    "buildingCodeYearsSinceUpdate": 30
+    "buildingCodeYearsSinceUpdate": 30,
+        "landAffordabilityIndex": 3.0
     },
     {
         "country": "Vietnam",
@@ -944,7 +990,8 @@ const housingData = [
         "housingMismatchIndex": 72.5,
         "policyAchievementIndex": 16,
         "deficitProjection2034": 2.1,
-    "buildingCodeYearsSinceUpdate": 15
+    "buildingCodeYearsSinceUpdate": 15,
+        "landAffordabilityIndex": 8.4
     },
     {
         "country": "Indonesia",
@@ -964,7 +1011,8 @@ const housingData = [
         "housingMismatchIndex": 72.1,
         "policyAchievementIndex": 35.4,
         "deficitProjection2034": -0.1,
-    "buildingCodeYearsSinceUpdate": 14
+    "buildingCodeYearsSinceUpdate": 14,
+        "landAffordabilityIndex": 5.9
     },
     {
         "country": "India",
@@ -984,7 +1032,8 @@ const housingData = [
         "housingMismatchIndex": 80.7,
         "policyAchievementIndex": 42.2,
         "deficitProjection2034": -4.3,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 4.4
     },
     {
         "country": "Argentina",
@@ -1004,7 +1053,8 @@ const housingData = [
         "housingMismatchIndex": 58.4,
         "policyAchievementIndex": 30.6,
         "deficitProjection2034": -2.2,
-    "buildingCodeYearsSinceUpdate": 35
+    "buildingCodeYearsSinceUpdate": 35,
+        "landAffordabilityIndex": 13.4
     },
     {
         "country": "Pakistan",
@@ -1024,7 +1074,8 @@ const housingData = [
         "housingMismatchIndex": 79.9,
         "policyAchievementIndex": 20.6,
         "deficitProjection2034": 2.4,
-    "buildingCodeYearsSinceUpdate": 17
+    "buildingCodeYearsSinceUpdate": 17,
+        "landAffordabilityIndex": 1.9
     },
     {
         "country": "Bangladesh",
@@ -1044,7 +1095,8 @@ const housingData = [
         "housingMismatchIndex": 83.9,
         "policyAchievementIndex": 20,
         "deficitProjection2034": 1.7,
-    "buildingCodeYearsSinceUpdate": 40
+    "buildingCodeYearsSinceUpdate": 40,
+        "landAffordabilityIndex": 8.5
     },
     {
         "country": "United Arab Emirates",
@@ -1064,7 +1116,8 @@ const housingData = [
         "housingMismatchIndex": 40.9,
         "policyAchievementIndex": 45.8,
         "deficitProjection2034": -15.5,
-    "buildingCodeYearsSinceUpdate": 3
+    "buildingCodeYearsSinceUpdate": 3,
+        "landAffordabilityIndex": 7.7
     },
     {
         "country": "Saudi Arabia",
@@ -1084,7 +1137,8 @@ const housingData = [
         "housingMismatchIndex": 41.8,
         "policyAchievementIndex": 39.2,
         "deficitProjection2034": -8.4,
-    "buildingCodeYearsSinceUpdate": 0
+    "buildingCodeYearsSinceUpdate": 0,
+        "landAffordabilityIndex": 1.0
     },
     {
         "country": "Iceland",
@@ -1104,7 +1158,8 @@ const housingData = [
         "housingMismatchIndex": 12.4,
         "policyAchievementIndex": 42.2,
         "deficitProjection2034": -7.8,
-    "buildingCodeYearsSinceUpdate": 12
+    "buildingCodeYearsSinceUpdate": 12,
+        "landAffordabilityIndex": 0.5
     },
     {
         "country": "South Africa",
@@ -1124,7 +1179,8 @@ const housingData = [
         "housingMismatchIndex": 59.6,
         "policyAchievementIndex": 37.5,
         "deficitProjection2034": -2.2,
-    "buildingCodeYearsSinceUpdate": 47
+    "buildingCodeYearsSinceUpdate": 47,
+        "landAffordabilityIndex": 0.9
     },
     {
         "country": "Egypt",
@@ -1144,7 +1200,8 @@ const housingData = [
         "housingMismatchIndex": 65.9,
         "policyAchievementIndex": 24.7,
         "deficitProjection2034": -0.6,
-    "buildingCodeYearsSinceUpdate": 35
+    "buildingCodeYearsSinceUpdate": 35,
+        "landAffordabilityIndex": 4.0
     },
     {
         "country": "Morocco",
@@ -1164,7 +1221,8 @@ const housingData = [
         "housingMismatchIndex": 57.1,
         "policyAchievementIndex": 30.9,
         "deficitProjection2034": -2.1,
-    "buildingCodeYearsSinceUpdate": 20
+    "buildingCodeYearsSinceUpdate": 20,
+        "landAffordabilityIndex": 1.6
     },
     {
         "country": "Kenya",
@@ -1184,7 +1242,8 @@ const housingData = [
         "housingMismatchIndex": 86.6,
         "policyAchievementIndex": 33.3,
         "deficitProjection2034": 4.4,
-    "buildingCodeYearsSinceUpdate": 0
+    "buildingCodeYearsSinceUpdate": 0,
+        "landAffordabilityIndex": 4.2
     },
     {
         "country": "Nigeria",
@@ -1204,7 +1263,8 @@ const housingData = [
         "housingMismatchIndex": 93.3,
         "policyAchievementIndex": 14.7,
         "deficitProjection2034": 10.3,
-    "buildingCodeYearsSinceUpdate": 60
+    "buildingCodeYearsSinceUpdate": 60,
+        "landAffordabilityIndex": 7.9
     },
     {
         "country": "Ghana",
@@ -1224,7 +1284,8 @@ const housingData = [
         "housingMismatchIndex": 82.7,
         "policyAchievementIndex": 14.7,
         "deficitProjection2034": 7.7,
-    "buildingCodeYearsSinceUpdate": 55
+    "buildingCodeYearsSinceUpdate": 55,
+        "landAffordabilityIndex": 8.2
     },
     {
         "country": "Ethiopia",
@@ -1244,7 +1305,8 @@ const housingData = [
         "housingMismatchIndex": 96.7,
         "policyAchievementIndex": 10.6,
         "deficitProjection2034": 10.5,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 22.4
     },
     {
         "country": "Tanzania",
@@ -1264,7 +1326,8 @@ const housingData = [
         "housingMismatchIndex": 88.7,
         "policyAchievementIndex": 14.9,
         "deficitProjection2034": 8.7,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 25.1
     },
     {
         "country": "Uganda",
@@ -1284,7 +1347,8 @@ const housingData = [
         "housingMismatchIndex": 95.1,
         "policyAchievementIndex": 15.2,
         "deficitProjection2034": 9.4,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 16.6
     },
     {
         "country": "Rwanda",
@@ -1304,7 +1368,8 @@ const housingData = [
         "housingMismatchIndex": 81.3,
         "policyAchievementIndex": 34.5,
         "deficitProjection2034": 1.9,
-    "buildingCodeYearsSinceUpdate": 15
+    "buildingCodeYearsSinceUpdate": 15,
+        "landAffordabilityIndex": 17.5
     },
     {
         "country": "Zambia",
@@ -1324,7 +1389,8 @@ const housingData = [
         "housingMismatchIndex": 86.3,
         "policyAchievementIndex": 14.2,
         "deficitProjection2034": 8.8,
-    "buildingCodeYearsSinceUpdate": 50
+    "buildingCodeYearsSinceUpdate": 50,
+        "landAffordabilityIndex": 26.4
     },
     {
         "country": "Namibia",
@@ -1344,7 +1410,8 @@ const housingData = [
         "housingMismatchIndex": 66.6,
         "policyAchievementIndex": 22.3,
         "deficitProjection2034": 2.1,
-    "buildingCodeYearsSinceUpdate": 50
+    "buildingCodeYearsSinceUpdate": 50,
+        "landAffordabilityIndex": 10.5
     },
     {
         "country": "Botswana",
@@ -1364,7 +1431,8 @@ const housingData = [
         "housingMismatchIndex": 58.1,
         "policyAchievementIndex": 28.6,
         "deficitProjection2034": 0.5,
-    "buildingCodeYearsSinceUpdate": 45
+    "buildingCodeYearsSinceUpdate": 45,
+        "landAffordabilityIndex": 3.7
     },
     {
         "country": "Senegal",
@@ -1384,7 +1452,8 @@ const housingData = [
         "housingMismatchIndex": 78,
         "policyAchievementIndex": 14.9,
         "deficitProjection2034": 4.9,
-    "buildingCodeYearsSinceUpdate": 55
+    "buildingCodeYearsSinceUpdate": 55,
+        "landAffordabilityIndex": 2.8
     },
     {
         "country": "Tunisia",
@@ -1404,7 +1473,8 @@ const housingData = [
         "housingMismatchIndex": 50.7,
         "policyAchievementIndex": 35.4,
         "deficitProjection2034": -2.2,
-    "buildingCodeYearsSinceUpdate": 15
+    "buildingCodeYearsSinceUpdate": 15,
+        "landAffordabilityIndex": 11.4
     },
     {
         "country": "Cameroon",
@@ -1424,7 +1494,8 @@ const housingData = [
         "housingMismatchIndex": 85.5,
         "policyAchievementIndex": 14.5,
         "deficitProjection2034": 8.1,
-    "buildingCodeYearsSinceUpdate": 60
+    "buildingCodeYearsSinceUpdate": 60,
+        "landAffordabilityIndex": 4.3
     },
     {
         "country": "Ivory Coast",
@@ -1444,7 +1515,8 @@ const housingData = [
         "housingMismatchIndex": 87.4,
         "policyAchievementIndex": 15,
         "deficitProjection2034": 7.9,
-    "buildingCodeYearsSinceUpdate": 60
+    "buildingCodeYearsSinceUpdate": 60,
+        "landAffordabilityIndex": 8.7
     },
     {
         "country": "Mozambique",
@@ -1464,7 +1536,8 @@ const housingData = [
         "housingMismatchIndex": 95.5,
         "policyAchievementIndex": 8.7,
         "deficitProjection2034": 11.4,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 7.3
     },
     {
         "country": "Angola",
@@ -1484,7 +1557,8 @@ const housingData = [
         "housingMismatchIndex": 91.4,
         "policyAchievementIndex": 15.1,
         "deficitProjection2034": 8.3,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 99.0
     },
     {
         "country": "Zimbabwe",
@@ -1504,7 +1578,8 @@ const housingData = [
         "housingMismatchIndex": 86.7,
         "policyAchievementIndex": 13.4,
         "deficitProjection2034": 7.2,
-    "buildingCodeYearsSinceUpdate": 55
+    "buildingCodeYearsSinceUpdate": 55,
+        "landAffordabilityIndex": 18.3
     },
     {
         "country": "Algeria",
@@ -1524,7 +1599,8 @@ const housingData = [
         "housingMismatchIndex": 53.9,
         "policyAchievementIndex": 24.5,
         "deficitProjection2034": -0.3,
-    "buildingCodeYearsSinceUpdate": 25
+    "buildingCodeYearsSinceUpdate": 25,
+        "landAffordabilityIndex": 8.5
     },
     {
         "country": "Sudan",
@@ -1544,7 +1620,8 @@ const housingData = [
         "housingMismatchIndex": 96,
         "policyAchievementIndex": 14,
         "deficitProjection2034": 10.7,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 4.8
     },
     {
         "country": "Mauritius",
@@ -1564,7 +1641,8 @@ const housingData = [
         "housingMismatchIndex": 47.8,
         "policyAchievementIndex": 26.8,
         "deficitProjection2034": -3.6,
-    "buildingCodeYearsSinceUpdate": 20
+    "buildingCodeYearsSinceUpdate": 20,
+        "landAffordabilityIndex": 8.0
     },
     {
         "country": "Malawi",
@@ -1584,7 +1662,8 @@ const housingData = [
         "housingMismatchIndex": 93.8,
         "policyAchievementIndex": 13.8,
         "deficitProjection2034": 10,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 2.5
     },
     {
         "country": "Benin",
@@ -1604,7 +1683,8 @@ const housingData = [
         "housingMismatchIndex": 86.3,
         "policyAchievementIndex": 14.7,
         "deficitProjection2034": 8.3,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 18.9
     },
     {
         "country": "Togo",
@@ -1624,7 +1704,8 @@ const housingData = [
         "housingMismatchIndex": 90,
         "policyAchievementIndex": 14.4,
         "deficitProjection2034": 8.8,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 10.5
     },
     {
         "country": "Mali",
@@ -1644,7 +1725,8 @@ const housingData = [
         "housingMismatchIndex": 89.8,
         "policyAchievementIndex": 14,
         "deficitProjection2034": 9.4,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 16.4
     },
     {
         "country": "Burkina Faso",
@@ -1664,7 +1746,8 @@ const housingData = [
         "housingMismatchIndex": 89.2,
         "policyAchievementIndex": 14.4,
         "deficitProjection2034": 9,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 14.4
     },
     {
         "country": "Madagascar",
@@ -1684,7 +1767,8 @@ const housingData = [
         "housingMismatchIndex": 96.1,
         "policyAchievementIndex": 8.5,
         "deficitProjection2034": 11.6,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 14.7
     },
     {
         "country": "Congo",
@@ -1704,7 +1788,8 @@ const housingData = [
         "housingMismatchIndex": 81.3,
         "policyAchievementIndex": 15,
         "deficitProjection2034": 5.4,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 20.0
     },
     {
         "country": "Romania",
@@ -1724,7 +1809,8 @@ const housingData = [
         "housingMismatchIndex": 44,
         "policyAchievementIndex": 35.1,
         "deficitProjection2034": -4.7,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 8.0
     },
     {
         "country": "Bulgaria",
@@ -1744,7 +1830,8 @@ const housingData = [
         "housingMismatchIndex": 43.4,
         "policyAchievementIndex": 32.6,
         "deficitProjection2034": -3.4,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 1.3
     },
     {
         "country": "Croatia",
@@ -1764,7 +1851,8 @@ const housingData = [
         "housingMismatchIndex": 35.9,
         "policyAchievementIndex": 33.8,
         "deficitProjection2034": -4.4,
-    "buildingCodeYearsSinceUpdate": 1
+    "buildingCodeYearsSinceUpdate": 1,
+        "landAffordabilityIndex": 1.8
     },
     {
         "country": "Peru",
@@ -1784,7 +1872,8 @@ const housingData = [
         "housingMismatchIndex": 65.1,
         "policyAchievementIndex": 31.6,
         "deficitProjection2034": 0.5,
-    "buildingCodeYearsSinceUpdate": 25
+    "buildingCodeYearsSinceUpdate": 25,
+        "landAffordabilityIndex": 2.3
     },
     {
         "country": "Cambodia",
@@ -1804,7 +1893,8 @@ const housingData = [
         "housingMismatchIndex": 71.8,
         "policyAchievementIndex": 23.1,
         "deficitProjection2034": 2.1,
-    "buildingCodeYearsSinceUpdate": 30
+    "buildingCodeYearsSinceUpdate": 30,
+        "landAffordabilityIndex": 3.1
     },
     {
         "country": "Nepal",
@@ -1824,7 +1914,8 @@ const housingData = [
         "housingMismatchIndex": 78.6,
         "policyAchievementIndex": 22.4,
         "deficitProjection2034": 5.5,
-    "buildingCodeYearsSinceUpdate": 0
+    "buildingCodeYearsSinceUpdate": 0,
+        "landAffordabilityIndex": 9.6
     },
     {
         "country": "Myanmar",
@@ -1844,7 +1935,8 @@ const housingData = [
         "housingMismatchIndex": 84.5,
         "policyAchievementIndex": 15.7,
         "deficitProjection2034": 7.2,
-    "buildingCodeYearsSinceUpdate": 100
+    "buildingCodeYearsSinceUpdate": 100,
+        "landAffordabilityIndex": 11.2
     }
 ];
 

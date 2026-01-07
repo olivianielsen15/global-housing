@@ -135,6 +135,15 @@ const layerConfig = {
         scale: [0, 50],
         unit: ' years',
         reversed: false  // Lower is better - recently updated codes
+    },
+    landAffordability: {
+        title: 'Urban Land Affordability Index',
+        description: 'Months of average income needed to buy 1m² of urban residential land in primary city. Calculated as land price per m² / monthly GDP per capita. Higher values (red) = land speculation/scarcity driving unaffordability. Lower values (green) = accessible land markets. Based on World Bank, Knight Frank, JLL, Savills, and national property data.',
+        detailedDefinition: 'This index measures urban land affordability by calculating how many months of average national income are required to purchase one square meter of residential land in the country\'s primary economic city (usually capital or largest city). Formula: (Urban residential land price per m² in USD) / (Monthly GDP per capita in USD). Land costs are often 50-80% of total housing costs in expensive cities, making this a critical driver of housing unaffordability. High values indicate land speculation, restrictive zoning, geographic constraints, or foreign investment inflating prices beyond local purchasing power. Score interpretation: Low (0-3 months) = Accessible land markets - found in countries with abundant land, moderate regulation, or lower urbanization pressure. Examples: Many US cities outside coastal areas, Canada (outside Toronto/Vancouver), Nordic countries outside capitals, some developing countries. Medium (3-8 months) = Moderate land costs - typical for mid-sized cities in developed countries, emerging market capitals. Examples: Germany (Berlin), France (outside Paris), Spain, Portugal, Eastern Europe, Latin America. High (8-15 months) = Expensive land markets - major global cities with geographic constraints or restrictive zoning. Examples: UK (London), Netherlands (Amsterdam), Australia (Sydney/Melbourne), Japan (Tokyo), Israel. Very High (15-30 months) = Severe land scarcity/speculation - extreme geographic constraints, land banking, or foreign speculation. Examples: Hong Kong, Singapore, Monaco, parts of China (Beijing/Shanghai). Extreme (30+ months) = Crisis-level land unaffordability - makes affordable housing development nearly impossible without massive subsidies. Land affordability directly impacts: housing construction costs (land = 50-80% in expensive cities), informal housing rates (when formal land is unaffordable), urban sprawl patterns (people pushed to periphery), and effectiveness of affordable housing programs (land costs overwhelm subsidies). Countries can improve land affordability through: land value capture taxes, upzoning/density increases, public land banking, breaking up speculative holdings, and transit-oriented development.',
+        dataKey: 'landAffordabilityIndex',
+        scale: [0, 40],
+        unit: ' months income',
+        reversed: false  // Lower is better - more affordable land
     }
 };
 
@@ -436,6 +445,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Policy Achievement:</strong> ${countryData.policyAchievementIndex.toFixed(1)}/100 achievement score</p>
             <p><strong>Deficit Projection 2034:</strong> ${countryData.deficitProjection2034.toFixed(1)} units/1000 ${countryData.deficitProjection2034 < 0 ? '(improving ✓)' : '(worsening ✗)'}</p>
             <p><strong>Building Code:</strong> ${countryData.buildingCodeYearsSinceUpdate === 100 ? 'No national code' : countryData.buildingCodeYearsSinceUpdate === 0 ? 'Updated 2024' : `${countryData.buildingCodeYearsSinceUpdate} years since update`}</p>
+            <p><strong>Land Affordability:</strong> ${countryData.landAffordabilityIndex.toFixed(1)} months income per m²</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
