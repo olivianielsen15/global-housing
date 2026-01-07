@@ -126,6 +126,15 @@ const layerConfig = {
         scale: [-15, 15],
         unit: ' units/1000',
         reversed: true  // Negative is better (deficit decreasing)
+    },
+    buildingCodeRecency: {
+        title: 'Building Code Recency',
+        description: 'Years since last major building code update as of 2024. Lower values (green) = recently updated modern codes. Higher values (red) = outdated codes. Value 100 = no national building code. Based on GFDRR World Bank data, national construction ministries, and IFC reports.',
+        detailedDefinition: 'This metric measures when countries last comprehensively updated their national building codes, revealing institutional capacity, disaster preparedness, and regulatory modernization. Building codes govern structural safety, fire protection, energy efficiency, accessibility, and construction standards. Recent updates (0-5 years) often incorporate climate resilience, seismic safety improvements, green building standards, and streamlined permitting for affordable housing. Outdated codes (20+ years) may lack disaster risk provisions, block innovative construction methods (modular, mass timber), mandate expensive materials, or fail to address modern housing challenges. Countries without codes (value 100) face safety risks, lack mortgage finance standards, and struggle with disaster reconstruction. Score interpretation: 0-5 years (dark green) = Modern, recently updated - examples include Singapore 2024, India 2023 (National Building Code updated for PMAY), UAE 2021, Japan 2020 (post-disaster improvements), Chile 2019 (seismic updates); 6-10 years (green) = Recent but due for review - UK 2013, Australia 2019; 11-20 years (yellow) = Aging codes needing updates - many Latin American, Eastern European countries; 21-40 years (orange) = Severely outdated - blocking innovation and disaster preparedness; 40+ years or none (red) = No code or colonial-era codes - many sub-Saharan African countries, small island states. Updated codes are crucial for: disaster resilience (earthquake, flood, hurricane standards), affordable housing innovation (allowing alternative materials, reducing costs), climate adaptation (energy efficiency, cooling), and mortgage finance (lenders require code compliance). Countries with recent updates often show correlation with lower informal housing and better disaster recovery.',
+        dataKey: 'buildingCodeYearsSinceUpdate',
+        scale: [0, 50],
+        unit: ' years',
+        reversed: false  // Lower is better - recently updated codes
     }
 };
 
@@ -426,6 +435,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Housing Mismatch:</strong> ${countryData.housingMismatchIndex.toFixed(1)}/100 mismatch index</p>
             <p><strong>Policy Achievement:</strong> ${countryData.policyAchievementIndex.toFixed(1)}/100 achievement score</p>
             <p><strong>Deficit Projection 2034:</strong> ${countryData.deficitProjection2034.toFixed(1)} units/1000 ${countryData.deficitProjection2034 < 0 ? '(improving ✓)' : '(worsening ✗)'}</p>
+            <p><strong>Building Code:</strong> ${countryData.buildingCodeYearsSinceUpdate === 100 ? 'No national code' : countryData.buildingCodeYearsSinceUpdate === 0 ? 'Updated 2024' : `${countryData.buildingCodeYearsSinceUpdate} years since update`}</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
