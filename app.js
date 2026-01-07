@@ -108,6 +108,15 @@ const layerConfig = {
         dataKey: 'housingMismatchIndex',
         scale: [0, 100],
         unit: ' mismatch'
+    },
+    policyAchievement: {
+        title: 'Affordable Housing Policy Achievement',
+        description: 'Composite index (0-100) measuring government effectiveness in tackling affordable housing crisis. Rewards policy activity, public investment, social housing supply, construction momentum, and affordability outcomes. Higher scores = stronger government commitment and achievement.',
+        detailedDefinition: 'This index highlights countries actively addressing affordable housing challenges through comprehensive policy action. Unlike metrics that only measure problems, this rewards solutions and achievements. Calculated from five components: (1) Policy Activity 2020-24 (0-25 pts) - recent housing reforms, regulations, and programs based on our policyActivityScore; (2) Public Investment (0-25 pts) - government housing expenditure as % of GDP, showing fiscal commitment; (3) Affordable Supply (0-25 pts) - social/public rental housing stock percentage, measuring alternative options created; (4) Construction Momentum (0-15 pts) - construction jobs per capita, indicating active building; (5) Affordability Achievement (0-10 pts) - bonus for maintaining reasonable price-to-income ratios (<8x income). Score 0-100: Low (0-35) = limited intervention; Medium (35-55) = moderate efforts; High (55-75) = strong comprehensive programs; Exceptional (75-100) = world-class achievement. Top performers include Austria (strong social housing tradition + high spending), Singapore (80%+ public housing success via HDB), Finland/Netherlands (comprehensive social housing systems), India (massive PMAY construction program + high policy activity), Chile (active subsidy programs + recent reforms), Colombia (Vivienda de Interés Social + urban social programs). This metric recognizes both developed-country welfare states AND emerging-market innovation in affordable housing delivery.',
+        dataKey: 'policyAchievementIndex',
+        scale: [0, 100],
+        unit: ' achievement',
+        reversed: true  // Higher is better - green for high achievement
     }
 };
 
@@ -406,6 +415,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Investment Opportunity:</strong> $${countryData.housingInvestmentOpportunity.toFixed(1)}B (affordable housing market)</p>
             <p><strong>Affordable Home Price:</strong> ${countryData.affordableHomePriceRatio.toFixed(1)}x income (at current mortgage rates)</p>
             <p><strong>Housing Mismatch:</strong> ${countryData.housingMismatchIndex.toFixed(1)}/100 mismatch index</p>
+            <p><strong>Policy Achievement:</strong> ${countryData.policyAchievementIndex.toFixed(1)}/100 achievement score</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
