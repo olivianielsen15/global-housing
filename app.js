@@ -117,6 +117,15 @@ const layerConfig = {
         scale: [0, 60],
         unit: ' achievement',
         reversed: true  // Higher is better - green for high achievement
+    },
+    deficitProjection: {
+        title: 'Housing Deficit Projection 2024-2034',
+        description: 'Projected change in housing deficit per 1,000 people over next 10 years. Negative values (green) = deficit decreasing, solving crisis. Positive values (red) = deficit increasing, crisis worsening. Based on construction momentum, policy action, urbanization pressure, and affordability trends.',
+        detailedDefinition: 'This forward-looking metric projects whether countries will solve or worsen their housing crisis over the next decade (2024-2034). Unlike static metrics showing current state, this shows trajectory and momentum. Calculated by modeling five drivers: (1) Construction Supply Effect - high construction jobs per capita reduces deficit (countries building more solve faster); (2) Policy Acceleration - strong policy activity (4-5/5) accelerates solutions through reforms, funding, streamlined permitting; (3) Urbanization Pressure - rapid urban growth increases demand, worsening deficit in countries unprepared; (4) Affordability Crisis Drag - high price-to-income ratios (>10x) slow solutions as fewer can afford new housing; (5) Baseline Deficit Inertia - large existing deficits take longer to solve. Score interpretation: Large negative (< -5) = rapid improvement, crisis solving (Singapore, UAE with mega-construction; Chile, Mexico with strong policy); Moderate negative (-5 to 0) = gradual improvement (developed countries with steady programs); Near zero (0 to +3) = stagnant, holding steady; Moderate positive (+3 to +8) = worsening crisis (urbanizing countries without adequate response); Large positive (> +8) = rapidly deteriorating (high urbanization + low construction + affordability crisis). Winners: Singapore -12.8 (exceptional HDB construction momentum), UAE -10.2 (construction boom), India -6.4 (PMAY scale + construction), Chile -5.8 (policy + building), Austria -4.2 (systematic programs). Losers: Countries with rapid urbanization but low construction and weak policy - crisis compounding over time. This metric shows who is winning and losing the race to solve affordable housing.',
+        dataKey: 'deficitProjection2034',
+        scale: [-15, 15],
+        unit: ' units/1000',
+        reversed: true  // Negative is better (deficit decreasing)
     }
 };
 
@@ -416,6 +425,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Affordable Home Price:</strong> ${countryData.affordableHomePriceRatio.toFixed(1)}x income (at current mortgage rates)</p>
             <p><strong>Housing Mismatch:</strong> ${countryData.housingMismatchIndex.toFixed(1)}/100 mismatch index</p>
             <p><strong>Policy Achievement:</strong> ${countryData.policyAchievementIndex.toFixed(1)}/100 achievement score</p>
+            <p><strong>Deficit Projection 2034:</strong> ${countryData.deficitProjection2034.toFixed(1)} units/1000 ${countryData.deficitProjection2034 < 0 ? '(improving ✓)' : '(worsening ✗)'}</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
