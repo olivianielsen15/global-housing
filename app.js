@@ -144,6 +144,15 @@ const layerConfig = {
         scale: [0, 20],
         unit: ' months income',
         reversed: false  // Lower is better - more affordable land
+    },
+    greenCertified: {
+        title: 'Green Certified Homes per Capita',
+        description: 'EDGE and LEED certified homes per 100,000 people. Measures sustainable housing commitment through green building certifications. Higher values (green) = greater adoption of energy-efficient, climate-resilient housing. Based on World Bank EDGE database and USGBC LEED project directory.',
+        detailedDefinition: 'This metric measures the penetration of green building certifications in residential construction, specifically EDGE (Excellence in Design for Greater Efficiencies) and LEED (Leadership in Energy and Environmental Design) certified homes per 100,000 population. EDGE is a World Bank/IFC green building certification system designed for emerging markets, requiring 20% reduction in energy, water, and embodied energy. LEED is the US Green Building Council certification focusing on sustainability, energy efficiency, and environmental performance. Both certifications ensure homes are resource-efficient, climate-resilient, and have lower operating costs for residents. High values indicate strong commitment to sustainable housing through: mandatory green building codes, financial incentives (tax credits, expedited permitting), developer adoption, and consumer demand for efficient housing. Score interpretation: Very Low (0-5 per 100k) = Minimal green certification adoption - most countries, especially developing markets without mandatory standards or incentives; Low (5-20 per 100k) = Emerging adoption - some projects certified, usually luxury developments; Medium (20-50 per 100k) = Moderate adoption - green codes in major cities, some incentive programs; High (50-100 per 100k) = Strong adoption - mandatory standards in key markets, widespread developer buy-in; Very High (100+ per 100k) = Leadership - comprehensive green building requirements, market transformation. Leading countries: UAE (high EDGE adoption in Dubai), Singapore (mandatory green building standards), USA (extensive LEED portfolio), India (largest EDGE market by volume), Colombia (strong EDGE uptake), South Africa (Green Star + EDGE), Rwanda (government green building push). Benefits of green certified homes: 20-40% lower energy costs for residents, improved air quality and health outcomes, climate resilience (flood protection, heat management), higher resale values, lower carbon emissions, and affordable housing alignment (lower utility costs = more affordable to operate). Green certification also correlates with: formal construction sector growth, access to green financing (lower interest rates), and institutional investor interest in affordable housing.',
+        dataKey: 'greenCertifiedHomesPerCapita',
+        scale: [0, 150],
+        unit: ' homes/100k',
+        reversed: true  // Higher is better - more green certified homes
     }
 };
 
@@ -446,6 +455,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Deficit Projection 2034:</strong> ${countryData.deficitProjection2034.toFixed(1)} units/1000 ${countryData.deficitProjection2034 < 0 ? '(improving ✓)' : '(worsening ✗)'}</p>
             <p><strong>Building Code:</strong> ${countryData.buildingCodeYearsSinceUpdate === 100 ? 'No national code' : countryData.buildingCodeYearsSinceUpdate === 0 ? 'Updated 2024' : `${countryData.buildingCodeYearsSinceUpdate} years since update`}</p>
             <p><strong>Land Affordability:</strong> ${countryData.landAffordabilityIndex.toFixed(1)} months income per m²</p>
+            <p><strong>Green Certified Homes:</strong> ${countryData.greenCertifiedHomesPerCapita.toFixed(1)} per 100k people</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
