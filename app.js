@@ -153,6 +153,15 @@ const layerConfig = {
         scale: [0, 15],
         unit: ' homes/100k',
         reversed: true  // Higher is better - more green certified homes
+    },
+    cementAffordability: {
+        title: 'Cement Affordability Index',
+        description: 'Days of average income needed to buy one 50kg bag of cement. Lower values (green) = affordable construction materials. Higher values (red) = expensive cement blocking affordable housing. Based on Global Petrol Prices, Trading Economics, and national construction material price surveys.',
+        detailedDefinition: 'This index measures how many days of average income are required to purchase one standard 50kg bag of Portland cement, the fundamental building material for housing construction. Formula: (Price of 50kg cement bag in USD) / (Daily GDP per capita in USD). Cement costs directly impact housing affordability since cement typically represents 10-15% of total construction costs and is essential for foundations, walls, and structural elements. High values indicate expensive cement due to: import dependencies (landlocked countries, island nations), local monopolies/cartels controlling production, high energy costs for cement kilns, poor infrastructure raising transport costs, or protectionist tariffs. Low values indicate: domestic cement production capacity, competitive markets, economies of scale, or government subsidies for construction materials. Score interpretation: Very Affordable (0-1 days) = Competitive cement markets with local production - enables affordable housing construction. Examples: China (world\'s largest producer), India (2nd largest), USA, Turkey, Brazil (strong domestic production). Affordable (1-2 days) = Good availability with some import or transport costs. Moderate (2-4 days) = Mid-range costs, typical for smaller countries or those with limited production. Expensive (4-7 days) = Import-dependent or monopolistic markets - significantly raises housing costs. Very Expensive (7+ days) = Prohibitively expensive cement blocking affordable construction - often landlocked African countries, small islands, or conflict zones. Cement affordability directly affects: affordable housing construction costs, self-build housing feasibility (informal sector), housing quality (expensive cement leads to substitution with weaker materials), and housing deficit solutions (high material costs block supply response). Countries can improve cement affordability through: supporting domestic production capacity, breaking up cement cartels, reducing energy costs for kilns, improving transport infrastructure, regional trade agreements for cement imports, or targeted subsidies for affordable housing projects.',
+        dataKey: 'cementAffordabilityDays',
+        scale: [0, 10],
+        unit: ' days income',
+        reversed: false  // Lower is better - fewer days to afford cement
     }
 };
 
@@ -456,6 +465,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Building Code:</strong> ${countryData.buildingCodeYearsSinceUpdate === 100 ? 'No national code' : countryData.buildingCodeYearsSinceUpdate === 0 ? 'Updated 2024' : `${countryData.buildingCodeYearsSinceUpdate} years since update`}</p>
             <p><strong>Land Affordability:</strong> ${countryData.landAffordabilityIndex.toFixed(1)} months income per m²</p>
             <p><strong>Green Certified Homes:</strong> ${countryData.greenCertifiedHomesPerCapita.toFixed(1)} per 100k people</p>
+            <p><strong>Cement Affordability:</strong> ${countryData.cementAffordabilityDays.toFixed(2)} days income per 50kg bag</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
