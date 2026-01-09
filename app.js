@@ -162,6 +162,15 @@ const layerConfig = {
         scale: [0, 10],
         unit: ' days income',
         reversed: false  // Lower is better - fewer days to afford cement
+    },
+    resilienceCertified: {
+        title: 'Resilience-Certified Projects per Capita',
+        description: 'RELi, Fortified, or other resilience-certified buildings per 100,000 people. Measures climate adaptation and disaster preparedness in construction. Higher values (green) = greater adoption of resilient building practices. Based on USGBC RELi, IBHS Fortified, and national resilience programs.',
+        detailedDefinition: 'This metric measures the penetration of resilience certifications in construction, specifically RELi (Resilient Design certification), IBHS Fortified (hurricane/wind resistance), and other national resilience standards per 100,000 population. Resilience certifications ensure buildings can withstand and recover from climate impacts, natural disasters, and extreme weather events including hurricanes, floods, earthquakes, wildfires, and heat waves. These certifications go beyond standard building codes to incorporate climate adaptation, passive survivability, community resilience, and disaster recovery planning. High values indicate strong commitment to climate-resilient housing through: mandatory resilience standards, insurance incentives (lower premiums for certified buildings), post-disaster building code upgrades, climate adaptation policies, and developer adoption. Score interpretation: Very Low (0-1 per 100k) = Minimal resilience certification - most countries without formal programs; Low (1-5 per 100k) = Emerging adoption - pilot projects in disaster-prone regions; Medium (5-15 per 100k) = Moderate adoption - resilience standards in high-risk areas; High (15-30 per 100k) = Strong adoption - widespread resilience requirements; Very High (30+ per 100k) = Leadership - comprehensive resilience mandates and market transformation. Leading countries: USA (IBHS Fortified in hurricane states, RELi certification), Japan (seismic resilience standards), Netherlands (flood resilience), New Zealand (post-Christchurch earthquake resilience), Caribbean nations (hurricane resilience programs), Philippines (typhoon-resilient housing). Benefits of resilience-certified housing: reduced disaster damage and repair costs, lower insurance premiums (up to 50% reduction), improved occupant safety during disasters, faster post-disaster recovery, protection of affordable housing investments, and climate adaptation for vulnerable communities. Resilience certification particularly important for: coastal communities facing sea-level rise and hurricanes, earthquake zones requiring seismic retrofitting, flood-prone areas needing elevated construction, wildfire interfaces requiring defensible space, and low-income communities vulnerable to climate impacts. Countries can improve resilience through: updating building codes for climate risks, insurance incentives for certified construction, targeted resilience programs for affordable housing, post-disaster reconstruction standards, and community resilience planning.',
+        dataKey: 'resilienceCertifiedPerCapita',
+        scale: [0, 20],
+        unit: ' projects/100k',
+        reversed: true  // Higher is better - more resilience-certified projects
     }
 };
 
@@ -466,6 +475,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Land Affordability:</strong> ${countryData.landAffordabilityIndex.toFixed(1)} months income per m²</p>
             <p><strong>Green Certified Homes:</strong> ${countryData.greenCertifiedHomesPerCapita.toFixed(1)} per 100k people</p>
             <p><strong>Cement Affordability:</strong> ${countryData.cementAffordabilityDays.toFixed(2)} days income per 50kg bag</p>
+            <p><strong>Resilience Certified:</strong> ${countryData.resilienceCertifiedPerCapita.toFixed(1)} per 100k people</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>

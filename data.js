@@ -27,6 +27,7 @@
 // 16. landAffordabilityIndex: Number of months of average income needed to buy 1 m² of urban residential land in the primary economic city. Calculated as (Urban residential land price per m² in USD) / (Monthly GDP per capita in USD). Based on 2025 data from Global Property Guide, Numbeo, Savills, Knight Frank, JLL, CBRE, and national statistics. Low values (0-3 months) indicate abundant/affordable land; medium (3-8) moderate affordability; high (8-15) expensive land; very high (15-30) severely constrained markets; extreme (30+) indicates extreme speculation or geographic limitations like Hong Kong, Monaco, Singapore.
 // 17. greenCertifiedHomesPerCapita: Green-certified residential units per 100,000 people. Calculated as (Total EDGE certified homes + LEED residential units) / (Population / 100,000). Based on 2024-2025 data from EDGE Buildings (World Bank/IFC), USGBC LEED Project Directory, and national green building councils (Green Star, BREEAM, DGNB, etc.). EDGE focuses on emerging markets with affordable, resource-efficient housing. LEED residential includes single-family homes and multifamily projects. High values (50+) indicate strong green building adoption; moderate (10-50) emerging markets; low (1-10) early adoption; minimal (0-1) limited green certification activity.
 // 18. cementAffordabilityDays: Number of days of average income needed to buy one standard 50kg bag of Portland cement. Calculated as (Price of 50kg bag of Portland cement in USD) / (Daily GDP per capita in USD). Based on 2025-2026 data from Global Petrol Prices, Trading Economics, IndexMundi, World Bank, regional cement associations, and national statistics. Lower values indicate more affordable construction materials. Major cement producers (China, India, Turkey, Egypt, Brazil) show very affordable cement (0.07-0.32 days); developed countries vary (0.02-0.12 days) based on labor costs and efficiency; landlocked African countries show higher costs (2-5 days) due to import dependence and logistics challenges; most affordable globally are wealthy nations with efficient markets (Japan, Singapore, Luxembourg at 0.02 days).
+// 19. resilienceCertifiedPerCapita: Resilience-certified buildings per 100,000 people. Calculated as (Total RELi + IBHS Fortified + other resilience-certified buildings) / (Population / 100,000). Based on 2024-2025 data from USGBC RELi (discontinued 2022), IBHS Fortified Home program (USA: ~90,000 homes in AL, LA, NC, SC), national seismic resilience programs (Japan post-Kobe retrofitting, Chile NCh 433, New Zealand post-Christchurch EPB), flood resilience initiatives (Netherlands amphibious housing, Singapore coastal protection, Bangladesh cyclone shelters), typhoon/hurricane programs (Philippines Build Back Better 171,230 homes, Caribbean initiatives), post-disaster reconstruction (Turkey 2023 earthquake, Indonesia post-tsunami, Nepal 2015 earthquake), and climate adaptation certifications (EU member states flood directives, India UEVRP program, China earthquake monitoring network). High values (100+ per 100k) indicate comprehensive disaster resilience mandates; medium (15-50) emerging certification programs in high-risk areas; low (1-15) pilot projects and voluntary programs; minimal (0.1-1) limited formal certification activity.
 
 const housingData = [
     {
@@ -50,7 +51,8 @@ const housingData = [
         "buildingCodeYearsSinceUpdate": 2,
         "landAffordabilityIndex": 2.3,
         "greenCertifiedHomesPerCapita": 51.1,
-        "cementAffordabilityDays": 0.03
+        "cementAffordabilityDays": 0.03,
+        "resilienceCertifiedPerCapita": 9.1
     },
     {
         "country": "Australia",
@@ -73,7 +75,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 5,
         "landAffordabilityIndex": 2.3,
         "greenCertifiedHomesPerCapita": 38.5,
-        "cementAffordabilityDays": 0.04
+        "cementAffordabilityDays": 0.04,
+        "resilienceCertifiedPerCapita": 30.1
     },
     {
         "country": "Denmark",
@@ -96,7 +99,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 4,
         "landAffordabilityIndex": 3.2,
         "greenCertifiedHomesPerCapita": 59.3,
-        "cementAffordabilityDays": 0.04
+        "cementAffordabilityDays": 0.04,
+        "resilienceCertifiedPerCapita": 6.8
     },
     {
         "country": "Cyprus",
@@ -119,7 +123,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 14,
         "landAffordabilityIndex": 1.4,
         "greenCertifiedHomesPerCapita": 13.3,
-        "cementAffordabilityDays": 0.07
+        "cementAffordabilityDays": 0.07,
+        "resilienceCertifiedPerCapita": 7.7
     },
     {
         "country": "Netherlands",
@@ -142,7 +147,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 1.2,
         "greenCertifiedHomesPerCapita": 36.9,
-        "cementAffordabilityDays": 0.05
+        "cementAffordabilityDays": 0.05,
+        "resilienceCertifiedPerCapita": 22.7
     },
     {
         "country": "Canada",
@@ -165,7 +171,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 4,
         "landAffordabilityIndex": 2.1,
         "greenCertifiedHomesPerCapita": 128.2,
-        "cementAffordabilityDays": 0.05
+        "cementAffordabilityDays": 0.05,
+        "resilienceCertifiedPerCapita": 12.8
     },
     {
         "country": "South Korea",
@@ -188,7 +195,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 8,
         "landAffordabilityIndex": 1.5,
         "greenCertifiedHomesPerCapita": 14.4,
-        "cementAffordabilityDays": 0.02
+        "cementAffordabilityDays": 0.02,
+        "resilienceCertifiedPerCapita": 15.5
     },
     {
         "country": "Norway",
@@ -211,7 +219,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 7,
         "landAffordabilityIndex": 2.2,
         "greenCertifiedHomesPerCapita": 54.5,
-        "cementAffordabilityDays": 0.03
+        "cementAffordabilityDays": 0.03,
+        "resilienceCertifiedPerCapita": 14.5
     },
     {
         "country": "Sweden",
@@ -234,7 +243,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 1.3,
         "greenCertifiedHomesPerCapita": 52.4,
-        "cementAffordabilityDays": 0.05
+        "cementAffordabilityDays": 0.05,
+        "resilienceCertifiedPerCapita": 5.7
     },
     {
         "country": "New Zealand",
@@ -257,7 +267,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 1.7,
         "greenCertifiedHomesPerCapita": 35.3,
-        "cementAffordabilityDays": 0.05
+        "cementAffordabilityDays": 0.05,
+        "resilienceCertifiedPerCapita": 346.2
     },
     {
         "country": "Luxembourg",
@@ -280,7 +291,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 14,
         "landAffordabilityIndex": 1.9,
         "greenCertifiedHomesPerCapita": 123.1,
-        "cementAffordabilityDays": 0.02
+        "cementAffordabilityDays": 0.02,
+        "resilienceCertifiedPerCapita": 4.5
     },
     {
         "country": "United Kingdom",
@@ -303,7 +315,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 11,
         "landAffordabilityIndex": 1.0,
         "greenCertifiedHomesPerCapita": 20.6,
-        "cementAffordabilityDays": 0.06
+        "cementAffordabilityDays": 0.06,
+        "resilienceCertifiedPerCapita": 7.3
     },
     {
         "country": "Finland",
@@ -326,7 +339,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 4.1,
         "greenCertifiedHomesPerCapita": 33.9,
-        "cementAffordabilityDays": 0.05
+        "cementAffordabilityDays": 0.05,
+        "resilienceCertifiedPerCapita": 5.4
     },
     {
         "country": "United States",
@@ -349,7 +363,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 0,
         "landAffordabilityIndex": 1.1,
         "greenCertifiedHomesPerCapita": 119.4,
-        "cementAffordabilityDays": 0.03
+        "cementAffordabilityDays": 0.03,
+        "resilienceCertifiedPerCapita": 26.9
     },
     {
         "country": "Belgium",
@@ -372,7 +387,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 0.9,
         "greenCertifiedHomesPerCapita": 24.1,
-        "cementAffordabilityDays": 0.05
+        "cementAffordabilityDays": 0.05,
+        "resilienceCertifiedPerCapita": 4.3
     },
     {
         "country": "France",
@@ -395,7 +411,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 1.1,
         "greenCertifiedHomesPerCapita": 15.4,
-        "cementAffordabilityDays": 0.06
+        "cementAffordabilityDays": 0.06,
+        "resilienceCertifiedPerCapita": 6.2
     },
     {
         "country": "Japan",
@@ -418,7 +435,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 4,
         "landAffordabilityIndex": 3.3,
         "greenCertifiedHomesPerCapita": 16.8,
-        "cementAffordabilityDays": 0.02
+        "cementAffordabilityDays": 0.02,
+        "resilienceCertifiedPerCapita": 201.6
     },
     {
         "country": "Spain",
@@ -441,7 +459,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 1.9,
         "greenCertifiedHomesPerCapita": 13.8,
-        "cementAffordabilityDays": 0.08
+        "cementAffordabilityDays": 0.08,
+        "resilienceCertifiedPerCapita": 6.3
     },
     {
         "country": "Portugal",
@@ -464,7 +483,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 1.4,
         "greenCertifiedHomesPerCapita": 11.7,
-        "cementAffordabilityDays": 0.09
+        "cementAffordabilityDays": 0.09,
+        "resilienceCertifiedPerCapita": 14.4
     },
     {
         "country": "Ireland",
@@ -487,7 +507,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 12,
         "landAffordabilityIndex": 1.4,
         "greenCertifiedHomesPerCapita": 21.6,
-        "cementAffordabilityDays": 0.03
+        "cementAffordabilityDays": 0.03,
+        "resilienceCertifiedPerCapita": 3.9
     },
     {
         "country": "Austria",
@@ -510,7 +531,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 0.8,
         "greenCertifiedHomesPerCapita": 31.1,
-        "cementAffordabilityDays": 0.05
+        "cementAffordabilityDays": 0.05,
+        "resilienceCertifiedPerCapita": 6.6
     },
     {
         "country": "Germany",
@@ -533,7 +555,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 1.6,
         "greenCertifiedHomesPerCapita": 29.8,
-        "cementAffordabilityDays": 0.04
+        "cementAffordabilityDays": 0.04,
+        "resilienceCertifiedPerCapita": 6.0
     },
     {
         "country": "Estonia",
@@ -556,7 +579,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 14,
         "landAffordabilityIndex": 1.8,
         "greenCertifiedHomesPerCapita": 11.5,
-        "cementAffordabilityDays": 0.09
+        "cementAffordabilityDays": 0.09,
+        "resilienceCertifiedPerCapita": 5.7
     },
     {
         "country": "Slovenia",
@@ -579,7 +603,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 14,
         "landAffordabilityIndex": 1.5,
         "greenCertifiedHomesPerCapita": 11.4,
-        "cementAffordabilityDays": 0.08
+        "cementAffordabilityDays": 0.08,
+        "resilienceCertifiedPerCapita": 7.1
     },
     {
         "country": "Italy",
@@ -602,7 +627,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 1.3,
         "greenCertifiedHomesPerCapita": 13.6,
-        "cementAffordabilityDays": 0.07
+        "cementAffordabilityDays": 0.07,
+        "resilienceCertifiedPerCapita": 20.3
     },
     {
         "country": "Israel",
@@ -625,7 +651,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 10,
         "landAffordabilityIndex": 1.9,
         "greenCertifiedHomesPerCapita": 26.6,
-        "cementAffordabilityDays": 0.04
+        "cementAffordabilityDays": 0.04,
+        "resilienceCertifiedPerCapita": 8.5
     },
     {
         "country": "Czech Republic",
@@ -648,7 +675,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 14,
         "landAffordabilityIndex": 1.9,
         "greenCertifiedHomesPerCapita": 9.5,
-        "cementAffordabilityDays": 0.07
+        "cementAffordabilityDays": 0.07,
+        "resilienceCertifiedPerCapita": 5.7
     },
     {
         "country": "Greece",
@@ -671,7 +699,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 14,
         "landAffordabilityIndex": 2.2,
         "greenCertifiedHomesPerCapita": 9.6,
-        "cementAffordabilityDays": 0.12
+        "cementAffordabilityDays": 0.12,
+        "resilienceCertifiedPerCapita": 28.8
     },
     {
         "country": "Poland",
@@ -694,7 +723,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 14,
         "landAffordabilityIndex": 1.6,
         "greenCertifiedHomesPerCapita": 8.4,
-        "cementAffordabilityDays": 0.08
+        "cementAffordabilityDays": 0.08,
+        "resilienceCertifiedPerCapita": 5.3
     },
     {
         "country": "Slovakia",
@@ -717,7 +747,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 14,
         "landAffordabilityIndex": 2.4,
         "greenCertifiedHomesPerCapita": 6.5,
-        "cementAffordabilityDays": 0.09
+        "cementAffordabilityDays": 0.09,
+        "resilienceCertifiedPerCapita": 4.5
     },
     {
         "country": "Chile",
@@ -740,7 +771,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 5,
         "landAffordabilityIndex": 1.5,
         "greenCertifiedHomesPerCapita": 10.2,
-        "cementAffordabilityDays": 0.16
+        "cementAffordabilityDays": 0.16,
+        "resilienceCertifiedPerCapita": 40.8
     },
     {
         "country": "Hungary",
@@ -763,7 +795,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 14,
         "landAffordabilityIndex": 1.9,
         "greenCertifiedHomesPerCapita": 6.2,
-        "cementAffordabilityDays": 0.1
+        "cementAffordabilityDays": 0.1,
+        "resilienceCertifiedPerCapita": 5.2
     },
     {
         "country": "Latvia",
@@ -786,7 +819,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 14,
         "landAffordabilityIndex": 1.9,
         "greenCertifiedHomesPerCapita": 8.9,
-        "cementAffordabilityDays": 0.1
+        "cementAffordabilityDays": 0.1,
+        "resilienceCertifiedPerCapita": 5.3
     },
     {
         "country": "Lithuania",
@@ -809,7 +843,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 14,
         "landAffordabilityIndex": 1.5,
         "greenCertifiedHomesPerCapita": 8.6,
-        "cementAffordabilityDays": 0.09
+        "cementAffordabilityDays": 0.09,
+        "resilienceCertifiedPerCapita": 5.4
     },
     {
         "country": "Turkey",
@@ -832,7 +867,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 0,
         "landAffordabilityIndex": 1.5,
         "greenCertifiedHomesPerCapita": 6.5,
-        "cementAffordabilityDays": 0.09
+        "cementAffordabilityDays": 0.09,
+        "resilienceCertifiedPerCapita": 23.4
     },
     {
         "country": "Mexico",
@@ -855,7 +891,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 20,
         "landAffordabilityIndex": 3.2,
         "greenCertifiedHomesPerCapita": 6.2,
-        "cementAffordabilityDays": 0.19
+        "cementAffordabilityDays": 0.19,
+        "resilienceCertifiedPerCapita": 11.7
     },
     {
         "country": "Costa Rica",
@@ -878,7 +915,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 25,
         "landAffordabilityIndex": 2.7,
         "greenCertifiedHomesPerCapita": 6.7,
-        "cementAffordabilityDays": 0.14
+        "cementAffordabilityDays": 0.14,
+        "resilienceCertifiedPerCapita": 11.5
     },
     {
         "country": "Colombia",
@@ -901,7 +939,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 30,
         "landAffordabilityIndex": 1.8,
         "greenCertifiedHomesPerCapita": 6.2,
-        "cementAffordabilityDays": 0.3
+        "cementAffordabilityDays": 0.3,
+        "resilienceCertifiedPerCapita": 9.6
     },
     {
         "country": "Brazil",
@@ -924,7 +963,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 10,
         "landAffordabilityIndex": 3.4,
         "greenCertifiedHomesPerCapita": 6,
-        "cementAffordabilityDays": 0.14
+        "cementAffordabilityDays": 0.14,
+        "resilienceCertifiedPerCapita": 5.6
     },
     {
         "country": "Russia",
@@ -947,7 +987,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 0,
         "landAffordabilityIndex": 2.7,
         "greenCertifiedHomesPerCapita": 2.6,
-        "cementAffordabilityDays": 0.09
+        "cementAffordabilityDays": 0.09,
+        "resilienceCertifiedPerCapita": 5.6
     },
     {
         "country": "China",
@@ -970,7 +1011,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 0,
         "landAffordabilityIndex": 3.0,
         "greenCertifiedHomesPerCapita": 3.5,
-        "cementAffordabilityDays": 0.07
+        "cementAffordabilityDays": 0.07,
+        "resilienceCertifiedPerCapita": 17.5
     },
     {
         "country": "Thailand",
@@ -993,7 +1035,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 19,
         "landAffordabilityIndex": 3.7,
         "greenCertifiedHomesPerCapita": 3.1,
-        "cementAffordabilityDays": 0.16
+        "cementAffordabilityDays": 0.16,
+        "resilienceCertifiedPerCapita": 3.5
     },
     {
         "country": "Malaysia",
@@ -1016,7 +1059,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 12,
         "landAffordabilityIndex": 7.2,
         "greenCertifiedHomesPerCapita": 5.6,
-        "cementAffordabilityDays": 0.1
+        "cementAffordabilityDays": 0.1,
+        "resilienceCertifiedPerCapita": 3.5
     },
     {
         "country": "Singapore",
@@ -1039,7 +1083,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 0,
         "landAffordabilityIndex": 3.0,
         "greenCertifiedHomesPerCapita": 254.2,
-        "cementAffordabilityDays": 0.02
+        "cementAffordabilityDays": 0.02,
+        "resilienceCertifiedPerCapita": 41.7
     },
     {
         "country": "Philippines",
@@ -1062,7 +1107,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 30,
         "landAffordabilityIndex": 3.0,
         "greenCertifiedHomesPerCapita": 2.4,
-        "cementAffordabilityDays": 0.35
+        "cementAffordabilityDays": 0.35,
+        "resilienceCertifiedPerCapita": 148.9
     },
     {
         "country": "Vietnam",
@@ -1085,7 +1131,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 15,
         "landAffordabilityIndex": 8.4,
         "greenCertifiedHomesPerCapita": 1.8,
-        "cementAffordabilityDays": 0.25
+        "cementAffordabilityDays": 0.25,
+        "resilienceCertifiedPerCapita": 3.0
     },
     {
         "country": "Indonesia",
@@ -1108,7 +1155,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 14,
         "landAffordabilityIndex": 5.9,
         "greenCertifiedHomesPerCapita": 2,
-        "cementAffordabilityDays": 0.21
+        "cementAffordabilityDays": 0.21,
+        "resilienceCertifiedPerCapita": 14.5
     },
     {
         "country": "India",
@@ -1131,7 +1179,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 4.4,
         "greenCertifiedHomesPerCapita": 3.2,
-        "cementAffordabilityDays": 0.32
+        "cementAffordabilityDays": 0.32,
+        "resilienceCertifiedPerCapita": 1.8
     },
     {
         "country": "Argentina",
@@ -1154,7 +1203,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 35,
         "landAffordabilityIndex": 13.4,
         "greenCertifiedHomesPerCapita": 5.4,
-        "cementAffordabilityDays": 0.15
+        "cementAffordabilityDays": 0.15,
+        "resilienceCertifiedPerCapita": 4.4
     },
     {
         "country": "Pakistan",
@@ -1177,7 +1227,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 17,
         "landAffordabilityIndex": 1.9,
         "greenCertifiedHomesPerCapita": 1.5,
-        "cementAffordabilityDays": 0.87
+        "cementAffordabilityDays": 0.87,
+        "resilienceCertifiedPerCapita": 1.3
     },
     {
         "country": "Bangladesh",
@@ -1200,7 +1251,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 40,
         "landAffordabilityIndex": 8.5,
         "greenCertifiedHomesPerCapita": 1.2,
-        "cementAffordabilityDays": 0.58
+        "cementAffordabilityDays": 0.58,
+        "resilienceCertifiedPerCapita": 1.2
     },
     {
         "country": "United Arab Emirates",
@@ -1223,7 +1275,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 3,
         "landAffordabilityIndex": 7.7,
         "greenCertifiedHomesPerCapita": 100,
-        "cementAffordabilityDays": 0.02
+        "cementAffordabilityDays": 0.02,
+        "resilienceCertifiedPerCapita": 6.3
     },
     {
         "country": "Saudi Arabia",
@@ -1246,7 +1299,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 0,
         "landAffordabilityIndex": 1.0,
         "greenCertifiedHomesPerCapita": 6.9,
-        "cementAffordabilityDays": 0.04
+        "cementAffordabilityDays": 0.04,
+        "resilienceCertifiedPerCapita": 3.3
     },
     {
         "country": "Iceland",
@@ -1269,7 +1323,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 12,
         "landAffordabilityIndex": 0.5,
         "greenCertifiedHomesPerCapita": 31.6,
-        "cementAffordabilityDays": 0.05
+        "cementAffordabilityDays": 0.05,
+        "resilienceCertifiedPerCapita": 12.8
     },
     {
         "country": "South Africa",
@@ -1292,7 +1347,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 47,
         "landAffordabilityIndex": 0.9,
         "greenCertifiedHomesPerCapita": 5.3,
-        "cementAffordabilityDays": 0.27
+        "cementAffordabilityDays": 0.27,
+        "resilienceCertifiedPerCapita": 2.5
     },
     {
         "country": "Egypt",
@@ -1315,7 +1371,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 35,
         "landAffordabilityIndex": 4.0,
         "greenCertifiedHomesPerCapita": 2.1,
-        "cementAffordabilityDays": 0.32
+        "cementAffordabilityDays": 0.32,
+        "resilienceCertifiedPerCapita": 2.7
     },
     {
         "country": "Morocco",
@@ -1338,7 +1395,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 20,
         "landAffordabilityIndex": 1.6,
         "greenCertifiedHomesPerCapita": 2.7,
-        "cementAffordabilityDays": 0.4
+        "cementAffordabilityDays": 0.4,
+        "resilienceCertifiedPerCapita": 3.2
     },
     {
         "country": "Kenya",
@@ -1361,7 +1419,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 0,
         "landAffordabilityIndex": 4.2,
         "greenCertifiedHomesPerCapita": 5.5,
-        "cementAffordabilityDays": 1.24
+        "cementAffordabilityDays": 1.24,
+        "resilienceCertifiedPerCapita": 1.5
     },
     {
         "country": "Nigeria",
@@ -1384,7 +1443,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 60,
         "landAffordabilityIndex": 7.9,
         "greenCertifiedHomesPerCapita": 1.6,
-        "cementAffordabilityDays": 1.9
+        "cementAffordabilityDays": 1.9,
+        "resilienceCertifiedPerCapita": 1.3
     },
     {
         "country": "Ghana",
@@ -1407,7 +1467,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 55,
         "landAffordabilityIndex": 8.2,
         "greenCertifiedHomesPerCapita": 1.2,
-        "cementAffordabilityDays": 0.59
+        "cementAffordabilityDays": 0.59,
+        "resilienceCertifiedPerCapita": 1.5
     },
     {
         "country": "Ethiopia",
@@ -1430,7 +1491,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 22.4,
         "greenCertifiedHomesPerCapita": 0.7,
-        "cementAffordabilityDays": 2.07
+        "cementAffordabilityDays": 2.07,
+        "resilienceCertifiedPerCapita": 1.2
     },
     {
         "country": "Tanzania",
@@ -1453,7 +1515,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 25.1,
         "greenCertifiedHomesPerCapita": 1,
-        "cementAffordabilityDays": 1.22
+        "cementAffordabilityDays": 1.22,
+        "resilienceCertifiedPerCapita": 1.2
     },
     {
         "country": "Uganda",
@@ -1476,7 +1539,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 16.6,
         "greenCertifiedHomesPerCapita": 0.8,
-        "cementAffordabilityDays": 2.16
+        "cementAffordabilityDays": 2.16,
+        "resilienceCertifiedPerCapita": 1.2
     },
     {
         "country": "Rwanda",
@@ -1499,7 +1563,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 15,
         "landAffordabilityIndex": 17.5,
         "greenCertifiedHomesPerCapita": 1.7,
-        "cementAffordabilityDays": 2.91
+        "cementAffordabilityDays": 2.91,
+        "resilienceCertifiedPerCapita": 2.9
     },
     {
         "country": "Zambia",
@@ -1522,7 +1587,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 50,
         "landAffordabilityIndex": 26.4,
         "greenCertifiedHomesPerCapita": 0.8,
-        "cementAffordabilityDays": 1.88
+        "cementAffordabilityDays": 1.88,
+        "resilienceCertifiedPerCapita": 1.5
     },
     {
         "country": "Namibia",
@@ -1545,7 +1611,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 50,
         "landAffordabilityIndex": 10.5,
         "greenCertifiedHomesPerCapita": 0.8,
-        "cementAffordabilityDays": 0.43
+        "cementAffordabilityDays": 0.43,
+        "resilienceCertifiedPerCapita": 3.8
     },
     {
         "country": "Botswana",
@@ -1568,7 +1635,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 45,
         "landAffordabilityIndex": 3.7,
         "greenCertifiedHomesPerCapita": 0.7,
-        "cementAffordabilityDays": 0.35
+        "cementAffordabilityDays": 0.35,
+        "resilienceCertifiedPerCapita": 3.1
     },
     {
         "country": "Senegal",
@@ -1591,7 +1659,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 55,
         "landAffordabilityIndex": 2.8,
         "greenCertifiedHomesPerCapita": 0.6,
-        "cementAffordabilityDays": 1.12
+        "cementAffordabilityDays": 1.12,
+        "resilienceCertifiedPerCapita": 1.7
     },
     {
         "country": "Tunisia",
@@ -1614,7 +1683,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 15,
         "landAffordabilityIndex": 11.4,
         "greenCertifiedHomesPerCapita": 1.8,
-        "cementAffordabilityDays": 0.48
+        "cementAffordabilityDays": 0.48,
+        "resilienceCertifiedPerCapita": 3.3
     },
     {
         "country": "Cameroon",
@@ -1637,7 +1707,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 60,
         "landAffordabilityIndex": 4.3,
         "greenCertifiedHomesPerCapita": 0.6,
-        "cementAffordabilityDays": 1.16
+        "cementAffordabilityDays": 1.16,
+        "resilienceCertifiedPerCapita": 1.4
     },
     {
         "country": "Ivory Coast",
@@ -1660,7 +1731,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 60,
         "landAffordabilityIndex": 8.7,
         "greenCertifiedHomesPerCapita": 0.5,
-        "cementAffordabilityDays": 0.7
+        "cementAffordabilityDays": 0.7,
+        "resilienceCertifiedPerCapita": 1.4
     },
     {
         "country": "Mozambique",
@@ -1683,7 +1755,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 7.3,
         "greenCertifiedHomesPerCapita": 0.5,
-        "cementAffordabilityDays": 3.61
+        "cementAffordabilityDays": 3.61,
+        "resilienceCertifiedPerCapita": 2.4
     },
     {
         "country": "Angola",
@@ -1706,7 +1779,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 99.0,
         "greenCertifiedHomesPerCapita": 0.5,
-        "cementAffordabilityDays": 1.01
+        "cementAffordabilityDays": 1.01,
+        "resilienceCertifiedPerCapita": 1.4
     },
     {
         "country": "Zimbabwe",
@@ -1729,7 +1803,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 55,
         "landAffordabilityIndex": 18.3,
         "greenCertifiedHomesPerCapita": 0.5,
-        "cementAffordabilityDays": 1.72
+        "cementAffordabilityDays": 1.72,
+        "resilienceCertifiedPerCapita": 1.6
     },
     {
         "country": "Algeria",
@@ -1752,7 +1827,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 25,
         "landAffordabilityIndex": 8.5,
         "greenCertifiedHomesPerCapita": 1.3,
-        "cementAffordabilityDays": 0.38
+        "cementAffordabilityDays": 0.38,
+        "resilienceCertifiedPerCapita": 3.3
     },
     {
         "country": "Sudan",
@@ -1775,7 +1851,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 4.8,
         "greenCertifiedHomesPerCapita": 0.5,
-        "cementAffordabilityDays": 2.8
+        "cementAffordabilityDays": 2.8,
+        "resilienceCertifiedPerCapita": 1.3
     },
     {
         "country": "Mauritius",
@@ -1798,7 +1875,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 20,
         "landAffordabilityIndex": 8.0,
         "greenCertifiedHomesPerCapita": 12.3,
-        "cementAffordabilityDays": 0.16
+        "cementAffordabilityDays": 0.16,
+        "resilienceCertifiedPerCapita": 6.2
     },
     {
         "country": "Malawi",
@@ -1821,7 +1899,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 2.5,
         "greenCertifiedHomesPerCapita": 0.4,
-        "cementAffordabilityDays": 4.83
+        "cementAffordabilityDays": 4.83,
+        "resilienceCertifiedPerCapita": 1.5
     },
     {
         "country": "Benin",
@@ -1844,7 +1923,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 18.9,
         "greenCertifiedHomesPerCapita": 0.4,
-        "cementAffordabilityDays": 1.52
+        "cementAffordabilityDays": 1.52,
+        "resilienceCertifiedPerCapita": 1.5
     },
     {
         "country": "Togo",
@@ -1867,7 +1947,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 10.5,
         "greenCertifiedHomesPerCapita": 0.3,
-        "cementAffordabilityDays": 2.0
+        "cementAffordabilityDays": 2.0,
+        "resilienceCertifiedPerCapita": 1.7
     },
     {
         "country": "Mali",
@@ -1890,7 +1971,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 16.4,
         "greenCertifiedHomesPerCapita": 0.3,
-        "cementAffordabilityDays": 3.04
+        "cementAffordabilityDays": 3.04,
+        "resilienceCertifiedPerCapita": 1.3
     },
     {
         "country": "Burkina Faso",
@@ -1913,7 +1995,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 14.4,
         "greenCertifiedHomesPerCapita": 0.3,
-        "cementAffordabilityDays": 3.53
+        "cementAffordabilityDays": 3.53,
+        "resilienceCertifiedPerCapita": 1.1
     },
     {
         "country": "Madagascar",
@@ -1936,7 +2019,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 14.7,
         "greenCertifiedHomesPerCapita": 0.3,
-        "cementAffordabilityDays": 5.27
+        "cementAffordabilityDays": 5.27,
+        "resilienceCertifiedPerCapita": 1.7
     },
     {
         "country": "Congo",
@@ -1959,7 +2043,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 20.0,
         "greenCertifiedHomesPerCapita": 0.4,
-        "cementAffordabilityDays": 1.15
+        "cementAffordabilityDays": 1.15,
+        "resilienceCertifiedPerCapita": 1.7
     },
     {
         "country": "Romania",
@@ -1982,7 +2067,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 8.0,
         "greenCertifiedHomesPerCapita": 5.8,
-        "cementAffordabilityDays": 0.11
+        "cementAffordabilityDays": 0.11,
+        "resilienceCertifiedPerCapita": 4.2
     },
     {
         "country": "Bulgaria",
@@ -2005,7 +2091,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 1.3,
         "greenCertifiedHomesPerCapita": 5.5,
-        "cementAffordabilityDays": 0.12
+        "cementAffordabilityDays": 0.12,
+        "resilienceCertifiedPerCapita": 4.4
     },
     {
         "country": "Croatia",
@@ -2028,7 +2115,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 1,
         "landAffordabilityIndex": 1.8,
         "greenCertifiedHomesPerCapita": 6.4,
-        "cementAffordabilityDays": 0.11
+        "cementAffordabilityDays": 0.11,
+        "resilienceCertifiedPerCapita": 5.1
     },
     {
         "country": "Peru",
@@ -2051,7 +2139,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 25,
         "landAffordabilityIndex": 2.3,
         "greenCertifiedHomesPerCapita": 3.8,
-        "cementAffordabilityDays": 0.2
+        "cementAffordabilityDays": 0.2,
+        "resilienceCertifiedPerCapita": 8.8
     },
     {
         "country": "Cambodia",
@@ -2074,7 +2163,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 30,
         "landAffordabilityIndex": 3.1,
         "greenCertifiedHomesPerCapita": 1.2,
-        "cementAffordabilityDays": 0.76
+        "cementAffordabilityDays": 0.76,
+        "resilienceCertifiedPerCapita": 3.0
     },
     {
         "country": "Nepal",
@@ -2097,7 +2187,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 0,
         "landAffordabilityIndex": 9.6,
         "greenCertifiedHomesPerCapita": 0.8,
-        "cementAffordabilityDays": 1.33
+        "cementAffordabilityDays": 1.33,
+        "resilienceCertifiedPerCapita": 2.6
     },
     {
         "country": "Myanmar",
@@ -2120,7 +2211,8 @@ const housingData = [
     "buildingCodeYearsSinceUpdate": 100,
         "landAffordabilityIndex": 11.2,
         "greenCertifiedHomesPerCapita": 0.5,
-        "cementAffordabilityDays": 1.3
+        "cementAffordabilityDays": 1.3,
+        "resilienceCertifiedPerCapita": 1.5
     }
 ];
 
