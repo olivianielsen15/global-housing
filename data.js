@@ -27,7 +27,7 @@
 // 16. landAffordabilityIndex: Number of months of average income needed to buy 1 m² of urban residential land in the primary economic city. Calculated as (Urban residential land price per m² in USD) / (Monthly GDP per capita in USD). Based on 2025 data from Global Property Guide, Numbeo, Savills, Knight Frank, JLL, CBRE, and national statistics. Low values (0-3 months) indicate abundant/affordable land; medium (3-8) moderate affordability; high (8-15) expensive land; very high (15-30) severely constrained markets; extreme (30+) indicates extreme speculation or geographic limitations like Hong Kong, Monaco, Singapore.
 // 17. greenCertifiedHomesPerCapita: Green-certified residential units per 100,000 people. Calculated as (Total EDGE certified homes + LEED residential units) / (Population / 100,000). Based on 2024-2025 data from EDGE Buildings (World Bank/IFC), USGBC LEED Project Directory, and national green building councils (Green Star, BREEAM, DGNB, etc.). EDGE focuses on emerging markets with affordable, resource-efficient housing. LEED residential includes single-family homes and multifamily projects. High values (50+) indicate strong green building adoption; moderate (10-50) emerging markets; low (1-10) early adoption; minimal (0-1) limited green certification activity.
 // 18. cementAffordabilityDays: Number of days of average income needed to buy one standard 50kg bag of Portland cement. Calculated as (Price of 50kg bag of Portland cement in USD) / (Daily GDP per capita in USD). Based on 2025-2026 data from Global Petrol Prices, Trading Economics, IndexMundi, World Bank, regional cement associations, and national statistics. Lower values indicate more affordable construction materials. Major cement producers (China, India, Turkey, Egypt, Brazil) show very affordable cement (0.07-0.32 days); developed countries vary (0.02-0.12 days) based on labor costs and efficiency; landlocked African countries show higher costs (2-5 days) due to import dependence and logistics challenges; most affordable globally are wealthy nations with efficient markets (Japan, Singapore, Luxembourg at 0.02 days).
-// 19. resilienceCertifiedPerCapita: Resilience-certified buildings per 100,000 people. Calculated as (Total RELi + IBHS Fortified + other resilience-certified buildings) / (Population / 100,000). Based on 2024-2025 data from USGBC RELi (discontinued 2022), IBHS Fortified Home program (USA: ~90,000 homes in AL, LA, NC, SC), national seismic resilience programs (Japan post-Kobe retrofitting, Chile NCh 433, New Zealand post-Christchurch EPB), flood resilience initiatives (Netherlands amphibious housing, Singapore coastal protection, Bangladesh cyclone shelters), typhoon/hurricane programs (Philippines Build Back Better 171,230 homes, Caribbean initiatives), post-disaster reconstruction (Turkey 2023 earthquake, Indonesia post-tsunami, Nepal 2015 earthquake), and climate adaptation certifications (EU member states flood directives, India UEVRP program, China earthquake monitoring network). High values (100+ per 100k) indicate comprehensive disaster resilience mandates; medium (15-50) emerging certification programs in high-risk areas; low (1-15) pilot projects and voluntary programs; minimal (0.1-1) limited formal certification activity.
+// 19. resilienceCertifiedPerCapita: Resilience-certified buildings per 100,000 people. Calculated as (Total BRI + RELi + IBHS Fortified + other resilience-certified buildings) / (Population / 100,000). Based on 2024-2025 data from IFC Building Resilience Index (BRI - 145 projects assessed across 19 countries in East Asia, Pacific, South Asia, and Latin America including Philippines pilot program, Vietnam, Indonesia, Thailand, Malaysia, Bangladesh, India, Pakistan, Nepal, Colombia; web-based hazard assessment tool covering wind, water, fire, and geo-seismic risks), USGBC RELi (discontinued 2022), IBHS Fortified Home program (USA: ~90,000 homes in AL, LA, NC, SC), national seismic resilience programs (Japan post-Kobe retrofitting, Chile NCh 433, New Zealand post-Christchurch EPB), flood resilience initiatives (Netherlands amphibious housing, Singapore coastal protection, Bangladesh cyclone shelters), typhoon/hurricane programs (Philippines Build Back Better 171,230 homes, Caribbean initiatives), post-disaster reconstruction (Turkey 2023 earthquake, Indonesia post-tsunami, Nepal 2015 earthquake), and climate adaptation certifications (EU member states flood directives, India UEVRP program, China earthquake monitoring network). High values (100+ per 100k) indicate comprehensive disaster resilience mandates; medium (15-50) emerging certification programs in high-risk areas; low (1-15) pilot projects and voluntary programs; minimal (0.1-1) limited formal certification activity.
 
 const housingData = [
     {
@@ -940,7 +940,7 @@ const housingData = [
         "landAffordabilityIndex": 1.8,
         "greenCertifiedHomesPerCapita": 6.2,
         "cementAffordabilityDays": 0.3,
-        "resilienceCertifiedPerCapita": 9.6
+        "resilienceCertifiedPerCapita": 11.2
     },
     {
         "country": "Brazil",
@@ -1036,7 +1036,7 @@ const housingData = [
         "landAffordabilityIndex": 3.7,
         "greenCertifiedHomesPerCapita": 3.1,
         "cementAffordabilityDays": 0.16,
-        "resilienceCertifiedPerCapita": 3.5
+        "resilienceCertifiedPerCapita": 6.3
     },
     {
         "country": "Malaysia",
@@ -1060,7 +1060,7 @@ const housingData = [
         "landAffordabilityIndex": 7.2,
         "greenCertifiedHomesPerCapita": 5.6,
         "cementAffordabilityDays": 0.1,
-        "resilienceCertifiedPerCapita": 3.5
+        "resilienceCertifiedPerCapita": 9.3
     },
     {
         "country": "Singapore",
@@ -1108,7 +1108,7 @@ const housingData = [
         "landAffordabilityIndex": 3.0,
         "greenCertifiedHomesPerCapita": 2.4,
         "cementAffordabilityDays": 0.35,
-        "resilienceCertifiedPerCapita": 148.9
+        "resilienceCertifiedPerCapita": 153.2
     },
     {
         "country": "Vietnam",
@@ -1132,7 +1132,7 @@ const housingData = [
         "landAffordabilityIndex": 8.4,
         "greenCertifiedHomesPerCapita": 1.8,
         "cementAffordabilityDays": 0.25,
-        "resilienceCertifiedPerCapita": 3.0
+        "resilienceCertifiedPerCapita": 4.5
     },
     {
         "country": "Indonesia",
@@ -1156,7 +1156,7 @@ const housingData = [
         "landAffordabilityIndex": 5.9,
         "greenCertifiedHomesPerCapita": 2,
         "cementAffordabilityDays": 0.21,
-        "resilienceCertifiedPerCapita": 14.5
+        "resilienceCertifiedPerCapita": 15.6
     },
     {
         "country": "India",
@@ -1180,7 +1180,7 @@ const housingData = [
         "landAffordabilityIndex": 4.4,
         "greenCertifiedHomesPerCapita": 3.2,
         "cementAffordabilityDays": 0.32,
-        "resilienceCertifiedPerCapita": 1.8
+        "resilienceCertifiedPerCapita": 2.0
     },
     {
         "country": "Argentina",
@@ -1228,7 +1228,7 @@ const housingData = [
         "landAffordabilityIndex": 1.9,
         "greenCertifiedHomesPerCapita": 1.5,
         "cementAffordabilityDays": 0.87,
-        "resilienceCertifiedPerCapita": 1.3
+        "resilienceCertifiedPerCapita": 2.1
     },
     {
         "country": "Bangladesh",
@@ -1252,7 +1252,7 @@ const housingData = [
         "landAffordabilityIndex": 8.5,
         "greenCertifiedHomesPerCapita": 1.2,
         "cementAffordabilityDays": 0.58,
-        "resilienceCertifiedPerCapita": 1.2
+        "resilienceCertifiedPerCapita": 2.5
     },
     {
         "country": "United Arab Emirates",
@@ -2188,7 +2188,7 @@ const housingData = [
         "landAffordabilityIndex": 9.6,
         "greenCertifiedHomesPerCapita": 0.8,
         "cementAffordabilityDays": 1.33,
-        "resilienceCertifiedPerCapita": 2.6
+        "resilienceCertifiedPerCapita": 4.8
     },
     {
         "country": "Myanmar",
