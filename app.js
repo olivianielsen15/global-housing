@@ -171,6 +171,15 @@ const layerConfig = {
         scale: [0, 20],
         unit: ' projects/100k',
         reversed: true  // Higher is better - more resilience-certified projects
+    },
+    vacancyRate: {
+        title: 'Housing Vacancy Rate',
+        description: 'Percentage of housing units sitting empty (excluding seasonal/holiday homes where data allows). Measures housing market efficiency and potential for reactivation. Lower values (green) = efficient housing use, higher values (red) = wasted housing stock. Based on census data, OECD HM1.1, Eurostat, and national statistics.',
+        detailedDefinition: 'This metric measures the percentage of total housing stock that sits vacant or unoccupied. Vacancy rates reveal housing market inefficiencies, demographic shifts, and potential for reactivation without new construction. Causes of high vacancy vary by region: Aging populations (Japan 13.7%, Italy 18.5%, Eastern Europe 15-30%) - Shrinking households and emigration leave homes empty. Post-bubble oversupply (China 22%, Spain 12%, Portugal 12%, Ireland 10%) - 2008 financial crisis and speculative construction created ghost developments. Depopulation (Croatia 30%, Bulgaria 16%, Romania 15%) - Young people emigrating to Western Europe for work. Holiday home concentration (France 18%) - Seasonal properties inflate vacancy statistics. Wealth parking (luxury segments in global cities) - Investment properties held empty for appreciation. Low vacancy signals housing scarcity and strong demand: UK (0.9%), Netherlands (0.8%), Denmark (<1%), Singapore (1%), Luxembourg (1.2%) face severe housing shortages driving high prices and cost burdens. Optimal vacancy rate is 2-5% for healthy market function - allows mobility, renovations, normal turnover without shortage or waste. Policy implications: High vacancy countries (>10%) should consider vacancy taxes, conversion programs, and reactivation incentives before new construction. Low vacancy countries (<2%) need supply increases through construction, densification, and regulatory reform. Housing deficit countries with low vacancy (Bangladesh 1.5%, Ethiopia 1.5%, Kenya 2%) must build new supply - no empty stock to reactivate. Benefits of reducing vacancy: Lower housing costs through increased effective supply, reduced environmental impact (reuse vs new construction), preservation of affordable housing stock, revitalization of declining neighborhoods, and better land use efficiency. Vacancy patterns reveal whether housing crises stem from absolute shortage (build more) or inefficient allocation (activate existing stock). Countries can address vacancy through: Empty homes taxes (Vancouver, Paris), conversion incentives, compulsory purchase for chronic vacancy, property maintenance requirements, and tenant matching programs.',
+        dataKey: 'vacancyRate',
+        scale: [0, 15],
+        unit: '%',
+        reversed: false  // Lower is better - less wasted housing stock
     }
 };
 
@@ -476,6 +485,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Green Certified Homes:</strong> ${countryData.greenCertifiedHomesPerCapita.toFixed(1)} per 100k people</p>
             <p><strong>Cement Affordability:</strong> ${countryData.cementAffordabilityDays.toFixed(2)} days income per 50kg bag</p>
             <p><strong>Resilience Certified:</strong> ${countryData.resilienceCertifiedPerCapita.toFixed(1)} per 100k people</p>
+            <p><strong>Vacancy Rate:</strong> ${countryData.vacancyRate.toFixed(1)}% of housing stock empty</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
