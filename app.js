@@ -189,6 +189,15 @@ const layerConfig = {
         scale: [0, 4.0],
         unit: ' index',
         reversed: false  // Lower is better - less demand pressure
+    },
+    municipalSpendingEfficiency: {
+        title: 'Municipal Spending Efficiency Index',
+        description: 'Municipal budget per capita (USD) relative to urban density. Formula: (Municipal Budget Per Capita) / (Urban Density per 1000 people/sq km). Higher values (green) = well-resourced municipal services. Lower values (red) = under-resourced dense cities. Based on OECD MUNIFI/REGOFI, World Bank, UN-Habitat, Africapolis, and national statistics (2023-2024).',
+        detailedDefinition: 'This metric measures municipal spending capacity relative to urban density, revealing which cities have adequate resources for housing and infrastructure services. Formula: (Municipal Budget Per Capita in USD) / (Urban Density per 1000 people/sq km). This normalizes spending by density to answer: do denser cities get proportional budgets, or are they under-resourced? High values (6000-7000) indicate well-funded municipal systems like Nordic countries - Denmark 6724.1 (budget $19,500/capita, density 2,900/km²), Norway 6909.1 ($15,200, 2,200/km²), Sweden 5153.8 ($13,400, 2,600/km²). These cities can afford quality infrastructure, social housing, and services. Medium values (500-2000) show moderate capacity - OECD countries like Switzerland 1634.6, Australia 1523.8, Netherlands 3555.6, developed systems with reasonable funding. Low values (100-400) indicate emerging economies with some municipal capacity - Brazil 163.0, Mexico 118.0, China 214.3, Malaysia 154.9, South Africa 125.5. Very low values (<100) reveal severely under-resourced dense cities - Bangladesh 3.7 (Dhaka 36,000/km², budget only $85/capita), Pakistan 8.2 (Karachi 24,000/km²), Philippines 12.0 (Manila 19,000/km²), India 19.8 (Mumbai 31,700/km²), Indonesia 16.9 (Jakarta 15,900/km²). These megacities have extreme density but minimal municipal budgets, making affordable housing provision nearly impossible. The pattern is stark: dense cities in developing countries face a double challenge - very high density that should enable economies of scale, but extremely low budgets that prevent adequate service delivery. Data sources: OECD MUNIFI Database (37 OECD+EU countries, most reliable local government finance data), OECD REGOFI (regional government data), World Bank Government Finance Statistics, UN-Habitat Urban Finance database, Africapolis urban density data (7,617 African agglomerations), national statistical offices, municipal budget reports. Urban density measured as average density in major urban agglomerations (people per sq km), not national density. Municipal budget includes local government spending on infrastructure, services, housing, but excludes national/regional transfers counted as local revenue. Policy implications: Low-efficiency countries (<100) need massive increases in municipal revenue - through local taxation, national transfers, or international development finance - to build affordable housing and infrastructure at scale. Decentralized fiscal systems (Nordic, Switzerland) show highest efficiency by empowering local governments with revenue authority. Centralized systems in developing countries often starve cities of resources despite rapid urbanization. The metric reveals why informal housing persists: cities like Dhaka, Karachi, Manila lack the municipal budget to provide formal affordable alternatives, forcing residents into slums despite high density that should enable efficient service delivery.',
+        dataKey: 'municipalSpendingEfficiency',
+        scale: [0, 7000],
+        unit: ' USD/capita per 1k density',
+        reversed: true  // Higher is better - more municipal resources
     }
 };
 
@@ -525,6 +534,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Resilience Certified:</strong> ${countryData.resilienceCertifiedPerCapita.toFixed(1)} per 100k people</p>
             <p><strong>Vacancy Rate:</strong> ${countryData.vacancyRate.toFixed(1)}% of housing stock empty</p>
             <p><strong>Housing Demand Pressure 2050:</strong> ${countryData.housingDemandPressure.toFixed(1)} index (pop growth + household changes)</p>
+            <p><strong>Municipal Spending Efficiency:</strong> ${countryData.municipalSpendingEfficiency.toFixed(1)} USD/capita per 1k density</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
