@@ -276,6 +276,10 @@ const numericToISO = {
     '876': 'WLF', '882': 'WSM', '887': 'YEM', '894': 'ZMB'
 };
 
+// City view state
+let cityViewActive = false;
+let currentZoomedCountry = null;
+
 // Hide loading screen
 function hideLoadingScreen() {
     const loadingScreen = document.getElementById('loading-screen');
@@ -285,6 +289,164 @@ function hideLoadingScreen() {
             loadingScreen.style.display = 'none';
         }, 500);
     }
+}
+
+// Add city markers to the globe
+function addCityMarkers() {
+    if (!globe || !cityData) return;
+
+    globe
+        .pointsData(cityData)
+        .pointLat('lat')
+        .pointLng('lng')
+        .pointColor(d => {
+            const config = layerConfig[currentLayer];
+            // Use informal settlements as a proxy for housing crisis intensity
+            const value = d.informalSettlementsPercent;
+            if (value > 60) return '#cc0000';  // Severe
+            if (value > 50) return '#ff4500';
+            if (value > 40) return '#ff9933';
+            if (value > 30) return '#ffff00';
+            if (value > 20) return '#66ff66';
+            return '#00cc66';  // Low informality
+        })
+        .pointAltitude(0.02)
+        .pointRadius(d => {
+            // Scale radius by population (logarithmic scale)
+            return Math.log(d.population) * 0.08;
+        })
+        .pointLabel(d => {
+            return `
+                <div style="
+                    background: rgba(0, 0, 0, 0.95);
+                    padding: 12px 16px;
+                    border-radius: 8px;
+                    border: 2px solid #4facfe;
+                    color: white;
+                    font-family: 'Segoe UI', sans-serif;
+                    max-width: 320px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+                ">
+                    <div style="font-size: 16px; font-weight: bold; margin-bottom: 8px; color: #00f2fe;">
+                        ${d.city}, ${d.country}
+                    </div>
+                    <div style="font-size: 13px; line-height: 1.5; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 8px;">
+                        <div style="margin: 4px 0;">
+                            <strong style="color: #4facfe;">Population:</strong>
+                            <span style="float: right; color: #fff;">${(d.population / 1000).toFixed(1)}M</span>
+                        </div>
+                        <div style="margin: 4px 0;">
+                            <strong style="color: #4facfe;">Housing Deficit:</strong>
+                            <span style="float: right; color: #fff;">${(d.housingDeficit / 1000).toFixed(0)}k units</span>
+                        </div>
+                        <div style="margin: 4px 0;">
+                            <strong style="color: #4facfe;">Informal Settlements:</strong>
+                            <span style="float: right; color: #fff;">${d.informalSettlementsPercent}%</span>
+                        </div>
+                        <div style="margin: 4px 0;">
+                            <strong style="color: #4facfe;">Slum Population:</strong>
+                            <span style="float: right; color: #fff;">${(d.slumPopulation / 1000).toFixed(1)}M</span>
+                        </div>
+                        <div style="margin: 4px 0;">
+                            <strong style="color: #4facfe;">Density:</strong>
+                            <span style="float: right; color: #fff;">${d.density.toLocaleString()}/km²</span>
+                        </div>
+                        <div style="margin: 4px 0;">
+                            <strong style="color: #4facfe;">Avg Rent:</strong>
+                            <span style="float: right; color: #fff;">$${d.averageRent}/month</span>
+                        </div>
+                    </div>
+                    ${d.notes ? `
+                        <div style="font-size: 11px; color: #aaa; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.1); font-style: italic;">
+                            ${d.notes}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        });
+}
+
+// Zoom to a country and highlight its cities
+function zoomToCountry(iso, feature) {
+    currentZoomedCountry = iso;
+    cityViewActive = true;
+
+    // Get the country's bounding box center
+    // Simple approach: use first city as zoom target, or calculate centroid
+    const countryCities = cityData.filter(c => c.iso === iso);
+
+    if (countryCities.length > 0) {
+        // Calculate centroid of cities
+        const avgLat = countryCities.reduce((sum, c) => sum + c.lat, 0) / countryCities.length;
+        const avgLng = countryCities.reduce((sum, c) => sum + c.lng, 0) / countryCities.length;
+
+        // Zoom into the country
+        globe.pointOfView({
+            lat: avgLat,
+            lng: avgLng,
+            altitude: 0.8  // Close zoom level to see cities
+        }, 1500);  // 1.5 second animation
+
+        // Update stats panel to show city view
+        updateCityListPanel(countryCities);
+    } else {
+        // No city data available, just zoom to polygon center
+        alert(`City-level data not yet available for this country. Currently covering ${
+            [...new Set(cityData.map(c => c.country))].length
+        } countries with detailed city data.`);
+    }
+}
+
+// Update stats panel to show list of cities
+function updateCityListPanel(cities) {
+    const statsPanel = document.getElementById('stats-panel');
+    const countryName = cities[0].country;
+
+    statsPanel.classList.add('has-data');
+    statsPanel.innerHTML = `
+        <h4>${countryName} - Cities</h4>
+        <p style="font-size: 12px; color: #aaa; margin-bottom: 12px;">
+            Click on city markers for detailed information
+        </p>
+        <div class="country-stats" style="max-height: 500px; overflow-y: auto;">
+            ${cities.map(city => `
+                <div style="margin-bottom: 10px; padding: 8px; background: rgba(79, 172, 254, 0.1); border-radius: 4px;">
+                    <p style="margin: 2px 0;"><strong style="color: #00f2fe;">${city.city}</strong></p>
+                    <p style="margin: 2px 0; font-size: 11px;">Pop: ${(city.population / 1000).toFixed(1)}M | Deficit: ${(city.housingDeficit / 1000).toFixed(0)}k units</p>
+                    <p style="margin: 2px 0; font-size: 11px;">Informal: ${city.informalSettlementsPercent}% | Density: ${city.density.toLocaleString()}/km²</p>
+                </div>
+            `).join('')}
+        </div>
+        <button onclick="resetGlobeView()" style="
+            margin-top: 12px;
+            padding: 8px 16px;
+            background: #4facfe;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            width: 100%;
+        ">
+            ← Back to Global View
+        </button>
+    `;
+}
+
+// Reset to global view
+function resetGlobeView() {
+    cityViewActive = false;
+    currentZoomedCountry = null;
+
+    // Zoom out to global view
+    globe.pointOfView({
+        lat: 0,
+        lng: 0,
+        altitude: 2.5
+    }, 1500);
+
+    // Reset stats panel
+    resetStatsPanel();
 }
 
 // Initialize globe visualization with choropleth (heat map)
@@ -442,8 +604,17 @@ function initGlobe() {
                 if (globe.controls().autoRotate) {
                     globe.controls().autoRotate = false;
                 }
-                // You could also add: focus on the country, show detailed info, etc.
+
+                // Zoom into the country and show cities
+                const numericId = String(feat.id).padStart(3, '0');
+                const iso = numericToISO[numericId];
+                if (iso) {
+                    zoomToCountry(iso, feat);
+                }
             });
+
+            // Add city markers
+            addCityMarkers();
 
             // Hide loading screen once globe is ready
             setTimeout(() => {
