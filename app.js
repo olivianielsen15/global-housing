@@ -427,6 +427,13 @@ function initGlobe() {
                 } else {
                     resetStatsPanel();
                 }
+            })
+            .onPolygonClick(feat => {
+                // Stop auto-rotation when user clicks on a country
+                if (globe.controls().autoRotate) {
+                    globe.controls().autoRotate = false;
+                }
+                // You could also add: focus on the country, show detailed info, etc.
             });
 
             // Hide loading screen once globe is ready
@@ -439,9 +446,31 @@ function initGlobe() {
             hideLoadingScreen(); // Hide loading screen even on error
         });
 
+    // Configure globe controls for better navigation
+    const controls = globe.controls();
+
     // Auto-rotate (slower on mobile to reduce GPU load)
-    globe.controls().autoRotate = true;
-    globe.controls().autoRotateSpeed = isMobile ? 0.15 : 0.25;  // Reduced from 0.2/0.35 for smoother initial rotation
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = isMobile ? 0.15 : 0.25;
+
+    // Enable full vertical and horizontal rotation
+    controls.enableRotate = true;
+    controls.enableZoom = true;
+    controls.enablePan = isMobile ? false : true;  // Disable pan on mobile to avoid conflicts
+
+    // Allow full vertical rotation (no limits)
+    controls.minPolarAngle = 0;  // Allow rotation to north pole
+    controls.maxPolarAngle = Math.PI;  // Allow rotation to south pole
+
+    // Set zoom limits
+    controls.minDistance = 150;  // Minimum zoom distance
+    controls.maxDistance = 800;  // Maximum zoom distance
+
+    // Smooth damping for better feel
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.rotateSpeed = 0.5;
+    controls.zoomSpeed = 0.8;
 
     // Handle window resize
     window.addEventListener('resize', () => {
