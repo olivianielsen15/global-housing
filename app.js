@@ -180,6 +180,15 @@ const layerConfig = {
         scale: [0, 15],
         unit: '%',
         reversed: false  // Lower is better - less wasted housing stock
+    },
+    housingDemandPressure: {
+        title: 'Housing Demand Pressure Index (2024-2050)',
+        description: 'Composite index measuring future housing demand from population growth and household size changes through 2050. Combines UN population projections with household formation trends. Higher values (red) = severe pressure requiring massive construction. Lower values (green) = manageable or declining demand. Based on UN World Population Prospects 2024 and UN Household Database 2022.',
+        detailedDefinition: 'This forward-looking metric combines population growth projections (2024-2050) with household size trends to estimate future housing demand pressure. The index captures two simultaneous forces: Population Change - UN WPP 2024 projects which countries will grow (India +14%, Nigeria +54%, Pakistan +46%) versus decline (China -14%, Japan -13%, Eastern Europe -15-21%). Household Size Decline - Globally, household size has fallen 0.5 persons per decade, creating hidden housing demand even in stable populations. When household size drops from 2.5 to 2.0 people, the same population needs 25% more housing units. Calculation: Housing Demand Pressure = Annual Population Growth Rate + Household Formation Adjustment. Declining household size adds 0.4-1.5 points depending on speed of change (rapid in Asia/Europe, slow in Africa). Score interpretation: Very High (3.5-4.0+) = Extreme pressure, Sub-Saharan Africa (Angola 4.0, Uganda 3.9, Tanzania 3.8, Mali 3.9) with 2.0-2.7% population growth + stable large households. High (2.5-3.5) = Severe pressure, Fast-growing MENA/South Asia (Egypt 2.9, Pakistan 2.8, Saudi Arabia 2.5) and Africa (Kenya 3.2, Ethiopia 3.5, Nigeria 3.4). Moderate (1.5-2.5) = Significant pressure, Emerging Asia/Latin America (India 2.1, Philippines 2.4, Israel 2.6) with growth + declining households. Low (0.5-1.5) = Manageable pressure, Most OECD countries (Australia 2.0, Canada 1.6, USA 1.4, UK 1.2) with modest growth offset by household decline. Declining (<0.5) = Falling demand, Eastern Europe (Latvia 0.2, Lithuania 0.2, Bulgaria 0.2, Estonia 0.4) where population loss exceeds household formation needs. Regional patterns: Sub-Saharan Africa (67% population growth by 2050) = Highest pressure; Eastern Europe (depopulation + emigration) = Lowest pressure; Asia diverging (India growing, China/Japan/Korea shrinking); Latin America moderate growth with rapid household decline. Policy implications: High pressure countries (>2.5) need sustained construction at scale, infrastructure investment, and urban planning for rapid growth. Moderate pressure (1.5-2.5) requires steady supply increases and household formation support. Low/declining pressure (<1.0) should focus on renovation, adaptation, vacancy reduction rather than new construction. Declining household size is nearly universal: Sweden 1.8 persons, Germany 2.0, China 2.8 (rapid decline), India 4.4 (declining), Senegal 8.4 (slow decline). Only Sub-Saharan Africa maintains stable large households. Compound pressure examples: Egypt (1.6% population growth + declining households) faces demographic explosion; India (0.7% growth + 4.4 to ~3.5 household size) needs millions of new units annually; Eastern Europe (population loss BUT household decline) still needs housing renovation and urban adaptation despite shrinking populations. The index reveals that housing demand is not just about total population—household formation patterns matter equally. Germany with 0% population growth still needs housing as 2.0-person households become more common through aging, divorce, and solo living.',
+        dataKey: 'housingDemandPressure',
+        scale: [0, 4.0],
+        unit: ' index',
+        reversed: false  // Lower is better - less demand pressure
     }
 };
 
@@ -486,6 +495,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Cement Affordability:</strong> ${countryData.cementAffordabilityDays.toFixed(2)} days income per 50kg bag</p>
             <p><strong>Resilience Certified:</strong> ${countryData.resilienceCertifiedPerCapita.toFixed(1)} per 100k people</p>
             <p><strong>Vacancy Rate:</strong> ${countryData.vacancyRate.toFixed(1)}% of housing stock empty</p>
+            <p><strong>Housing Demand Pressure 2050:</strong> ${countryData.housingDemandPressure.toFixed(1)} index (pop growth + household changes)</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>

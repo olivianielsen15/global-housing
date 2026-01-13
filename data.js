@@ -29,6 +29,7 @@
 // 18. cementAffordabilityDays: Number of days of average income needed to buy one standard 50kg bag of Portland cement. Calculated as (Price of 50kg bag of Portland cement in USD) / (Daily GDP per capita in USD). Based on 2025-2026 data from Global Petrol Prices, Trading Economics, IndexMundi, World Bank, regional cement associations, and national statistics. Lower values indicate more affordable construction materials. Major cement producers (China, India, Turkey, Egypt, Brazil) show very affordable cement (0.07-0.32 days); developed countries vary (0.02-0.12 days) based on labor costs and efficiency; landlocked African countries show higher costs (2-5 days) due to import dependence and logistics challenges; most affordable globally are wealthy nations with efficient markets (Japan, Singapore, Luxembourg at 0.02 days).
 // 19. resilienceCertifiedPerCapita: Resilience-certified buildings per 100,000 people. Calculated as (Total BRI + RELi + IBHS Fortified + other resilience-certified buildings) / (Population / 100,000). Based on 2024-2025 data from IFC Building Resilience Index (BRI - 145 projects assessed across 19 countries in East Asia, Pacific, South Asia, and Latin America including Philippines pilot program, Vietnam, Indonesia, Thailand, Malaysia, Bangladesh, India, Pakistan, Nepal, Colombia; web-based hazard assessment tool covering wind, water, fire, and geo-seismic risks), USGBC RELi (discontinued 2022), IBHS Fortified Home program (USA: ~90,000 homes in AL, LA, NC, SC), national seismic resilience programs (Japan post-Kobe retrofitting, Chile NCh 433, New Zealand post-Christchurch EPB), flood resilience initiatives (Netherlands amphibious housing, Singapore coastal protection, Bangladesh cyclone shelters), typhoon/hurricane programs (Philippines Build Back Better 171,230 homes, Caribbean initiatives), post-disaster reconstruction (Turkey 2023 earthquake, Indonesia post-tsunami, Nepal 2015 earthquake), and climate adaptation certifications (EU member states flood directives, India UEVRP program, China earthquake monitoring network). High values (100+ per 100k) indicate comprehensive disaster resilience mandates; medium (15-50) emerging certification programs in high-risk areas; low (1-15) pilot projects and voluntary programs; minimal (0.1-1) limited formal certification activity.
 // 20. vacancyRate: Percentage of total housing stock sitting vacant or unoccupied (excluding seasonal/holiday homes where data specification allows). Based on 2023-2025 data from census data, OECD Affordable Housing Database (HM1.1), Eurostat Housing Statistics, national statistics offices, and real estate research (CBRE, empirica, JLL, Savills, Investropa). Vacancy patterns reveal housing market efficiency and allocation issues. Highest rates: Croatia 30% (depopulation/emigration), China 22% (speculative overbuilding), France/Italy 18-18.5% (includes holiday homes, aging population), Bulgaria/Romania 15-16% (emigration to Western Europe), Greece/Japan/Spain/Philippines 12-14% (post-bubble oversupply, aging demographics). Lowest rates: UK 0.9%, Netherlands/Denmark 0.8% (severe housing shortages), Singapore 1%, Luxembourg 1.2%, Iceland/New Zealand 1.5% (tight supply markets). Housing deficit countries generally show low vacancy (Bangladesh/Ethiopia/Uganda 1.5%, Kenya/Nigeria/Pakistan 2%, India 2.5%) indicating absolute shortage rather than allocation issues. Optimal vacancy rate is 2-5% for healthy market turnover. High vacancy (>10%) suggests reactivation potential through vacancy taxes, conversion programs, or compulsory purchase. Low vacancy (<2%) indicates supply shortage requiring new construction. Lower values indicate efficient housing use and market tightness; higher values indicate wasted stock, demographic decline, or speculation.
+// 21. housingDemandPressure: Housing Demand Pressure Index (2024-2050). Composite forward-looking metric combining UN World Population Prospects 2024 population growth projections with household size trends from UN Database on Household Size and Composition 2022. Calculated as: Annual Population Growth Rate (2024-2050) + Household Formation Adjustment (0.4-1.5 points added for declining household size based on speed of change). Scale 0-4.0+ index points. Very High (3.5-4.0+): Angola 4.0, Uganda 3.9, Tanzania 3.8, Mali 3.9, Senegal 3.8, Burkina Faso 3.8 (Sub-Saharan Africa with 2.0-2.7% population growth + stable large households 5.0-8.4 persons). High (2.5-3.5): Egypt 2.9, Pakistan 2.8, Saudi Arabia 2.5, Kenya 3.2, Ethiopia 3.5, Nigeria 3.4, Ghana 3.0, Cameroon 3.4, Benin 3.7, Zambia 3.7, Malawi 3.6, Madagascar 3.6, Congo 3.6, Togo 3.5, Ivory Coast 3.3, Rwanda 3.3, Sudan 3.3 (fast-growing MENA/South Asia/Africa). Moderate (1.5-2.5): India 2.1, Philippines 2.4, Israel 2.6, Malaysia 2.0, Indonesia 1.9, Bangladesh 2.0, Australia 2.0, Luxembourg 2.0, Cambodia 2.2, Nepal 2.1, UAE 2.2, Pakistan 2.8, Namibia 2.7, Zimbabwe 2.6, Algeria 2.3, Botswana 2.3 (emerging Asia/Latin America with growth + declining households). Low (0.5-1.5): Most OECD countries - USA 1.4, Canada 1.6, UK 1.2, Ireland 1.8, New Zealand 1.6, Norway/Denmark/Finland 0.9-1.0, Belgium/France/Austria 1.0, Switzerland 1.1, Sweden 1.3, Netherlands 0.9, Germany 0.8, Chile 1.4, Brazil 1.3, Mexico 1.8, Colombia 1.6, China 1.0, Thailand 1.0, Turkey 1.6 (modest growth offset by household decline). Declining (<0.5): Eastern Europe - Latvia 0.2, Lithuania 0.2, Bulgaria 0.2, Romania 0.3, Croatia 0.3, Estonia 0.4, Greece 0.4, Hungary/Poland 0.5, Japan 0.5 (population loss exceeds household formation needs). Declining household size is nearly universal: globally fallen 0.5 persons per decade. When household size drops 2.5→2.0 people, same population needs 25% more housing units. Regional patterns: Sub-Saharan Africa 67% population growth by 2050 = highest pressure; Eastern Europe depopulation/emigration = lowest pressure; Asia diverging (India growing +14%, China declining -14%, Japan -13%, Korea -0.3% with ultra-low 0.72 fertility); Latin America moderate growth with rapid household decline; MENA demographic explosion (Egypt to 205M). Compound pressure examples: Egypt 1.6% annual growth + declining 4.2-person households = 2.9 index; India 0.7% growth + 4.4→3.5 household size = 2.1 index requiring millions of units annually. Based on UN WPP 2024, OECD Family Database SF1.1, UN Household Database 2022, Eurostat population projections.
 
 const housingData = [
     {
@@ -54,7 +55,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 51.1,
         "cementAffordabilityDays": 0.03,
         "resilienceCertifiedPerCapita": 9.1,
-        "vacancyRate": 1.08
+        "vacancyRate": 1.08,
+        "housingDemandPressure": 1.1
     },
     {
         "country": "Australia",
@@ -79,7 +81,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 38.5,
         "cementAffordabilityDays": 0.04,
         "resilienceCertifiedPerCapita": 30.1,
-        "vacancyRate": 1.6
+        "vacancyRate": 1.6,
+        "housingDemandPressure": 2.0
     },
     {
         "country": "Denmark",
@@ -104,7 +107,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 59.3,
         "cementAffordabilityDays": 0.04,
         "resilienceCertifiedPerCapita": 6.8,
-        "vacancyRate": 0.8
+        "vacancyRate": 0.8,
+        "housingDemandPressure": 1.0
     },
     {
         "country": "Cyprus",
@@ -129,7 +133,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 13.3,
         "cementAffordabilityDays": 0.07,
         "resilienceCertifiedPerCapita": 7.7,
-        "vacancyRate": 12.5
+        "vacancyRate": 12.5,
+        "housingDemandPressure": 1.3
     },
     {
         "country": "Netherlands",
@@ -154,7 +159,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 36.9,
         "cementAffordabilityDays": 0.05,
         "resilienceCertifiedPerCapita": 22.7,
-        "vacancyRate": 0.8
+        "vacancyRate": 0.8,
+        "housingDemandPressure": 0.9
     },
     {
         "country": "Canada",
@@ -179,7 +185,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 128.2,
         "cementAffordabilityDays": 0.05,
         "resilienceCertifiedPerCapita": 12.8,
-        "vacancyRate": 2.2
+        "vacancyRate": 2.2,
+        "housingDemandPressure": 1.6
     },
     {
         "country": "South Korea",
@@ -204,7 +211,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 14.4,
         "cementAffordabilityDays": 0.02,
         "resilienceCertifiedPerCapita": 15.5,
-        "vacancyRate": 3.2
+        "vacancyRate": 3.2,
+        "housingDemandPressure": 0.8
     },
     {
         "country": "Norway",
@@ -229,7 +237,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 54.5,
         "cementAffordabilityDays": 0.03,
         "resilienceCertifiedPerCapita": 14.5,
-        "vacancyRate": 2.5
+        "vacancyRate": 2.5,
+        "housingDemandPressure": 1.0
     },
     {
         "country": "Sweden",
@@ -254,7 +263,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 52.4,
         "cementAffordabilityDays": 0.05,
         "resilienceCertifiedPerCapita": 5.7,
-        "vacancyRate": 2.5
+        "vacancyRate": 2.5,
+        "housingDemandPressure": 1.3
     },
     {
         "country": "New Zealand",
@@ -279,7 +289,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 35.3,
         "cementAffordabilityDays": 0.05,
         "resilienceCertifiedPerCapita": 346.2,
-        "vacancyRate": 1.5
+        "vacancyRate": 1.5,
+        "housingDemandPressure": 1.6
     },
     {
         "country": "Luxembourg",
@@ -304,7 +315,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 123.1,
         "cementAffordabilityDays": 0.02,
         "resilienceCertifiedPerCapita": 4.5,
-        "vacancyRate": 1.2
+        "vacancyRate": 1.2,
+        "housingDemandPressure": 2.0
     },
     {
         "country": "United Kingdom",
@@ -329,7 +341,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 20.6,
         "cementAffordabilityDays": 0.06,
         "resilienceCertifiedPerCapita": 7.3,
-        "vacancyRate": 0.9
+        "vacancyRate": 0.9,
+        "housingDemandPressure": 1.2
     },
     {
         "country": "Finland",
@@ -354,7 +367,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 33.9,
         "cementAffordabilityDays": 0.05,
         "resilienceCertifiedPerCapita": 5.4,
-        "vacancyRate": 10.7
+        "vacancyRate": 10.7,
+        "housingDemandPressure": 0.9
     },
     {
         "country": "United States",
@@ -379,7 +393,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 119.4,
         "cementAffordabilityDays": 0.03,
         "resilienceCertifiedPerCapita": 26.9,
-        "vacancyRate": 11.1
+        "vacancyRate": 11.1,
+        "housingDemandPressure": 1.4
     },
     {
         "country": "Belgium",
@@ -404,7 +419,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 24.1,
         "cementAffordabilityDays": 0.05,
         "resilienceCertifiedPerCapita": 4.3,
-        "vacancyRate": 5.5
+        "vacancyRate": 5.5,
+        "housingDemandPressure": 1.0
     },
     {
         "country": "France",
@@ -429,7 +445,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 15.4,
         "cementAffordabilityDays": 0.06,
         "resilienceCertifiedPerCapita": 6.2,
-        "vacancyRate": 18.0
+        "vacancyRate": 18.0,
+        "housingDemandPressure": 1.0
     },
     {
         "country": "Japan",
@@ -454,7 +471,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 16.8,
         "cementAffordabilityDays": 0.02,
         "resilienceCertifiedPerCapita": 201.6,
-        "vacancyRate": 13.7
+        "vacancyRate": 13.7,
+        "housingDemandPressure": 0.5
     },
     {
         "country": "Spain",
@@ -479,7 +497,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 13.8,
         "cementAffordabilityDays": 0.08,
         "resilienceCertifiedPerCapita": 6.3,
-        "vacancyRate": 12.0
+        "vacancyRate": 12.0,
+        "housingDemandPressure": 0.7
     },
     {
         "country": "Portugal",
@@ -504,7 +523,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 11.7,
         "cementAffordabilityDays": 0.09,
         "resilienceCertifiedPerCapita": 14.4,
-        "vacancyRate": 12.0
+        "vacancyRate": 12.0,
+        "housingDemandPressure": 0.6
     },
     {
         "country": "Ireland",
@@ -529,7 +549,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 21.6,
         "cementAffordabilityDays": 0.03,
         "resilienceCertifiedPerCapita": 3.9,
-        "vacancyRate": 10.0
+        "vacancyRate": 10.0,
+        "housingDemandPressure": 1.8
     },
     {
         "country": "Austria",
@@ -554,7 +575,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 31.1,
         "cementAffordabilityDays": 0.05,
         "resilienceCertifiedPerCapita": 6.6,
-        "vacancyRate": 2.5
+        "vacancyRate": 2.5,
+        "housingDemandPressure": 1.0
     },
     {
         "country": "Germany",
@@ -579,7 +601,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 29.8,
         "cementAffordabilityDays": 0.04,
         "resilienceCertifiedPerCapita": 6.0,
-        "vacancyRate": 2.2
+        "vacancyRate": 2.2,
+        "housingDemandPressure": 0.8
     },
     {
         "country": "Estonia",
@@ -604,7 +627,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 11.5,
         "cementAffordabilityDays": 0.09,
         "resilienceCertifiedPerCapita": 5.7,
-        "vacancyRate": 3.5
+        "vacancyRate": 3.5,
+        "housingDemandPressure": 0.4
     },
     {
         "country": "Slovenia",
@@ -629,7 +653,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 11.4,
         "cementAffordabilityDays": 0.08,
         "resilienceCertifiedPerCapita": 7.1,
-        "vacancyRate": 4.0
+        "vacancyRate": 4.0,
+        "housingDemandPressure": 0.9
     },
     {
         "country": "Italy",
@@ -654,7 +679,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 13.6,
         "cementAffordabilityDays": 0.07,
         "resilienceCertifiedPerCapita": 20.3,
-        "vacancyRate": 18.5
+        "vacancyRate": 18.5,
+        "housingDemandPressure": 0.6
     },
     {
         "country": "Israel",
@@ -679,7 +705,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 26.6,
         "cementAffordabilityDays": 0.04,
         "resilienceCertifiedPerCapita": 8.5,
-        "vacancyRate": 2.0
+        "vacancyRate": 2.0,
+        "housingDemandPressure": 2.6
     },
     {
         "country": "Czech Republic",
@@ -704,7 +731,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 9.5,
         "cementAffordabilityDays": 0.07,
         "resilienceCertifiedPerCapita": 5.7,
-        "vacancyRate": 8.0
+        "vacancyRate": 8.0,
+        "housingDemandPressure": 0.8
     },
     {
         "country": "Greece",
@@ -729,7 +757,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 9.6,
         "cementAffordabilityDays": 0.12,
         "resilienceCertifiedPerCapita": 28.8,
-        "vacancyRate": 14.0
+        "vacancyRate": 14.0,
+        "housingDemandPressure": 0.4
     },
     {
         "country": "Poland",
@@ -754,7 +783,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 8.4,
         "cementAffordabilityDays": 0.08,
         "resilienceCertifiedPerCapita": 5.3,
-        "vacancyRate": 4.0
+        "vacancyRate": 4.0,
+        "housingDemandPressure": 0.5
     },
     {
         "country": "Slovakia",
@@ -779,7 +809,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 6.5,
         "cementAffordabilityDays": 0.09,
         "resilienceCertifiedPerCapita": 4.5,
-        "vacancyRate": 7.0
+        "vacancyRate": 7.0,
+        "housingDemandPressure": 0.7
     },
     {
         "country": "Chile",
@@ -804,7 +835,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 10.2,
         "cementAffordabilityDays": 0.16,
         "resilienceCertifiedPerCapita": 40.8,
-        "vacancyRate": 3.0
+        "vacancyRate": 3.0,
+        "housingDemandPressure": 1.4
     },
     {
         "country": "Hungary",
@@ -829,7 +861,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 6.2,
         "cementAffordabilityDays": 0.1,
         "resilienceCertifiedPerCapita": 5.2,
-        "vacancyRate": 12.3
+        "vacancyRate": 12.3,
+        "housingDemandPressure": 0.5
     },
     {
         "country": "Latvia",
@@ -854,7 +887,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 8.9,
         "cementAffordabilityDays": 0.1,
         "resilienceCertifiedPerCapita": 5.3,
-        "vacancyRate": 5.0
+        "vacancyRate": 5.0,
+        "housingDemandPressure": 0.2
     },
     {
         "country": "Lithuania",
@@ -879,7 +913,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 8.6,
         "cementAffordabilityDays": 0.09,
         "resilienceCertifiedPerCapita": 5.4,
-        "vacancyRate": 3.5
+        "vacancyRate": 3.5,
+        "housingDemandPressure": 0.2
     },
     {
         "country": "Turkey",
@@ -904,7 +939,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 6.5,
         "cementAffordabilityDays": 0.09,
         "resilienceCertifiedPerCapita": 23.4,
-        "vacancyRate": 6.0
+        "vacancyRate": 6.0,
+        "housingDemandPressure": 1.6
     },
     {
         "country": "Mexico",
@@ -929,7 +965,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 6.2,
         "cementAffordabilityDays": 0.19,
         "resilienceCertifiedPerCapita": 11.7,
-        "vacancyRate": 2.0
+        "vacancyRate": 2.0,
+        "housingDemandPressure": 1.8
     },
     {
         "country": "Costa Rica",
@@ -954,7 +991,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 6.7,
         "cementAffordabilityDays": 0.14,
         "resilienceCertifiedPerCapita": 11.5,
-        "vacancyRate": 3.0
+        "vacancyRate": 3.0,
+        "housingDemandPressure": 1.8
     },
     {
         "country": "Colombia",
@@ -979,7 +1017,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 6.2,
         "cementAffordabilityDays": 0.3,
         "resilienceCertifiedPerCapita": 11.2,
-        "vacancyRate": 5.0
+        "vacancyRate": 5.0,
+        "housingDemandPressure": 1.6
     },
     {
         "country": "Brazil",
@@ -1004,7 +1043,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 6,
         "cementAffordabilityDays": 0.14,
         "resilienceCertifiedPerCapita": 5.6,
-        "vacancyRate": 11.1
+        "vacancyRate": 11.1,
+        "housingDemandPressure": 1.3
     },
     {
         "country": "Russia",
@@ -1029,7 +1069,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 2.6,
         "cementAffordabilityDays": 0.09,
         "resilienceCertifiedPerCapita": 5.6,
-        "vacancyRate": 7.0
+        "vacancyRate": 7.0,
+        "housingDemandPressure": 0.6
     },
     {
         "country": "China",
@@ -1054,7 +1095,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 3.5,
         "cementAffordabilityDays": 0.07,
         "resilienceCertifiedPerCapita": 17.5,
-        "vacancyRate": 22.0
+        "vacancyRate": 22.0,
+        "housingDemandPressure": 1.0
     },
     {
         "country": "Thailand",
@@ -1079,7 +1121,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 3.1,
         "cementAffordabilityDays": 0.16,
         "resilienceCertifiedPerCapita": 6.3,
-        "vacancyRate": 8.0
+        "vacancyRate": 8.0,
+        "housingDemandPressure": 1.0
     },
     {
         "country": "Malaysia",
@@ -1104,7 +1147,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 5.6,
         "cementAffordabilityDays": 0.1,
         "resilienceCertifiedPerCapita": 9.3,
-        "vacancyRate": 6.0
+        "vacancyRate": 6.0,
+        "housingDemandPressure": 2.0
     },
     {
         "country": "Singapore",
@@ -1129,7 +1173,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 254.2,
         "cementAffordabilityDays": 0.02,
         "resilienceCertifiedPerCapita": 41.7,
-        "vacancyRate": 1.0
+        "vacancyRate": 1.0,
+        "housingDemandPressure": 1.5
     },
     {
         "country": "Philippines",
@@ -1154,7 +1199,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 2.4,
         "cementAffordabilityDays": 0.35,
         "resilienceCertifiedPerCapita": 153.2,
-        "vacancyRate": 12.0
+        "vacancyRate": 12.0,
+        "housingDemandPressure": 2.4
     },
     {
         "country": "Vietnam",
@@ -1179,7 +1225,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 1.8,
         "cementAffordabilityDays": 0.25,
         "resilienceCertifiedPerCapita": 4.5,
-        "vacancyRate": 10.0
+        "vacancyRate": 10.0,
+        "housingDemandPressure": 1.6
     },
     {
         "country": "Indonesia",
@@ -1204,7 +1251,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 2,
         "cementAffordabilityDays": 0.21,
         "resilienceCertifiedPerCapita": 15.6,
-        "vacancyRate": 3.0
+        "vacancyRate": 3.0,
+        "housingDemandPressure": 1.9
     },
     {
         "country": "India",
@@ -1229,7 +1277,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 3.2,
         "cementAffordabilityDays": 0.32,
         "resilienceCertifiedPerCapita": 2.0,
-        "vacancyRate": 2.5
+        "vacancyRate": 2.5,
+        "housingDemandPressure": 2.1
     },
     {
         "country": "Argentina",
@@ -1254,7 +1303,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 5.4,
         "cementAffordabilityDays": 0.15,
         "resilienceCertifiedPerCapita": 4.4,
-        "vacancyRate": 8.0
+        "vacancyRate": 8.0,
+        "housingDemandPressure": 1.5
     },
     {
         "country": "Pakistan",
@@ -1279,7 +1329,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 1.5,
         "cementAffordabilityDays": 0.87,
         "resilienceCertifiedPerCapita": 2.1,
-        "vacancyRate": 2.0
+        "vacancyRate": 2.0,
+        "housingDemandPressure": 2.8
     },
     {
         "country": "Bangladesh",
@@ -1304,7 +1355,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 1.2,
         "cementAffordabilityDays": 0.58,
         "resilienceCertifiedPerCapita": 2.5,
-        "vacancyRate": 1.5
+        "vacancyRate": 1.5,
+        "housingDemandPressure": 2.0
     },
     {
         "country": "United Arab Emirates",
@@ -1329,7 +1381,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 100,
         "cementAffordabilityDays": 0.02,
         "resilienceCertifiedPerCapita": 6.3,
-        "vacancyRate": 3.0
+        "vacancyRate": 3.0,
+        "housingDemandPressure": 2.2
     },
     {
         "country": "Saudi Arabia",
@@ -1354,7 +1407,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 6.9,
         "cementAffordabilityDays": 0.04,
         "resilienceCertifiedPerCapita": 3.3,
-        "vacancyRate": 4.0
+        "vacancyRate": 4.0,
+        "housingDemandPressure": 2.5
     },
     {
         "country": "Iceland",
@@ -1379,7 +1433,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 31.6,
         "cementAffordabilityDays": 0.05,
         "resilienceCertifiedPerCapita": 12.8,
-        "vacancyRate": 1.5
+        "vacancyRate": 1.5,
+        "housingDemandPressure": 1.3
     },
     {
         "country": "South Africa",
@@ -1404,7 +1459,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 5.3,
         "cementAffordabilityDays": 0.27,
         "resilienceCertifiedPerCapita": 2.5,
-        "vacancyRate": 5.0
+        "vacancyRate": 5.0,
+        "housingDemandPressure": 1.8
     },
     {
         "country": "Egypt",
@@ -1429,7 +1485,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 2.1,
         "cementAffordabilityDays": 0.32,
         "resilienceCertifiedPerCapita": 2.7,
-        "vacancyRate": 7.0
+        "vacancyRate": 7.0,
+        "housingDemandPressure": 2.9
     },
     {
         "country": "Morocco",
@@ -1454,7 +1511,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 2.7,
         "cementAffordabilityDays": 0.4,
         "resilienceCertifiedPerCapita": 3.2,
-        "vacancyRate": 4.0
+        "vacancyRate": 4.0,
+        "housingDemandPressure": 1.9
     },
     {
         "country": "Kenya",
@@ -1479,7 +1537,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 5.5,
         "cementAffordabilityDays": 1.24,
         "resilienceCertifiedPerCapita": 1.5,
-        "vacancyRate": 2.0
+        "vacancyRate": 2.0,
+        "housingDemandPressure": 3.2
     },
     {
         "country": "Nigeria",
@@ -1504,7 +1563,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 1.6,
         "cementAffordabilityDays": 1.9,
         "resilienceCertifiedPerCapita": 1.3,
-        "vacancyRate": 2.0
+        "vacancyRate": 2.0,
+        "housingDemandPressure": 3.4
     },
     {
         "country": "Ghana",
@@ -1529,7 +1589,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 1.2,
         "cementAffordabilityDays": 0.59,
         "resilienceCertifiedPerCapita": 1.5,
-        "vacancyRate": 3.0
+        "vacancyRate": 3.0,
+        "housingDemandPressure": 3.0
     },
     {
         "country": "Ethiopia",
@@ -1554,7 +1615,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.7,
         "cementAffordabilityDays": 2.07,
         "resilienceCertifiedPerCapita": 1.2,
-        "vacancyRate": 1.5
+        "vacancyRate": 1.5,
+        "housingDemandPressure": 3.5
     },
     {
         "country": "Tanzania",
@@ -1579,7 +1641,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 1,
         "cementAffordabilityDays": 1.22,
         "resilienceCertifiedPerCapita": 1.2,
-        "vacancyRate": 2.0
+        "vacancyRate": 2.0,
+        "housingDemandPressure": 3.8
     },
     {
         "country": "Uganda",
@@ -1604,7 +1667,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.8,
         "cementAffordabilityDays": 2.16,
         "resilienceCertifiedPerCapita": 1.2,
-        "vacancyRate": 1.5
+        "vacancyRate": 1.5,
+        "housingDemandPressure": 3.9
     },
     {
         "country": "Rwanda",
@@ -1629,7 +1693,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 1.7,
         "cementAffordabilityDays": 2.91,
         "resilienceCertifiedPerCapita": 2.9,
-        "vacancyRate": 2.0
+        "vacancyRate": 2.0,
+        "housingDemandPressure": 3.3
     },
     {
         "country": "Zambia",
@@ -1654,7 +1719,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.8,
         "cementAffordabilityDays": 1.88,
         "resilienceCertifiedPerCapita": 1.5,
-        "vacancyRate": 4.0
+        "vacancyRate": 4.0,
+        "housingDemandPressure": 3.7
     },
     {
         "country": "Namibia",
@@ -1679,7 +1745,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.8,
         "cementAffordabilityDays": 0.43,
         "resilienceCertifiedPerCapita": 3.8,
-        "vacancyRate": 6.0
+        "vacancyRate": 6.0,
+        "housingDemandPressure": 2.7
     },
     {
         "country": "Botswana",
@@ -1704,7 +1771,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.7,
         "cementAffordabilityDays": 0.35,
         "resilienceCertifiedPerCapita": 3.1,
-        "vacancyRate": 5.0
+        "vacancyRate": 5.0,
+        "housingDemandPressure": 2.3
     },
     {
         "country": "Senegal",
@@ -1729,7 +1797,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.6,
         "cementAffordabilityDays": 1.12,
         "resilienceCertifiedPerCapita": 1.7,
-        "vacancyRate": 3.0
+        "vacancyRate": 3.0,
+        "housingDemandPressure": 3.8
     },
     {
         "country": "Tunisia",
@@ -1754,7 +1823,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 1.8,
         "cementAffordabilityDays": 0.48,
         "resilienceCertifiedPerCapita": 3.3,
-        "vacancyRate": 8.0
+        "vacancyRate": 8.0,
+        "housingDemandPressure": 1.7
     },
     {
         "country": "Cameroon",
@@ -1779,7 +1849,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.6,
         "cementAffordabilityDays": 1.16,
         "resilienceCertifiedPerCapita": 1.4,
-        "vacancyRate": 3.0
+        "vacancyRate": 3.0,
+        "housingDemandPressure": 3.4
     },
     {
         "country": "Ivory Coast",
@@ -1804,7 +1875,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.5,
         "cementAffordabilityDays": 0.7,
         "resilienceCertifiedPerCapita": 1.4,
-        "vacancyRate": 3.0
+        "vacancyRate": 3.0,
+        "housingDemandPressure": 3.3
     },
     {
         "country": "Mozambique",
@@ -1829,7 +1901,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.5,
         "cementAffordabilityDays": 3.61,
         "resilienceCertifiedPerCapita": 2.4,
-        "vacancyRate": 4.0
+        "vacancyRate": 4.0,
+        "housingDemandPressure": 3.7
     },
     {
         "country": "Angola",
@@ -1854,7 +1927,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.5,
         "cementAffordabilityDays": 1.01,
         "resilienceCertifiedPerCapita": 1.4,
-        "vacancyRate": 9.0
+        "vacancyRate": 9.0,
+        "housingDemandPressure": 4.0
     },
     {
         "country": "Zimbabwe",
@@ -1879,7 +1953,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.5,
         "cementAffordabilityDays": 1.72,
         "resilienceCertifiedPerCapita": 1.6,
-        "vacancyRate": 5.0
+        "vacancyRate": 5.0,
+        "housingDemandPressure": 2.6
     },
     {
         "country": "Algeria",
@@ -1904,7 +1979,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 1.3,
         "cementAffordabilityDays": 0.38,
         "resilienceCertifiedPerCapita": 3.3,
-        "vacancyRate": 6.0
+        "vacancyRate": 6.0,
+        "housingDemandPressure": 2.3
     },
     {
         "country": "Sudan",
@@ -1929,7 +2005,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.5,
         "cementAffordabilityDays": 2.8,
         "resilienceCertifiedPerCapita": 1.3,
-        "vacancyRate": 4.0
+        "vacancyRate": 4.0,
+        "housingDemandPressure": 3.3
     },
     {
         "country": "Mauritius",
@@ -1954,7 +2031,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 12.3,
         "cementAffordabilityDays": 0.16,
         "resilienceCertifiedPerCapita": 6.2,
-        "vacancyRate": 7.0
+        "vacancyRate": 7.0,
+        "housingDemandPressure": 1.0
     },
     {
         "country": "Malawi",
@@ -1979,7 +2057,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.4,
         "cementAffordabilityDays": 4.83,
         "resilienceCertifiedPerCapita": 1.5,
-        "vacancyRate": 2.5
+        "vacancyRate": 2.5,
+        "housingDemandPressure": 3.6
     },
     {
         "country": "Benin",
@@ -2004,7 +2083,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.4,
         "cementAffordabilityDays": 1.52,
         "resilienceCertifiedPerCapita": 1.5,
-        "vacancyRate": 3.5
+        "vacancyRate": 3.5,
+        "housingDemandPressure": 3.7
     },
     {
         "country": "Togo",
@@ -2029,7 +2109,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.3,
         "cementAffordabilityDays": 2.0,
         "resilienceCertifiedPerCapita": 1.7,
-        "vacancyRate": 3.5
+        "vacancyRate": 3.5,
+        "housingDemandPressure": 3.5
     },
     {
         "country": "Mali",
@@ -2054,7 +2135,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.3,
         "cementAffordabilityDays": 3.04,
         "resilienceCertifiedPerCapita": 1.3,
-        "vacancyRate": 4.0
+        "vacancyRate": 4.0,
+        "housingDemandPressure": 3.9
     },
     {
         "country": "Burkina Faso",
@@ -2079,7 +2161,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.3,
         "cementAffordabilityDays": 3.53,
         "resilienceCertifiedPerCapita": 1.1,
-        "vacancyRate": 3.0
+        "vacancyRate": 3.0,
+        "housingDemandPressure": 3.8
     },
     {
         "country": "Madagascar",
@@ -2104,7 +2187,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.3,
         "cementAffordabilityDays": 5.27,
         "resilienceCertifiedPerCapita": 1.7,
-        "vacancyRate": 3.5
+        "vacancyRate": 3.5,
+        "housingDemandPressure": 3.6
     },
     {
         "country": "Congo",
@@ -2129,7 +2213,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.4,
         "cementAffordabilityDays": 1.15,
         "resilienceCertifiedPerCapita": 1.7,
-        "vacancyRate": 5.0
+        "vacancyRate": 5.0,
+        "housingDemandPressure": 3.6
     },
     {
         "country": "Romania",
@@ -2154,7 +2239,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 5.8,
         "cementAffordabilityDays": 0.11,
         "resilienceCertifiedPerCapita": 4.2,
-        "vacancyRate": 15.0
+        "vacancyRate": 15.0,
+        "housingDemandPressure": 0.3
     },
     {
         "country": "Bulgaria",
@@ -2179,7 +2265,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 5.5,
         "cementAffordabilityDays": 0.12,
         "resilienceCertifiedPerCapita": 4.4,
-        "vacancyRate": 16.0
+        "vacancyRate": 16.0,
+        "housingDemandPressure": 0.2
     },
     {
         "country": "Croatia",
@@ -2204,7 +2291,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 6.4,
         "cementAffordabilityDays": 0.11,
         "resilienceCertifiedPerCapita": 5.1,
-        "vacancyRate": 30.0
+        "vacancyRate": 30.0,
+        "housingDemandPressure": 0.3
     },
     {
         "country": "Peru",
@@ -2229,7 +2317,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 3.8,
         "cementAffordabilityDays": 0.2,
         "resilienceCertifiedPerCapita": 8.8,
-        "vacancyRate": 5.0
+        "vacancyRate": 5.0,
+        "housingDemandPressure": 1.8
     },
     {
         "country": "Cambodia",
@@ -2254,7 +2343,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 1.2,
         "cementAffordabilityDays": 0.76,
         "resilienceCertifiedPerCapita": 3.0,
-        "vacancyRate": 6.0
+        "vacancyRate": 6.0,
+        "housingDemandPressure": 2.2
     },
     {
         "country": "Nepal",
@@ -2279,7 +2369,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.8,
         "cementAffordabilityDays": 1.33,
         "resilienceCertifiedPerCapita": 4.8,
-        "vacancyRate": 3.0
+        "vacancyRate": 3.0,
+        "housingDemandPressure": 2.1
     },
     {
         "country": "Myanmar",
@@ -2304,7 +2395,8 @@ const housingData = [
         "greenCertifiedHomesPerCapita": 0.5,
         "cementAffordabilityDays": 1.3,
         "resilienceCertifiedPerCapita": 1.5,
-        "vacancyRate": 4.0
+        "vacancyRate": 4.0,
+        "housingDemandPressure": 1.5
     }
 ];
 
