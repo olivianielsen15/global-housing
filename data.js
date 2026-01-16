@@ -31,6 +31,8 @@
 // 20. vacancyRate: Percentage of total housing stock sitting vacant or unoccupied (excluding seasonal/holiday homes where data specification allows). Based on 2023-2025 data from census data, OECD Affordable Housing Database (HM1.1), Eurostat Housing Statistics, national statistics offices, and real estate research (CBRE, empirica, JLL, Savills, Investropa). Vacancy patterns reveal housing market efficiency and allocation issues. Highest rates: Croatia 30% (depopulation/emigration), China 22% (speculative overbuilding), France/Italy 18-18.5% (includes holiday homes, aging population), Bulgaria/Romania 15-16% (emigration to Western Europe), Greece/Japan/Spain/Philippines 12-14% (post-bubble oversupply, aging demographics). Lowest rates: UK 0.9%, Netherlands/Denmark 0.8% (severe housing shortages), Singapore 1%, Luxembourg 1.2%, Iceland/New Zealand 1.5% (tight supply markets). Housing deficit countries generally show low vacancy (Bangladesh/Ethiopia/Uganda 1.5%, Kenya/Nigeria/Pakistan 2%, India 2.5%) indicating absolute shortage rather than allocation issues. Optimal vacancy rate is 2-5% for healthy market turnover. High vacancy (>10%) suggests reactivation potential through vacancy taxes, conversion programs, or compulsory purchase. Low vacancy (<2%) indicates supply shortage requiring new construction. Lower values indicate efficient housing use and market tightness; higher values indicate wasted stock, demographic decline, or speculation.
 // 21. housingDemandPressure: Housing Demand Pressure Index (2024-2050). Composite forward-looking metric combining UN World Population Prospects 2024 population growth projections with household size trends from UN Database on Household Size and Composition 2022. Calculated as: Annual Population Growth Rate (2024-2050) + Household Formation Adjustment (0.4-1.5 points added for declining household size based on speed of change). Scale 0-4.0+ index points. Very High (3.5-4.0+): Angola 4.0, Uganda 3.9, Tanzania 3.8, Mali 3.9, Senegal 3.8, Burkina Faso 3.8 (Sub-Saharan Africa with 2.0-2.7% population growth + stable large households 5.0-8.4 persons). High (2.5-3.5): Egypt 2.9, Pakistan 2.8, Saudi Arabia 2.5, Kenya 3.2, Ethiopia 3.5, Nigeria 3.4, Ghana 3.0, Cameroon 3.4, Benin 3.7, Zambia 3.7, Malawi 3.6, Madagascar 3.6, Congo 3.6, Togo 3.5, Ivory Coast 3.3, Rwanda 3.3, Sudan 3.3 (fast-growing MENA/South Asia/Africa). Moderate (1.5-2.5): India 2.1, Philippines 2.4, Israel 2.6, Malaysia 2.0, Indonesia 1.9, Bangladesh 2.0, Australia 2.0, Luxembourg 2.0, Cambodia 2.2, Nepal 2.1, UAE 2.2, Pakistan 2.8, Namibia 2.7, Zimbabwe 2.6, Algeria 2.3, Botswana 2.3 (emerging Asia/Latin America with growth + declining households). Low (0.5-1.5): Most OECD countries - USA 1.4, Canada 1.6, UK 1.2, Ireland 1.8, New Zealand 1.6, Norway/Denmark/Finland 0.9-1.0, Belgium/France/Austria 1.0, Switzerland 1.1, Sweden 1.3, Netherlands 0.9, Germany 0.8, Chile 1.4, Brazil 1.3, Mexico 1.8, Colombia 1.6, China 1.0, Thailand 1.0, Turkey 1.6 (modest growth offset by household decline). Declining (<0.5): Eastern Europe - Latvia 0.2, Lithuania 0.2, Bulgaria 0.2, Romania 0.3, Croatia 0.3, Estonia 0.4, Greece 0.4, Hungary/Poland 0.5, Japan 0.5 (population loss exceeds household formation needs). Declining household size is nearly universal: globally fallen 0.5 persons per decade. When household size drops 2.5→2.0 people, same population needs 25% more housing units. Regional patterns: Sub-Saharan Africa 67% population growth by 2050 = highest pressure; Eastern Europe depopulation/emigration = lowest pressure; Asia diverging (India growing +14%, China declining -14%, Japan -13%, Korea -0.3% with ultra-low 0.72 fertility); Latin America moderate growth with rapid household decline; MENA demographic explosion (Egypt to 205M). Compound pressure examples: Egypt 1.6% annual growth + declining 4.2-person households = 2.9 index; India 0.7% growth + 4.4→3.5 household size = 2.1 index requiring millions of units annually. Based on UN WPP 2024, OECD Family Database SF1.1, UN Household Database 2022, Eurostat population projections.
 // 22. municipalSpendingEfficiency: Municipal Spending Efficiency Index. Measures municipal budget capacity relative to urban density. Calculated as: (Municipal Budget Per Capita in USD) / (Urban Density per 1000 people/sq km). Scale 0-7000+ USD per capita per 1k density. Formula normalizes spending by density to reveal which cities have adequate resources for housing and infrastructure. Very High (5000-7000): Nordic countries with well-funded systems - Norway 6909.1 (budget $15,200/capita, density 2,200/km²), Denmark 6724.1 ($19,500, 2,900/km²), Sweden 5153.8 ($13,400, 2,600/km²), Iceland 4526.3 ($8,600, 1,900/km²). These cities afford quality infrastructure, social housing, robust services. High (2000-4000): Developed countries - Netherlands 3555.6, Luxembourg 3500.0, Switzerland 1634.6, Finland 4666.7, Australia 1523.8, Canada 2125.0, USA 2333.3. Moderate (500-2000): Mid-tier economies - Austria 1720.9, Germany 1682.9, Belgium 1589.7, France 1567.6, UK 1095.2, Israel 397.4, UAE 1354.8, Saudi Arabia 827.6, Singapore 809.5. Low-Moderate (100-500): Emerging economies - Brazil 163.0, Mexico 118.0, China 214.3, Malaysia 154.9, South Africa 125.5, Argentina 191.7, Costa Rica 188.5, Mauritius 206.9, Thailand 100.0. Low (20-100): Developing countries with inadequate capacity - India 19.8, Indonesia 16.9, Philippines 12.0, Vietnam 35.4, Egypt 28.6, Turkey 224.1, most sub-Saharan African countries 14-35. Very Low (<20): Severely under-resourced dense megacities - Bangladesh 3.7 (Dhaka 36,000/km², budget only $85/capita), Pakistan 8.2 (Karachi 24,000/km²), Nepal 9.0, Myanmar 11.8, Cambodia 19.4. These megacities have extreme density but minimal budgets, making affordable housing provision nearly impossible. Pattern reveals dense cities in developing countries face double challenge: very high density that should enable economies of scale, but extremely low budgets preventing adequate service delivery. Data sources: OECD MUNIFI Database (Municipal Finance, 37 OECD+EU countries - most reliable local government finance data), OECD REGOFI (Regional Government Finance), World Bank Government Finance Statistics, UN-Habitat Urban Finance Database, Africapolis (OECD/SWAC database - 7,617 African urban agglomerations with density data), national statistical offices, municipal budget reports (2023-2024). Urban density measured as average density in major urban agglomerations (people per sq km), not national density. Municipal budget includes local government spending on infrastructure, services, housing; excludes national/regional transfers counted as local revenue. Policy implications: Low-efficiency countries (<100) need massive increases in municipal revenue through local taxation, national transfers, or international development finance. Decentralized fiscal systems (Nordic, Switzerland) show highest efficiency by empowering local governments with revenue authority. Centralized systems in developing countries often starve cities of resources despite rapid urbanization. Metric reveals why informal housing persists in cities like Dhaka, Karachi, Manila - lack municipal budget to provide formal affordable alternatives despite high density enabling efficient service delivery.
+// 23. mortgagePenetrationPerCapita: Mortgage Penetration per Capita (USD). Total outstanding residential mortgage debt divided by population, measuring housing finance system depth and accessibility. Scale: $35-60,000+ per capita. Very High ($40,000-60,000+): Anglo-Nordic mortgage leaders with mature markets - Switzerland $60,200 (highest globally), Denmark $56,800 (world's highest mortgage debt/GDP at 120%), Norway $52,300 (oil wealth + borrowing), Netherlands $51,200 (mortgage culture), Australia $48,500 (high leverage), New Zealand $44,600 (housing boom). These countries have deep financial systems enabling widespread homeownership through leverage, sophisticated mortgage products (fixed/variable, long terms). High ($30,000-40,000): Developed Anglo markets - Canada $38,400, USA $35,200 (world's largest absolute mortgage market), UK $33,800, Singapore $35,600. Established mortgage cultures with most households accessing finance. Medium-High ($20,000-30,000): Western Europe mature markets - France $24,300, Belgium $26,700, Finland $28,900, Ireland $29,400, South Korea $21,800 (jeonse deposit system + mortgages). Medium ($10,000-20,000): Maturing markets - Germany $19,800 (rental culture limits mortgages), Japan $18,500 (aging population deleveraging), Austria $18,200 (social housing reduces mortgages), Spain $17,600 (post-2008 crisis deleveraging), Israel $16,700. Low-Medium ($5,000-10,000): Emerging mortgage markets - Poland $6,800, Chile $7,200 (Latin America leader), China $6,800 (rapid 2000s-2020s mortgage growth), Czech Republic $8,200. Low ($1,000-5,000): Developing finance systems - Malaysia $4,200, South Africa $3,200, Thailand $2,800, Brazil $1,800, Mexico $2,100, Colombia $1,560, Morocco $890. Very Low (<$1,000): Cash-dominated markets with minimal formal housing finance - India $420, Indonesia $680, Philippines $520, Egypt $380, Pakistan $180, Kenya $280, Bangladesh $95, Nigeria $95, Ethiopia $65, Vietnam $380. These countries have underdeveloped financial systems, limited banking access, property rights issues; informal/family financing dominates. The mortgage divide is stark: Nordic/Anglo countries have 100-600x more mortgage debt per capita than African/South Asian nations, reflecting fundamental differences in financial inclusion, property rights, credit infrastructure, and homeownership pathways. Without mortgages, only wealthy can afford homes, perpetuating inequality. Data sources: IMF Global Debt Database (most comprehensive, 190+ countries, quarterly updates), World Bank Global Financial Development Database, BIS (Bank for International Settlements) Residential Property Price Statistics, OECD National Accounts, European Mortgage Federation, central bank financial stability reports, national housing finance agencies. Mortgage debt includes residential only, excludes commercial real estate. Per capita calculation uses total population (including children), not just adults. Policy implications: Low-penetration countries need financial sector development (credit bureaus like Equifax, collateral registries, foreclosure frameworks), specialized housing finance institutions (like India's NHB, Mexico's Infonavit), affordable mortgage products (long terms, subsidized rates), and macroprudential regulation to avoid overleveraging. High-penetration countries face household debt sustainability risks as seen in 2008 subprime crisis, 2022 UK mortgage crisis. Optimal balance: enable homeownership access without creating financial fragility. Mortgage finance critical for affordable housing - cash purchases favor wealthy, mortgages democratize homeownership.
+// 24. homeInsurancePenetration: Home Insurance Penetration (USD per capita per year). Annual residential property insurance premiums divided by population, measuring insurance market sophistication and risk protection culture. Scale: $1-800 per capita annually. Very High ($500-800): Anglo markets with mandatory/comprehensive coverage - USA $720 (lender-required for mortgages, hurricane/flood/tornado/wildfire risks drive premiums), Switzerland $680 (world's highest insurance penetration), Australia $640 (cyclone/bushfire risks, climate change impact), Netherlands $580 (flood risk from below-sea-level geography), New Zealand $580 (Earthquake Commission fund post-Christchurch quake). These countries have mature insurance industries, high homeownership, strong risk culture, often lender mandates. High ($400-500): Nordic comprehensive welfare + insurance - Norway $520, Denmark $510, Sweden $490, Luxembourg $450, Finland $440, UK $420, Japan $420 (earthquake/typhoon coverage), showing integration of insurance into housing finance systems. Medium ($200-400): Moderate penetration - Canada $380 (winter damage), France $350 (mandatory for renters since 1989), Ireland $380 (Atlantic storm risks), Germany $280, Austria $310, Belgium $340 (flood awareness), Singapore $280, South Korea $240, Israel $220. Growing awareness but not universal coverage. Low-Medium ($100-200): Emerging insurance - Czech Republic $120, Estonia $180, Latvia $150, Lithuania $165, Poland $85, Chile $120 (earthquake risk), South Africa $95, Turkey $48, Morocco $32. Small middle class adopts insurance, majority uninsured. Low ($20-100): Limited penetration - Brazil $28, Mexico $35, Argentina $18, China $45 (rapidly growing), Malaysia $58, Thailand $32, Egypt $18, showing nascent insurance cultures. Very Low (<$20): Minimal coverage despite major disaster risks - Indonesia $12, Philippines $8 (typhoons), India $4, Vietnam $6, Pakistan $2, Bangladesh $1 (cyclones), Nepal $2 (earthquakes), Ethiopia $1, Nigeria $4, Kenya $8, Cambodia $3, Myanmar $1, Madagascar $1 (cyclones). These populations face catastrophic uninsured losses from disasters, perpetuating poverty cycles. Insurance gap is massive: Americans pay 720x more home insurance per capita than Bangladeshis, despite Bangladesh facing severe cyclone/flood risks annually. This reflects income inequality, insurance industry development, regulatory frameworks, and risk culture differences. Uninsured disasters destroy housing wealth permanently. Data sources: Swiss Re Sigma World Insurance Reports (authoritative global data, annual publication), national insurance regulators (US NAIC, UK FCA, European EIOPA), OECD Insurance Statistics, World Bank Financial Sector Indicators, national insurance associations. Includes homeowners/property insurance only, excludes life/health/auto. Per capita calculated on total population. Policy implications: Low-penetration disaster-prone countries need insurance sector development, microinsurance products for low-income (parametric insurance, index-based), mandatory coverage laws (like France for renters), public catastrophic funds (like New Zealand EQC), building code enforcement (reduces premiums through risk mitigation). Insurance critical for housing resilience - without it, disasters destroy housing wealth permanently, forcing reconstruction from poverty. Countries with high disaster risk but low insurance (Philippines 8 typhoons/year, Bangladesh cyclones, Nepal earthquakes) trapped in perpetual reconstruction cycles. Governments should mandate/incentivize coverage or create public backstops for catastrophic risks.
 
 const housingData = [
     {
@@ -58,7 +60,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 9.1,
         "vacancyRate": 1.08,
         "housingDemandPressure": 1.1,
-        "municipalSpendingEfficiency": 1634.6
+        "municipalSpendingEfficiency": 1634.6,
+        "mortgagePenetrationPerCapita": 60200,
+        "homeInsurancePenetration": 680,
+        "mortgagePenetrationPerCapita": 60200,
+        "homeInsurancePenetration": 680
     },
     {
         "country": "Australia",
@@ -85,7 +91,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 30.1,
         "vacancyRate": 1.6,
         "housingDemandPressure": 2.0,
-        "municipalSpendingEfficiency": 1523.8
+        "municipalSpendingEfficiency": 1523.8,
+        "mortgagePenetrationPerCapita": 48500,
+        "homeInsurancePenetration": 640,
+        "mortgagePenetrationPerCapita": 48500,
+        "homeInsurancePenetration": 640
     },
     {
         "country": "Denmark",
@@ -112,7 +122,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 6.8,
         "vacancyRate": 0.8,
         "housingDemandPressure": 1.0,
-        "municipalSpendingEfficiency": 6724.1
+        "municipalSpendingEfficiency": 6724.1,
+        "mortgagePenetrationPerCapita": 56800,
+        "homeInsurancePenetration": 510,
+        "mortgagePenetrationPerCapita": 56800,
+        "homeInsurancePenetration": 510
     },
     {
         "country": "Cyprus",
@@ -139,7 +153,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 7.7,
         "vacancyRate": 12.5,
         "housingDemandPressure": 1.3,
-        "municipalSpendingEfficiency": 774.2
+        "municipalSpendingEfficiency": 774.2,
+        "mortgagePenetrationPerCapita": 15800,
+        "homeInsurancePenetration": 120,
+        "mortgagePenetrationPerCapita": 15800,
+        "homeInsurancePenetration": 120
     },
     {
         "country": "Netherlands",
@@ -166,7 +184,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 22.7,
         "vacancyRate": 0.8,
         "housingDemandPressure": 0.9,
-        "municipalSpendingEfficiency": 3555.6
+        "municipalSpendingEfficiency": 3555.6,
+        "mortgagePenetrationPerCapita": 51200,
+        "homeInsurancePenetration": 580,
+        "mortgagePenetrationPerCapita": 51200,
+        "homeInsurancePenetration": 580
     },
     {
         "country": "Canada",
@@ -193,7 +215,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 12.8,
         "vacancyRate": 2.2,
         "housingDemandPressure": 1.6,
-        "municipalSpendingEfficiency": 2125.0
+        "municipalSpendingEfficiency": 2125.0,
+        "mortgagePenetrationPerCapita": 38400,
+        "homeInsurancePenetration": 380,
+        "mortgagePenetrationPerCapita": 38400,
+        "homeInsurancePenetration": 380
     },
     {
         "country": "South Korea",
@@ -220,7 +246,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 15.5,
         "vacancyRate": 3.2,
         "housingDemandPressure": 0.8,
-        "municipalSpendingEfficiency": 233.5
+        "municipalSpendingEfficiency": 233.5,
+        "mortgagePenetrationPerCapita": 21800,
+        "homeInsurancePenetration": 240,
+        "mortgagePenetrationPerCapita": 21800,
+        "homeInsurancePenetration": 240
     },
     {
         "country": "Norway",
@@ -247,7 +277,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 14.5,
         "vacancyRate": 2.5,
         "housingDemandPressure": 1.0,
-        "municipalSpendingEfficiency": 6909.1
+        "municipalSpendingEfficiency": 6909.1,
+        "mortgagePenetrationPerCapita": 52300,
+        "homeInsurancePenetration": 520,
+        "mortgagePenetrationPerCapita": 52300,
+        "homeInsurancePenetration": 520
     },
     {
         "country": "Sweden",
@@ -274,7 +308,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 5.7,
         "vacancyRate": 2.5,
         "housingDemandPressure": 1.3,
-        "municipalSpendingEfficiency": 5153.8
+        "municipalSpendingEfficiency": 5153.8,
+        "mortgagePenetrationPerCapita": 49100,
+        "homeInsurancePenetration": 490,
+        "mortgagePenetrationPerCapita": 49100,
+        "homeInsurancePenetration": 490
     },
     {
         "country": "New Zealand",
@@ -301,7 +339,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 346.2,
         "vacancyRate": 1.5,
         "housingDemandPressure": 1.6,
-        "municipalSpendingEfficiency": 1478.3
+        "municipalSpendingEfficiency": 1478.3,
+        "mortgagePenetrationPerCapita": 44600,
+        "homeInsurancePenetration": 580,
+        "mortgagePenetrationPerCapita": 44600,
+        "homeInsurancePenetration": 580
     },
     {
         "country": "Luxembourg",
@@ -328,7 +370,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 4.5,
         "vacancyRate": 1.2,
         "housingDemandPressure": 2.0,
-        "municipalSpendingEfficiency": 3500.0
+        "municipalSpendingEfficiency": 3500.0,
+        "mortgagePenetrationPerCapita": 47800,
+        "homeInsurancePenetration": 450,
+        "mortgagePenetrationPerCapita": 47800,
+        "homeInsurancePenetration": 450
     },
     {
         "country": "United Kingdom",
@@ -355,7 +401,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 7.3,
         "vacancyRate": 0.9,
         "housingDemandPressure": 1.2,
-        "municipalSpendingEfficiency": 1095.2
+        "municipalSpendingEfficiency": 1095.2,
+        "mortgagePenetrationPerCapita": 33800,
+        "homeInsurancePenetration": 420,
+        "mortgagePenetrationPerCapita": 33800,
+        "homeInsurancePenetration": 420
     },
     {
         "country": "Finland",
@@ -382,7 +432,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 5.4,
         "vacancyRate": 10.7,
         "housingDemandPressure": 0.9,
-        "municipalSpendingEfficiency": 4666.7
+        "municipalSpendingEfficiency": 4666.7,
+        "mortgagePenetrationPerCapita": 28900,
+        "homeInsurancePenetration": 440,
+        "mortgagePenetrationPerCapita": 28900,
+        "homeInsurancePenetration": 440
     },
     {
         "country": "United States",
@@ -409,7 +463,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 26.9,
         "vacancyRate": 11.1,
         "housingDemandPressure": 1.4,
-        "municipalSpendingEfficiency": 2333.3
+        "municipalSpendingEfficiency": 2333.3,
+        "mortgagePenetrationPerCapita": 35200,
+        "homeInsurancePenetration": 720,
+        "mortgagePenetrationPerCapita": 35200,
+        "homeInsurancePenetration": 720
     },
     {
         "country": "Belgium",
@@ -436,7 +494,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 4.3,
         "vacancyRate": 5.5,
         "housingDemandPressure": 1.0,
-        "municipalSpendingEfficiency": 1589.7
+        "municipalSpendingEfficiency": 1589.7,
+        "mortgagePenetrationPerCapita": 26700,
+        "homeInsurancePenetration": 340,
+        "mortgagePenetrationPerCapita": 26700,
+        "homeInsurancePenetration": 340
     },
     {
         "country": "France",
@@ -463,7 +525,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 6.2,
         "vacancyRate": 18.0,
         "housingDemandPressure": 1.0,
-        "municipalSpendingEfficiency": 1567.6
+        "municipalSpendingEfficiency": 1567.6,
+        "mortgagePenetrationPerCapita": 24300,
+        "homeInsurancePenetration": 350,
+        "mortgagePenetrationPerCapita": 24300,
+        "homeInsurancePenetration": 350
     },
     {
         "country": "Japan",
@@ -490,7 +556,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 201.6,
         "vacancyRate": 13.7,
         "housingDemandPressure": 0.5,
-        "municipalSpendingEfficiency": 460.7
+        "municipalSpendingEfficiency": 460.7,
+        "mortgagePenetrationPerCapita": 18500,
+        "homeInsurancePenetration": 420,
+        "mortgagePenetrationPerCapita": 18500,
+        "homeInsurancePenetration": 420
     },
     {
         "country": "Spain",
@@ -517,7 +587,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 6.3,
         "vacancyRate": 12.0,
         "housingDemandPressure": 0.7,
-        "municipalSpendingEfficiency": 596.2
+        "municipalSpendingEfficiency": 596.2,
+        "mortgagePenetrationPerCapita": 17600,
+        "homeInsurancePenetration": 180,
+        "mortgagePenetrationPerCapita": 17600,
+        "homeInsurancePenetration": 180
     },
     {
         "country": "Portugal",
@@ -544,7 +618,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 14.4,
         "vacancyRate": 12.0,
         "housingDemandPressure": 0.6,
-        "municipalSpendingEfficiency": 536.6
+        "municipalSpendingEfficiency": 536.6,
+        "mortgagePenetrationPerCapita": 16200,
+        "homeInsurancePenetration": 160,
+        "mortgagePenetrationPerCapita": 16200,
+        "homeInsurancePenetration": 160
     },
     {
         "country": "Ireland",
@@ -571,7 +649,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 3.9,
         "vacancyRate": 10.0,
         "housingDemandPressure": 1.8,
-        "municipalSpendingEfficiency": 1411.8
+        "municipalSpendingEfficiency": 1411.8,
+        "mortgagePenetrationPerCapita": 29400,
+        "homeInsurancePenetration": 380,
+        "mortgagePenetrationPerCapita": 29400,
+        "homeInsurancePenetration": 380
     },
     {
         "country": "Austria",
@@ -598,7 +680,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 6.6,
         "vacancyRate": 2.5,
         "housingDemandPressure": 1.0,
-        "municipalSpendingEfficiency": 1720.9
+        "municipalSpendingEfficiency": 1720.9,
+        "mortgagePenetrationPerCapita": 18200,
+        "homeInsurancePenetration": 310,
+        "mortgagePenetrationPerCapita": 18200,
+        "homeInsurancePenetration": 310
     },
     {
         "country": "Germany",
@@ -625,7 +711,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 6.0,
         "vacancyRate": 2.2,
         "housingDemandPressure": 0.8,
-        "municipalSpendingEfficiency": 1682.9
+        "municipalSpendingEfficiency": 1682.9,
+        "mortgagePenetrationPerCapita": 19800,
+        "homeInsurancePenetration": 280,
+        "mortgagePenetrationPerCapita": 19800,
+        "homeInsurancePenetration": 280
     },
     {
         "country": "Estonia",
@@ -652,7 +742,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 5.7,
         "vacancyRate": 3.5,
         "housingDemandPressure": 0.4,
-        "municipalSpendingEfficiency": 965.5
+        "municipalSpendingEfficiency": 965.5,
+        "mortgagePenetrationPerCapita": 10200,
+        "homeInsurancePenetration": 180,
+        "mortgagePenetrationPerCapita": 10200,
+        "homeInsurancePenetration": 180
     },
     {
         "country": "Slovenia",
@@ -679,7 +773,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 7.1,
         "vacancyRate": 4.0,
         "housingDemandPressure": 0.9,
-        "municipalSpendingEfficiency": 888.9
+        "municipalSpendingEfficiency": 888.9,
+        "mortgagePenetrationPerCapita": 6900,
+        "homeInsurancePenetration": 110,
+        "mortgagePenetrationPerCapita": 6900,
+        "homeInsurancePenetration": 110
     },
     {
         "country": "Italy",
@@ -706,7 +804,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 20.3,
         "vacancyRate": 18.5,
         "housingDemandPressure": 0.6,
-        "municipalSpendingEfficiency": 750.0
+        "municipalSpendingEfficiency": 750.0,
+        "mortgagePenetrationPerCapita": 11400,
+        "homeInsurancePenetration": 95,
+        "mortgagePenetrationPerCapita": 11400,
+        "homeInsurancePenetration": 95
     },
     {
         "country": "Israel",
@@ -733,7 +835,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 8.5,
         "vacancyRate": 2.0,
         "housingDemandPressure": 2.6,
-        "municipalSpendingEfficiency": 397.4
+        "municipalSpendingEfficiency": 397.4,
+        "mortgagePenetrationPerCapita": 16700,
+        "homeInsurancePenetration": 220,
+        "mortgagePenetrationPerCapita": 16700,
+        "homeInsurancePenetration": 220
     },
     {
         "country": "Czech Republic",
@@ -760,7 +866,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 5.7,
         "vacancyRate": 8.0,
         "housingDemandPressure": 0.8,
-        "municipalSpendingEfficiency": 763.2
+        "municipalSpendingEfficiency": 763.2,
+        "mortgagePenetrationPerCapita": 8200,
+        "homeInsurancePenetration": 120,
+        "mortgagePenetrationPerCapita": 8200,
+        "homeInsurancePenetration": 120
     },
     {
         "country": "Greece",
@@ -787,7 +897,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 28.8,
         "vacancyRate": 14.0,
         "housingDemandPressure": 0.4,
-        "municipalSpendingEfficiency": 326.5
+        "municipalSpendingEfficiency": 326.5,
+        "mortgagePenetrationPerCapita": 8900,
+        "homeInsurancePenetration": 65,
+        "mortgagePenetrationPerCapita": 8900,
+        "homeInsurancePenetration": 65
     },
     {
         "country": "Poland",
@@ -814,7 +928,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 5.3,
         "vacancyRate": 4.0,
         "housingDemandPressure": 0.5,
-        "municipalSpendingEfficiency": 656.2
+        "municipalSpendingEfficiency": 656.2,
+        "mortgagePenetrationPerCapita": 6800,
+        "homeInsurancePenetration": 85,
+        "mortgagePenetrationPerCapita": 6800,
+        "homeInsurancePenetration": 85
     },
     {
         "country": "Slovakia",
@@ -841,7 +959,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 4.5,
         "vacancyRate": 7.0,
         "housingDemandPressure": 0.7,
-        "municipalSpendingEfficiency": 676.5
+        "municipalSpendingEfficiency": 676.5,
+        "mortgagePenetrationPerCapita": 7100,
+        "homeInsurancePenetration": 95,
+        "mortgagePenetrationPerCapita": 7100,
+        "homeInsurancePenetration": 95
     },
     {
         "country": "Chile",
@@ -868,7 +990,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 40.8,
         "vacancyRate": 3.0,
         "housingDemandPressure": 1.4,
-        "municipalSpendingEfficiency": 237.3
+        "municipalSpendingEfficiency": 237.3,
+        "mortgagePenetrationPerCapita": 7200,
+        "homeInsurancePenetration": 120,
+        "mortgagePenetrationPerCapita": 7200,
+        "homeInsurancePenetration": 120
     },
     {
         "country": "Hungary",
@@ -895,7 +1021,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 5.2,
         "vacancyRate": 12.3,
         "housingDemandPressure": 0.5,
-        "municipalSpendingEfficiency": 354.8
+        "municipalSpendingEfficiency": 354.8,
+        "mortgagePenetrationPerCapita": 5400,
+        "homeInsurancePenetration": 72,
+        "mortgagePenetrationPerCapita": 5400,
+        "homeInsurancePenetration": 72
     },
     {
         "country": "Latvia",
@@ -922,7 +1052,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 5.3,
         "vacancyRate": 5.0,
         "housingDemandPressure": 0.2,
-        "municipalSpendingEfficiency": 666.7
+        "municipalSpendingEfficiency": 666.7,
+        "mortgagePenetrationPerCapita": 8900,
+        "homeInsurancePenetration": 150,
+        "mortgagePenetrationPerCapita": 8900,
+        "homeInsurancePenetration": 150
     },
     {
         "country": "Lithuania",
@@ -949,7 +1083,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 5.4,
         "vacancyRate": 3.5,
         "housingDemandPressure": 0.2,
-        "municipalSpendingEfficiency": 678.6
+        "municipalSpendingEfficiency": 678.6,
+        "mortgagePenetrationPerCapita": 9400,
+        "homeInsurancePenetration": 165,
+        "mortgagePenetrationPerCapita": 9400,
+        "homeInsurancePenetration": 165
     },
     {
         "country": "Turkey",
@@ -976,7 +1114,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 23.4,
         "vacancyRate": 6.0,
         "housingDemandPressure": 1.6,
-        "municipalSpendingEfficiency": 224.1
+        "municipalSpendingEfficiency": 224.1,
+        "mortgagePenetrationPerCapita": 2100,
+        "homeInsurancePenetration": 48,
+        "mortgagePenetrationPerCapita": 2100,
+        "homeInsurancePenetration": 48
     },
     {
         "country": "Mexico",
@@ -1003,7 +1145,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 11.7,
         "vacancyRate": 2.0,
         "housingDemandPressure": 1.8,
-        "municipalSpendingEfficiency": 118.0
+        "municipalSpendingEfficiency": 118.0,
+        "mortgagePenetrationPerCapita": 2100,
+        "homeInsurancePenetration": 35,
+        "mortgagePenetrationPerCapita": 2100,
+        "homeInsurancePenetration": 35
     },
     {
         "country": "Costa Rica",
@@ -1030,7 +1176,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 11.5,
         "vacancyRate": 3.0,
         "housingDemandPressure": 1.8,
-        "municipalSpendingEfficiency": 188.5
+        "municipalSpendingEfficiency": 188.5,
+        "mortgagePenetrationPerCapita": 2400,
+        "homeInsurancePenetration": 38,
+        "mortgagePenetrationPerCapita": 2400,
+        "homeInsurancePenetration": 38
     },
     {
         "country": "Colombia",
@@ -1057,7 +1207,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 11.2,
         "vacancyRate": 5.0,
         "housingDemandPressure": 1.6,
-        "municipalSpendingEfficiency": 76.7
+        "municipalSpendingEfficiency": 76.7,
+        "mortgagePenetrationPerCapita": 1560,
+        "homeInsurancePenetration": 24,
+        "mortgagePenetrationPerCapita": 1560,
+        "homeInsurancePenetration": 24
     },
     {
         "country": "Brazil",
@@ -1084,7 +1238,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 5.6,
         "vacancyRate": 11.1,
         "housingDemandPressure": 1.3,
-        "municipalSpendingEfficiency": 163.0
+        "municipalSpendingEfficiency": 163.0,
+        "mortgagePenetrationPerCapita": 1800,
+        "homeInsurancePenetration": 28,
+        "mortgagePenetrationPerCapita": 1800,
+        "homeInsurancePenetration": 28
     },
     {
         "country": "Russia",
@@ -1111,7 +1269,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 5.6,
         "vacancyRate": 7.0,
         "housingDemandPressure": 0.6,
-        "municipalSpendingEfficiency": 381.0
+        "municipalSpendingEfficiency": 381.0,
+        "mortgagePenetrationPerCapita": 3800,
+        "homeInsurancePenetration": 42,
+        "mortgagePenetrationPerCapita": 3800,
+        "homeInsurancePenetration": 42
     },
     {
         "country": "China",
@@ -1138,7 +1300,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 17.5,
         "vacancyRate": 22.0,
         "housingDemandPressure": 1.0,
-        "municipalSpendingEfficiency": 214.3
+        "municipalSpendingEfficiency": 214.3,
+        "mortgagePenetrationPerCapita": 6800,
+        "homeInsurancePenetration": 45,
+        "mortgagePenetrationPerCapita": 6800,
+        "homeInsurancePenetration": 45
     },
     {
         "country": "Thailand",
@@ -1165,7 +1331,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 6.3,
         "vacancyRate": 8.0,
         "housingDemandPressure": 1.0,
-        "municipalSpendingEfficiency": 100.0
+        "municipalSpendingEfficiency": 100.0,
+        "mortgagePenetrationPerCapita": 2800,
+        "homeInsurancePenetration": 32,
+        "mortgagePenetrationPerCapita": 2800,
+        "homeInsurancePenetration": 32
     },
     {
         "country": "Malaysia",
@@ -1192,7 +1362,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 9.3,
         "vacancyRate": 6.0,
         "housingDemandPressure": 2.0,
-        "municipalSpendingEfficiency": 154.9
+        "municipalSpendingEfficiency": 154.9,
+        "mortgagePenetrationPerCapita": 4200,
+        "homeInsurancePenetration": 58,
+        "mortgagePenetrationPerCapita": 4200,
+        "homeInsurancePenetration": 58
     },
     {
         "country": "Singapore",
@@ -1219,7 +1393,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 41.7,
         "vacancyRate": 1.0,
         "housingDemandPressure": 1.5,
-        "municipalSpendingEfficiency": 809.5
+        "municipalSpendingEfficiency": 809.5,
+        "mortgagePenetrationPerCapita": 35600,
+        "homeInsurancePenetration": 280,
+        "mortgagePenetrationPerCapita": 35600,
+        "homeInsurancePenetration": 280
     },
     {
         "country": "Philippines",
@@ -1246,7 +1424,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 153.2,
         "vacancyRate": 12.0,
         "housingDemandPressure": 2.4,
-        "municipalSpendingEfficiency": 12.0
+        "municipalSpendingEfficiency": 12.0,
+        "mortgagePenetrationPerCapita": 520,
+        "homeInsurancePenetration": 8,
+        "mortgagePenetrationPerCapita": 520,
+        "homeInsurancePenetration": 8
     },
     {
         "country": "Vietnam",
@@ -1273,7 +1455,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 4.5,
         "vacancyRate": 10.0,
         "housingDemandPressure": 1.6,
-        "municipalSpendingEfficiency": 35.4
+        "municipalSpendingEfficiency": 35.4,
+        "mortgagePenetrationPerCapita": 380,
+        "homeInsurancePenetration": 6,
+        "mortgagePenetrationPerCapita": 380,
+        "homeInsurancePenetration": 6
     },
     {
         "country": "Indonesia",
@@ -1300,7 +1486,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 15.6,
         "vacancyRate": 3.0,
         "housingDemandPressure": 1.9,
-        "municipalSpendingEfficiency": 16.9
+        "municipalSpendingEfficiency": 16.9,
+        "mortgagePenetrationPerCapita": 680,
+        "homeInsurancePenetration": 12,
+        "mortgagePenetrationPerCapita": 680,
+        "homeInsurancePenetration": 12
     },
     {
         "country": "India",
@@ -1327,7 +1517,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 2.0,
         "vacancyRate": 2.5,
         "housingDemandPressure": 2.1,
-        "municipalSpendingEfficiency": 19.8
+        "municipalSpendingEfficiency": 19.8,
+        "mortgagePenetrationPerCapita": 420,
+        "homeInsurancePenetration": 4,
+        "mortgagePenetrationPerCapita": 420,
+        "homeInsurancePenetration": 4
     },
     {
         "country": "Argentina",
@@ -1354,7 +1548,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 4.4,
         "vacancyRate": 8.0,
         "housingDemandPressure": 1.5,
-        "municipalSpendingEfficiency": 191.7
+        "municipalSpendingEfficiency": 191.7,
+        "mortgagePenetrationPerCapita": 890,
+        "homeInsurancePenetration": 18,
+        "mortgagePenetrationPerCapita": 890,
+        "homeInsurancePenetration": 18
     },
     {
         "country": "Pakistan",
@@ -1381,7 +1579,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 2.1,
         "vacancyRate": 2.0,
         "housingDemandPressure": 2.8,
-        "municipalSpendingEfficiency": 8.2
+        "municipalSpendingEfficiency": 8.2,
+        "mortgagePenetrationPerCapita": 180,
+        "homeInsurancePenetration": 2,
+        "mortgagePenetrationPerCapita": 180,
+        "homeInsurancePenetration": 2
     },
     {
         "country": "Bangladesh",
@@ -1408,7 +1610,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 2.5,
         "vacancyRate": 1.5,
         "housingDemandPressure": 2.0,
-        "municipalSpendingEfficiency": 3.7
+        "municipalSpendingEfficiency": 3.7,
+        "mortgagePenetrationPerCapita": 95,
+        "homeInsurancePenetration": 1,
+        "mortgagePenetrationPerCapita": 95,
+        "homeInsurancePenetration": 1
     },
     {
         "country": "United Arab Emirates",
@@ -1435,7 +1641,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 6.3,
         "vacancyRate": 3.0,
         "housingDemandPressure": 2.2,
-        "municipalSpendingEfficiency": 1354.8
+        "municipalSpendingEfficiency": 1354.8,
+        "mortgagePenetrationPerCapita": 8200,
+        "homeInsurancePenetration": 180,
+        "mortgagePenetrationPerCapita": 8200,
+        "homeInsurancePenetration": 180
     },
     {
         "country": "Saudi Arabia",
@@ -1462,7 +1672,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 3.3,
         "vacancyRate": 4.0,
         "housingDemandPressure": 2.5,
-        "municipalSpendingEfficiency": 827.6
+        "municipalSpendingEfficiency": 827.6,
+        "mortgagePenetrationPerCapita": 3400,
+        "homeInsurancePenetration": 45,
+        "mortgagePenetrationPerCapita": 3400,
+        "homeInsurancePenetration": 45
     },
     {
         "country": "Iceland",
@@ -1489,7 +1703,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 12.8,
         "vacancyRate": 1.5,
         "housingDemandPressure": 1.3,
-        "municipalSpendingEfficiency": 4526.3
+        "municipalSpendingEfficiency": 4526.3,
+        "mortgagePenetrationPerCapita": 32100,
+        "homeInsurancePenetration": 390,
+        "mortgagePenetrationPerCapita": 32100,
+        "homeInsurancePenetration": 390
     },
     {
         "country": "South Africa",
@@ -1516,7 +1734,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 2.5,
         "vacancyRate": 5.0,
         "housingDemandPressure": 1.8,
-        "municipalSpendingEfficiency": 125.5
+        "municipalSpendingEfficiency": 125.5,
+        "mortgagePenetrationPerCapita": 3200,
+        "homeInsurancePenetration": 95,
+        "mortgagePenetrationPerCapita": 3200,
+        "homeInsurancePenetration": 95
     },
     {
         "country": "Egypt",
@@ -1543,7 +1765,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 2.7,
         "vacancyRate": 7.0,
         "housingDemandPressure": 2.9,
-        "municipalSpendingEfficiency": 28.6
+        "municipalSpendingEfficiency": 28.6,
+        "mortgagePenetrationPerCapita": 380,
+        "homeInsurancePenetration": 18,
+        "mortgagePenetrationPerCapita": 380,
+        "homeInsurancePenetration": 18
     },
     {
         "country": "Morocco",
@@ -1570,7 +1796,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 3.2,
         "vacancyRate": 4.0,
         "housingDemandPressure": 1.9,
-        "municipalSpendingEfficiency": 60.9
+        "municipalSpendingEfficiency": 60.9,
+        "mortgagePenetrationPerCapita": 890,
+        "homeInsurancePenetration": 32,
+        "mortgagePenetrationPerCapita": 890,
+        "homeInsurancePenetration": 32
     },
     {
         "country": "Kenya",
@@ -1597,7 +1827,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.5,
         "vacancyRate": 2.0,
         "housingDemandPressure": 3.2,
-        "municipalSpendingEfficiency": 18.8
+        "municipalSpendingEfficiency": 18.8,
+        "mortgagePenetrationPerCapita": 280,
+        "homeInsurancePenetration": 8,
+        "mortgagePenetrationPerCapita": 280,
+        "homeInsurancePenetration": 8
     },
     {
         "country": "Nigeria",
@@ -1624,7 +1858,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.3,
         "vacancyRate": 2.0,
         "housingDemandPressure": 3.4,
-        "municipalSpendingEfficiency": 13.5
+        "municipalSpendingEfficiency": 13.5,
+        "mortgagePenetrationPerCapita": 95,
+        "homeInsurancePenetration": 4,
+        "mortgagePenetrationPerCapita": 95,
+        "homeInsurancePenetration": 4
     },
     {
         "country": "Ghana",
@@ -1651,7 +1889,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.5,
         "vacancyRate": 3.0,
         "housingDemandPressure": 3.0,
-        "municipalSpendingEfficiency": 22.3
+        "municipalSpendingEfficiency": 22.3,
+        "mortgagePenetrationPerCapita": 210,
+        "homeInsurancePenetration": 6,
+        "mortgagePenetrationPerCapita": 210,
+        "homeInsurancePenetration": 6
     },
     {
         "country": "Ethiopia",
@@ -1678,7 +1920,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.2,
         "vacancyRate": 1.5,
         "housingDemandPressure": 3.5,
-        "municipalSpendingEfficiency": 14.0
+        "municipalSpendingEfficiency": 14.0,
+        "mortgagePenetrationPerCapita": 65,
+        "homeInsurancePenetration": 1,
+        "mortgagePenetrationPerCapita": 65,
+        "homeInsurancePenetration": 1
     },
     {
         "country": "Tanzania",
@@ -1705,7 +1951,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.2,
         "vacancyRate": 2.0,
         "housingDemandPressure": 3.8,
-        "municipalSpendingEfficiency": 17.2
+        "municipalSpendingEfficiency": 17.2,
+        "mortgagePenetrationPerCapita": 95,
+        "homeInsurancePenetration": 2,
+        "mortgagePenetrationPerCapita": 95,
+        "homeInsurancePenetration": 2
     },
     {
         "country": "Uganda",
@@ -1732,7 +1982,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.2,
         "vacancyRate": 1.5,
         "housingDemandPressure": 3.9,
-        "municipalSpendingEfficiency": 14.8
+        "municipalSpendingEfficiency": 14.8,
+        "mortgagePenetrationPerCapita": 120,
+        "homeInsurancePenetration": 3,
+        "mortgagePenetrationPerCapita": 120,
+        "homeInsurancePenetration": 3
     },
     {
         "country": "Rwanda",
@@ -1759,7 +2013,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 2.9,
         "vacancyRate": 2.0,
         "housingDemandPressure": 3.3,
-        "municipalSpendingEfficiency": 30.5
+        "municipalSpendingEfficiency": 30.5,
+        "mortgagePenetrationPerCapita": 180,
+        "homeInsurancePenetration": 4,
+        "mortgagePenetrationPerCapita": 180,
+        "homeInsurancePenetration": 4
     },
     {
         "country": "Zambia",
@@ -1786,7 +2044,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.5,
         "vacancyRate": 4.0,
         "housingDemandPressure": 3.7,
-        "municipalSpendingEfficiency": 26.9
+        "municipalSpendingEfficiency": 26.9,
+        "mortgagePenetrationPerCapita": 140,
+        "homeInsurancePenetration": 5,
+        "mortgagePenetrationPerCapita": 140,
+        "homeInsurancePenetration": 5
     },
     {
         "country": "Namibia",
@@ -1813,7 +2075,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 3.8,
         "vacancyRate": 6.0,
         "housingDemandPressure": 2.7,
-        "municipalSpendingEfficiency": 110.5
+        "municipalSpendingEfficiency": 110.5,
+        "mortgagePenetrationPerCapita": 1800,
+        "homeInsurancePenetration": 48,
+        "mortgagePenetrationPerCapita": 1800,
+        "homeInsurancePenetration": 48
     },
     {
         "country": "Botswana",
@@ -1840,7 +2106,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 3.1,
         "vacancyRate": 5.0,
         "housingDemandPressure": 2.3,
-        "municipalSpendingEfficiency": 165.9
+        "municipalSpendingEfficiency": 165.9,
+        "mortgagePenetrationPerCapita": 1400,
+        "homeInsurancePenetration": 35,
+        "mortgagePenetrationPerCapita": 1400,
+        "homeInsurancePenetration": 35
     },
     {
         "country": "Senegal",
@@ -1867,7 +2137,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.7,
         "vacancyRate": 3.0,
         "housingDemandPressure": 3.8,
-        "municipalSpendingEfficiency": 17.4
+        "municipalSpendingEfficiency": 17.4,
+        "mortgagePenetrationPerCapita": 240,
+        "homeInsurancePenetration": 7,
+        "mortgagePenetrationPerCapita": 240,
+        "homeInsurancePenetration": 7
     },
     {
         "country": "Tunisia",
@@ -1894,7 +2168,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 3.3,
         "vacancyRate": 8.0,
         "housingDemandPressure": 1.7,
-        "municipalSpendingEfficiency": 71.6
+        "municipalSpendingEfficiency": 71.6,
+        "mortgagePenetrationPerCapita": 720,
+        "homeInsurancePenetration": 22,
+        "mortgagePenetrationPerCapita": 720,
+        "homeInsurancePenetration": 22
     },
     {
         "country": "Cameroon",
@@ -1921,7 +2199,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.4,
         "vacancyRate": 3.0,
         "housingDemandPressure": 3.4,
-        "municipalSpendingEfficiency": 17.9
+        "municipalSpendingEfficiency": 17.9,
+        "mortgagePenetrationPerCapita": 160,
+        "homeInsurancePenetration": 4,
+        "mortgagePenetrationPerCapita": 160,
+        "homeInsurancePenetration": 4
     },
     {
         "country": "Ivory Coast",
@@ -1948,7 +2230,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.4,
         "vacancyRate": 3.0,
         "housingDemandPressure": 3.3,
-        "municipalSpendingEfficiency": 18.9
+        "municipalSpendingEfficiency": 18.9,
+        "mortgagePenetrationPerCapita": 190,
+        "homeInsurancePenetration": 5,
+        "mortgagePenetrationPerCapita": 190,
+        "homeInsurancePenetration": 5
     },
     {
         "country": "Mozambique",
@@ -1975,7 +2261,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 2.4,
         "vacancyRate": 4.0,
         "housingDemandPressure": 3.7,
-        "municipalSpendingEfficiency": 17.2
+        "municipalSpendingEfficiency": 17.2,
+        "mortgagePenetrationPerCapita": 85,
+        "homeInsurancePenetration": 2,
+        "mortgagePenetrationPerCapita": 85,
+        "homeInsurancePenetration": 2
     },
     {
         "country": "Angola",
@@ -2002,7 +2292,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.4,
         "vacancyRate": 9.0,
         "housingDemandPressure": 4.0,
-        "municipalSpendingEfficiency": 45.9
+        "municipalSpendingEfficiency": 45.9,
+        "mortgagePenetrationPerCapita": 420,
+        "homeInsurancePenetration": 12,
+        "mortgagePenetrationPerCapita": 420,
+        "homeInsurancePenetration": 12
     },
     {
         "country": "Zimbabwe",
@@ -2029,7 +2323,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.6,
         "vacancyRate": 5.0,
         "housingDemandPressure": 2.6,
-        "municipalSpendingEfficiency": 22.3
+        "municipalSpendingEfficiency": 22.3,
+        "mortgagePenetrationPerCapita": 45,
+        "homeInsurancePenetration": 3,
+        "mortgagePenetrationPerCapita": 45,
+        "homeInsurancePenetration": 3
     },
     {
         "country": "Algeria",
@@ -2056,7 +2354,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 3.3,
         "vacancyRate": 6.0,
         "housingDemandPressure": 2.3,
-        "municipalSpendingEfficiency": 65.8
+        "municipalSpendingEfficiency": 65.8,
+        "mortgagePenetrationPerCapita": 520,
+        "homeInsurancePenetration": 14,
+        "mortgagePenetrationPerCapita": 520,
+        "homeInsurancePenetration": 14
     },
     {
         "country": "Sudan",
@@ -2083,7 +2385,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.3,
         "vacancyRate": 4.0,
         "housingDemandPressure": 3.3,
-        "municipalSpendingEfficiency": 14.6
+        "municipalSpendingEfficiency": 14.6,
+        "mortgagePenetrationPerCapita": 65,
+        "homeInsurancePenetration": 2,
+        "mortgagePenetrationPerCapita": 65,
+        "homeInsurancePenetration": 2
     },
     {
         "country": "Mauritius",
@@ -2110,7 +2416,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 6.2,
         "vacancyRate": 7.0,
         "housingDemandPressure": 1.0,
-        "municipalSpendingEfficiency": 206.9
+        "municipalSpendingEfficiency": 206.9,
+        "mortgagePenetrationPerCapita": 4100,
+        "homeInsurancePenetration": 72,
+        "mortgagePenetrationPerCapita": 4100,
+        "homeInsurancePenetration": 72
     },
     {
         "country": "Malawi",
@@ -2137,7 +2447,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.5,
         "vacancyRate": 2.5,
         "housingDemandPressure": 3.6,
-        "municipalSpendingEfficiency": 14.9
+        "municipalSpendingEfficiency": 14.9,
+        "mortgagePenetrationPerCapita": 70,
+        "homeInsurancePenetration": 2,
+        "mortgagePenetrationPerCapita": 70,
+        "homeInsurancePenetration": 2
     },
     {
         "country": "Benin",
@@ -2272,7 +2586,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.7,
         "vacancyRate": 3.5,
         "housingDemandPressure": 3.6,
-        "municipalSpendingEfficiency": 16.1
+        "municipalSpendingEfficiency": 16.1,
+        "mortgagePenetrationPerCapita": 55,
+        "homeInsurancePenetration": 1,
+        "mortgagePenetrationPerCapita": 55,
+        "homeInsurancePenetration": 1
     },
     {
         "country": "Congo",
@@ -2326,7 +2644,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 4.2,
         "vacancyRate": 15.0,
         "housingDemandPressure": 0.3,
-        "municipalSpendingEfficiency": 352.9
+        "municipalSpendingEfficiency": 352.9,
+        "mortgagePenetrationPerCapita": 2100,
+        "homeInsurancePenetration": 35,
+        "mortgagePenetrationPerCapita": 2100,
+        "homeInsurancePenetration": 35
     },
     {
         "country": "Bulgaria",
@@ -2353,7 +2675,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 4.4,
         "vacancyRate": 16.0,
         "housingDemandPressure": 0.2,
-        "municipalSpendingEfficiency": 322.6
+        "municipalSpendingEfficiency": 322.6,
+        "mortgagePenetrationPerCapita": 2400,
+        "homeInsurancePenetration": 38,
+        "mortgagePenetrationPerCapita": 2400,
+        "homeInsurancePenetration": 38
     },
     {
         "country": "Croatia",
@@ -2380,7 +2706,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 5.1,
         "vacancyRate": 30.0,
         "housingDemandPressure": 0.3,
-        "municipalSpendingEfficiency": 724.1
+        "municipalSpendingEfficiency": 724.1,
+        "mortgagePenetrationPerCapita": 4200,
+        "homeInsurancePenetration": 68,
+        "mortgagePenetrationPerCapita": 4200,
+        "homeInsurancePenetration": 68
     },
     {
         "country": "Peru",
@@ -2407,7 +2737,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 8.8,
         "vacancyRate": 5.0,
         "housingDemandPressure": 1.8,
-        "municipalSpendingEfficiency": 63.2
+        "municipalSpendingEfficiency": 63.2,
+        "mortgagePenetrationPerCapita": 980,
+        "homeInsurancePenetration": 15,
+        "mortgagePenetrationPerCapita": 980,
+        "homeInsurancePenetration": 15
     },
     {
         "country": "Cambodia",
@@ -2434,7 +2768,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 3.0,
         "vacancyRate": 6.0,
         "housingDemandPressure": 2.2,
-        "municipalSpendingEfficiency": 19.4
+        "municipalSpendingEfficiency": 19.4,
+        "mortgagePenetrationPerCapita": 210,
+        "homeInsurancePenetration": 3,
+        "mortgagePenetrationPerCapita": 210,
+        "homeInsurancePenetration": 3
     },
     {
         "country": "Nepal",
@@ -2461,7 +2799,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 4.8,
         "vacancyRate": 3.0,
         "housingDemandPressure": 2.1,
-        "municipalSpendingEfficiency": 9.0
+        "municipalSpendingEfficiency": 9.0,
+        "mortgagePenetrationPerCapita": 140,
+        "homeInsurancePenetration": 2,
+        "mortgagePenetrationPerCapita": 140,
+        "homeInsurancePenetration": 2
     },
     {
         "country": "Myanmar",
@@ -2488,7 +2830,11 @@ const housingData = [
         "resilienceCertifiedPerCapita": 1.5,
         "vacancyRate": 4.0,
         "housingDemandPressure": 1.5,
-        "municipalSpendingEfficiency": 11.8
+        "municipalSpendingEfficiency": 11.8,
+        "mortgagePenetrationPerCapita": 75,
+        "homeInsurancePenetration": 1,
+        "mortgagePenetrationPerCapita": 75,
+        "homeInsurancePenetration": 1
     }
 ];
 
