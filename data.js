@@ -33,6 +33,7 @@
 // 22. municipalSpendingEfficiency: Municipal Spending Efficiency Index. Measures municipal budget capacity relative to urban density. Calculated as: (Municipal Budget Per Capita in USD) / (Urban Density per 1000 people/sq km). Scale 0-7000+ USD per capita per 1k density. Formula normalizes spending by density to reveal which cities have adequate resources for housing and infrastructure. Very High (5000-7000): Nordic countries with well-funded systems - Norway 6909.1 (budget $15,200/capita, density 2,200/km²), Denmark 6724.1 ($19,500, 2,900/km²), Sweden 5153.8 ($13,400, 2,600/km²), Iceland 4526.3 ($8,600, 1,900/km²). These cities afford quality infrastructure, social housing, robust services. High (2000-4000): Developed countries - Netherlands 3555.6, Luxembourg 3500.0, Switzerland 1634.6, Finland 4666.7, Australia 1523.8, Canada 2125.0, USA 2333.3. Moderate (500-2000): Mid-tier economies - Austria 1720.9, Germany 1682.9, Belgium 1589.7, France 1567.6, UK 1095.2, Israel 397.4, UAE 1354.8, Saudi Arabia 827.6, Singapore 809.5. Low-Moderate (100-500): Emerging economies - Brazil 163.0, Mexico 118.0, China 214.3, Malaysia 154.9, South Africa 125.5, Argentina 191.7, Costa Rica 188.5, Mauritius 206.9, Thailand 100.0. Low (20-100): Developing countries with inadequate capacity - India 19.8, Indonesia 16.9, Philippines 12.0, Vietnam 35.4, Egypt 28.6, Turkey 224.1, most sub-Saharan African countries 14-35. Very Low (<20): Severely under-resourced dense megacities - Bangladesh 3.7 (Dhaka 36,000/km², budget only $85/capita), Pakistan 8.2 (Karachi 24,000/km²), Nepal 9.0, Myanmar 11.8, Cambodia 19.4. These megacities have extreme density but minimal budgets, making affordable housing provision nearly impossible. Pattern reveals dense cities in developing countries face double challenge: very high density that should enable economies of scale, but extremely low budgets preventing adequate service delivery. Data sources: OECD MUNIFI Database (Municipal Finance, 37 OECD+EU countries - most reliable local government finance data), OECD REGOFI (Regional Government Finance), World Bank Government Finance Statistics, UN-Habitat Urban Finance Database, Africapolis (OECD/SWAC database - 7,617 African urban agglomerations with density data), national statistical offices, municipal budget reports (2023-2024). Urban density measured as average density in major urban agglomerations (people per sq km), not national density. Municipal budget includes local government spending on infrastructure, services, housing; excludes national/regional transfers counted as local revenue. Policy implications: Low-efficiency countries (<100) need massive increases in municipal revenue through local taxation, national transfers, or international development finance. Decentralized fiscal systems (Nordic, Switzerland) show highest efficiency by empowering local governments with revenue authority. Centralized systems in developing countries often starve cities of resources despite rapid urbanization. Metric reveals why informal housing persists in cities like Dhaka, Karachi, Manila - lack municipal budget to provide formal affordable alternatives despite high density enabling efficient service delivery.
 // 23. mortgagePenetrationPerCapita: Mortgage Penetration Rate (% of households). Percentage of all households (owner-occupied and rented) that have a residential mortgage, measuring housing finance accessibility and mortgage market breadth. Scale: 0%-70%. Very High (50-70%): Nordic leaders with exceptional mortgage penetration - Denmark 65% (European leader, mortgage culture deeply embedded, 120% mortgage debt/GDP ratio), Norway 58% (oil wealth enables borrowing, high trust in banks), Netherlands 52% (historical mortgage market since 17th century), Sweden 48% (universal banking access), Finland 45% (Nordic financial inclusion). These countries combine high homeownership rates (60-80%) with widespread use of leverage rather than outright ownership. Long-term fixed mortgages (20-30 years) standard, deep financial inclusion, sophisticated lending infrastructure. High (35-50%): Anglo-developed markets with mature lending - USA 41% (though only 37% of owner-occupied homes mortgaged; includes high outright ownership among elderly Baby Boomers), Australia 35% (35% of owner-occupiers with mortgages, median debt A$600k), Canada 38% (robust mortgage market, CMHC insurance system), Japan 38% (despite aging/deleveraging, lifetime employment enables borrowing), Belgium 35%, New Zealand 36% (post-2020 housing boom). Established infrastructure, credit bureaus, foreclosure frameworks, mortgage insurance systems. Medium-High (25-35%): Western Europe mixed ownership models - Switzerland 42% (rental culture coexists with mortgage market), UK 32% (down from 40% pre-2008, austerity impact), France 28% (strong rental protections reduce ownership pressure), Austria 28% (social housing alternatives), Ireland 34% (Celtic Tiger legacy), South Korea 32% (jeonse deposit system + mortgages), Singapore 31% (HDB dominates, some mortgaged). Significant mortgage usage but also substantial outright ownership or robust rental sectors. Medium (15-25%): Southern/Eastern Europe + emerging Asia - Spain 24% (down from 32% pre-2008 crisis, deleveraging + youth unemployment), Estonia 24%, Malaysia 24% (EPF + Islamic finance), South Africa 22%, Chile 22% (Latin America's most developed mortgage market), Portugal 22%, Czech 20%, Latvia 20%, Lithuania 19%. Growing mortgage markets but limited by income levels, financial system development, or cultural preferences for cash/outright ownership. Low (8-15%): Emerging markets with nascent mortgage finance serving only middle-class elite - Mexico 14% (Infonavit government program + commercial banks), Turkey 15% (rapid 2010s growth, now currency crisis), Italy 15% (low despite wealth, multigenerational housing + family financing culture), Greece 12% (post-crisis credit crunch), Brazil 11% (Minha Casa Minha Vida subsidies), Uruguay 12%, China 18% (urban concentrations 25-30%, rural minimal; 2000s-2020s explosion from near-zero), Russia 9% (2014 sanctions + ruble volatility limits lending), Argentina 6% (hyperinflation destroys long-term lending), Peru 8%, Iran 8%. Mortgage markets exist but serve small minority; majority rely on cash savings, family networks, or incremental construction. Very Low (0-8%): Minimal formal mortgage markets, cash/informal financing dominates - India 4% (despite 1.4B population and rapid urbanization, only ~60M mortgaged households; financial exclusion, weak property rights, PMAY subsidies reach few), Indonesia 3% (world's 4th largest population, tiny mortgage penetration), Thailand 7%, Vietnam 5%, Colombia 10%, Philippines 4% (Pag-IBIG fund limited reach), Pakistan 2%, Bangladesh 1%, Sri Lanka 6%, Myanmar 1%, Cambodia 2%, Nigeria 1% (Sub-Saharan Africa's largest economy, almost no mortgage finance), Kenya 2%, Ethiopia 0.5%, Tanzania 1%, Uganda 1%, Ghana 2%, Senegal 2%, Egypt 4%, Morocco 7%, Algeria 3%. Underdeveloped financial systems, limited banking penetration (rural areas often unbanked), weak property rights/land titling, no credit bureaus, ineffective foreclosure mechanisms. Housing financed through: informal savings groups, family/diaspora remittances, employer schemes, incremental self-construction over years, microfinance. The global mortgage divide is stark: Denmark has 130x higher household penetration than Ethiopia, 65x higher than Nigeria. This isn't purely about income - it reflects legal infrastructure (property registration systems, foreclosure laws), financial development (credit bureaus, banking reach, capital markets), regulatory frameworks (capital adequacy rules, mortgage regulations, consumer protections), and cultural norms (comfort with debt, preference for multigenerational housing vs nuclear households). Data sources: World Bank Global Findex Database (financial inclusion surveys, 140+ countries, representative sampling), OECD Affordable Housing Database (HC1.2.1.1 - mortgage debt data), national housing surveys (US Census American Housing Survey, UK English Housing Survey, Australia ABS Housing Occupancy), central bank household debt reports (ECB, RBI, PBoC financial stability), housing finance institutions (US Fannie Mae/Freddie Mac, Canada CMHC, India NHB, Mexico Infonavit). Methodology: households with outstanding residential mortgages / total households (owner-occupied + rented). Includes all mortgage types: prime, subprime, Islamic (murabaha/ijara), government-subsidized, commercial bank, cooperative. Policy implications: Low-penetration countries need comprehensive reforms: (1) Financial sector development - establish credit bureaus (like Equifax, Experian), create collateral registries, develop foreclosure mechanisms balancing lender rights with borrower protections, (2) Specialized housing finance institutions - government mortgage banks/funds like India's NHB, Mexico's Infonavit/Fovissste, South Africa's FLISP, Kenya Mortgage Refinance Company, (3) Affordability mechanisms - interest rate subsidies for low-income borrowers, longer loan terms (25-30 years), graduated payment mortgages, (4) Property rights infrastructure - systematic land titling programs (like Rwanda's), cadastral modernization, informal settlement regularization, (5) Macroprudential regulation - loan-to-value caps, debt-service-to-income limits, stress testing to prevent 2008-style crises. Without mortgage finance, homeownership becomes privilege of wealthy who can pay cash, perpetuating inequality and forcing families into informal settlements, overcrowding, or exploitative rental markets. Mortgage finance democratizes homeownership - critical for wealth building, intergenerational mobility, housing stability.
 // 24. homeInsurancePenetration: Home Insurance Penetration Rate (% of households). Percentage of households with residential property insurance, measuring insurance market reach, risk awareness, and financial resilience against housing shocks. Scale: 0%-100%. Very High (85-96%): Nordic/Northern Europe near-universal coverage - Denmark 96% (world leader, insurance bundled with mortgages as standard practice), Norway 95% (comprehensive welfare state + insurance culture), Sweden 94%, Switzerland 94% (quasi-mandatory, uninsured face difficulties), Netherlands 93% (flood risk below sea level drives awareness), Finland 92%. Insurance deeply embedded in housing finance systems; lenders universally require coverage; governments incentivize through tax deductions; comprehensive policies cover fire, water, storms, liability. Cultural norm of risk protection. High (75-89%): Anglo-developed markets with strong coverage - USA 85% of homeowners insured (mortgage lenders mandate insurance, though declining in high-risk coastal areas like Florida due to unaffordability/insurer exodus), Australia 88% (cyclone/bushfire awareness high after Black Saturday 2009, climate change driving premiums up), Canada 82% (winter damage coverage, mandatory for mortgaged properties), Germany 86% (strong insurance tradition, Versicherungsschutz cultural norm), France 89% (mandatory for renters since 1989 law, homeowners follow suit). Mature insurance industries, widespread homeownership, established risk culture. Medium-High (65-80%): Western Europe + disaster-aware markets - New Zealand 80% (Earthquake Commission public catastrophic fund post-Christchurch 2011 quake + private top-up coverage), UK 78% (buildings insurance common, though rising premiums in flood zones), Belgium 81%, Austria 79%, Japan 71% (fire insurance high, but earthquake insurance separate and less common despite severe risk - cultural fatalism, government bailout expectation). Medium (50-65%): Southern Europe + East Asia - Spain 65% (post-2008 crisis awareness increased), Czech 56%, South Africa 55% (wealth inequality: insured middle class, uninsured townships), Chile 52% (Latin America's highest, earthquake risk drives uptake post-2010 Maule quake), Estonia 62%, Latvia 54%, Lithuania 51%, Slovakia 41%. Growing middle class adopts insurance, but many households still unprotected. Medium-Low (35-50%): Emerging insurance markets - Malaysia 48% (Islamic takaful + conventional), Hungary 48%, Poland 52% (EU accession drove growth), Slovenia 45%, UAE 45% (expat awareness, nationals less), Turkey 38% (shockingly low despite 1999 Izmit quake 17,000 dead, 2023 Kahramanmaras quake 62,000 dead - government bailout expectation, affordability, trust deficit). Small urban elite/middle class insured, rural/poor majority vulnerable. Low (20-35%): Limited insurance reach despite risks - Italy 42% (low despite wealth, family support culture, distrust of insurers), Greece 35% (economic crisis reduced coverage), Costa Rica 38%, Mexico 34% (earthquake/hurricane risk but low uptake), Brazil 28% (favelas uninsurable, middle class growing awareness), Panama 42%, Uruguay 32%, China 32% (urban concentrations, rural almost zero; rapid growth from 5% in 2000). Very Low (1-20%): Minimal insurance penetration despite catastrophic disaster risks - India 6% (1.4B population, monsoon floods/earthquakes, but only urban elite insured; informal housing uninsurable), Indonesia 8% (shocking given tsunami 2004 230,000 dead, earthquakes, volcanoes; cultural acceptance of loss, Islamic fatalism, poverty), Thailand 18% (monsoons/floods), Vietnam 12% (typhoons), Philippines 11% (averages 8 typhoons/year causing billions in damage, yet 89% uninsured - poverty, informality, government/NGO reconstruction expected), Colombia 24%, Peru 19%, Argentina 18%, Russia 14% (distrust of institutions), Egypt 8%, Morocco 12%, Nigeria 2% (Sub-Saharan Africa minimal insurance despite flood risks), Kenya 4%, Bangladesh 2% (despite being world's most climate-vulnerable nation with annual cyclones/floods destroying housing), Ethiopia 1%, Nepal 5% (2015 earthquake 9,000 dead, almost all uninsured), Cambodia 4%, Myanmar 3%, Laos 3%, Pakistan 4%, Afghanistan 1%, Iraq 6%, Syria 3%, Madagascar 1% (cyclones). These countries face perpetual disaster-reconstruction poverty cycles. Post-disaster, families lose all housing wealth, rely on family/government/NGO aid, rebuild incrementally over years. The global insurance gap is staggering: Denmark has 96x higher household coverage than Ethiopia, 48x higher than Nigeria, 48x higher than Bangladesh. This isn't purely about income - many disaster-prone developing countries have vastly lower insurance rates than their risk profiles demand. Factors preventing coverage: (1) Affordability - premiums unaffordable for poor households earning $2-10/day, (2) Awareness - lack of understanding of insurance benefits, never seen it work, (3) Trust - deep skepticism insurers will actually pay claims (often justified - claim denial rates high in weak regulatory environments), (4) Availability - insurance companies don't operate in rural areas, informal settlements, (5) Regulatory weakness - inadequate consumer protections, fraud, (6) Informality - unregistered homes, no legal title, cannot be formally insured, (7) Cultural factors - fatalism, religious acceptance of disasters as divine will, reliance on family/community rather than financial instruments. Data sources: Swiss Re Sigma World Insurance Reports (industry standard, surveys national insurance associations and major insurers globally, annual publication with country-level penetration data), national insurance regulators (US NAIC, UK Financial Conduct Authority, European EIOPA, India IRDAI, China CBIRC), World Bank Global Findex Database (financial inclusion surveys include insurance questions), OECD Insurance Statistics, Insurance Information Institute, Munich Re NatCatSERVICE (tracks insured vs uninsured disaster losses). Methodology: households with active residential property/homeowners insurance policies / total households. Includes owner-occupied homeowners insurance and renters/contents insurance. Excludes life, health, auto insurance. Policy implications: Low-penetration disaster-prone countries face perpetual reconstruction cycles, housing wealth destruction, poverty traps. Solutions needed: (1) Mandatory insurance - France model requiring renters insurance (1989 law), Turkey pushing compulsory earthquake insurance post-2023 (TCIP program), (2) Microinsurance - affordable parametric products for low-income households ($1-5/month premiums, automatic payouts when disaster threshold triggered like earthquake magnitude >6.0 or rainfall >200mm), (3) Public-private partnerships - New Zealand Earthquake Commission model (government catastrophic fund covers first NZ$150k damage, private insurers cover above), Caribbean Catastrophe Risk Insurance Facility (regional risk pool for 20 countries), (4) Premium subsidies - California FAIR plan for high-risk areas, India Pradhan Mantri Fasal Bima Yojana crop insurance model, Florida Citizens Property Insurance (state insurer of last resort), (5) Building code enforcement - safer construction = lower risk = lower premiums = higher affordability/uptake, (6) Index/parametric insurance - pays on objective trigger (earthquake magnitude, wind speed, rainfall) rather than loss assessment, eliminates moral hazard and claim disputes, enables fast payouts (24-48 hours vs months). Without insurance, disasters destroy housing wealth permanently. Philippines loses $3-5B annually to typhoons with 89% uninsured. Bangladesh faces annual cyclone/flood devastation with 98% uninsured. Haiti 2010 earthquake killed 220,000, destroyed 250,000 homes, almost zero insurance - still rebuilding 15 years later. Insurance is critical development infrastructure - it transforms disasters from permanent wealth destruction into temporary setbacks with financial recovery. Countries must treat housing insurance like other development priorities (roads, electricity, water) requiring public intervention for universal access.
+// 25. dataMismatchIndex: Data Mismatch Index (0-100 scale). Composite measure of data quality, consistency, and measurement reliability across housing metrics. Identifies where different data sources contradict each other, revealing data infrastructure gaps, informal market prevalence, and methodological challenges. Higher scores indicate greater data inconsistencies and measurement uncertainty. Very Low (0-15): Excellent data quality and consistency - Denmark 5, Norway 6, Sweden 7, Switzerland 8, Finland 8 (Nordic countries with comprehensive national registries, digitized records, transparent governance, frequent surveys, minimal informal economy <10%, universal property registration, statistical agencies with ISO 9001 certification). Low (15-30): Good data quality - Iceland 12, Singapore 13, Austria 10, Netherlands 9, Belgium 11, Germany 14, Estonia 28 (developed countries with strong statistical infrastructure, some measurement challenges from tourism/expat populations, minor informal economy). Moderate (30-50): Moderate inconsistencies - UK 16, Canada 18, Australia 21, USA 24 (regional variation complicates aggregation, homeless undercounting, some indigenous housing gaps), France 22 (vacation home counting affects vacancy data), Japan 28 (aging population creates data lag, high vacancy cultural acceptance differs from other countries), South Korea 31 (jeonse deposit system complicates debt classification), Chile 34, Czech 29, Slovakia 34 (best emerging markets). Medium-High (50-65): Significant data challenges - Spain 35, Italy 38, Portugal 32, Greece 42 (informal economy 20-30% GDP, vacation properties complicate data, tax evasion affects transaction records, high vacancy + deficit paradoxes), Poland 36, Hungary 37, Romania 51, Bulgaria 53, Croatia 48 (Eastern Europe: emigration creates population data lags, informal construction unreported, depopulation vs urban shortage mismatches), Brazil 62, Mexico 58, Colombia 59, India 64 (large informal settlements partially unmeasured, regional data quality varies enormously, favelas/slums/juggi-jhopri undercounted). High (65-75): Major data gaps and inconsistencies - Ukraine 67 (war displacement, Crimea/Donbas data missing post-2014), Kenya 68 (Kibera slum population disputed: 250k-1M estimates, 60% informal settlements Nairobi), Tanzania 71, Uganda 70, Ethiopia 73 (informal settlements 60-80%, rural data minimal), Nigeria 77 (population figures disputed, Boko Haram areas unmeasured, informal settlements 60-70%), Bangladesh 71 (Dhaka slum estimates vary 40-60%, char lands unmeasured, Rohingya camps), Pakistan 69 (katchi abadis undercounted, FATA/Balochistan gaps), Philippines 66 (informal settlements 40-50%, squatter data disputed), Indonesia 67 (kampung undercount, Java vs Papua data quality gap), Myanmar 69 (Rohingya excluded from census, conflict zones), Egypt 59 (ashwaiyyat informal housing ~60% urban, official statistics undercount), Turkey 53 (gecekondu undercounted, Syrian refugees, earthquake reconstruction lag). Very High (75-90): Severe data infrastructure breakdown - Venezuela 78 (hyperinflation makes price data meaningless, economic collapse destroyed statistical capacity, 7M emigrants), Libya 82 (civil war, tribal land systems), DR Congo 81 (conflict zones unmeasured, informal settlements 80%+, eastern displacement), Haiti 84 (earthquake destruction, informal settlements 70%+, minimal data infrastructure since 2010), South Sudan 85 (newest nation 2011, civil war, displacement, no proper census), Afghanistan 86 (war, Taliban control, data infrastructure collapsed, rural unmeasured), Somalia 87 (failed state, no reliable census since 1975, Al-Shabaab areas, IDP camps), Syria 89 (war destruction 2011-present, massive displacement 13M+, data infrastructure collapsed, government-held vs opposition vs Kurdish areas unmeasured). Key mismatch patterns identified: (1) Vacancy-Deficit Paradox: Croatia 30% vacancy + housing deficit (depopulation emigration), Greece/Spain/Italy high vacancy + affordability crisis (speculation, geographic mismatch), China 22% vacancy + continued construction (overbuilding). (2) Affordability-Deficit Gap: Countries with low official price-to-income ratios but high housing deficits suggest informal housing not captured in price statistics - India, Bangladesh, Nigeria, Ethiopia. (3) Finance-Ownership Inconsistency: South Korea high household debt/GDP but moderate mortgage penetration suggests jeonse deposits misclassified; Japan high debt but aging deleveraging. (4) Insurance-Risk Mismatch: Philippines 11% insured despite 8 typhoons/year, Bangladesh 2% despite cyclones, Indonesia 8% despite tsunami/earthquake/volcano risks, Turkey 38% despite major earthquakes - massive uninsured vulnerability. (5) Construction-Deficit Gap: High construction activity but persistent deficits indicate location/quality mismatch (luxury construction vs affordable need) or informal construction uncounted - India, Nigeria, China. (6) Policy-Outcome Gap: Countries with high policy activity scores but poor outcomes suggest implementation failure or measurement error - South Africa, Brazil, India. (7) Informal-Formal Inconsistency: Official homeownership rates contradict high informal settlement percentages, indicating titling/recognition issues - Kenya, Nigeria, Philippines, Indonesia, Egypt, Mexico. (8) Demographic Data Lag: Rapid emigration (Eastern Europe, Venezuela) or immigration (UAE, Qatar) creates population estimate errors affecting per-capita calculations. (9) Conflict/Disaster Impact: War zones (Syria, Yemen, Somalia, Afghanistan, South Sudan, Ukraine), post-disaster areas (Haiti 2010, Philippines typhoons, Nepal 2015), and gang-controlled areas (El Salvador, Honduras, parts of Mexico) have unmeasured or outdated data. (10) Governance and Transparency: Authoritarian regimes (Eritrea, Belarus), failed states (Somalia), and countries with limited statistical capacity (Chad, CAR, Niger) have unreliable or fabricated data. Data sources: Transparency International Corruption Perceptions Index, World Bank Statistical Capacity Indicator, PARIS21 Statistical Capacity Development, OECD data quality assessments, academic housing research identifying measurement challenges, discrepancies between UN-Habitat, World Bank, OECD, and national statistics. Methodology: Expert assessment combining quantitative discrepancies (coefficient of variation across sources >20%, large revisions >10% in census updates) and qualitative factors (informal economy size, conflict, data infrastructure, governance quality). Policy implications: High-mismatch countries need investment in statistical infrastructure - national housing surveys (like US AHS, UK EHS), property registries (blockchain-based like Georgia, Rwanda land titling), informal settlement mapping (using satellite imagery, GIS, participatory mapping with residents), census capacity building, transparent open data policies. Researchers and policymakers must exercise caution interpreting data from high-mismatch countries - use ranges rather than point estimates, triangulate across multiple sources, acknowledge uncertainty. International development organizations should prioritize data infrastructure as foundational for evidence-based housing policy - cannot solve housing crisis without measuring it accurately. Lower scores indicate reliable data for policy/investment decisions; higher scores indicate uncertainty requiring ground-truth validation.
 
 const housingData = [
     {
@@ -63,6 +64,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1634.6,
         "mortgagePenetrationPerCapita": 42,
         "homeInsurancePenetration": 94,
+        "dataMismatchIndex": 8,
         "mortgagePenetrationPerCapita": 60200,
         "homeInsurancePenetration": 680
     },
@@ -94,6 +96,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1523.8,
         "mortgagePenetrationPerCapita": 35,
         "homeInsurancePenetration": 88,
+        "dataMismatchIndex": 21,
         "mortgagePenetrationPerCapita": 48500,
         "homeInsurancePenetration": 640
     },
@@ -125,6 +128,7 @@ const housingData = [
         "municipalSpendingEfficiency": 6724.1,
         "mortgagePenetrationPerCapita": 65,
         "homeInsurancePenetration": 96,
+        "dataMismatchIndex": 5,
         "mortgagePenetrationPerCapita": 56800,
         "homeInsurancePenetration": 510
     },
@@ -156,6 +160,7 @@ const housingData = [
         "municipalSpendingEfficiency": 774.2,
         "mortgagePenetrationPerCapita": 15800,
         "homeInsurancePenetration": 120,
+        "dataMismatchIndex": 33,
         "mortgagePenetrationPerCapita": 15800,
         "homeInsurancePenetration": 120
     },
@@ -187,6 +192,7 @@ const housingData = [
         "municipalSpendingEfficiency": 3555.6,
         "mortgagePenetrationPerCapita": 52,
         "homeInsurancePenetration": 93,
+        "dataMismatchIndex": 9,
         "mortgagePenetrationPerCapita": 51200,
         "homeInsurancePenetration": 580
     },
@@ -218,6 +224,7 @@ const housingData = [
         "municipalSpendingEfficiency": 2125.0,
         "mortgagePenetrationPerCapita": 38,
         "homeInsurancePenetration": 82,
+        "dataMismatchIndex": 18,
         "mortgagePenetrationPerCapita": 38400,
         "homeInsurancePenetration": 380
     },
@@ -249,6 +256,7 @@ const housingData = [
         "municipalSpendingEfficiency": 233.5,
         "mortgagePenetrationPerCapita": 32,
         "homeInsurancePenetration": 68,
+        "dataMismatchIndex": 31,
         "mortgagePenetrationPerCapita": 21800,
         "homeInsurancePenetration": 240
     },
@@ -280,6 +288,7 @@ const housingData = [
         "municipalSpendingEfficiency": 6909.1,
         "mortgagePenetrationPerCapita": 58,
         "homeInsurancePenetration": 95,
+        "dataMismatchIndex": 6,
         "mortgagePenetrationPerCapita": 52300,
         "homeInsurancePenetration": 520
     },
@@ -311,6 +320,7 @@ const housingData = [
         "municipalSpendingEfficiency": 5153.8,
         "mortgagePenetrationPerCapita": 48,
         "homeInsurancePenetration": 94,
+        "dataMismatchIndex": 7,
         "mortgagePenetrationPerCapita": 49100,
         "homeInsurancePenetration": 490
     },
@@ -342,6 +352,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1478.3,
         "mortgagePenetrationPerCapita": 36,
         "homeInsurancePenetration": 80,
+        "dataMismatchIndex": 17,
         "mortgagePenetrationPerCapita": 44600,
         "homeInsurancePenetration": 580
     },
@@ -373,6 +384,7 @@ const housingData = [
         "municipalSpendingEfficiency": 3500.0,
         "mortgagePenetrationPerCapita": 47800,
         "homeInsurancePenetration": 450,
+        "dataMismatchIndex": 11,
         "mortgagePenetrationPerCapita": 47800,
         "homeInsurancePenetration": 450
     },
@@ -404,6 +416,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1095.2,
         "mortgagePenetrationPerCapita": 32,
         "homeInsurancePenetration": 78,
+        "dataMismatchIndex": 16,
         "mortgagePenetrationPerCapita": 33800,
         "homeInsurancePenetration": 420
     },
@@ -435,6 +448,7 @@ const housingData = [
         "municipalSpendingEfficiency": 4666.7,
         "mortgagePenetrationPerCapita": 45,
         "homeInsurancePenetration": 92,
+        "dataMismatchIndex": 8,
         "mortgagePenetrationPerCapita": 28900,
         "homeInsurancePenetration": 440
     },
@@ -466,6 +480,7 @@ const housingData = [
         "municipalSpendingEfficiency": 2333.3,
         "mortgagePenetrationPerCapita": 41,
         "homeInsurancePenetration": 85,
+        "dataMismatchIndex": 24,
         "mortgagePenetrationPerCapita": 35200,
         "homeInsurancePenetration": 720
     },
@@ -497,6 +512,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1589.7,
         "mortgagePenetrationPerCapita": 35,
         "homeInsurancePenetration": 81,
+        "dataMismatchIndex": 11,
         "mortgagePenetrationPerCapita": 26700,
         "homeInsurancePenetration": 340
     },
@@ -528,6 +544,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1567.6,
         "mortgagePenetrationPerCapita": 28,
         "homeInsurancePenetration": 89,
+        "dataMismatchIndex": 22,
         "mortgagePenetrationPerCapita": 24300,
         "homeInsurancePenetration": 350
     },
@@ -559,6 +576,7 @@ const housingData = [
         "municipalSpendingEfficiency": 460.7,
         "mortgagePenetrationPerCapita": 38,
         "homeInsurancePenetration": 71,
+        "dataMismatchIndex": 28,
         "mortgagePenetrationPerCapita": 18500,
         "homeInsurancePenetration": 420
     },
@@ -590,6 +608,7 @@ const housingData = [
         "municipalSpendingEfficiency": 596.2,
         "mortgagePenetrationPerCapita": 24,
         "homeInsurancePenetration": 65,
+        "dataMismatchIndex": 35,
         "mortgagePenetrationPerCapita": 17600,
         "homeInsurancePenetration": 180
     },
@@ -621,6 +640,7 @@ const housingData = [
         "municipalSpendingEfficiency": 536.6,
         "mortgagePenetrationPerCapita": 22,
         "homeInsurancePenetration": 58,
+        "dataMismatchIndex": 32,
         "mortgagePenetrationPerCapita": 16200,
         "homeInsurancePenetration": 160
     },
@@ -652,6 +672,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1411.8,
         "mortgagePenetrationPerCapita": 34,
         "homeInsurancePenetration": 74,
+        "dataMismatchIndex": 19,
         "mortgagePenetrationPerCapita": 29400,
         "homeInsurancePenetration": 380
     },
@@ -683,6 +704,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1720.9,
         "mortgagePenetrationPerCapita": 28,
         "homeInsurancePenetration": 79,
+        "dataMismatchIndex": 10,
         "mortgagePenetrationPerCapita": 18200,
         "homeInsurancePenetration": 310
     },
@@ -714,6 +736,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1682.9,
         "mortgagePenetrationPerCapita": 26,
         "homeInsurancePenetration": 86,
+        "dataMismatchIndex": 14,
         "mortgagePenetrationPerCapita": 19800,
         "homeInsurancePenetration": 280
     },
@@ -745,6 +768,7 @@ const housingData = [
         "municipalSpendingEfficiency": 965.5,
         "mortgagePenetrationPerCapita": 24,
         "homeInsurancePenetration": 62,
+        "dataMismatchIndex": 28,
         "mortgagePenetrationPerCapita": 10200,
         "homeInsurancePenetration": 180
     },
@@ -776,6 +800,7 @@ const housingData = [
         "municipalSpendingEfficiency": 888.9,
         "mortgagePenetrationPerCapita": 14,
         "homeInsurancePenetration": 45,
+        "dataMismatchIndex": 31,
         "mortgagePenetrationPerCapita": 6900,
         "homeInsurancePenetration": 110
     },
@@ -807,6 +832,7 @@ const housingData = [
         "municipalSpendingEfficiency": 750.0,
         "mortgagePenetrationPerCapita": 15,
         "homeInsurancePenetration": 42,
+        "dataMismatchIndex": 38,
         "mortgagePenetrationPerCapita": 11400,
         "homeInsurancePenetration": 95
     },
@@ -838,6 +864,7 @@ const housingData = [
         "municipalSpendingEfficiency": 397.4,
         "mortgagePenetrationPerCapita": 30,
         "homeInsurancePenetration": 67,
+        "dataMismatchIndex": 23,
         "mortgagePenetrationPerCapita": 16700,
         "homeInsurancePenetration": 220
     },
@@ -869,6 +896,7 @@ const housingData = [
         "municipalSpendingEfficiency": 763.2,
         "mortgagePenetrationPerCapita": 20,
         "homeInsurancePenetration": 56,
+        "dataMismatchIndex": 29,
         "mortgagePenetrationPerCapita": 8200,
         "homeInsurancePenetration": 120
     },
@@ -900,6 +928,7 @@ const housingData = [
         "municipalSpendingEfficiency": 326.5,
         "mortgagePenetrationPerCapita": 12,
         "homeInsurancePenetration": 35,
+        "dataMismatchIndex": 42,
         "mortgagePenetrationPerCapita": 8900,
         "homeInsurancePenetration": 65
     },
@@ -931,6 +960,7 @@ const housingData = [
         "municipalSpendingEfficiency": 656.2,
         "mortgagePenetrationPerCapita": 18,
         "homeInsurancePenetration": 52,
+        "dataMismatchIndex": 36,
         "mortgagePenetrationPerCapita": 6800,
         "homeInsurancePenetration": 85
     },
@@ -962,6 +992,7 @@ const housingData = [
         "municipalSpendingEfficiency": 676.5,
         "mortgagePenetrationPerCapita": 15,
         "homeInsurancePenetration": 41,
+        "dataMismatchIndex": 34,
         "mortgagePenetrationPerCapita": 7100,
         "homeInsurancePenetration": 95
     },
@@ -993,6 +1024,7 @@ const housingData = [
         "municipalSpendingEfficiency": 237.3,
         "mortgagePenetrationPerCapita": 22,
         "homeInsurancePenetration": 52,
+        "dataMismatchIndex": 34,
         "mortgagePenetrationPerCapita": 7200,
         "homeInsurancePenetration": 120
     },
@@ -1024,6 +1056,7 @@ const housingData = [
         "municipalSpendingEfficiency": 354.8,
         "mortgagePenetrationPerCapita": 16,
         "homeInsurancePenetration": 48,
+        "dataMismatchIndex": 37,
         "mortgagePenetrationPerCapita": 5400,
         "homeInsurancePenetration": 72
     },
@@ -1055,6 +1088,7 @@ const housingData = [
         "municipalSpendingEfficiency": 666.7,
         "mortgagePenetrationPerCapita": 20,
         "homeInsurancePenetration": 54,
+        "dataMismatchIndex": 39,
         "mortgagePenetrationPerCapita": 8900,
         "homeInsurancePenetration": 150
     },
@@ -1086,6 +1120,7 @@ const housingData = [
         "municipalSpendingEfficiency": 678.6,
         "mortgagePenetrationPerCapita": 19,
         "homeInsurancePenetration": 51,
+        "dataMismatchIndex": 37,
         "mortgagePenetrationPerCapita": 9400,
         "homeInsurancePenetration": 165
     },
@@ -1117,6 +1152,7 @@ const housingData = [
         "municipalSpendingEfficiency": 224.1,
         "mortgagePenetrationPerCapita": 15,
         "homeInsurancePenetration": 38,
+        "dataMismatchIndex": 53,
         "mortgagePenetrationPerCapita": 2100,
         "homeInsurancePenetration": 48
     },
@@ -1148,6 +1184,7 @@ const housingData = [
         "municipalSpendingEfficiency": 118.0,
         "mortgagePenetrationPerCapita": 14,
         "homeInsurancePenetration": 34,
+        "dataMismatchIndex": 58,
         "mortgagePenetrationPerCapita": 2100,
         "homeInsurancePenetration": 35
     },
@@ -1179,6 +1216,7 @@ const housingData = [
         "municipalSpendingEfficiency": 188.5,
         "mortgagePenetrationPerCapita": 13,
         "homeInsurancePenetration": 38,
+        "dataMismatchIndex": 38,
         "mortgagePenetrationPerCapita": 2400,
         "homeInsurancePenetration": 38
     },
@@ -1210,6 +1248,7 @@ const housingData = [
         "municipalSpendingEfficiency": 76.7,
         "mortgagePenetrationPerCapita": 10,
         "homeInsurancePenetration": 24,
+        "dataMismatchIndex": 59,
         "mortgagePenetrationPerCapita": 1560,
         "homeInsurancePenetration": 24
     },
@@ -1241,6 +1280,7 @@ const housingData = [
         "municipalSpendingEfficiency": 163.0,
         "mortgagePenetrationPerCapita": 11,
         "homeInsurancePenetration": 28,
+        "dataMismatchIndex": 62,
         "mortgagePenetrationPerCapita": 1800,
         "homeInsurancePenetration": 28
     },
@@ -1272,6 +1312,7 @@ const housingData = [
         "municipalSpendingEfficiency": 381.0,
         "mortgagePenetrationPerCapita": 9,
         "homeInsurancePenetration": 14,
+        "dataMismatchIndex": 49,
         "mortgagePenetrationPerCapita": 3800,
         "homeInsurancePenetration": 42
     },
@@ -1303,6 +1344,7 @@ const housingData = [
         "municipalSpendingEfficiency": 214.3,
         "mortgagePenetrationPerCapita": 18,
         "homeInsurancePenetration": 32,
+        "dataMismatchIndex": 47,
         "mortgagePenetrationPerCapita": 6800,
         "homeInsurancePenetration": 45
     },
@@ -1334,6 +1376,7 @@ const housingData = [
         "municipalSpendingEfficiency": 100.0,
         "mortgagePenetrationPerCapita": 7,
         "homeInsurancePenetration": 18,
+        "dataMismatchIndex": 56,
         "mortgagePenetrationPerCapita": 2800,
         "homeInsurancePenetration": 32
     },
@@ -1365,6 +1408,7 @@ const housingData = [
         "municipalSpendingEfficiency": 154.9,
         "mortgagePenetrationPerCapita": 24,
         "homeInsurancePenetration": 48,
+        "dataMismatchIndex": 46,
         "mortgagePenetrationPerCapita": 4200,
         "homeInsurancePenetration": 58
     },
@@ -1396,6 +1440,7 @@ const housingData = [
         "municipalSpendingEfficiency": 809.5,
         "mortgagePenetrationPerCapita": 31,
         "homeInsurancePenetration": 72,
+        "dataMismatchIndex": 13,
         "mortgagePenetrationPerCapita": 35600,
         "homeInsurancePenetration": 280
     },
@@ -1427,6 +1472,7 @@ const housingData = [
         "municipalSpendingEfficiency": 12.0,
         "mortgagePenetrationPerCapita": 4,
         "homeInsurancePenetration": 11,
+        "dataMismatchIndex": 66,
         "mortgagePenetrationPerCapita": 520,
         "homeInsurancePenetration": 8
     },
@@ -1458,6 +1504,7 @@ const housingData = [
         "municipalSpendingEfficiency": 35.4,
         "mortgagePenetrationPerCapita": 5,
         "homeInsurancePenetration": 12,
+        "dataMismatchIndex": 58,
         "mortgagePenetrationPerCapita": 380,
         "homeInsurancePenetration": 6
     },
@@ -1489,6 +1536,7 @@ const housingData = [
         "municipalSpendingEfficiency": 16.9,
         "mortgagePenetrationPerCapita": 3,
         "homeInsurancePenetration": 8,
+        "dataMismatchIndex": 67,
         "mortgagePenetrationPerCapita": 680,
         "homeInsurancePenetration": 12
     },
@@ -1520,6 +1568,7 @@ const housingData = [
         "municipalSpendingEfficiency": 19.8,
         "mortgagePenetrationPerCapita": 4,
         "homeInsurancePenetration": 6,
+        "dataMismatchIndex": 64,
         "mortgagePenetrationPerCapita": 420,
         "homeInsurancePenetration": 4
     },
@@ -1551,6 +1600,7 @@ const housingData = [
         "municipalSpendingEfficiency": 191.7,
         "mortgagePenetrationPerCapita": 6,
         "homeInsurancePenetration": 18,
+        "dataMismatchIndex": 56,
         "mortgagePenetrationPerCapita": 890,
         "homeInsurancePenetration": 18
     },
@@ -1582,6 +1632,7 @@ const housingData = [
         "municipalSpendingEfficiency": 8.2,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 4,
+        "dataMismatchIndex": 69,
         "mortgagePenetrationPerCapita": 180,
         "homeInsurancePenetration": 2
     },
@@ -1613,6 +1664,7 @@ const housingData = [
         "municipalSpendingEfficiency": 3.7,
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 2,
+        "dataMismatchIndex": 71,
         "mortgagePenetrationPerCapita": 95,
         "homeInsurancePenetration": 1
     },
@@ -1644,6 +1696,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1354.8,
         "mortgagePenetrationPerCapita": 18,
         "homeInsurancePenetration": 45,
+        "dataMismatchIndex": 37,
         "mortgagePenetrationPerCapita": 8200,
         "homeInsurancePenetration": 180
     },
@@ -1675,6 +1728,7 @@ const housingData = [
         "municipalSpendingEfficiency": 827.6,
         "mortgagePenetrationPerCapita": 12,
         "homeInsurancePenetration": 28,
+        "dataMismatchIndex": 44,
         "mortgagePenetrationPerCapita": 3400,
         "homeInsurancePenetration": 45
     },
@@ -1706,6 +1760,7 @@ const housingData = [
         "municipalSpendingEfficiency": 4526.3,
         "mortgagePenetrationPerCapita": 32100,
         "homeInsurancePenetration": 390,
+        "dataMismatchIndex": 12,
         "mortgagePenetrationPerCapita": 32100,
         "homeInsurancePenetration": 390
     },
@@ -1737,6 +1792,7 @@ const housingData = [
         "municipalSpendingEfficiency": 125.5,
         "mortgagePenetrationPerCapita": 22,
         "homeInsurancePenetration": 55,
+        "dataMismatchIndex": 55,
         "mortgagePenetrationPerCapita": 3200,
         "homeInsurancePenetration": 95
     },
@@ -1768,6 +1824,7 @@ const housingData = [
         "municipalSpendingEfficiency": 28.6,
         "mortgagePenetrationPerCapita": 4,
         "homeInsurancePenetration": 8,
+        "dataMismatchIndex": 59,
         "mortgagePenetrationPerCapita": 380,
         "homeInsurancePenetration": 18
     },
@@ -1799,6 +1856,7 @@ const housingData = [
         "municipalSpendingEfficiency": 60.9,
         "mortgagePenetrationPerCapita": 7,
         "homeInsurancePenetration": 12,
+        "dataMismatchIndex": 51,
         "mortgagePenetrationPerCapita": 890,
         "homeInsurancePenetration": 32
     },
@@ -1830,6 +1888,7 @@ const housingData = [
         "municipalSpendingEfficiency": 18.8,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 4,
+        "dataMismatchIndex": 68,
         "mortgagePenetrationPerCapita": 280,
         "homeInsurancePenetration": 8
     },
@@ -1861,6 +1920,7 @@ const housingData = [
         "municipalSpendingEfficiency": 13.5,
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 2,
+        "dataMismatchIndex": 77,
         "mortgagePenetrationPerCapita": 95,
         "homeInsurancePenetration": 4
     },
@@ -1892,6 +1952,7 @@ const housingData = [
         "municipalSpendingEfficiency": 22.3,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 3,
+        "dataMismatchIndex": 64,
         "mortgagePenetrationPerCapita": 210,
         "homeInsurancePenetration": 6
     },
@@ -1923,6 +1984,7 @@ const housingData = [
         "municipalSpendingEfficiency": 14.0,
         "mortgagePenetrationPerCapita": 0.5,
         "homeInsurancePenetration": 1,
+        "dataMismatchIndex": 73,
         "mortgagePenetrationPerCapita": 65,
         "homeInsurancePenetration": 1
     },
@@ -1954,6 +2016,7 @@ const housingData = [
         "municipalSpendingEfficiency": 17.2,
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 2,
+        "dataMismatchIndex": 71,
         "mortgagePenetrationPerCapita": 95,
         "homeInsurancePenetration": 2
     },
@@ -1985,6 +2048,7 @@ const housingData = [
         "municipalSpendingEfficiency": 14.8,
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 2,
+        "dataMismatchIndex": 70,
         "mortgagePenetrationPerCapita": 120,
         "homeInsurancePenetration": 3
     },
@@ -2016,6 +2080,7 @@ const housingData = [
         "municipalSpendingEfficiency": 30.5,
         "mortgagePenetrationPerCapita": 180,
         "homeInsurancePenetration": 4,
+        "dataMismatchIndex": 52,
         "mortgagePenetrationPerCapita": 180,
         "homeInsurancePenetration": 4
     },
@@ -2047,6 +2112,7 @@ const housingData = [
         "municipalSpendingEfficiency": 26.9,
         "mortgagePenetrationPerCapita": 140,
         "homeInsurancePenetration": 5,
+        "dataMismatchIndex": 70,
         "mortgagePenetrationPerCapita": 140,
         "homeInsurancePenetration": 5
     },
@@ -2078,6 +2144,7 @@ const housingData = [
         "municipalSpendingEfficiency": 110.5,
         "mortgagePenetrationPerCapita": 1800,
         "homeInsurancePenetration": 48,
+        "dataMismatchIndex": 49,
         "mortgagePenetrationPerCapita": 1800,
         "homeInsurancePenetration": 48
     },
@@ -2109,6 +2176,7 @@ const housingData = [
         "municipalSpendingEfficiency": 165.9,
         "mortgagePenetrationPerCapita": 1400,
         "homeInsurancePenetration": 35,
+        "dataMismatchIndex": 47,
         "mortgagePenetrationPerCapita": 1400,
         "homeInsurancePenetration": 35
     },
@@ -2140,6 +2208,7 @@ const housingData = [
         "municipalSpendingEfficiency": 17.4,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 3,
+        "dataMismatchIndex": 66,
         "mortgagePenetrationPerCapita": 240,
         "homeInsurancePenetration": 7
     },
@@ -2171,6 +2240,7 @@ const housingData = [
         "municipalSpendingEfficiency": 71.6,
         "mortgagePenetrationPerCapita": 6,
         "homeInsurancePenetration": 10,
+        "dataMismatchIndex": 48,
         "mortgagePenetrationPerCapita": 720,
         "homeInsurancePenetration": 22
     },
@@ -2202,6 +2272,7 @@ const housingData = [
         "municipalSpendingEfficiency": 17.9,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 3,
+        "dataMismatchIndex": 67,
         "mortgagePenetrationPerCapita": 160,
         "homeInsurancePenetration": 4
     },
@@ -2233,6 +2304,7 @@ const housingData = [
         "municipalSpendingEfficiency": 18.9,
         "mortgagePenetrationPerCapita": 3,
         "homeInsurancePenetration": 4,
+        "dataMismatchIndex": 69,
         "mortgagePenetrationPerCapita": 190,
         "homeInsurancePenetration": 5
     },
@@ -2264,6 +2336,7 @@ const housingData = [
         "municipalSpendingEfficiency": 17.2,
         "mortgagePenetrationPerCapita": 85,
         "homeInsurancePenetration": 2,
+        "dataMismatchIndex": 73,
         "mortgagePenetrationPerCapita": 85,
         "homeInsurancePenetration": 2
     },
@@ -2295,6 +2368,7 @@ const housingData = [
         "municipalSpendingEfficiency": 45.9,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 5,
+        "dataMismatchIndex": 72,
         "mortgagePenetrationPerCapita": 420,
         "homeInsurancePenetration": 12
     },
@@ -2326,6 +2400,7 @@ const housingData = [
         "municipalSpendingEfficiency": 22.3,
         "mortgagePenetrationPerCapita": 45,
         "homeInsurancePenetration": 3,
+        "dataMismatchIndex": 74,
         "mortgagePenetrationPerCapita": 45,
         "homeInsurancePenetration": 3
     },
@@ -2357,6 +2432,7 @@ const housingData = [
         "municipalSpendingEfficiency": 65.8,
         "mortgagePenetrationPerCapita": 3,
         "homeInsurancePenetration": 6,
+        "dataMismatchIndex": 56,
         "mortgagePenetrationPerCapita": 520,
         "homeInsurancePenetration": 14
     },
@@ -2388,6 +2464,7 @@ const housingData = [
         "municipalSpendingEfficiency": 14.6,
         "mortgagePenetrationPerCapita": 65,
         "homeInsurancePenetration": 2,
+        "dataMismatchIndex": 76,
         "mortgagePenetrationPerCapita": 65,
         "homeInsurancePenetration": 2
     },
@@ -2419,6 +2496,7 @@ const housingData = [
         "municipalSpendingEfficiency": 206.9,
         "mortgagePenetrationPerCapita": 4100,
         "homeInsurancePenetration": 72,
+        "dataMismatchIndex": 38,
         "mortgagePenetrationPerCapita": 4100,
         "homeInsurancePenetration": 72
     },
@@ -2450,6 +2528,7 @@ const housingData = [
         "municipalSpendingEfficiency": 14.9,
         "mortgagePenetrationPerCapita": 70,
         "homeInsurancePenetration": 2,
+        "dataMismatchIndex": 69,
         "mortgagePenetrationPerCapita": 70,
         "homeInsurancePenetration": 2
     },
@@ -2589,6 +2668,7 @@ const housingData = [
         "municipalSpendingEfficiency": 16.1,
         "mortgagePenetrationPerCapita": 55,
         "homeInsurancePenetration": 1,
+        "dataMismatchIndex": 72,
         "mortgagePenetrationPerCapita": 55,
         "homeInsurancePenetration": 1
     },
@@ -2647,6 +2727,7 @@ const housingData = [
         "municipalSpendingEfficiency": 352.9,
         "mortgagePenetrationPerCapita": 8,
         "homeInsurancePenetration": 22,
+        "dataMismatchIndex": 51,
         "mortgagePenetrationPerCapita": 2100,
         "homeInsurancePenetration": 35
     },
@@ -2678,6 +2759,7 @@ const housingData = [
         "municipalSpendingEfficiency": 322.6,
         "mortgagePenetrationPerCapita": 6,
         "homeInsurancePenetration": 18,
+        "dataMismatchIndex": 53,
         "mortgagePenetrationPerCapita": 2400,
         "homeInsurancePenetration": 38
     },
@@ -2709,6 +2791,7 @@ const housingData = [
         "municipalSpendingEfficiency": 724.1,
         "mortgagePenetrationPerCapita": 10,
         "homeInsurancePenetration": 28,
+        "dataMismatchIndex": 48,
         "mortgagePenetrationPerCapita": 4200,
         "homeInsurancePenetration": 68
     },
@@ -2740,6 +2823,7 @@ const housingData = [
         "municipalSpendingEfficiency": 63.2,
         "mortgagePenetrationPerCapita": 8,
         "homeInsurancePenetration": 19,
+        "dataMismatchIndex": 54,
         "mortgagePenetrationPerCapita": 980,
         "homeInsurancePenetration": 15
     },
@@ -2771,6 +2855,7 @@ const housingData = [
         "municipalSpendingEfficiency": 19.4,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 4,
+        "dataMismatchIndex": 65,
         "mortgagePenetrationPerCapita": 210,
         "homeInsurancePenetration": 3
     },
@@ -2802,6 +2887,7 @@ const housingData = [
         "municipalSpendingEfficiency": 9.0,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 5,
+        "dataMismatchIndex": 63,
         "mortgagePenetrationPerCapita": 140,
         "homeInsurancePenetration": 2
     },
@@ -2833,6 +2919,7 @@ const housingData = [
         "municipalSpendingEfficiency": 11.8,
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 3,
+        "dataMismatchIndex": 69,
         "mortgagePenetrationPerCapita": 75,
         "homeInsurancePenetration": 1
     }
