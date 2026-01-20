@@ -627,16 +627,6 @@ function initGlobe() {
                 }
             })
             .onPolygonClick(feat => {
-                // Check if resilient design mode is active
-                if (resilientDesignModeActive) {
-                    const numericId = String(feat.id).padStart(3, '0');
-                    const iso = numericToISO[numericId];
-                    if (iso) {
-                        showDesignModal(iso);
-                        return; // Don't zoom to country
-                    }
-                }
-
                 // Stop auto-rotation when user clicks on a country
                 if (globe.controls().autoRotate) {
                     globe.controls().autoRotate = false;
@@ -750,6 +740,9 @@ function updateStatsPanel(countryData) {
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
         </div>
+        <button onclick="showDesignModal('${countryData.iso}')" style="width: 100%; margin-top: 15px; padding: 12px; background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+            🏠 View Resilient Home Design
+        </button>
     `;
 }
 
@@ -1082,21 +1075,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-// Add to existing globe click handler
-let resilientDesignModeActive = false;
-
-function activateResilientDesignMode() {
-    resilientDesignModeActive = !resilientDesignModeActive;
-    const btn = document.getElementById('resilient-design-btn');
-
-    if (resilientDesignModeActive) {
-        btn.style.background = 'linear-gradient(135deg, #00f2fe 0%, #4facfe 100%)';
-        btn.style.transform = 'scale(1.05)';
-        alert('🏠 Resilient Design Mode Activated!\n\nClick on any country to see context-specific resilient home designs adapted to local risks, climate, materials, and culture.\n\nClick the button again to deactivate.');
-    } else {
-        btn.style.background = 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)';
-        btn.style.transform = 'scale(1)';
-    }
-}
 
