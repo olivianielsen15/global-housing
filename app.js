@@ -975,6 +975,8 @@ function showDesignModal(isoCode) {
         <h1 class="design-title">${design.name}</h1>
         <p class="design-description">${design.description}</p>
 
+        ${design.image ? `<img src="${design.image}" alt="${design.name}" class="design-image" />` : ''}
+
         <div class="design-section">
             <h2 class="design-section-title">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

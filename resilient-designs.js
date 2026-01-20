@@ -4,6 +4,7 @@
 const resilientHomeDesigns = {
     "DNK": {
         "name": "Nordic Passive House+",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
         "risks": [
             "Flooding",
             "Storm surge",
@@ -41,6 +42,7 @@ const resilientHomeDesigns = {
     },
     "NOR": {
         "name": "Fjord Climate Cabin",
+        "image": "https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=800&q=80",
         "risks": [
             "Avalanche",
             "Landslide",
@@ -79,6 +81,7 @@ const resilientHomeDesigns = {
     },
     "SWE": {
         "name": "Swedish Eco-Villa",
+        "image": "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=800&q=80",
         "risks": [
             "Winter storms",
             "Flooding",
@@ -116,6 +119,7 @@ const resilientHomeDesigns = {
     },
     "FIN": {
         "name": "Finnish Forest House",
+        "image": "https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80",
         "risks": [
             "Extreme cold (-40\u00b0C)",
             "Forest fires",
@@ -153,6 +157,7 @@ const resilientHomeDesigns = {
     },
     "JPN": {
         "name": "Resilient Machiya",
+        "image": "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=800&q=80",
         "risks": [
             "Earthquakes (9.0)",
             "Tsunamis",
@@ -192,6 +197,7 @@ const resilientHomeDesigns = {
     },
     "PHL": {
         "name": "Typhoon-Proof Bahay",
+        "image": "https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=800&q=80",
         "risks": [
             "Typhoons (8/year)",
             "Storm surge",
@@ -230,6 +236,7 @@ const resilientHomeDesigns = {
     },
     "IDN": {
         "name": "Java Earthquake House",
+        "image": "https://images.unsplash.com/photo-1600047509782-20d39509f26d?w=800&q=80",
         "risks": [
             "Earthquakes",
             "Tsunamis",
@@ -305,6 +312,7 @@ const resilientHomeDesigns = {
     },
     "USA": {
         "name": "Gulf Coast Resilient Home",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",
         "risks": [
             "Hurricanes (Cat 5)",
             "Flooding",
@@ -343,6 +351,7 @@ const resilientHomeDesigns = {
     },
     "BGD": {
         "name": "Cyclone-Resistant Char House",
+        "image": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=800&q=80",
         "risks": [
             "Cyclones",
             "Flooding (annual)",
@@ -418,6 +427,7 @@ const resilientHomeDesigns = {
     },
     "THA": {
         "name": "Bangkok Flood House",
+        "image": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
         "risks": [
             "Monsoon flooding",
             "Subsidence",
@@ -455,6 +465,7 @@ const resilientHomeDesigns = {
     },
     "AUS": {
         "name": "Bushfire-Proof Homestead",
+        "image": "https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=800&q=80",
         "risks": [
             "Bushfires",
             "Cyclones (North)",
@@ -493,6 +504,7 @@ const resilientHomeDesigns = {
     },
     "ZAF": {
         "name": "Cape Fynbos Fire Home",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
         "risks": [
             "Wildfires",
             "Drought",
@@ -531,6 +543,7 @@ const resilientHomeDesigns = {
     },
     "ARE": {
         "name": "Gulf Passive Cooling Tower",
+        "image": "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800&q=80",
         "risks": [
             "Extreme heat (50\u00b0C)",
             "Sandstorms",
@@ -644,6 +657,7 @@ const resilientHomeDesigns = {
     },
     "CAN": {
         "name": "Arctic Net-Zero Cabin",
+        "image": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80",
         "risks": [
             "Extreme cold (-50\u00b0C)",
             "Permafrost thaw",
@@ -682,6 +696,7 @@ const resilientHomeDesigns = {
     },
     "BRA": {
         "name": "Favela Resilience Upgrade",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
         "risks": [
             "Landslides",
             "Flooding",
@@ -720,6 +735,7 @@ const resilientHomeDesigns = {
     },
     "IND": {
         "name": "Monsoon-Adaptive Courtyard",
+        "image": "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=800&q=80",
         "risks": [
             "Monsoon flooding",
             "Earthquakes",
@@ -758,6 +774,7 @@ const resilientHomeDesigns = {
     },
     "KEN": {
         "name": "Nairobi Eco-Compound",
+        "image": "https://images.unsplash.com/photo-1632126344982-71441f2c1e0f?w=800&q=80",
         "risks": [
             "Flooding",
             "Drought",
@@ -796,6 +813,7 @@ const resilientHomeDesigns = {
     },
     "ETH": {
         "name": "Ethiopian Tukul Resilient",
+        "image": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800&q=80",
         "risks": [
             "Earthquakes",
             "Drought",
@@ -948,6 +966,7 @@ const resilientHomeDesigns = {
     },
     "CHN": {
         "name": "Sichuan Earthquake Courtyard",
+        "image": "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=800&q=80",
         "risks": [
             "Earthquanes (8.0)",
             "Landslides",
@@ -986,6 +1005,7 @@ const resilientHomeDesigns = {
     },
     "MEX": {
         "name": "Mexican Seismic Adobe",
+        "image": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
         "risks": [
             "Earthquakes",
             "Hurricanes (coasts)",
@@ -1024,6 +1044,7 @@ const resilientHomeDesigns = {
     },
     "TUR": {
         "name": "Anatolian Quake-Safe House",
+        "image": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80",
         "risks": [
             "Earthquakes (7.8)",
             "Landslides",
@@ -1061,6 +1082,7 @@ const resilientHomeDesigns = {
     },
     "EGY": {
         "name": "Nile Valley Passive House",
+        "image": "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?w=800&q=80",
         "risks": [
             "Extreme heat",
             "Flooding",
@@ -1137,6 +1159,7 @@ const resilientHomeDesigns = {
     },
     "VNM": {
         "name": "Mekong Delta Floating Home",
+        "image": "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80",
         "risks": [
             "Flooding",
             "Typhoons",
@@ -1175,6 +1198,7 @@ const resilientHomeDesigns = {
     },
     "ARG": {
         "name": "Pampas Sustainable Estancia",
+        "image": "https://images.unsplash.com/photo-1600566753151-384129cf4e3e?w=800&q=80",
         "risks": [
             "Flooding",
             "Drought",
