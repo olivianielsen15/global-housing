@@ -707,3 +707,227 @@ header h1 {
         padding: 15px 10px;
     }
 }
+
+/* Resilient Home Design Modal */
+.design-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.design-modal.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.design-modal-content {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1620 100%);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(79, 172, 254, 0.3);
+    position: relative;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.design-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    font-size: 32px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.design-modal-close:hover {
+    background: rgba(255, 50, 50, 0.8);
+    transform: rotate(90deg);
+}
+
+.design-title {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.design-description {
+    font-size: 1.1em;
+    color: #b0c4d4;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.design-section {
+    margin-bottom: 25px;
+}
+
+.design-section-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #4facfe;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.design-section-title svg {
+    width: 24px;
+    height: 24px;
+}
+
+.design-risks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.risk-badge {
+    background: linear-gradient(135deg, #ff4500 0%, #ff9500 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3);
+}
+
+.design-list {
+    list-style: none;
+    padding: 0;
+}
+
+.design-list li {
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+    color: #d0dce6;
+    line-height: 1.5;
+}
+
+.design-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00f2fe;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.design-materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.material-card {
+    background: rgba(79, 172, 254, 0.1);
+    border: 1px solid rgba(79, 172, 254, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.material-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(79, 172, 254, 0.2);
+}
+
+.cost-indicator {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95em;
+    margin-top: 10px;
+}
+
+.cost-low {
+    background: linear-gradient(135deg, #00cc66 0%, #00f2a2 100%);
+    color: white;
+}
+
+.cost-medium {
+    background: linear-gradient(135deg, #ff9500 0%, #ffb733 100%);
+    color: white;
+}
+
+.cost-high {
+    background: linear-gradient(135deg, #cc0066 0%, #ff3399 100%);
+    color: white;
+}
+
+.design-modal-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.design-modal-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.design-modal-content::-webkit-scrollbar-thumb {
+    background: rgba(79, 172, 254, 0.5);
+    border-radius: 10px;
+}
+
+.design-modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(79, 172, 254, 0.7);
+}
+
+@media (max-width: 768px) {
+    .design-modal-content {
+        padding: 25px;
+        margin: 20px;
+    }
+
+    .design-title {
+        font-size: 1.6em;
+    }
+
+    .design-materials-grid {
+        grid-template-columns: 1fr;
+    }
+}
