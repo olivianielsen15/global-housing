@@ -286,6 +286,28 @@ header h1 {
 .country-stats {
     margin-top: 10px;
     width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Custom scrollbar for country stats */
+.country-stats::-webkit-scrollbar {
+    width: 6px;
+}
+
+.country-stats::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+.country-stats::-webkit-scrollbar-thumb {
+    background: rgba(79, 172, 254, 0.5);
+    border-radius: 3px;
+}
+
+.country-stats::-webkit-scrollbar-thumb:hover {
+    background: rgba(79, 172, 254, 0.7);
 }
 
 .country-stats p {
