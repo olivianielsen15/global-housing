@@ -248,6 +248,7 @@ header h1 {
     background: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     min-height: 80px;
+    max-height: none;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -258,6 +259,11 @@ header h1 {
 .empty-illustration {
     opacity: 0.6;
     transition: opacity 0.3s ease;
+}
+
+.stats-panel.has-data {
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .stats-panel.has-data .empty-illustration,
