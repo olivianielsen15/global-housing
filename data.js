@@ -64,9 +64,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1634.6,
         "mortgagePenetrationPerCapita": 42,
         "homeInsurancePenetration": 94,
-        "dataMismatchIndex": 8,
-        "mortgagePenetrationPerCapita": 60200,
-        "homeInsurancePenetration": 680
+        "dataMismatchIndex": 8
     },
     {
         "country": "Australia",
@@ -96,9 +94,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1523.8,
         "mortgagePenetrationPerCapita": 35,
         "homeInsurancePenetration": 88,
-        "dataMismatchIndex": 21,
-        "mortgagePenetrationPerCapita": 48500,
-        "homeInsurancePenetration": 640
+        "dataMismatchIndex": 21
     },
     {
         "country": "Denmark",
@@ -128,9 +124,7 @@ const housingData = [
         "municipalSpendingEfficiency": 6724.1,
         "mortgagePenetrationPerCapita": 65,
         "homeInsurancePenetration": 96,
-        "dataMismatchIndex": 5,
-        "mortgagePenetrationPerCapita": 56800,
-        "homeInsurancePenetration": 510
+        "dataMismatchIndex": 5
     },
     {
         "country": "Cyprus",
@@ -160,9 +154,7 @@ const housingData = [
         "municipalSpendingEfficiency": 774.2,
         "mortgagePenetrationPerCapita": 15800,
         "homeInsurancePenetration": 120,
-        "dataMismatchIndex": 33,
-        "mortgagePenetrationPerCapita": 15800,
-        "homeInsurancePenetration": 120
+        "dataMismatchIndex": 33
     },
     {
         "country": "Netherlands",
@@ -192,9 +184,7 @@ const housingData = [
         "municipalSpendingEfficiency": 3555.6,
         "mortgagePenetrationPerCapita": 52,
         "homeInsurancePenetration": 93,
-        "dataMismatchIndex": 9,
-        "mortgagePenetrationPerCapita": 51200,
-        "homeInsurancePenetration": 580
+        "dataMismatchIndex": 9
     },
     {
         "country": "Canada",
@@ -224,9 +214,7 @@ const housingData = [
         "municipalSpendingEfficiency": 2125.0,
         "mortgagePenetrationPerCapita": 38,
         "homeInsurancePenetration": 82,
-        "dataMismatchIndex": 18,
-        "mortgagePenetrationPerCapita": 38400,
-        "homeInsurancePenetration": 380
+        "dataMismatchIndex": 18
     },
     {
         "country": "South Korea",
@@ -256,9 +244,7 @@ const housingData = [
         "municipalSpendingEfficiency": 233.5,
         "mortgagePenetrationPerCapita": 32,
         "homeInsurancePenetration": 68,
-        "dataMismatchIndex": 31,
-        "mortgagePenetrationPerCapita": 21800,
-        "homeInsurancePenetration": 240
+        "dataMismatchIndex": 31
     },
     {
         "country": "Norway",
@@ -288,9 +274,7 @@ const housingData = [
         "municipalSpendingEfficiency": 6909.1,
         "mortgagePenetrationPerCapita": 58,
         "homeInsurancePenetration": 95,
-        "dataMismatchIndex": 6,
-        "mortgagePenetrationPerCapita": 52300,
-        "homeInsurancePenetration": 520
+        "dataMismatchIndex": 6
     },
     {
         "country": "Sweden",
@@ -320,9 +304,7 @@ const housingData = [
         "municipalSpendingEfficiency": 5153.8,
         "mortgagePenetrationPerCapita": 48,
         "homeInsurancePenetration": 94,
-        "dataMismatchIndex": 7,
-        "mortgagePenetrationPerCapita": 49100,
-        "homeInsurancePenetration": 490
+        "dataMismatchIndex": 7
     },
     {
         "country": "New Zealand",
@@ -352,9 +334,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1478.3,
         "mortgagePenetrationPerCapita": 36,
         "homeInsurancePenetration": 80,
-        "dataMismatchIndex": 17,
-        "mortgagePenetrationPerCapita": 44600,
-        "homeInsurancePenetration": 580
+        "dataMismatchIndex": 17
     },
     {
         "country": "Luxembourg",
@@ -384,9 +364,7 @@ const housingData = [
         "municipalSpendingEfficiency": 3500.0,
         "mortgagePenetrationPerCapita": 47800,
         "homeInsurancePenetration": 450,
-        "dataMismatchIndex": 11,
-        "mortgagePenetrationPerCapita": 47800,
-        "homeInsurancePenetration": 450
+        "dataMismatchIndex": 11
     },
     {
         "country": "United Kingdom",
@@ -416,9 +394,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1095.2,
         "mortgagePenetrationPerCapita": 32,
         "homeInsurancePenetration": 78,
-        "dataMismatchIndex": 16,
-        "mortgagePenetrationPerCapita": 33800,
-        "homeInsurancePenetration": 420
+        "dataMismatchIndex": 16
     },
     {
         "country": "Finland",
@@ -448,9 +424,7 @@ const housingData = [
         "municipalSpendingEfficiency": 4666.7,
         "mortgagePenetrationPerCapita": 45,
         "homeInsurancePenetration": 92,
-        "dataMismatchIndex": 8,
-        "mortgagePenetrationPerCapita": 28900,
-        "homeInsurancePenetration": 440
+        "dataMismatchIndex": 8
     },
     {
         "country": "United States",
@@ -480,9 +454,7 @@ const housingData = [
         "municipalSpendingEfficiency": 2333.3,
         "mortgagePenetrationPerCapita": 41,
         "homeInsurancePenetration": 85,
-        "dataMismatchIndex": 24,
-        "mortgagePenetrationPerCapita": 35200,
-        "homeInsurancePenetration": 720
+        "dataMismatchIndex": 24
     },
     {
         "country": "Belgium",
@@ -512,9 +484,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1589.7,
         "mortgagePenetrationPerCapita": 35,
         "homeInsurancePenetration": 81,
-        "dataMismatchIndex": 11,
-        "mortgagePenetrationPerCapita": 26700,
-        "homeInsurancePenetration": 340
+        "dataMismatchIndex": 11
     },
     {
         "country": "France",
@@ -544,9 +514,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1567.6,
         "mortgagePenetrationPerCapita": 28,
         "homeInsurancePenetration": 89,
-        "dataMismatchIndex": 22,
-        "mortgagePenetrationPerCapita": 24300,
-        "homeInsurancePenetration": 350
+        "dataMismatchIndex": 22
     },
     {
         "country": "Japan",
@@ -576,9 +544,7 @@ const housingData = [
         "municipalSpendingEfficiency": 460.7,
         "mortgagePenetrationPerCapita": 38,
         "homeInsurancePenetration": 71,
-        "dataMismatchIndex": 28,
-        "mortgagePenetrationPerCapita": 18500,
-        "homeInsurancePenetration": 420
+        "dataMismatchIndex": 28
     },
     {
         "country": "Spain",
@@ -608,9 +574,7 @@ const housingData = [
         "municipalSpendingEfficiency": 596.2,
         "mortgagePenetrationPerCapita": 24,
         "homeInsurancePenetration": 65,
-        "dataMismatchIndex": 35,
-        "mortgagePenetrationPerCapita": 17600,
-        "homeInsurancePenetration": 180
+        "dataMismatchIndex": 35
     },
     {
         "country": "Portugal",
@@ -640,9 +604,7 @@ const housingData = [
         "municipalSpendingEfficiency": 536.6,
         "mortgagePenetrationPerCapita": 22,
         "homeInsurancePenetration": 58,
-        "dataMismatchIndex": 32,
-        "mortgagePenetrationPerCapita": 16200,
-        "homeInsurancePenetration": 160
+        "dataMismatchIndex": 32
     },
     {
         "country": "Ireland",
@@ -672,9 +634,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1411.8,
         "mortgagePenetrationPerCapita": 34,
         "homeInsurancePenetration": 74,
-        "dataMismatchIndex": 19,
-        "mortgagePenetrationPerCapita": 29400,
-        "homeInsurancePenetration": 380
+        "dataMismatchIndex": 19
     },
     {
         "country": "Austria",
@@ -704,9 +664,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1720.9,
         "mortgagePenetrationPerCapita": 28,
         "homeInsurancePenetration": 79,
-        "dataMismatchIndex": 10,
-        "mortgagePenetrationPerCapita": 18200,
-        "homeInsurancePenetration": 310
+        "dataMismatchIndex": 10
     },
     {
         "country": "Germany",
@@ -736,9 +694,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1682.9,
         "mortgagePenetrationPerCapita": 26,
         "homeInsurancePenetration": 86,
-        "dataMismatchIndex": 14,
-        "mortgagePenetrationPerCapita": 19800,
-        "homeInsurancePenetration": 280
+        "dataMismatchIndex": 14
     },
     {
         "country": "Estonia",
@@ -768,9 +724,7 @@ const housingData = [
         "municipalSpendingEfficiency": 965.5,
         "mortgagePenetrationPerCapita": 24,
         "homeInsurancePenetration": 62,
-        "dataMismatchIndex": 28,
-        "mortgagePenetrationPerCapita": 10200,
-        "homeInsurancePenetration": 180
+        "dataMismatchIndex": 28
     },
     {
         "country": "Slovenia",
@@ -800,9 +754,7 @@ const housingData = [
         "municipalSpendingEfficiency": 888.9,
         "mortgagePenetrationPerCapita": 14,
         "homeInsurancePenetration": 45,
-        "dataMismatchIndex": 31,
-        "mortgagePenetrationPerCapita": 6900,
-        "homeInsurancePenetration": 110
+        "dataMismatchIndex": 31
     },
     {
         "country": "Italy",
@@ -832,9 +784,7 @@ const housingData = [
         "municipalSpendingEfficiency": 750.0,
         "mortgagePenetrationPerCapita": 15,
         "homeInsurancePenetration": 42,
-        "dataMismatchIndex": 38,
-        "mortgagePenetrationPerCapita": 11400,
-        "homeInsurancePenetration": 95
+        "dataMismatchIndex": 38
     },
     {
         "country": "Israel",
@@ -864,9 +814,7 @@ const housingData = [
         "municipalSpendingEfficiency": 397.4,
         "mortgagePenetrationPerCapita": 30,
         "homeInsurancePenetration": 67,
-        "dataMismatchIndex": 23,
-        "mortgagePenetrationPerCapita": 16700,
-        "homeInsurancePenetration": 220
+        "dataMismatchIndex": 23
     },
     {
         "country": "Czech Republic",
@@ -896,9 +844,7 @@ const housingData = [
         "municipalSpendingEfficiency": 763.2,
         "mortgagePenetrationPerCapita": 20,
         "homeInsurancePenetration": 56,
-        "dataMismatchIndex": 29,
-        "mortgagePenetrationPerCapita": 8200,
-        "homeInsurancePenetration": 120
+        "dataMismatchIndex": 29
     },
     {
         "country": "Greece",
@@ -928,9 +874,7 @@ const housingData = [
         "municipalSpendingEfficiency": 326.5,
         "mortgagePenetrationPerCapita": 12,
         "homeInsurancePenetration": 35,
-        "dataMismatchIndex": 42,
-        "mortgagePenetrationPerCapita": 8900,
-        "homeInsurancePenetration": 65
+        "dataMismatchIndex": 42
     },
     {
         "country": "Poland",
@@ -960,9 +904,7 @@ const housingData = [
         "municipalSpendingEfficiency": 656.2,
         "mortgagePenetrationPerCapita": 18,
         "homeInsurancePenetration": 52,
-        "dataMismatchIndex": 36,
-        "mortgagePenetrationPerCapita": 6800,
-        "homeInsurancePenetration": 85
+        "dataMismatchIndex": 36
     },
     {
         "country": "Slovakia",
@@ -992,9 +934,7 @@ const housingData = [
         "municipalSpendingEfficiency": 676.5,
         "mortgagePenetrationPerCapita": 15,
         "homeInsurancePenetration": 41,
-        "dataMismatchIndex": 34,
-        "mortgagePenetrationPerCapita": 7100,
-        "homeInsurancePenetration": 95
+        "dataMismatchIndex": 34
     },
     {
         "country": "Chile",
@@ -1024,9 +964,7 @@ const housingData = [
         "municipalSpendingEfficiency": 237.3,
         "mortgagePenetrationPerCapita": 22,
         "homeInsurancePenetration": 52,
-        "dataMismatchIndex": 34,
-        "mortgagePenetrationPerCapita": 7200,
-        "homeInsurancePenetration": 120
+        "dataMismatchIndex": 34
     },
     {
         "country": "Hungary",
@@ -1056,9 +994,7 @@ const housingData = [
         "municipalSpendingEfficiency": 354.8,
         "mortgagePenetrationPerCapita": 16,
         "homeInsurancePenetration": 48,
-        "dataMismatchIndex": 37,
-        "mortgagePenetrationPerCapita": 5400,
-        "homeInsurancePenetration": 72
+        "dataMismatchIndex": 37
     },
     {
         "country": "Latvia",
@@ -1088,9 +1024,7 @@ const housingData = [
         "municipalSpendingEfficiency": 666.7,
         "mortgagePenetrationPerCapita": 20,
         "homeInsurancePenetration": 54,
-        "dataMismatchIndex": 39,
-        "mortgagePenetrationPerCapita": 8900,
-        "homeInsurancePenetration": 150
+        "dataMismatchIndex": 39
     },
     {
         "country": "Lithuania",
@@ -1120,9 +1054,7 @@ const housingData = [
         "municipalSpendingEfficiency": 678.6,
         "mortgagePenetrationPerCapita": 19,
         "homeInsurancePenetration": 51,
-        "dataMismatchIndex": 37,
-        "mortgagePenetrationPerCapita": 9400,
-        "homeInsurancePenetration": 165
+        "dataMismatchIndex": 37
     },
     {
         "country": "Turkey",
@@ -1152,9 +1084,7 @@ const housingData = [
         "municipalSpendingEfficiency": 224.1,
         "mortgagePenetrationPerCapita": 15,
         "homeInsurancePenetration": 38,
-        "dataMismatchIndex": 53,
-        "mortgagePenetrationPerCapita": 2100,
-        "homeInsurancePenetration": 48
+        "dataMismatchIndex": 53
     },
     {
         "country": "Mexico",
@@ -1184,9 +1114,7 @@ const housingData = [
         "municipalSpendingEfficiency": 118.0,
         "mortgagePenetrationPerCapita": 14,
         "homeInsurancePenetration": 34,
-        "dataMismatchIndex": 58,
-        "mortgagePenetrationPerCapita": 2100,
-        "homeInsurancePenetration": 35
+        "dataMismatchIndex": 58
     },
     {
         "country": "Costa Rica",
@@ -1216,9 +1144,7 @@ const housingData = [
         "municipalSpendingEfficiency": 188.5,
         "mortgagePenetrationPerCapita": 13,
         "homeInsurancePenetration": 38,
-        "dataMismatchIndex": 38,
-        "mortgagePenetrationPerCapita": 2400,
-        "homeInsurancePenetration": 38
+        "dataMismatchIndex": 38
     },
     {
         "country": "Colombia",
@@ -1248,9 +1174,7 @@ const housingData = [
         "municipalSpendingEfficiency": 76.7,
         "mortgagePenetrationPerCapita": 10,
         "homeInsurancePenetration": 24,
-        "dataMismatchIndex": 59,
-        "mortgagePenetrationPerCapita": 1560,
-        "homeInsurancePenetration": 24
+        "dataMismatchIndex": 59
     },
     {
         "country": "Brazil",
@@ -1280,9 +1204,7 @@ const housingData = [
         "municipalSpendingEfficiency": 163.0,
         "mortgagePenetrationPerCapita": 11,
         "homeInsurancePenetration": 28,
-        "dataMismatchIndex": 62,
-        "mortgagePenetrationPerCapita": 1800,
-        "homeInsurancePenetration": 28
+        "dataMismatchIndex": 62
     },
     {
         "country": "Russia",
@@ -1312,9 +1234,7 @@ const housingData = [
         "municipalSpendingEfficiency": 381.0,
         "mortgagePenetrationPerCapita": 9,
         "homeInsurancePenetration": 14,
-        "dataMismatchIndex": 49,
-        "mortgagePenetrationPerCapita": 3800,
-        "homeInsurancePenetration": 42
+        "dataMismatchIndex": 49
     },
     {
         "country": "China",
@@ -1344,9 +1264,7 @@ const housingData = [
         "municipalSpendingEfficiency": 214.3,
         "mortgagePenetrationPerCapita": 18,
         "homeInsurancePenetration": 32,
-        "dataMismatchIndex": 47,
-        "mortgagePenetrationPerCapita": 6800,
-        "homeInsurancePenetration": 45
+        "dataMismatchIndex": 47
     },
     {
         "country": "Thailand",
@@ -1376,9 +1294,7 @@ const housingData = [
         "municipalSpendingEfficiency": 100.0,
         "mortgagePenetrationPerCapita": 7,
         "homeInsurancePenetration": 18,
-        "dataMismatchIndex": 56,
-        "mortgagePenetrationPerCapita": 2800,
-        "homeInsurancePenetration": 32
+        "dataMismatchIndex": 56
     },
     {
         "country": "Malaysia",
@@ -1408,9 +1324,7 @@ const housingData = [
         "municipalSpendingEfficiency": 154.9,
         "mortgagePenetrationPerCapita": 24,
         "homeInsurancePenetration": 48,
-        "dataMismatchIndex": 46,
-        "mortgagePenetrationPerCapita": 4200,
-        "homeInsurancePenetration": 58
+        "dataMismatchIndex": 46
     },
     {
         "country": "Singapore",
@@ -1440,9 +1354,7 @@ const housingData = [
         "municipalSpendingEfficiency": 809.5,
         "mortgagePenetrationPerCapita": 31,
         "homeInsurancePenetration": 72,
-        "dataMismatchIndex": 13,
-        "mortgagePenetrationPerCapita": 35600,
-        "homeInsurancePenetration": 280
+        "dataMismatchIndex": 13
     },
     {
         "country": "Philippines",
@@ -1472,9 +1384,7 @@ const housingData = [
         "municipalSpendingEfficiency": 12.0,
         "mortgagePenetrationPerCapita": 4,
         "homeInsurancePenetration": 11,
-        "dataMismatchIndex": 66,
-        "mortgagePenetrationPerCapita": 520,
-        "homeInsurancePenetration": 8
+        "dataMismatchIndex": 66
     },
     {
         "country": "Vietnam",
@@ -1504,9 +1414,7 @@ const housingData = [
         "municipalSpendingEfficiency": 35.4,
         "mortgagePenetrationPerCapita": 5,
         "homeInsurancePenetration": 12,
-        "dataMismatchIndex": 58,
-        "mortgagePenetrationPerCapita": 380,
-        "homeInsurancePenetration": 6
+        "dataMismatchIndex": 58
     },
     {
         "country": "Indonesia",
@@ -1536,9 +1444,7 @@ const housingData = [
         "municipalSpendingEfficiency": 16.9,
         "mortgagePenetrationPerCapita": 3,
         "homeInsurancePenetration": 8,
-        "dataMismatchIndex": 67,
-        "mortgagePenetrationPerCapita": 680,
-        "homeInsurancePenetration": 12
+        "dataMismatchIndex": 67
     },
     {
         "country": "India",
@@ -1568,9 +1474,7 @@ const housingData = [
         "municipalSpendingEfficiency": 19.8,
         "mortgagePenetrationPerCapita": 4,
         "homeInsurancePenetration": 6,
-        "dataMismatchIndex": 64,
-        "mortgagePenetrationPerCapita": 420,
-        "homeInsurancePenetration": 4
+        "dataMismatchIndex": 64
     },
     {
         "country": "Argentina",
@@ -1600,9 +1504,7 @@ const housingData = [
         "municipalSpendingEfficiency": 191.7,
         "mortgagePenetrationPerCapita": 6,
         "homeInsurancePenetration": 18,
-        "dataMismatchIndex": 56,
-        "mortgagePenetrationPerCapita": 890,
-        "homeInsurancePenetration": 18
+        "dataMismatchIndex": 56
     },
     {
         "country": "Pakistan",
@@ -1632,9 +1534,7 @@ const housingData = [
         "municipalSpendingEfficiency": 8.2,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 4,
-        "dataMismatchIndex": 69,
-        "mortgagePenetrationPerCapita": 180,
-        "homeInsurancePenetration": 2
+        "dataMismatchIndex": 69
     },
     {
         "country": "Bangladesh",
@@ -1664,9 +1564,7 @@ const housingData = [
         "municipalSpendingEfficiency": 3.7,
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 2,
-        "dataMismatchIndex": 71,
-        "mortgagePenetrationPerCapita": 95,
-        "homeInsurancePenetration": 1
+        "dataMismatchIndex": 71
     },
     {
         "country": "United Arab Emirates",
@@ -1696,9 +1594,7 @@ const housingData = [
         "municipalSpendingEfficiency": 1354.8,
         "mortgagePenetrationPerCapita": 18,
         "homeInsurancePenetration": 45,
-        "dataMismatchIndex": 37,
-        "mortgagePenetrationPerCapita": 8200,
-        "homeInsurancePenetration": 180
+        "dataMismatchIndex": 37
     },
     {
         "country": "Saudi Arabia",
@@ -1728,9 +1624,7 @@ const housingData = [
         "municipalSpendingEfficiency": 827.6,
         "mortgagePenetrationPerCapita": 12,
         "homeInsurancePenetration": 28,
-        "dataMismatchIndex": 44,
-        "mortgagePenetrationPerCapita": 3400,
-        "homeInsurancePenetration": 45
+        "dataMismatchIndex": 44
     },
     {
         "country": "Iceland",
@@ -1760,9 +1654,7 @@ const housingData = [
         "municipalSpendingEfficiency": 4526.3,
         "mortgagePenetrationPerCapita": 32100,
         "homeInsurancePenetration": 390,
-        "dataMismatchIndex": 12,
-        "mortgagePenetrationPerCapita": 32100,
-        "homeInsurancePenetration": 390
+        "dataMismatchIndex": 12
     },
     {
         "country": "South Africa",
@@ -1792,9 +1684,7 @@ const housingData = [
         "municipalSpendingEfficiency": 125.5,
         "mortgagePenetrationPerCapita": 22,
         "homeInsurancePenetration": 55,
-        "dataMismatchIndex": 55,
-        "mortgagePenetrationPerCapita": 3200,
-        "homeInsurancePenetration": 95
+        "dataMismatchIndex": 55
     },
     {
         "country": "Egypt",
@@ -1824,9 +1714,7 @@ const housingData = [
         "municipalSpendingEfficiency": 28.6,
         "mortgagePenetrationPerCapita": 4,
         "homeInsurancePenetration": 8,
-        "dataMismatchIndex": 59,
-        "mortgagePenetrationPerCapita": 380,
-        "homeInsurancePenetration": 18
+        "dataMismatchIndex": 59
     },
     {
         "country": "Morocco",
@@ -1856,9 +1744,7 @@ const housingData = [
         "municipalSpendingEfficiency": 60.9,
         "mortgagePenetrationPerCapita": 7,
         "homeInsurancePenetration": 12,
-        "dataMismatchIndex": 51,
-        "mortgagePenetrationPerCapita": 890,
-        "homeInsurancePenetration": 32
+        "dataMismatchIndex": 51
     },
     {
         "country": "Kenya",
@@ -1888,9 +1774,7 @@ const housingData = [
         "municipalSpendingEfficiency": 18.8,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 4,
-        "dataMismatchIndex": 68,
-        "mortgagePenetrationPerCapita": 280,
-        "homeInsurancePenetration": 8
+        "dataMismatchIndex": 68
     },
     {
         "country": "Nigeria",
@@ -1920,9 +1804,7 @@ const housingData = [
         "municipalSpendingEfficiency": 13.5,
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 2,
-        "dataMismatchIndex": 77,
-        "mortgagePenetrationPerCapita": 95,
-        "homeInsurancePenetration": 4
+        "dataMismatchIndex": 77
     },
     {
         "country": "Ghana",
@@ -1952,9 +1834,7 @@ const housingData = [
         "municipalSpendingEfficiency": 22.3,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 3,
-        "dataMismatchIndex": 64,
-        "mortgagePenetrationPerCapita": 210,
-        "homeInsurancePenetration": 6
+        "dataMismatchIndex": 64
     },
     {
         "country": "Ethiopia",
@@ -1984,9 +1864,7 @@ const housingData = [
         "municipalSpendingEfficiency": 14.0,
         "mortgagePenetrationPerCapita": 0.5,
         "homeInsurancePenetration": 1,
-        "dataMismatchIndex": 73,
-        "mortgagePenetrationPerCapita": 65,
-        "homeInsurancePenetration": 1
+        "dataMismatchIndex": 73
     },
     {
         "country": "Tanzania",
@@ -2016,9 +1894,7 @@ const housingData = [
         "municipalSpendingEfficiency": 17.2,
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 2,
-        "dataMismatchIndex": 71,
-        "mortgagePenetrationPerCapita": 95,
-        "homeInsurancePenetration": 2
+        "dataMismatchIndex": 71
     },
     {
         "country": "Uganda",
@@ -2048,9 +1924,7 @@ const housingData = [
         "municipalSpendingEfficiency": 14.8,
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 2,
-        "dataMismatchIndex": 70,
-        "mortgagePenetrationPerCapita": 120,
-        "homeInsurancePenetration": 3
+        "dataMismatchIndex": 70
     },
     {
         "country": "Rwanda",
@@ -2080,9 +1954,7 @@ const housingData = [
         "municipalSpendingEfficiency": 30.5,
         "mortgagePenetrationPerCapita": 180,
         "homeInsurancePenetration": 4,
-        "dataMismatchIndex": 52,
-        "mortgagePenetrationPerCapita": 180,
-        "homeInsurancePenetration": 4
+        "dataMismatchIndex": 52
     },
     {
         "country": "Zambia",
@@ -2112,9 +1984,7 @@ const housingData = [
         "municipalSpendingEfficiency": 26.9,
         "mortgagePenetrationPerCapita": 140,
         "homeInsurancePenetration": 5,
-        "dataMismatchIndex": 70,
-        "mortgagePenetrationPerCapita": 140,
-        "homeInsurancePenetration": 5
+        "dataMismatchIndex": 70
     },
     {
         "country": "Namibia",
@@ -2144,9 +2014,7 @@ const housingData = [
         "municipalSpendingEfficiency": 110.5,
         "mortgagePenetrationPerCapita": 1800,
         "homeInsurancePenetration": 48,
-        "dataMismatchIndex": 49,
-        "mortgagePenetrationPerCapita": 1800,
-        "homeInsurancePenetration": 48
+        "dataMismatchIndex": 49
     },
     {
         "country": "Botswana",
@@ -2176,9 +2044,7 @@ const housingData = [
         "municipalSpendingEfficiency": 165.9,
         "mortgagePenetrationPerCapita": 1400,
         "homeInsurancePenetration": 35,
-        "dataMismatchIndex": 47,
-        "mortgagePenetrationPerCapita": 1400,
-        "homeInsurancePenetration": 35
+        "dataMismatchIndex": 47
     },
     {
         "country": "Senegal",
@@ -2208,9 +2074,7 @@ const housingData = [
         "municipalSpendingEfficiency": 17.4,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 3,
-        "dataMismatchIndex": 66,
-        "mortgagePenetrationPerCapita": 240,
-        "homeInsurancePenetration": 7
+        "dataMismatchIndex": 66
     },
     {
         "country": "Tunisia",
@@ -2240,9 +2104,7 @@ const housingData = [
         "municipalSpendingEfficiency": 71.6,
         "mortgagePenetrationPerCapita": 6,
         "homeInsurancePenetration": 10,
-        "dataMismatchIndex": 48,
-        "mortgagePenetrationPerCapita": 720,
-        "homeInsurancePenetration": 22
+        "dataMismatchIndex": 48
     },
     {
         "country": "Cameroon",
@@ -2272,9 +2134,7 @@ const housingData = [
         "municipalSpendingEfficiency": 17.9,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 3,
-        "dataMismatchIndex": 67,
-        "mortgagePenetrationPerCapita": 160,
-        "homeInsurancePenetration": 4
+        "dataMismatchIndex": 67
     },
     {
         "country": "Ivory Coast",
@@ -2304,9 +2164,7 @@ const housingData = [
         "municipalSpendingEfficiency": 18.9,
         "mortgagePenetrationPerCapita": 3,
         "homeInsurancePenetration": 4,
-        "dataMismatchIndex": 69,
-        "mortgagePenetrationPerCapita": 190,
-        "homeInsurancePenetration": 5
+        "dataMismatchIndex": 69
     },
     {
         "country": "Mozambique",
@@ -2336,9 +2194,7 @@ const housingData = [
         "municipalSpendingEfficiency": 17.2,
         "mortgagePenetrationPerCapita": 85,
         "homeInsurancePenetration": 2,
-        "dataMismatchIndex": 73,
-        "mortgagePenetrationPerCapita": 85,
-        "homeInsurancePenetration": 2
+        "dataMismatchIndex": 73
     },
     {
         "country": "Angola",
@@ -2368,9 +2224,7 @@ const housingData = [
         "municipalSpendingEfficiency": 45.9,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 5,
-        "dataMismatchIndex": 72,
-        "mortgagePenetrationPerCapita": 420,
-        "homeInsurancePenetration": 12
+        "dataMismatchIndex": 72
     },
     {
         "country": "Zimbabwe",
@@ -2400,9 +2254,7 @@ const housingData = [
         "municipalSpendingEfficiency": 22.3,
         "mortgagePenetrationPerCapita": 45,
         "homeInsurancePenetration": 3,
-        "dataMismatchIndex": 74,
-        "mortgagePenetrationPerCapita": 45,
-        "homeInsurancePenetration": 3
+        "dataMismatchIndex": 74
     },
     {
         "country": "Algeria",
@@ -2432,9 +2284,7 @@ const housingData = [
         "municipalSpendingEfficiency": 65.8,
         "mortgagePenetrationPerCapita": 3,
         "homeInsurancePenetration": 6,
-        "dataMismatchIndex": 56,
-        "mortgagePenetrationPerCapita": 520,
-        "homeInsurancePenetration": 14
+        "dataMismatchIndex": 56
     },
     {
         "country": "Sudan",
@@ -2464,9 +2314,7 @@ const housingData = [
         "municipalSpendingEfficiency": 14.6,
         "mortgagePenetrationPerCapita": 65,
         "homeInsurancePenetration": 2,
-        "dataMismatchIndex": 76,
-        "mortgagePenetrationPerCapita": 65,
-        "homeInsurancePenetration": 2
+        "dataMismatchIndex": 76
     },
     {
         "country": "Mauritius",
@@ -2496,9 +2344,7 @@ const housingData = [
         "municipalSpendingEfficiency": 206.9,
         "mortgagePenetrationPerCapita": 4100,
         "homeInsurancePenetration": 72,
-        "dataMismatchIndex": 38,
-        "mortgagePenetrationPerCapita": 4100,
-        "homeInsurancePenetration": 72
+        "dataMismatchIndex": 38
     },
     {
         "country": "Malawi",
@@ -2528,9 +2374,7 @@ const housingData = [
         "municipalSpendingEfficiency": 14.9,
         "mortgagePenetrationPerCapita": 70,
         "homeInsurancePenetration": 2,
-        "dataMismatchIndex": 69,
-        "mortgagePenetrationPerCapita": 70,
-        "homeInsurancePenetration": 2
+        "dataMismatchIndex": 69
     },
     {
         "country": "Benin",
@@ -2668,9 +2512,7 @@ const housingData = [
         "municipalSpendingEfficiency": 16.1,
         "mortgagePenetrationPerCapita": 55,
         "homeInsurancePenetration": 1,
-        "dataMismatchIndex": 72,
-        "mortgagePenetrationPerCapita": 55,
-        "homeInsurancePenetration": 1
+        "dataMismatchIndex": 72
     },
     {
         "country": "Congo",
@@ -2727,9 +2569,7 @@ const housingData = [
         "municipalSpendingEfficiency": 352.9,
         "mortgagePenetrationPerCapita": 8,
         "homeInsurancePenetration": 22,
-        "dataMismatchIndex": 51,
-        "mortgagePenetrationPerCapita": 2100,
-        "homeInsurancePenetration": 35
+        "dataMismatchIndex": 51
     },
     {
         "country": "Bulgaria",
@@ -2759,9 +2599,7 @@ const housingData = [
         "municipalSpendingEfficiency": 322.6,
         "mortgagePenetrationPerCapita": 6,
         "homeInsurancePenetration": 18,
-        "dataMismatchIndex": 53,
-        "mortgagePenetrationPerCapita": 2400,
-        "homeInsurancePenetration": 38
+        "dataMismatchIndex": 53
     },
     {
         "country": "Croatia",
@@ -2791,9 +2629,7 @@ const housingData = [
         "municipalSpendingEfficiency": 724.1,
         "mortgagePenetrationPerCapita": 10,
         "homeInsurancePenetration": 28,
-        "dataMismatchIndex": 48,
-        "mortgagePenetrationPerCapita": 4200,
-        "homeInsurancePenetration": 68
+        "dataMismatchIndex": 48
     },
     {
         "country": "Peru",
@@ -2823,9 +2659,7 @@ const housingData = [
         "municipalSpendingEfficiency": 63.2,
         "mortgagePenetrationPerCapita": 8,
         "homeInsurancePenetration": 19,
-        "dataMismatchIndex": 54,
-        "mortgagePenetrationPerCapita": 980,
-        "homeInsurancePenetration": 15
+        "dataMismatchIndex": 54
     },
     {
         "country": "Cambodia",
@@ -2855,9 +2689,7 @@ const housingData = [
         "municipalSpendingEfficiency": 19.4,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 4,
-        "dataMismatchIndex": 65,
-        "mortgagePenetrationPerCapita": 210,
-        "homeInsurancePenetration": 3
+        "dataMismatchIndex": 65
     },
     {
         "country": "Nepal",
@@ -2887,9 +2719,7 @@ const housingData = [
         "municipalSpendingEfficiency": 9.0,
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 5,
-        "dataMismatchIndex": 63,
-        "mortgagePenetrationPerCapita": 140,
-        "homeInsurancePenetration": 2
+        "dataMismatchIndex": 63
     },
     {
         "country": "Myanmar",
@@ -2919,9 +2749,7 @@ const housingData = [
         "municipalSpendingEfficiency": 11.8,
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 3,
-        "dataMismatchIndex": 69,
-        "mortgagePenetrationPerCapita": 75,
-        "homeInsurancePenetration": 1
+        "dataMismatchIndex": 69
     }
 ];
 
