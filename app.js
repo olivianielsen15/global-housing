@@ -627,6 +627,16 @@ function initGlobe() {
                 }
             })
             .onPolygonClick(feat => {
+                // Check if resilient design mode is active
+                if (resilientDesignModeActive) {
+                    const numericId = String(feat.id).padStart(3, '0');
+                    const iso = numericToISO[numericId];
+                    if (iso) {
+                        showDesignModal(iso);
+                        return; // Don't zoom to country
+                    }
+                }
+
                 // Stop auto-rotation when user clicks on a country
                 if (globe.controls().autoRotate) {
                     globe.controls().autoRotate = false;
@@ -1090,18 +1100,3 @@ function activateResilientDesignMode() {
     }
 }
 
-// Intercept polygon clicks when in resilient design mode
-const originalOnPolygonClick = globe.onPolygonClick;
-globe.onPolygonClick = (polygon) => {
-    if (resilientDesignModeActive && polygon && polygon.properties) {
-        const isoCode = polygon.properties.ISO_A3;
-        if (isoCode) {
-            showDesignModal(isoCode);
-            return; // Don't execute original click handler
-        }
-    }
-    // Otherwise execute original behavior
-    if (originalOnPolygonClick) {
-        originalOnPolygonClick(polygon);
-    }
-};
