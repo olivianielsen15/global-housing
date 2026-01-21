@@ -233,6 +233,14 @@ const layerConfig = {
         scale: [18, 96],
         unit: '% own',
         reversed: true  // Higher is better - more ownership
+    },
+    housingStockAtRisk: {
+        title: 'Housing Stock at Disaster Risk',
+        description: 'Percentage of housing stock vulnerable to collapse or severe damage during natural disasters (5.9%-82.5%). Very High (red): Haiti 82.5%, Nepal 76%, Bangladesh 72%, Syria 81% (poor codes + high exposure + informal housing). Moderate (yellow): Mexico 42%, Italy 34%, USA 23% (codes improving but exposure high). Low (green): Japan 14%, Chile 18%, Switzerland 10% (excellent seismic codes despite high exposure). Critical for disaster risk reduction investment.',
+        dataKey: 'housingStockAtRisk',
+        scale: [5, 85],
+        unit: '% at risk',
+        reversed: false  // Higher is worse - more vulnerability
     }
 };
 
@@ -745,6 +753,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Home Insurance:</strong> ${countryData.homeInsurancePenetration}% of households insured</p>
             <p><strong>Data Quality Index:</strong> ${countryData.dataMismatchIndex}/100 (${countryData.dataMismatchIndex < 20 ? 'excellent' : countryData.dataMismatchIndex < 40 ? 'good' : countryData.dataMismatchIndex < 60 ? 'moderate' : countryData.dataMismatchIndex < 75 ? 'challenged' : 'severe gaps'})</p>
             <p><strong>Homeownership Rate:</strong> ${countryData.homeownershipRate ? countryData.homeownershipRate.toFixed(1) + '% of households own' : 'N/A'}</p>
+            <p><strong>Housing at Disaster Risk:</strong> ${countryData.housingStockAtRisk ? countryData.housingStockAtRisk.toFixed(1) + '% vulnerable to collapse' : 'N/A'}</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>

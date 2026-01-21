@@ -35,6 +35,7 @@
 // 24. homeInsurancePenetration: Home Insurance Penetration Rate (% of households). Percentage of households with residential property insurance, measuring insurance market reach, risk awareness, and financial resilience against housing shocks. Scale: 0%-100%. Very High (85-96%): Nordic/Northern Europe near-universal coverage - Denmark 96% (world leader, insurance bundled with mortgages as standard practice), Norway 95% (comprehensive welfare state + insurance culture), Sweden 94%, Switzerland 94% (quasi-mandatory, uninsured face difficulties), Netherlands 93% (flood risk below sea level drives awareness), Finland 92%. Insurance deeply embedded in housing finance systems; lenders universally require coverage; governments incentivize through tax deductions; comprehensive policies cover fire, water, storms, liability. Cultural norm of risk protection. High (75-89%): Anglo-developed markets with strong coverage - USA 85% of homeowners insured (mortgage lenders mandate insurance, though declining in high-risk coastal areas like Florida due to unaffordability/insurer exodus), Australia 88% (cyclone/bushfire awareness high after Black Saturday 2009, climate change driving premiums up), Canada 82% (winter damage coverage, mandatory for mortgaged properties), Germany 86% (strong insurance tradition, Versicherungsschutz cultural norm), France 89% (mandatory for renters since 1989 law, homeowners follow suit). Mature insurance industries, widespread homeownership, established risk culture. Medium-High (65-80%): Western Europe + disaster-aware markets - New Zealand 80% (Earthquake Commission public catastrophic fund post-Christchurch 2011 quake + private top-up coverage), UK 78% (buildings insurance common, though rising premiums in flood zones), Belgium 81%, Austria 79%, Japan 71% (fire insurance high, but earthquake insurance separate and less common despite severe risk - cultural fatalism, government bailout expectation). Medium (50-65%): Southern Europe + East Asia - Spain 65% (post-2008 crisis awareness increased), Czech 56%, South Africa 55% (wealth inequality: insured middle class, uninsured townships), Chile 52% (Latin America's highest, earthquake risk drives uptake post-2010 Maule quake), Estonia 62%, Latvia 54%, Lithuania 51%, Slovakia 41%. Growing middle class adopts insurance, but many households still unprotected. Medium-Low (35-50%): Emerging insurance markets - Malaysia 48% (Islamic takaful + conventional), Hungary 48%, Poland 52% (EU accession drove growth), Slovenia 45%, UAE 45% (expat awareness, nationals less), Turkey 38% (shockingly low despite 1999 Izmit quake 17,000 dead, 2023 Kahramanmaras quake 62,000 dead - government bailout expectation, affordability, trust deficit). Small urban elite/middle class insured, rural/poor majority vulnerable. Low (20-35%): Limited insurance reach despite risks - Italy 42% (low despite wealth, family support culture, distrust of insurers), Greece 35% (economic crisis reduced coverage), Costa Rica 38%, Mexico 34% (earthquake/hurricane risk but low uptake), Brazil 28% (favelas uninsurable, middle class growing awareness), Panama 42%, Uruguay 32%, China 32% (urban concentrations, rural almost zero; rapid growth from 5% in 2000). Very Low (1-20%): Minimal insurance penetration despite catastrophic disaster risks - India 6% (1.4B population, monsoon floods/earthquakes, but only urban elite insured; informal housing uninsurable), Indonesia 8% (shocking given tsunami 2004 230,000 dead, earthquakes, volcanoes; cultural acceptance of loss, Islamic fatalism, poverty), Thailand 18% (monsoons/floods), Vietnam 12% (typhoons), Philippines 11% (averages 8 typhoons/year causing billions in damage, yet 89% uninsured - poverty, informality, government/NGO reconstruction expected), Colombia 24%, Peru 19%, Argentina 18%, Russia 14% (distrust of institutions), Egypt 8%, Morocco 12%, Nigeria 2% (Sub-Saharan Africa minimal insurance despite flood risks), Kenya 4%, Bangladesh 2% (despite being world's most climate-vulnerable nation with annual cyclones/floods destroying housing), Ethiopia 1%, Nepal 5% (2015 earthquake 9,000 dead, almost all uninsured), Cambodia 4%, Myanmar 3%, Laos 3%, Pakistan 4%, Afghanistan 1%, Iraq 6%, Syria 3%, Madagascar 1% (cyclones). These countries face perpetual disaster-reconstruction poverty cycles. Post-disaster, families lose all housing wealth, rely on family/government/NGO aid, rebuild incrementally over years. The global insurance gap is staggering: Denmark has 96x higher household coverage than Ethiopia, 48x higher than Nigeria, 48x higher than Bangladesh. This isn't purely about income - many disaster-prone developing countries have vastly lower insurance rates than their risk profiles demand. Factors preventing coverage: (1) Affordability - premiums unaffordable for poor households earning $2-10/day, (2) Awareness - lack of understanding of insurance benefits, never seen it work, (3) Trust - deep skepticism insurers will actually pay claims (often justified - claim denial rates high in weak regulatory environments), (4) Availability - insurance companies don't operate in rural areas, informal settlements, (5) Regulatory weakness - inadequate consumer protections, fraud, (6) Informality - unregistered homes, no legal title, cannot be formally insured, (7) Cultural factors - fatalism, religious acceptance of disasters as divine will, reliance on family/community rather than financial instruments. Data sources: Swiss Re Sigma World Insurance Reports (industry standard, surveys national insurance associations and major insurers globally, annual publication with country-level penetration data), national insurance regulators (US NAIC, UK Financial Conduct Authority, European EIOPA, India IRDAI, China CBIRC), World Bank Global Findex Database (financial inclusion surveys include insurance questions), OECD Insurance Statistics, Insurance Information Institute, Munich Re NatCatSERVICE (tracks insured vs uninsured disaster losses). Methodology: households with active residential property/homeowners insurance policies / total households. Includes owner-occupied homeowners insurance and renters/contents insurance. Excludes life, health, auto insurance. Policy implications: Low-penetration disaster-prone countries face perpetual reconstruction cycles, housing wealth destruction, poverty traps. Solutions needed: (1) Mandatory insurance - France model requiring renters insurance (1989 law), Turkey pushing compulsory earthquake insurance post-2023 (TCIP program), (2) Microinsurance - affordable parametric products for low-income households ($1-5/month premiums, automatic payouts when disaster threshold triggered like earthquake magnitude >6.0 or rainfall >200mm), (3) Public-private partnerships - New Zealand Earthquake Commission model (government catastrophic fund covers first NZ$150k damage, private insurers cover above), Caribbean Catastrophe Risk Insurance Facility (regional risk pool for 20 countries), (4) Premium subsidies - California FAIR plan for high-risk areas, India Pradhan Mantri Fasal Bima Yojana crop insurance model, Florida Citizens Property Insurance (state insurer of last resort), (5) Building code enforcement - safer construction = lower risk = lower premiums = higher affordability/uptake, (6) Index/parametric insurance - pays on objective trigger (earthquake magnitude, wind speed, rainfall) rather than loss assessment, eliminates moral hazard and claim disputes, enables fast payouts (24-48 hours vs months). Without insurance, disasters destroy housing wealth permanently. Philippines loses $3-5B annually to typhoons with 89% uninsured. Bangladesh faces annual cyclone/flood devastation with 98% uninsured. Haiti 2010 earthquake killed 220,000, destroyed 250,000 homes, almost zero insurance - still rebuilding 15 years later. Insurance is critical development infrastructure - it transforms disasters from permanent wealth destruction into temporary setbacks with financial recovery. Countries must treat housing insurance like other development priorities (roads, electricity, water) requiring public intervention for universal access.
 // 25. dataMismatchIndex: Data Mismatch Index (0-100 scale). Composite measure of data quality, consistency, and measurement reliability across housing metrics. Identifies where different data sources contradict each other, revealing data infrastructure gaps, informal market prevalence, and methodological challenges. Higher scores indicate greater data inconsistencies and measurement uncertainty. Very Low (0-15): Excellent data quality and consistency - Denmark 5, Norway 6, Sweden 7, Switzerland 8, Finland 8 (Nordic countries with comprehensive national registries, digitized records, transparent governance, frequent surveys, minimal informal economy <10%, universal property registration, statistical agencies with ISO 9001 certification). Low (15-30): Good data quality - Iceland 12, Singapore 13, Austria 10, Netherlands 9, Belgium 11, Germany 14, Estonia 28 (developed countries with strong statistical infrastructure, some measurement challenges from tourism/expat populations, minor informal economy). Moderate (30-50): Moderate inconsistencies - UK 16, Canada 18, Australia 21, USA 24 (regional variation complicates aggregation, homeless undercounting, some indigenous housing gaps), France 22 (vacation home counting affects vacancy data), Japan 28 (aging population creates data lag, high vacancy cultural acceptance differs from other countries), South Korea 31 (jeonse deposit system complicates debt classification), Chile 34, Czech 29, Slovakia 34 (best emerging markets). Medium-High (50-65): Significant data challenges - Spain 35, Italy 38, Portugal 32, Greece 42 (informal economy 20-30% GDP, vacation properties complicate data, tax evasion affects transaction records, high vacancy + deficit paradoxes), Poland 36, Hungary 37, Romania 51, Bulgaria 53, Croatia 48 (Eastern Europe: emigration creates population data lags, informal construction unreported, depopulation vs urban shortage mismatches), Brazil 62, Mexico 58, Colombia 59, India 64 (large informal settlements partially unmeasured, regional data quality varies enormously, favelas/slums/juggi-jhopri undercounted). High (65-75): Major data gaps and inconsistencies - Ukraine 67 (war displacement, Crimea/Donbas data missing post-2014), Kenya 68 (Kibera slum population disputed: 250k-1M estimates, 60% informal settlements Nairobi), Tanzania 71, Uganda 70, Ethiopia 73 (informal settlements 60-80%, rural data minimal), Nigeria 77 (population figures disputed, Boko Haram areas unmeasured, informal settlements 60-70%), Bangladesh 71 (Dhaka slum estimates vary 40-60%, char lands unmeasured, Rohingya camps), Pakistan 69 (katchi abadis undercounted, FATA/Balochistan gaps), Philippines 66 (informal settlements 40-50%, squatter data disputed), Indonesia 67 (kampung undercount, Java vs Papua data quality gap), Myanmar 69 (Rohingya excluded from census, conflict zones), Egypt 59 (ashwaiyyat informal housing ~60% urban, official statistics undercount), Turkey 53 (gecekondu undercounted, Syrian refugees, earthquake reconstruction lag). Very High (75-90): Severe data infrastructure breakdown - Venezuela 78 (hyperinflation makes price data meaningless, economic collapse destroyed statistical capacity, 7M emigrants), Libya 82 (civil war, tribal land systems), DR Congo 81 (conflict zones unmeasured, informal settlements 80%+, eastern displacement), Haiti 84 (earthquake destruction, informal settlements 70%+, minimal data infrastructure since 2010), South Sudan 85 (newest nation 2011, civil war, displacement, no proper census), Afghanistan 86 (war, Taliban control, data infrastructure collapsed, rural unmeasured), Somalia 87 (failed state, no reliable census since 1975, Al-Shabaab areas, IDP camps), Syria 89 (war destruction 2011-present, massive displacement 13M+, data infrastructure collapsed, government-held vs opposition vs Kurdish areas unmeasured). Key mismatch patterns identified: (1) Vacancy-Deficit Paradox: Croatia 30% vacancy + housing deficit (depopulation emigration), Greece/Spain/Italy high vacancy + affordability crisis (speculation, geographic mismatch), China 22% vacancy + continued construction (overbuilding). (2) Affordability-Deficit Gap: Countries with low official price-to-income ratios but high housing deficits suggest informal housing not captured in price statistics - India, Bangladesh, Nigeria, Ethiopia. (3) Finance-Ownership Inconsistency: South Korea high household debt/GDP but moderate mortgage penetration suggests jeonse deposits misclassified; Japan high debt but aging deleveraging. (4) Insurance-Risk Mismatch: Philippines 11% insured despite 8 typhoons/year, Bangladesh 2% despite cyclones, Indonesia 8% despite tsunami/earthquake/volcano risks, Turkey 38% despite major earthquakes - massive uninsured vulnerability. (5) Construction-Deficit Gap: High construction activity but persistent deficits indicate location/quality mismatch (luxury construction vs affordable need) or informal construction uncounted - India, Nigeria, China. (6) Policy-Outcome Gap: Countries with high policy activity scores but poor outcomes suggest implementation failure or measurement error - South Africa, Brazil, India. (7) Informal-Formal Inconsistency: Official homeownership rates contradict high informal settlement percentages, indicating titling/recognition issues - Kenya, Nigeria, Philippines, Indonesia, Egypt, Mexico. (8) Demographic Data Lag: Rapid emigration (Eastern Europe, Venezuela) or immigration (UAE, Qatar) creates population estimate errors affecting per-capita calculations. (9) Conflict/Disaster Impact: War zones (Syria, Yemen, Somalia, Afghanistan, South Sudan, Ukraine), post-disaster areas (Haiti 2010, Philippines typhoons, Nepal 2015), and gang-controlled areas (El Salvador, Honduras, parts of Mexico) have unmeasured or outdated data. (10) Governance and Transparency: Authoritarian regimes (Eritrea, Belarus), failed states (Somalia), and countries with limited statistical capacity (Chad, CAR, Niger) have unreliable or fabricated data. Data sources: Transparency International Corruption Perceptions Index, World Bank Statistical Capacity Indicator, PARIS21 Statistical Capacity Development, OECD data quality assessments, academic housing research identifying measurement challenges, discrepancies between UN-Habitat, World Bank, OECD, and national statistics. Methodology: Expert assessment combining quantitative discrepancies (coefficient of variation across sources >20%, large revisions >10% in census updates) and qualitative factors (informal economy size, conflict, data infrastructure, governance quality). Policy implications: High-mismatch countries need investment in statistical infrastructure - national housing surveys (like US AHS, UK EHS), property registries (blockchain-based like Georgia, Rwanda land titling), informal settlement mapping (using satellite imagery, GIS, participatory mapping with residents), census capacity building, transparent open data policies. Researchers and policymakers must exercise caution interpreting data from high-mismatch countries - use ranges rather than point estimates, triangulate across multiple sources, acknowledge uncertainty. International development organizations should prioritize data infrastructure as foundational for evidence-based housing policy - cannot solve housing crisis without measuring it accurately. Lower scores indicate reliable data for policy/investment decisions; higher scores indicate uncertainty requiring ground-truth validation.
 // 26. homeownershipRate: Homeownership Rate (% of households). Percentage of households that own their home rather than rent, measuring housing tenure security and wealth building through real estate. Scale: 18%-96%. Very High (85-96%): Eastern Europe/Asia - Romania 96.4% (highest globally, post-communist privatization), Hungary 91.3%, Lithuania 90.6%, Slovakia 90.3%, Vietnam 90.3% (socialist housing legacy + Asian ownership culture), Singapore 88.9% (HDB 99-year leasehold counted as ownership), Bangladesh 88.2%, Nepal 88.5%, Bulgaria 87.5%, India 86.8%, Ethiopia 86.3%, Pakistan 85.7%. Post-socialist countries privatized state housing in 1990s creating near-universal ownership; Asian countries combine cultural preference for ownership with weak rental protections. High (75-85%): Southern Europe/Latin America/Africa - Brazil 75.2%, Croatia 89.7%, Spain 76.1%, Slovenia 76.3%, Poland 84.2%, Philippines 83.4%, Laos 83.6%, Rwanda 82.7%, Norway 82.7%, Myanmar 82.1%, Uganda 82.4%, Thailand 81.6%, Madagascar 81.6%, Estonia 81.5%, Latvia 81.4%, Malta 80.1%, Malawi 80.4%, Nigeria 78.5%, Indonesia 78.5%, Czech 78.3%, Burkina Faso 78.2%, Iceland 79.5%, Tanzania 79.8%, Cambodia 79.4%, Niger 79.5%. Mix of post-socialist, Mediterranean family-oriented cultures, and developing countries where self-construction dominates. Medium-High (70-75%): Mixed markets - Portugal 74.9%, Finland 73.8%, Libya 74.2%, Luxembourg 73.2%, Italy 72.9%, Belgium 72.8%, Egypt 72.8%, Jordan 72.6%, Ghana 72.5%, Greece 72.4%, Zambia 73.2%, Peru 73.4%, South Sudan 71.8%, Uruguay 71.8%, Iran 71.2%, Kenya 71.2%, Lebanon 71.3%, Ireland 70.1%, Cameroon 70.6%. Moderate (65-70%): Anglo-developed + Middle East - Netherlands 69.2%, Argentina 69.5%, Tunisia 69.8%, Canada 68.5%, Angola 69.2%, Israel 66.8%, Somalia 68.9%, Algeria 67.5%, Zimbabwe 66.8%, USA 65.5%, UK 65.2%, Ivory Coast 65.8%, Senegal 68.3%. Balance between ownership and rental markets. Medium-Low (55-65%): Rental culture emerging - France 64.9%, Sweden 64.1%, New Zealand 64.5%, Costa Rica 64.2%, Morocco 63.2%, Chile 63.8%, Australia 66.5%, Saudi Arabia 62.4%, Mexico 62.1%, Japan 61.2%, Namibia 61.3%, Botswana 58.7%, Panama 58.3%. Low (50-55%): Strong rental sectors - Turkey 59.2%, South Korea 57.3% (jeonse deposit system), Colombia 56.3%, Austria 55.2%, South Africa 53.4%, Germany 51.5% (rental protections, social housing). Very Low (18-42%): Extreme rental dominance - Switzerland 42.2% (expensive property, strong rental rights), UAE 23.1% (expat rental market dominates), Qatar 18.3% (guest worker economy). Patterns reveal: (1) Post-Communist Legacy: Eastern Europe 80-96% due to 1990s privatization of state housing at discounted prices - created ownership but also maintenance crises, energy inefficiency, lack of mobility. (2) Cultural Norms: Asian societies strong ownership preference (family wealth, marriage requirements, weak tenant protections) vs Northern Europe acceptance of renting (strong tenant rights, social housing, mobility valued). (3) Rental Market Development: Germany/Switzerland/Austria have mature rental sectors with rent controls, tenant protections, social housing making renting viable long-term vs developing countries where renting is exploitative/insecure driving ownership preference. (4) Affordability Paradox: High ownership in poor countries (Ethiopia 86%, Bangladesh 88%) reflects informal self-construction on invaded/irregular land rather than formal ownership - counted as "owners" but lack legal title, services, security. Low ownership in rich countries (Switzerland 42%, Germany 52%) reflects choice and functioning rental markets. (5) Expat Distortion: Gulf States (UAE 23%, Qatar 18%) artificially low due to temporary migrant workers who cannot own property - if measured for citizens only would be 70-80%. (6) Policy Implications: Countries should NOT aim for maximum homeownership - optimal rate is 60-70% allowing rental market flexibility for young workers, students, mobile professionals. Eastern Europe's 90%+ rates create problems: housing immobility reducing labor market flexibility, elderly trapped in deteriorating buildings, lack of rental supply for youth, concentration of wealth in real estate rather than productive investment. Data sources: OECD Affordable Housing Database, Eurostat Housing Statistics, national census data (US Census, UK ONS, Australia ABS, Statistics Canada), World Bank Global Findex Database, UN-Habitat Urban Indicators, national housing surveys. Methodology: owner-occupied households / total households. Includes: formal titled ownership, informal occupation with de facto ownership, leasehold counted as ownership (Singapore HDB, UK), shared ownership schemes, cooperative housing. Excludes: pure renters (private and social), squatters without ownership claim. Challenges: informal settlements (slums, favelas, kampungs) often self-reported as "owners" despite lacking legal title - inflates rates in developing countries; multigenerational households where adult children "own" together with parents counted differently across countries; Singapore's 99-year HDB leaseholds counted as ownership though technically government land. Policy design: Balanced tenure mix is optimal - excessive homeownership reduces labor mobility (laid-off workers can't move for jobs if they own), concentrates household wealth in illiquid real estate vulnerable to price crashes (2008 crisis), creates NIMBYism blocking new housing, and reduces flexibility for life changes. Excessive renting creates wealth inequality (landlords accumulate, renters don't build equity), insecurity from eviction risk, and family instability. Target: 60-70% ownership with robust, regulated rental sector for remainder.
+// 27. housingStockAtRisk: Housing Stock at Disaster Risk (%). Percentage of total housing stock vulnerable to collapse or severe structural damage during natural disasters (earthquakes, floods, hurricanes, tsunamis, landslides, etc.). Combines disaster exposure intensity, building code existence and enforcement, construction quality, and informal housing prevalence. Scale: 5.9%-82.5%. Very High Risk (60-85%): Countries with extreme exposure + minimal codes/enforcement + high informality - Haiti 82.5% (2010 earthquake exposed catastrophic vulnerability, 70%+ informal, minimal codes, still rebuilding 15 years later), Syria 81.3% (war destroyed infrastructure, 13M displaced, collapsed enforcement), Afghanistan 78.2% (earthquakes + conflict, no modern codes, traditional mud-brick), Nepal 76.3% (2015 M7.8 earthquake killed 9,000, destroyed 600,000 homes, 60% informal, weak enforcement), South Sudan 75.4% (floods, conflict, no building standards), Yemen 74.6% (earthquakes + conflict), Somalia 73.8% (floods, droughts, no codes, 80%+ informal), Bangladesh 71.8% (cyclones + floods annually, Dhaka slums, minimal enforcement despite codes existing), Myanmar 69.4% (cyclones like Nargis 2008 killed 138,000, earthquakes, minimal codes), Chad 68.9% (Sahel floods, mud construction), Niger 67.2%, Eritrea 66.1%, Mali 65.8%, Burkina Faso 64.3%, Ethiopia 63.7% (earthquakes, 60-80% informal). These countries face catastrophic housing losses in every disaster - the 2010 Haiti earthquake killed 220,000 primarily from building collapse; 2015 Nepal earthquake flattened adobe/stone homes; annual Bangladesh cyclones destroy millions of homes. High Risk (40-60%): Significant exposure with weak codes or high informality - Philippines 58.4% (averages 8 typhoons/year, earthquakes, 40-50% informal settlements lack resilience, Yolanda/Haiyan 2013 destroyed 1M homes), Indonesia 56.2% (earthquakes killed 5,700 in 2006 Java, 2004 tsunami 170,000 dead, volcanoes, kampung informal settlements), Turkey 54.8% (shocking given modern codes exist - 2023 Kahramanmaras M7.8 killed 62,000, exposed rampant non-compliance, contractors ignoring seismic codes for profit, "concrete cancer"), Pakistan 59.7% (2005 Kashmir earthquake 87,000 dead, 2010 floods displaced 20M, katchi abadi slums, weak enforcement), Vietnam 52.8% (typhoons annually, rapid construction outpaces enforcement), Cambodia 54.6%, Madagascar 56.8% (cyclones every year, Enawo 2017, Batsirai 2022, deforestation increases landslide risk), Mozambique 53.4% (Cyclone Idai 2019 killed 1,000+, annual flooding), Iran 52.1% (2003 Bam earthquake M6.6 killed 30,000 from mud-brick collapse, weak enforcement despite codes), Nigeria 51.6% (coastal flooding Lagos, 60-70% informal), Laos 51.3%, India 48.6% (earthquakes Gujarat 2001, Kashmir 2005, floods Kerala, cyclones Odisha, but improving codes in major cities), Guatemala 49.5%, Iraq 49.8%, Honduras 48.7% (Hurricane Mitch 1998 killed 7,000), Nicaragua 47.3%, Kenya 47.8% (Nairobi informal 60%, floods, droughts), El Salvador 46.2%, Egypt 46.3% (ashwaiyyat informal 60% Cairo lacks earthquake resilience), Mozambique 53.4%. These countries lose thousands of lives and millions of homes repeatedly - Indonesia's repeated earthquakes/tsunamis, Philippines' annual typhoon destruction, Turkey's enforcement failure despite modern building codes. Moderate Risk (20-40%): Mixed - either good codes but high exposure OR low exposure with weak codes - Mexico 42.3% (1985 M8.0 Mexico City killed 10,000, led to improved codes, but enforcement varies, informal colonias vulnerable), Ecuador 43.8% (2016 M7.8 killed 676), Venezuela 45.1% (Vargas 1999 mudslides killed 30,000, economic collapse affects maintenance), Myanmar 69.4% (already listed above), Colombia 39.7% (earthquakes, landslides, improving codes), Peru 38.6% (earthquakes, El Niño floods), Morocco 38.4% (2023 M6.8 killed 2,900 in Atlas Mountains, rural adobe vulnerability), Angola 44.6%, Burundi 44.8%, Rwanda 38.2% (improving rapidly), Dominican Republic 44.3%, Cuba 38.7%, Italy 34.2% (earthquakes L'Aquila 2009 killed 309, Amatrice 2016 killed 299, old unreinforced masonry stock, slow retrofit progress), Greece 35.6% (earthquakes, aging stock, informal 40%+), Mauritius 35.6% (cyclones but good codes for island), Costa Rica 34.8%, Jamaica 41.2%, Lebanon 32.4% (Beirut old stock, Hezbollah areas), China 31.5% (2008 Sichuan M7.9 killed 87,000 from school/building collapse, improved codes since but rapid construction), South Africa 32.5% (townships flood-prone, some earthquake risk), Panama 32.1%, Argentina 26.8%, Romania 23.6% (Bucharest 1977 M7.2, aging Soviet stock), Brazil 28.9% (Rio favela landslides, floods, but better codes São Paulo), Portugal 28.7% (1755 Lisbon earthquake memories, old stock), Croatia 26.4% (Zagreb 2020 M5.5 damaged 26,000 buildings), Bulgaria 24.8%, Spain 24.3%, Uruguay 24.6%, USA 22.8% (hurricanes Katrina/Sandy/Maria, California earthquakes, tornadoes, BUT codes vary widely - Florida/California strict, other states weak, aging infrastructure), Australia 24.7% (bushfires Black Saturday 2009 killed 173, floods, cyclones, increasing climate risk), Russia 23.4% (Sakhalin 1995 M7.1, Kamchatka earthquakes), Ukraine 21.7%. Moderate-Low Risk (15-25%): Developed countries with exposure but strong codes - Slovenia 21.3%, New Zealand 19.3% (Christchurch 2011 M6.3 killed 185, led to massive retrofit program, now world-leading resilience), Iceland 18.5% (volcanoes, earthquakes, but excellent codes for volcanic island), Chile 18.4% (WORLD-CLASS seismic codes after 2010 M8.8 Maule earthquake, 2015 M8.3 Illapel - minimal deaths due to codes, global model), Slovakia 18.2%, France 18.6%, Ireland 17.8%, Hungary 17.5%, Taiwan 16.8% (earthquakes, typhoons, but strict codes post-1999 M7.6 Chi-Chi), Czech 16.8%, UK 16.3% (floods increasing, storms, but good codes), Netherlands 15.2% (paradox - entire country below sea level BUT Delta Works + strict codes = world-leading flood management), Poland 15.4%, Canada 16.8% (BC earthquakes, floods, but excellent codes). Low Risk (5-15%): Minimal exposure + excellent codes - Japan 14.2% (REMARKABLE - highest seismic/tsunami risk globally BUT world-leading codes, mandatory retrofitting, seismic isolation, strict enforcement since 1981, 2011 Tohoku M9.0 tsunami killed 19,000 but building collapse minimal, nuclear disaster separate issue), Belgium 14.6%, Jordan 14.3%, Estonia 13.8%, Latvia 14.9%, Austria 13.7% (Alpine avalanche/landslide/flood engineering excellence), Lithuania 15.6%, Malta 12.8%, South Korea 12.6% (excellent modern codes), Germany 12.3% (engineering excellence, floods managed), Denmark 12.1%, Luxembourg 11.4%, Israel 11.6%, Norway 11.2% (avalanche engineering), Sweden 10.7%, Finland 9.4% (low exposure, excellent codes), Switzerland 9.8% (ALPINE ENGINEERING MASTERCLASS - avalanches, landslides, floods expertly managed through codes, early warning, infrastructure), Singapore 8.2% (island flood management, excellent codes), Saudi Arabia 7.4%, UAE 6.8%, Qatar 5.9% (minimal exposure, modern construction). Patterns reveal stark divides: (1) Building Code Divide: Haiti 82.5% vs Japan 14.2% - both face extreme seismic risk, but Japan's strict codes + enforcement save lives while Haiti's absence kills thousands. Chile vs Haiti - similar earthquake exposure, vastly different outcomes due to codes. (2) Informal Housing Crisis: Countries with 60%+ informal housing (Haiti, Bangladesh, Somalia, Ethiopia, Nigeria, Kenya) face perpetual disaster vulnerability - informal settlements built on flood plains, steep slopes, without foundations, non-engineered, using substandard materials. (3) Enforcement Failure: Turkey shocking example - modern seismic codes exist but 2023 earthquake exposed rampant contractor fraud, building inspectors bribed, "concrete cancer" (insufficient rebar, poor mixing), killed 62,000. Codes mean nothing without enforcement. (4) Climate Change Acceleration: Bangladesh, Philippines, Madagascar, Mozambique face intensifying cyclone/flood risk with rising seas, heavier rainfall, more intense storms - existing vulnerable housing stock faces growing threat. (5) Retrofit Gap: Italy, Greece, Portugal have aging unreinforced masonry/concrete stock vulnerable to earthquakes - retrofit is expensive, slow, politically difficult (who pays?). Japan and New Zealand show retrofit is possible with political will. (6) Poverty Trap: Poor countries cannot afford both enforcement AND retrofitting - Nepal post-2015, Haiti post-2010 still rebuilding 9-15 years later because lack resources for resilient reconstruction. Families forced to rebuild vulnerable homes. (7) Alpine Excellence: Switzerland, Austria, Norway show how high-risk environments (avalanches, landslides, floods) can be made safe through engineering, codes, and investment. (8) Island Resilience: Singapore, Netherlands, Denmark below sea level but sophisticated flood management. Contrast with Bangladesh similar flood exposure but 71.8% at risk. Data sources: UNDRR Global Assessment Report on Disaster Risk Reduction, World Bank Disaster Risk Financing, Munich Re NatCatSERVICE (tracks disaster losses and building vulnerability), Swiss Re Sigma Catastrophe Reports, GFDRR (Global Facility for Disaster Reduction and Recovery), national building code databases (ICC, Eurocode, national standards), UN-Habitat informal settlement data, academic post-disaster reconnaissance reports (EERI, EEFIT), national disaster management agencies. Methodology: Expert assessment combining (1) Disaster exposure - seismic hazard maps, flood zones, cyclone tracks, tsunami inundation, landslide susceptibility, volcano proximity from USGS, NOAA, national geological surveys, (2) Building code existence and stringency - whether modern seismic/wind/flood codes exist, how strict (Chile AAA-rated, Haiti no national code), (3) Enforcement quality - compliance rates from post-disaster surveys showing actual vs code-required construction (Turkey 2023 showed 40-60% non-compliance), corruption indices affecting building inspection, (4) Informal housing share - informal settlements typically built without permits, engineering, or codes, (5) Construction quality - materials (adobe, unreinforced masonry, reinforced concrete, engineered timber), age of stock (pre-code vs post-code buildings), (6) Retrofit progress - Japan extensive post-1981, Italy/Greece minimal despite high risk. Policy implications: CRITICAL for prioritizing international disaster risk reduction investment. High-risk countries (>60%) need: (1) Mandatory building codes - adopt and enforce modern seismic/wind/flood codes, (2) Informal settlement upgrading - cannot ignore 60-80% of housing stock, need systematic retrofitting/relocation programs, (3) Building inspector training and anti-corruption - Turkey 2023 shows inspectors must be independent, penalties for non-compliance must be severe (criminal charges for contractors whose buildings collapse), (4) Retrofit incentives - subsidies, tax credits, low-interest loans for homeowners to strengthen existing buildings (California/Japan models), (5) Land use controls - prohibit construction on high-risk flood plains, steep slopes, fault lines without special engineering, (6) Public awareness - homeowners must understand their risk and demand code compliance, (7) Post-disaster reconstruction standards - "Build Back Better" not just "build back" - every disaster is opportunity to upgrade standards (Philippines post-Yolanda). Low-risk countries (<15%) show what's possible - Japan, Chile, Switzerland, Singapore prove that even extreme disaster exposure can be managed to acceptable risk levels through investment in codes, engineering, and enforcement. The metric reveals where housing is a death trap waiting for the next disaster (Haiti, Bangladesh, Nepal, Turkey non-compliant buildings) vs where it provides safety even in extreme events (Japan, Chile, Switzerland). Housing resilience is not just about disaster response - it's about preventing disasters from becoming catastrophes through proactive code enforcement and construction quality.
 
 const housingData = [
     {
@@ -66,7 +67,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 42,
         "homeInsurancePenetration": 94,
         "dataMismatchIndex": 8,
-        "homeownershipRate": 42.2
+        "homeownershipRate": 42.2,
+        "housingStockAtRisk": 9.8
     },
     {
         "country": "Australia",
@@ -97,7 +99,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 35,
         "homeInsurancePenetration": 88,
         "dataMismatchIndex": 21,
-        "homeownershipRate": 66.5
+        "homeownershipRate": 66.5,
+        "housingStockAtRisk": 24.7
     },
     {
         "country": "Denmark",
@@ -128,7 +131,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 65,
         "homeInsurancePenetration": 96,
         "dataMismatchIndex": 5,
-        "homeownershipRate": 60.4
+        "homeownershipRate": 60.4,
+        "housingStockAtRisk": 12.1
     },
     {
         "country": "Cyprus",
@@ -189,7 +193,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 52,
         "homeInsurancePenetration": 93,
         "dataMismatchIndex": 9,
-        "homeownershipRate": 69.2
+        "homeownershipRate": 69.2,
+        "housingStockAtRisk": 15.2
     },
     {
         "country": "Canada",
@@ -220,7 +225,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 38,
         "homeInsurancePenetration": 82,
         "dataMismatchIndex": 18,
-        "homeownershipRate": 68.5
+        "homeownershipRate": 68.5,
+        "housingStockAtRisk": 16.8
     },
     {
         "country": "South Korea",
@@ -251,7 +257,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 32,
         "homeInsurancePenetration": 68,
         "dataMismatchIndex": 31,
-        "homeownershipRate": 57.3
+        "homeownershipRate": 57.3,
+        "housingStockAtRisk": 12.6
     },
     {
         "country": "Norway",
@@ -282,7 +289,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 58,
         "homeInsurancePenetration": 95,
         "dataMismatchIndex": 6,
-        "homeownershipRate": 82.7
+        "homeownershipRate": 82.7,
+        "housingStockAtRisk": 11.2
     },
     {
         "country": "Sweden",
@@ -313,7 +321,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 48,
         "homeInsurancePenetration": 94,
         "dataMismatchIndex": 7,
-        "homeownershipRate": 64.1
+        "homeownershipRate": 64.1,
+        "housingStockAtRisk": 10.7
     },
     {
         "country": "New Zealand",
@@ -344,7 +353,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 36,
         "homeInsurancePenetration": 80,
         "dataMismatchIndex": 17,
-        "homeownershipRate": 64.5
+        "homeownershipRate": 64.5,
+        "housingStockAtRisk": 19.3
     },
     {
         "country": "Luxembourg",
@@ -375,7 +385,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 47800,
         "homeInsurancePenetration": 450,
         "dataMismatchIndex": 11,
-        "homeownershipRate": 73.2
+        "homeownershipRate": 73.2,
+        "housingStockAtRisk": 11.4
     },
     {
         "country": "United Kingdom",
@@ -406,7 +417,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 32,
         "homeInsurancePenetration": 78,
         "dataMismatchIndex": 16,
-        "homeownershipRate": 65.2
+        "homeownershipRate": 65.2,
+        "housingStockAtRisk": 16.3
     },
     {
         "country": "Finland",
@@ -437,7 +449,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 45,
         "homeInsurancePenetration": 92,
         "dataMismatchIndex": 8,
-        "homeownershipRate": 73.8
+        "homeownershipRate": 73.8,
+        "housingStockAtRisk": 9.4
     },
     {
         "country": "United States",
@@ -468,7 +481,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 41,
         "homeInsurancePenetration": 85,
         "dataMismatchIndex": 24,
-        "homeownershipRate": 65.5
+        "homeownershipRate": 65.5,
+        "housingStockAtRisk": 22.8
     },
     {
         "country": "Belgium",
@@ -499,7 +513,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 35,
         "homeInsurancePenetration": 81,
         "dataMismatchIndex": 11,
-        "homeownershipRate": 72.8
+        "homeownershipRate": 72.8,
+        "housingStockAtRisk": 14.6
     },
     {
         "country": "France",
@@ -530,7 +545,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 28,
         "homeInsurancePenetration": 89,
         "dataMismatchIndex": 22,
-        "homeownershipRate": 64.9
+        "homeownershipRate": 64.9,
+        "housingStockAtRisk": 18.6
     },
     {
         "country": "Japan",
@@ -561,7 +577,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 38,
         "homeInsurancePenetration": 71,
         "dataMismatchIndex": 28,
-        "homeownershipRate": 61.2
+        "homeownershipRate": 61.2,
+        "housingStockAtRisk": 14.2
     },
     {
         "country": "Spain",
@@ -592,7 +609,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 24,
         "homeInsurancePenetration": 65,
         "dataMismatchIndex": 35,
-        "homeownershipRate": 76.1
+        "homeownershipRate": 76.1,
+        "housingStockAtRisk": 24.3
     },
     {
         "country": "Portugal",
@@ -623,7 +641,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 22,
         "homeInsurancePenetration": 58,
         "dataMismatchIndex": 32,
-        "homeownershipRate": 74.9
+        "homeownershipRate": 74.9,
+        "housingStockAtRisk": 28.7
     },
     {
         "country": "Ireland",
@@ -654,7 +673,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 34,
         "homeInsurancePenetration": 74,
         "dataMismatchIndex": 19,
-        "homeownershipRate": 70.1
+        "homeownershipRate": 70.1,
+        "housingStockAtRisk": 17.8
     },
     {
         "country": "Austria",
@@ -685,7 +705,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 28,
         "homeInsurancePenetration": 79,
         "dataMismatchIndex": 10,
-        "homeownershipRate": 55.2
+        "homeownershipRate": 55.2,
+        "housingStockAtRisk": 13.7
     },
     {
         "country": "Germany",
@@ -716,7 +737,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 26,
         "homeInsurancePenetration": 86,
         "dataMismatchIndex": 14,
-        "homeownershipRate": 51.5
+        "homeownershipRate": 51.5,
+        "housingStockAtRisk": 12.3
     },
     {
         "country": "Estonia",
@@ -747,7 +769,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 24,
         "homeInsurancePenetration": 62,
         "dataMismatchIndex": 28,
-        "homeownershipRate": 81.5
+        "homeownershipRate": 81.5,
+        "housingStockAtRisk": 13.8
     },
     {
         "country": "Slovenia",
@@ -778,7 +801,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 14,
         "homeInsurancePenetration": 45,
         "dataMismatchIndex": 31,
-        "homeownershipRate": 76.3
+        "homeownershipRate": 76.3,
+        "housingStockAtRisk": 21.3
     },
     {
         "country": "Italy",
@@ -809,7 +833,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 15,
         "homeInsurancePenetration": 42,
         "dataMismatchIndex": 38,
-        "homeownershipRate": 72.9
+        "homeownershipRate": 72.9,
+        "housingStockAtRisk": 34.2
     },
     {
         "country": "Israel",
@@ -840,7 +865,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 30,
         "homeInsurancePenetration": 67,
         "dataMismatchIndex": 23,
-        "homeownershipRate": 66.8
+        "homeownershipRate": 66.8,
+        "housingStockAtRisk": 11.6
     },
     {
         "country": "Czech Republic",
@@ -871,7 +897,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 20,
         "homeInsurancePenetration": 56,
         "dataMismatchIndex": 29,
-        "homeownershipRate": 78.3
+        "homeownershipRate": 78.3,
+        "housingStockAtRisk": 16.8
     },
     {
         "country": "Greece",
@@ -902,7 +929,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 12,
         "homeInsurancePenetration": 35,
         "dataMismatchIndex": 42,
-        "homeownershipRate": 72.4
+        "homeownershipRate": 72.4,
+        "housingStockAtRisk": 35.6
     },
     {
         "country": "Poland",
@@ -933,7 +961,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 18,
         "homeInsurancePenetration": 52,
         "dataMismatchIndex": 36,
-        "homeownershipRate": 84.2
+        "homeownershipRate": 84.2,
+        "housingStockAtRisk": 15.4
     },
     {
         "country": "Slovakia",
@@ -964,7 +993,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 15,
         "homeInsurancePenetration": 41,
         "dataMismatchIndex": 34,
-        "homeownershipRate": 90.3
+        "homeownershipRate": 90.3,
+        "housingStockAtRisk": 18.2
     },
     {
         "country": "Chile",
@@ -995,7 +1025,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 22,
         "homeInsurancePenetration": 52,
         "dataMismatchIndex": 34,
-        "homeownershipRate": 63.8
+        "homeownershipRate": 63.8,
+        "housingStockAtRisk": 18.4
     },
     {
         "country": "Hungary",
@@ -1026,7 +1057,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 16,
         "homeInsurancePenetration": 48,
         "dataMismatchIndex": 37,
-        "homeownershipRate": 91.3
+        "homeownershipRate": 91.3,
+        "housingStockAtRisk": 17.5
     },
     {
         "country": "Latvia",
@@ -1057,7 +1089,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 20,
         "homeInsurancePenetration": 54,
         "dataMismatchIndex": 39,
-        "homeownershipRate": 81.4
+        "homeownershipRate": 81.4,
+        "housingStockAtRisk": 14.9
     },
     {
         "country": "Lithuania",
@@ -1088,7 +1121,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 19,
         "homeInsurancePenetration": 51,
         "dataMismatchIndex": 37,
-        "homeownershipRate": 90.6
+        "homeownershipRate": 90.6,
+        "housingStockAtRisk": 15.6
     },
     {
         "country": "Turkey",
@@ -1119,7 +1153,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 15,
         "homeInsurancePenetration": 38,
         "dataMismatchIndex": 53,
-        "homeownershipRate": 59.2
+        "homeownershipRate": 59.2,
+        "housingStockAtRisk": 54.8
     },
     {
         "country": "Mexico",
@@ -1150,7 +1185,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 14,
         "homeInsurancePenetration": 34,
         "dataMismatchIndex": 58,
-        "homeownershipRate": 62.1
+        "homeownershipRate": 62.1,
+        "housingStockAtRisk": 42.3
     },
     {
         "country": "Costa Rica",
@@ -1181,7 +1217,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 13,
         "homeInsurancePenetration": 38,
         "dataMismatchIndex": 38,
-        "homeownershipRate": 64.2
+        "homeownershipRate": 64.2,
+        "housingStockAtRisk": 34.8
     },
     {
         "country": "Colombia",
@@ -1212,7 +1249,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 10,
         "homeInsurancePenetration": 24,
         "dataMismatchIndex": 59,
-        "homeownershipRate": 56.3
+        "homeownershipRate": 56.3,
+        "housingStockAtRisk": 39.7
     },
     {
         "country": "Brazil",
@@ -1243,7 +1281,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 11,
         "homeInsurancePenetration": 28,
         "dataMismatchIndex": 62,
-        "homeownershipRate": 75.2
+        "homeownershipRate": 75.2,
+        "housingStockAtRisk": 28.9
     },
     {
         "country": "Russia",
@@ -1304,7 +1343,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 18,
         "homeInsurancePenetration": 32,
         "dataMismatchIndex": 47,
-        "homeownershipRate": 89.7
+        "homeownershipRate": 89.7,
+        "housingStockAtRisk": 31.5
     },
     {
         "country": "Thailand",
@@ -1397,7 +1437,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 31,
         "homeInsurancePenetration": 72,
         "dataMismatchIndex": 13,
-        "homeownershipRate": 88.9
+        "homeownershipRate": 88.9,
+        "housingStockAtRisk": 8.2
     },
     {
         "country": "Philippines",
@@ -1428,7 +1469,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 4,
         "homeInsurancePenetration": 11,
         "dataMismatchIndex": 66,
-        "homeownershipRate": 83.4
+        "homeownershipRate": 83.4,
+        "housingStockAtRisk": 58.4
     },
     {
         "country": "Vietnam",
@@ -1459,7 +1501,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 5,
         "homeInsurancePenetration": 12,
         "dataMismatchIndex": 58,
-        "homeownershipRate": 90.3
+        "homeownershipRate": 90.3,
+        "housingStockAtRisk": 52.8
     },
     {
         "country": "Indonesia",
@@ -1490,7 +1533,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 3,
         "homeInsurancePenetration": 8,
         "dataMismatchIndex": 67,
-        "homeownershipRate": 78.5
+        "homeownershipRate": 78.5,
+        "housingStockAtRisk": 56.2
     },
     {
         "country": "India",
@@ -1521,7 +1565,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 4,
         "homeInsurancePenetration": 6,
         "dataMismatchIndex": 64,
-        "homeownershipRate": 86.8
+        "homeownershipRate": 86.8,
+        "housingStockAtRisk": 48.6
     },
     {
         "country": "Argentina",
@@ -1552,7 +1597,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 6,
         "homeInsurancePenetration": 18,
         "dataMismatchIndex": 56,
-        "homeownershipRate": 69.5
+        "homeownershipRate": 69.5,
+        "housingStockAtRisk": 26.8
     },
     {
         "country": "Pakistan",
@@ -1583,7 +1629,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 4,
         "dataMismatchIndex": 69,
-        "homeownershipRate": 85.7
+        "homeownershipRate": 85.7,
+        "housingStockAtRisk": 59.7
     },
     {
         "country": "Bangladesh",
@@ -1614,7 +1661,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 2,
         "dataMismatchIndex": 71,
-        "homeownershipRate": 88.2
+        "homeownershipRate": 88.2,
+        "housingStockAtRisk": 71.8
     },
     {
         "country": "United Arab Emirates",
@@ -1645,7 +1693,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 18,
         "homeInsurancePenetration": 45,
         "dataMismatchIndex": 37,
-        "homeownershipRate": 23.1
+        "homeownershipRate": 23.1,
+        "housingStockAtRisk": 6.8
     },
     {
         "country": "Saudi Arabia",
@@ -1676,7 +1725,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 12,
         "homeInsurancePenetration": 28,
         "dataMismatchIndex": 44,
-        "homeownershipRate": 62.4
+        "homeownershipRate": 62.4,
+        "housingStockAtRisk": 7.4
     },
     {
         "country": "Iceland",
@@ -1707,7 +1757,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 32100,
         "homeInsurancePenetration": 390,
         "dataMismatchIndex": 12,
-        "homeownershipRate": 79.5
+        "homeownershipRate": 79.5,
+        "housingStockAtRisk": 18.5
     },
     {
         "country": "South Africa",
@@ -1738,7 +1789,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 22,
         "homeInsurancePenetration": 55,
         "dataMismatchIndex": 55,
-        "homeownershipRate": 53.4
+        "homeownershipRate": 53.4,
+        "housingStockAtRisk": 32.5
     },
     {
         "country": "Egypt",
@@ -1769,7 +1821,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 4,
         "homeInsurancePenetration": 8,
         "dataMismatchIndex": 59,
-        "homeownershipRate": 72.8
+        "homeownershipRate": 72.8,
+        "housingStockAtRisk": 46.3
     },
     {
         "country": "Morocco",
@@ -1800,7 +1853,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 7,
         "homeInsurancePenetration": 12,
         "dataMismatchIndex": 51,
-        "homeownershipRate": 63.2
+        "homeownershipRate": 63.2,
+        "housingStockAtRisk": 38.4
     },
     {
         "country": "Kenya",
@@ -1831,7 +1885,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 4,
         "dataMismatchIndex": 68,
-        "homeownershipRate": 71.2
+        "homeownershipRate": 71.2,
+        "housingStockAtRisk": 47.8
     },
     {
         "country": "Nigeria",
@@ -1862,7 +1917,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 2,
         "dataMismatchIndex": 77,
-        "homeownershipRate": 78.5
+        "homeownershipRate": 78.5,
+        "housingStockAtRisk": 51.6
     },
     {
         "country": "Ghana",
@@ -1893,7 +1949,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 3,
         "dataMismatchIndex": 64,
-        "homeownershipRate": 72.5
+        "homeownershipRate": 72.5,
+        "housingStockAtRisk": 39.8
     },
     {
         "country": "Ethiopia",
@@ -1924,7 +1981,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 0.5,
         "homeInsurancePenetration": 1,
         "dataMismatchIndex": 73,
-        "homeownershipRate": 86.3
+        "homeownershipRate": 86.3,
+        "housingStockAtRisk": 63.7
     },
     {
         "country": "Tanzania",
@@ -1955,7 +2013,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 2,
         "dataMismatchIndex": 71,
-        "homeownershipRate": 79.8
+        "homeownershipRate": 79.8,
+        "housingStockAtRisk": 45.7
     },
     {
         "country": "Uganda",
@@ -1986,7 +2045,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 2,
         "dataMismatchIndex": 70,
-        "homeownershipRate": 82.4
+        "homeownershipRate": 82.4,
+        "housingStockAtRisk": 44.3
     },
     {
         "country": "Rwanda",
@@ -2017,7 +2077,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 180,
         "homeInsurancePenetration": 4,
         "dataMismatchIndex": 52,
-        "homeownershipRate": 82.7
+        "homeownershipRate": 82.7,
+        "housingStockAtRisk": 38.2
     },
     {
         "country": "Zambia",
@@ -2048,7 +2109,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 140,
         "homeInsurancePenetration": 5,
         "dataMismatchIndex": 70,
-        "homeownershipRate": 73.2
+        "homeownershipRate": 73.2,
+        "housingStockAtRisk": 43.5
     },
     {
         "country": "Namibia",
@@ -2079,7 +2141,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 1800,
         "homeInsurancePenetration": 48,
         "dataMismatchIndex": 49,
-        "homeownershipRate": 61.3
+        "homeownershipRate": 61.3,
+        "housingStockAtRisk": 28.4
     },
     {
         "country": "Botswana",
@@ -2110,7 +2173,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 1400,
         "homeInsurancePenetration": 35,
         "dataMismatchIndex": 47,
-        "homeownershipRate": 58.7
+        "homeownershipRate": 58.7,
+        "housingStockAtRisk": 26.7
     },
     {
         "country": "Senegal",
@@ -2141,7 +2205,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 3,
         "dataMismatchIndex": 66,
-        "homeownershipRate": 68.3
+        "homeownershipRate": 68.3,
+        "housingStockAtRisk": 40.2
     },
     {
         "country": "Tunisia",
@@ -2172,7 +2237,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 6,
         "homeInsurancePenetration": 10,
         "dataMismatchIndex": 48,
-        "homeownershipRate": 69.8
+        "homeownershipRate": 69.8,
+        "housingStockAtRisk": 36.7
     },
     {
         "country": "Cameroon",
@@ -2203,7 +2269,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 3,
         "dataMismatchIndex": 67,
-        "homeownershipRate": 70.6
+        "homeownershipRate": 70.6,
+        "housingStockAtRisk": 42.6
     },
     {
         "country": "Ivory Coast",
@@ -2234,7 +2301,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 3,
         "homeInsurancePenetration": 4,
         "dataMismatchIndex": 69,
-        "homeownershipRate": 65.8
+        "homeownershipRate": 65.8,
+        "housingStockAtRisk": 41.5
     },
     {
         "country": "Mozambique",
@@ -2265,7 +2333,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 85,
         "homeInsurancePenetration": 2,
         "dataMismatchIndex": 73,
-        "homeownershipRate": 77.4
+        "homeownershipRate": 77.4,
+        "housingStockAtRisk": 53.4
     },
     {
         "country": "Angola",
@@ -2296,7 +2365,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 5,
         "dataMismatchIndex": 72,
-        "homeownershipRate": 69.2
+        "homeownershipRate": 69.2,
+        "housingStockAtRisk": 44.6
     },
     {
         "country": "Zimbabwe",
@@ -2327,7 +2397,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 45,
         "homeInsurancePenetration": 3,
         "dataMismatchIndex": 74,
-        "homeownershipRate": 66.8
+        "homeownershipRate": 66.8,
+        "housingStockAtRisk": 42.1
     },
     {
         "country": "Algeria",
@@ -2358,7 +2429,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 3,
         "homeInsurancePenetration": 6,
         "dataMismatchIndex": 56,
-        "homeownershipRate": 67.5
+        "homeownershipRate": 67.5,
+        "housingStockAtRisk": 41.2
     },
     {
         "country": "Sudan",
@@ -2420,7 +2492,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 4100,
         "homeInsurancePenetration": 72,
         "dataMismatchIndex": 38,
-        "homeownershipRate": 72.1
+        "homeownershipRate": 72.1,
+        "housingStockAtRisk": 35.6
     },
     {
         "country": "Malawi",
@@ -2451,7 +2524,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 70,
         "homeInsurancePenetration": 2,
         "dataMismatchIndex": 69,
-        "homeownershipRate": 80.4
+        "homeownershipRate": 80.4,
+        "housingStockAtRisk": 46.9
     },
     {
         "country": "Benin",
@@ -2590,7 +2664,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 55,
         "homeInsurancePenetration": 1,
         "dataMismatchIndex": 72,
-        "homeownershipRate": 81.6
+        "homeownershipRate": 81.6,
+        "housingStockAtRisk": 56.8
     },
     {
         "country": "Congo",
@@ -2678,7 +2753,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 6,
         "homeInsurancePenetration": 18,
         "dataMismatchIndex": 53,
-        "homeownershipRate": 87.5
+        "homeownershipRate": 87.5,
+        "housingStockAtRisk": 24.8
     },
     {
         "country": "Croatia",
@@ -2709,7 +2785,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 10,
         "homeInsurancePenetration": 28,
         "dataMismatchIndex": 48,
-        "homeownershipRate": 89.7
+        "homeownershipRate": 89.7,
+        "housingStockAtRisk": 26.4
     },
     {
         "country": "Peru",
@@ -2740,7 +2817,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 8,
         "homeInsurancePenetration": 19,
         "dataMismatchIndex": 54,
-        "homeownershipRate": 73.4
+        "homeownershipRate": 73.4,
+        "housingStockAtRisk": 38.6
     },
     {
         "country": "Cambodia",
@@ -2771,7 +2849,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 4,
         "dataMismatchIndex": 65,
-        "homeownershipRate": 79.4
+        "homeownershipRate": 79.4,
+        "housingStockAtRisk": 54.6
     },
     {
         "country": "Nepal",
@@ -2802,7 +2881,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 2,
         "homeInsurancePenetration": 5,
         "dataMismatchIndex": 63,
-        "homeownershipRate": 88.5
+        "homeownershipRate": 88.5,
+        "housingStockAtRisk": 76.3
     },
     {
         "country": "Myanmar",
@@ -2833,7 +2913,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 1,
         "homeInsurancePenetration": 3,
         "dataMismatchIndex": 69,
-        "homeownershipRate": 82.1
+        "homeownershipRate": 82.1,
+        "housingStockAtRisk": 69.4
     }
 ];
 
