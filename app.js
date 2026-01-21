@@ -225,6 +225,14 @@ const layerConfig = {
         scale: [0, 100],
         unit: ' data reliability',
         reversed: false  // Higher is worse - more data inconsistencies
+    },
+    homeownershipRate: {
+        title: 'Homeownership Rate',
+        description: 'Percentage of households that own their home rather than rent (18%-96%). High ownership (dark green): Eastern Europe 85-96% (post-communist privatization), Asia 85-90% (cultural preference). Medium (yellow): Anglo countries 60-70%, balanced tenure mix. Low (red): Germany 52%, Switzerland 42% (strong rental cultures). Reveals housing tenure patterns, wealth building opportunities, and rental market development.',
+        dataKey: 'homeownershipRate',
+        scale: [18, 96],
+        unit: '% own',
+        reversed: true  // Higher is better - more ownership
     }
 };
 
@@ -736,6 +744,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Mortgage Penetration:</strong> ${countryData.mortgagePenetrationPerCapita}% of households have mortgages</p>
             <p><strong>Home Insurance:</strong> ${countryData.homeInsurancePenetration}% of households insured</p>
             <p><strong>Data Quality Index:</strong> ${countryData.dataMismatchIndex}/100 (${countryData.dataMismatchIndex < 20 ? 'excellent' : countryData.dataMismatchIndex < 40 ? 'good' : countryData.dataMismatchIndex < 60 ? 'moderate' : countryData.dataMismatchIndex < 75 ? 'challenged' : 'severe gaps'})</p>
+            <p><strong>Homeownership Rate:</strong> ${countryData.homeownershipRate ? countryData.homeownershipRate.toFixed(1) + '% of households own' : 'N/A'}</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
