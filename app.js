@@ -241,6 +241,22 @@ const layerConfig = {
         scale: [5, 85],
         unit: '% at risk',
         reversed: false  // Higher is worse - more vulnerability
+    },
+    affordabilityTrend: {
+        title: 'Affordability Trend (2019-2025)',
+        description: 'Housing affordability change from 2019-2025. Scale: -10 (severe worsening) to +10 (improving). Negative (red) = prices rising faster than incomes. Positive (green) = improving affordability. Most countries worsening: New Zealand -9.6 (worst), Canada -9.2, Australia -8.8, USA -8.4. Rare improvers: Venezuela +2.4 (economic collapse paradox). Based on price-to-income changes, wage growth, interest rates, policy interventions.',
+        dataKey: 'affordabilityTrend',
+        scale: [-10, 3],
+        unit: ' trend',
+        reversed: true  // Higher (positive) is better - improving affordability
+    },
+    housingUnaffordabilityRate: {
+        title: 'Housing Unaffordability Rate',
+        description: 'Percentage of households unable to afford a basic formal house (using 30% income rule). Very High (red): Haiti 88%, Madagascar 86%, Ethiopia 85%, Bangladesh 82% - most rely on informal housing. High: Nigeria 84%, Kenya 79%, India 68% - formal housing elite market. Moderate: USA 38%, UK 43%, Germany 35%. Low (green): Singapore 24% (HDB model), Qatar 29%, Japan 28%. Shows housing accessibility crisis in developing countries and squeezed middle class in developed nations.',
+        dataKey: 'housingUnaffordabilityRate',
+        scale: [20, 90],
+        unit: '% cannot afford',
+        reversed: false  // Higher is worse - more households priced out
     }
 };
 
@@ -754,6 +770,8 @@ function updateStatsPanel(countryData) {
             <p><strong>Data Quality Index:</strong> ${countryData.dataMismatchIndex}/100 (${countryData.dataMismatchIndex < 20 ? 'excellent' : countryData.dataMismatchIndex < 40 ? 'good' : countryData.dataMismatchIndex < 60 ? 'moderate' : countryData.dataMismatchIndex < 75 ? 'challenged' : 'severe gaps'})</p>
             <p><strong>Homeownership Rate:</strong> ${countryData.homeownershipRate ? countryData.homeownershipRate.toFixed(1) + '% of households own' : 'N/A'}</p>
             <p><strong>Housing at Disaster Risk:</strong> ${countryData.housingStockAtRisk ? countryData.housingStockAtRisk.toFixed(1) + '% vulnerable to collapse' : 'N/A'}</p>
+            <p><strong>Affordability Trend (2019-2025):</strong> ${countryData.affordabilityTrend ? (countryData.affordabilityTrend > 0 ? '+' : '') + countryData.affordabilityTrend.toFixed(1) + (countryData.affordabilityTrend < -5 ? ' (severe worsening)' : countryData.affordabilityTrend < 0 ? ' (worsening)' : countryData.affordabilityTrend > 0 ? ' (improving)' : ' (stable)') : 'N/A'}</p>
+            <p><strong>Cannot Afford Basic Housing:</strong> ${countryData.housingUnaffordabilityRate ? countryData.housingUnaffordabilityRate.toFixed(1) + '% of households' : 'N/A'}</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>
