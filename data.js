@@ -2884,7 +2884,7 @@ const housingData = [
         "dataMismatchIndex": 69,
         "homeownershipRate": 82.1,
         "housingStockAtRisk": 69.4
-    }
+    },
     {
         "country": "Guatemala",
         "iso": "GTM",
