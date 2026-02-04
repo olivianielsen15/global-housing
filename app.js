@@ -257,6 +257,14 @@ const layerConfig = {
         scale: [20, 90],
         unit: '% cannot afford',
         reversed: false  // Higher is worse - more households priced out
+    },
+    programTargetingEfficiency: {
+        title: 'Housing Program Targeting Efficiency',
+        description: 'How well housing subsidies reach intended beneficiaries (0-100 scale). Excellent (dark green): Singapore 91.2 (HDB strict income limits), Chile 87.4 (Subsidio Habitacional), Netherlands 84.8, Indonesia 82.6 (BSPS home improvement grants). Good: Brazil 72.4, South Africa 72.8. Mixed: USA 58.2 (Section 8 good, mortgage deduction regressive), China 56.4 (connections matter). Poor (red): Venezuela 32.4 (political allocation), Angola 34.2 (elite capture), Haiti 29.6. Evaluates mortgage subsidies, home improvement grants, rental assistance, construction subsidies, land programs.',
+        dataKey: 'programTargetingEfficiency',
+        scale: [28, 92],
+        unit: ' targeting score',
+        reversed: true  // Higher is better - better targeting to poor/middle class
     }
 };
 
@@ -772,6 +780,7 @@ function updateStatsPanel(countryData) {
             <p><strong>Housing at Disaster Risk:</strong> ${countryData.housingStockAtRisk ? countryData.housingStockAtRisk.toFixed(1) + '% vulnerable to collapse' : 'N/A'}</p>
             <p><strong>Affordability Trend (2019-2025):</strong> ${countryData.affordabilityTrend ? (countryData.affordabilityTrend > 0 ? '+' : '') + countryData.affordabilityTrend.toFixed(1) + (countryData.affordabilityTrend < -5 ? ' (severe worsening)' : countryData.affordabilityTrend < 0 ? ' (worsening)' : countryData.affordabilityTrend > 0 ? ' (improving)' : ' (stable)') : 'N/A'}</p>
             <p><strong>Cannot Afford Basic Housing:</strong> ${countryData.housingUnaffordabilityRate ? countryData.housingUnaffordabilityRate.toFixed(1) + '% of households' : 'N/A'}</p>
+            <p><strong>Program Targeting Efficiency:</strong> ${countryData.programTargetingEfficiency ? countryData.programTargetingEfficiency.toFixed(1) + '/100 (' + (countryData.programTargetingEfficiency >= 75 ? 'excellent' : countryData.programTargetingEfficiency >= 60 ? 'good' : countryData.programTargetingEfficiency >= 45 ? 'moderate' : countryData.programTargetingEfficiency >= 30 ? 'poor' : 'very poor') + ')' : 'N/A'}</p>
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
             </p>

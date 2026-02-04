@@ -39,7 +39,8 @@ const housingData = [
         "homeownershipRate": 42.2,
         "housingStockAtRisk": 9.8,
         "affordabilityTrend": -5.2,
-        "housingUnaffordabilityRate": 24.8
+        "housingUnaffordabilityRate": 24.8,
+        "programTargetingEfficiency": 54.6
     },
     {
         "country": "Australia",
@@ -73,7 +74,8 @@ const housingData = [
         "homeownershipRate": 66.5,
         "housingStockAtRisk": 24.7,
         "affordabilityTrend": -8.8,
-        "housingUnaffordabilityRate": 48.4
+        "housingUnaffordabilityRate": 48.4,
+        "programTargetingEfficiency": 66.4
     },
     {
         "country": "Denmark",
@@ -107,7 +109,8 @@ const housingData = [
         "homeownershipRate": 60.4,
         "housingStockAtRisk": 12.1,
         "affordabilityTrend": -5.8,
-        "housingUnaffordabilityRate": 31.8
+        "housingUnaffordabilityRate": 31.8,
+        "programTargetingEfficiency": 83.2
     },
     {
         "country": "Cyprus",
@@ -171,7 +174,8 @@ const housingData = [
         "homeownershipRate": 69.2,
         "housingStockAtRisk": 15.2,
         "affordabilityTrend": -7.6,
-        "housingUnaffordabilityRate": 36.4
+        "housingUnaffordabilityRate": 36.4,
+        "programTargetingEfficiency": 84.8
     },
     {
         "country": "Canada",
@@ -205,7 +209,8 @@ const housingData = [
         "homeownershipRate": 68.5,
         "housingStockAtRisk": 16.8,
         "affordabilityTrend": -9.2,
-        "housingUnaffordabilityRate": 46.2
+        "housingUnaffordabilityRate": 46.2,
+        "programTargetingEfficiency": 67.8
     },
     {
         "country": "South Korea",
@@ -239,7 +244,8 @@ const housingData = [
         "homeownershipRate": 57.3,
         "housingStockAtRisk": 12.6,
         "affordabilityTrend": -6.6,
-        "housingUnaffordabilityRate": 42.8
+        "housingUnaffordabilityRate": 42.8,
+        "programTargetingEfficiency": 73.2
     },
     {
         "country": "Norway",
@@ -273,7 +279,8 @@ const housingData = [
         "homeownershipRate": 82.7,
         "housingStockAtRisk": 11.2,
         "affordabilityTrend": -6.2,
-        "housingUnaffordabilityRate": 32.4
+        "housingUnaffordabilityRate": 32.4,
+        "programTargetingEfficiency": 74.2
     },
     {
         "country": "Sweden",
@@ -307,7 +314,8 @@ const housingData = [
         "homeownershipRate": 64.1,
         "housingStockAtRisk": 10.7,
         "affordabilityTrend": -6.8,
-        "housingUnaffordabilityRate": 36.2
+        "housingUnaffordabilityRate": 36.2,
+        "programTargetingEfficiency": 81.6
     },
     {
         "country": "New Zealand",
@@ -341,7 +349,8 @@ const housingData = [
         "homeownershipRate": 64.5,
         "housingStockAtRisk": 19.3,
         "affordabilityTrend": -9.6,
-        "housingUnaffordabilityRate": 54.8
+        "housingUnaffordabilityRate": 54.8,
+        "programTargetingEfficiency": 65.2
     },
     {
         "country": "Luxembourg",
@@ -375,7 +384,8 @@ const housingData = [
         "homeownershipRate": 73.2,
         "housingStockAtRisk": 11.4,
         "affordabilityTrend": -6.4,
-        "housingUnaffordabilityRate": 28.2
+        "housingUnaffordabilityRate": 28.2,
+        "programTargetingEfficiency": 52.4
     },
     {
         "country": "United Kingdom",
@@ -409,7 +419,8 @@ const housingData = [
         "homeownershipRate": 65.2,
         "housingStockAtRisk": 16.3,
         "affordabilityTrend": -7.8,
-        "housingUnaffordabilityRate": 42.6
+        "housingUnaffordabilityRate": 42.6,
+        "programTargetingEfficiency": 71.6
     },
     {
         "country": "Finland",
@@ -443,7 +454,8 @@ const housingData = [
         "homeownershipRate": 73.8,
         "housingStockAtRisk": 9.4,
         "affordabilityTrend": -4.2,
-        "housingUnaffordabilityRate": 28.6
+        "housingUnaffordabilityRate": 28.6,
+        "programTargetingEfficiency": 80.4
     },
     {
         "country": "United States",
@@ -477,7 +489,8 @@ const housingData = [
         "homeownershipRate": 65.5,
         "housingStockAtRisk": 22.8,
         "affordabilityTrend": -8.4,
-        "housingUnaffordabilityRate": 38.4
+        "housingUnaffordabilityRate": 38.4,
+        "programTargetingEfficiency": 58.2
     },
     {
         "country": "Belgium",
@@ -511,7 +524,8 @@ const housingData = [
         "homeownershipRate": 72.8,
         "housingStockAtRisk": 14.6,
         "affordabilityTrend": -4.8,
-        "housingUnaffordabilityRate": 32.6
+        "housingUnaffordabilityRate": 32.6,
+        "programTargetingEfficiency": 72.2
     },
     {
         "country": "France",
@@ -545,7 +559,8 @@ const housingData = [
         "homeownershipRate": 64.9,
         "housingStockAtRisk": 18.6,
         "affordabilityTrend": -5.4,
-        "housingUnaffordabilityRate": 32.8
+        "housingUnaffordabilityRate": 32.8,
+        "programTargetingEfficiency": 73.8
     },
     {
         "country": "Japan",
@@ -579,7 +594,8 @@ const housingData = [
         "homeownershipRate": 61.2,
         "housingStockAtRisk": 14.2,
         "affordabilityTrend": -1.2,
-        "housingUnaffordabilityRate": 28.4
+        "housingUnaffordabilityRate": 28.4,
+        "programTargetingEfficiency": 75.6
     },
     {
         "country": "Spain",
@@ -613,7 +629,8 @@ const housingData = [
         "homeownershipRate": 76.1,
         "housingStockAtRisk": 24.3,
         "affordabilityTrend": -4.2,
-        "housingUnaffordabilityRate": 36.8
+        "housingUnaffordabilityRate": 36.8,
+        "programTargetingEfficiency": 68.2
     },
     {
         "country": "Portugal",
@@ -647,7 +664,8 @@ const housingData = [
         "homeownershipRate": 74.9,
         "housingStockAtRisk": 28.7,
         "affordabilityTrend": -6.8,
-        "housingUnaffordabilityRate": 42.4
+        "housingUnaffordabilityRate": 42.4,
+        "programTargetingEfficiency": 66.8
     },
     {
         "country": "Ireland",
@@ -681,7 +699,8 @@ const housingData = [
         "homeownershipRate": 70.1,
         "housingStockAtRisk": 17.8,
         "affordabilityTrend": -8.2,
-        "housingUnaffordabilityRate": 44.8
+        "housingUnaffordabilityRate": 44.8,
+        "programTargetingEfficiency": 68.4
     },
     {
         "country": "Austria",
@@ -715,7 +734,8 @@ const housingData = [
         "homeownershipRate": 55.2,
         "housingStockAtRisk": 13.7,
         "affordabilityTrend": -4.6,
-        "housingUnaffordabilityRate": 26.4
+        "housingUnaffordabilityRate": 26.4,
+        "programTargetingEfficiency": 82.8
     },
     {
         "country": "Germany",
@@ -749,7 +769,8 @@ const housingData = [
         "homeownershipRate": 51.5,
         "housingStockAtRisk": 12.3,
         "affordabilityTrend": -6.4,
-        "housingUnaffordabilityRate": 34.8
+        "housingUnaffordabilityRate": 34.8,
+        "programTargetingEfficiency": 70.6
     },
     {
         "country": "Estonia",
@@ -851,7 +872,8 @@ const housingData = [
         "homeownershipRate": 72.9,
         "housingStockAtRisk": 34.2,
         "affordabilityTrend": -3.4,
-        "housingUnaffordabilityRate": 34.2
+        "housingUnaffordabilityRate": 34.2,
+        "programTargetingEfficiency": 62.4
     },
     {
         "country": "Israel",
@@ -919,7 +941,8 @@ const housingData = [
         "homeownershipRate": 78.3,
         "housingStockAtRisk": 16.8,
         "affordabilityTrend": -4.4,
-        "housingUnaffordabilityRate": 36.4
+        "housingUnaffordabilityRate": 36.4,
+        "programTargetingEfficiency": 66.6
     },
     {
         "country": "Greece",
@@ -987,7 +1010,8 @@ const housingData = [
         "homeownershipRate": 84.2,
         "housingStockAtRisk": 15.4,
         "affordabilityTrend": -5.2,
-        "housingUnaffordabilityRate": 38.2
+        "housingUnaffordabilityRate": 38.2,
+        "programTargetingEfficiency": 64.2
     },
     {
         "country": "Slovakia",
@@ -1055,7 +1079,8 @@ const housingData = [
         "homeownershipRate": 63.8,
         "housingStockAtRisk": 18.4,
         "affordabilityTrend": -5.8,
-        "housingUnaffordabilityRate": 46.2
+        "housingUnaffordabilityRate": 46.2,
+        "programTargetingEfficiency": 87.4
     },
     {
         "country": "Hungary",
@@ -1089,7 +1114,8 @@ const housingData = [
         "homeownershipRate": 91.3,
         "housingStockAtRisk": 17.5,
         "affordabilityTrend": -4.6,
-        "housingUnaffordabilityRate": 34.8
+        "housingUnaffordabilityRate": 34.8,
+        "programTargetingEfficiency": 61.8
     },
     {
         "country": "Latvia",
@@ -1191,7 +1217,8 @@ const housingData = [
         "homeownershipRate": 59.2,
         "housingStockAtRisk": 54.8,
         "affordabilityTrend": -6.8,
-        "housingUnaffordabilityRate": 52.6
+        "housingUnaffordabilityRate": 52.6,
+        "programTargetingEfficiency": 58.6
     },
     {
         "country": "Mexico",
@@ -1225,7 +1252,8 @@ const housingData = [
         "homeownershipRate": 62.1,
         "housingStockAtRisk": 42.3,
         "affordabilityTrend": -5.4,
-        "housingUnaffordabilityRate": 62.8
+        "housingUnaffordabilityRate": 62.8,
+        "programTargetingEfficiency": 68.6
     },
     {
         "country": "Costa Rica",
@@ -1259,7 +1287,8 @@ const housingData = [
         "homeownershipRate": 64.2,
         "housingStockAtRisk": 34.8,
         "affordabilityTrend": -5.2,
-        "housingUnaffordabilityRate": 42.8
+        "housingUnaffordabilityRate": 42.8,
+        "programTargetingEfficiency": 76.2
     },
     {
         "country": "Colombia",
@@ -1293,7 +1322,8 @@ const housingData = [
         "homeownershipRate": 56.3,
         "housingStockAtRisk": 39.7,
         "affordabilityTrend": -4.8,
-        "housingUnaffordabilityRate": 61.2
+        "housingUnaffordabilityRate": 61.2,
+        "programTargetingEfficiency": 69.8
     },
     {
         "country": "Brazil",
@@ -1327,7 +1357,8 @@ const housingData = [
         "homeownershipRate": 75.2,
         "housingStockAtRisk": 28.9,
         "affordabilityTrend": -4.6,
-        "housingUnaffordabilityRate": 58.4
+        "housingUnaffordabilityRate": 58.4,
+        "programTargetingEfficiency": 72.4
     },
     {
         "country": "Russia",
@@ -1391,7 +1422,8 @@ const housingData = [
         "homeownershipRate": 89.7,
         "housingStockAtRisk": 31.5,
         "affordabilityTrend": -4.8,
-        "housingUnaffordabilityRate": 52.4
+        "housingUnaffordabilityRate": 52.4,
+        "programTargetingEfficiency": 56.4
     },
     {
         "country": "Thailand",
@@ -1487,7 +1519,8 @@ const housingData = [
         "homeownershipRate": 88.9,
         "housingStockAtRisk": 8.2,
         "affordabilityTrend": -7.8,
-        "housingUnaffordabilityRate": 24.2
+        "housingUnaffordabilityRate": 24.2,
+        "programTargetingEfficiency": 91.2
     },
     {
         "country": "Philippines",
@@ -1521,7 +1554,8 @@ const housingData = [
         "homeownershipRate": 83.4,
         "housingStockAtRisk": 58.4,
         "affordabilityTrend": -5.4,
-        "housingUnaffordabilityRate": 72.6
+        "housingUnaffordabilityRate": 72.6,
+        "programTargetingEfficiency": 67.2
     },
     {
         "country": "Vietnam",
@@ -1555,7 +1589,8 @@ const housingData = [
         "homeownershipRate": 90.3,
         "housingStockAtRisk": 52.8,
         "affordabilityTrend": -5.8,
-        "housingUnaffordabilityRate": 58.6
+        "housingUnaffordabilityRate": 58.6,
+        "programTargetingEfficiency": 66.8
     },
     {
         "country": "Indonesia",
@@ -1589,7 +1624,8 @@ const housingData = [
         "homeownershipRate": 78.5,
         "housingStockAtRisk": 56.2,
         "affordabilityTrend": -5.2,
-        "housingUnaffordabilityRate": 69.8
+        "housingUnaffordabilityRate": 69.8,
+        "programTargetingEfficiency": 82.6
     },
     {
         "country": "India",
@@ -1623,7 +1659,8 @@ const housingData = [
         "homeownershipRate": 86.8,
         "housingStockAtRisk": 48.6,
         "affordabilityTrend": -6.2,
-        "housingUnaffordabilityRate": 68.4
+        "housingUnaffordabilityRate": 68.4,
+        "programTargetingEfficiency": 64.6
     },
     {
         "country": "Argentina",
@@ -1657,7 +1694,8 @@ const housingData = [
         "homeownershipRate": 69.5,
         "housingStockAtRisk": 26.8,
         "affordabilityTrend": -2.2,
-        "housingUnaffordabilityRate": 48.4
+        "housingUnaffordabilityRate": 48.4,
+        "programTargetingEfficiency": 56.8
     },
     {
         "country": "Pakistan",
@@ -1691,7 +1729,8 @@ const housingData = [
         "homeownershipRate": 85.7,
         "housingStockAtRisk": 59.7,
         "affordabilityTrend": -4.2,
-        "housingUnaffordabilityRate": 76.8
+        "housingUnaffordabilityRate": 76.8,
+        "programTargetingEfficiency": 46.8
     },
     {
         "country": "Bangladesh",
@@ -1725,7 +1764,8 @@ const housingData = [
         "homeownershipRate": 88.2,
         "housingStockAtRisk": 71.8,
         "affordabilityTrend": -4.8,
-        "housingUnaffordabilityRate": 82.4
+        "housingUnaffordabilityRate": 82.4,
+        "programTargetingEfficiency": 52.6
     },
     {
         "country": "United Arab Emirates",
@@ -1759,7 +1799,8 @@ const housingData = [
         "homeownershipRate": 23.1,
         "housingStockAtRisk": 6.8,
         "affordabilityTrend": -4.6,
-        "housingUnaffordabilityRate": 32.4
+        "housingUnaffordabilityRate": 32.4,
+        "programTargetingEfficiency": 58.4
     },
     {
         "country": "Saudi Arabia",
@@ -1793,7 +1834,8 @@ const housingData = [
         "homeownershipRate": 62.4,
         "housingStockAtRisk": 7.4,
         "affordabilityTrend": -3.4,
-        "housingUnaffordabilityRate": 34.6
+        "housingUnaffordabilityRate": 34.6,
+        "programTargetingEfficiency": 62.8
     },
     {
         "country": "Iceland",
@@ -1827,7 +1869,8 @@ const housingData = [
         "homeownershipRate": 79.5,
         "housingStockAtRisk": 18.5,
         "affordabilityTrend": -7.4,
-        "housingUnaffordabilityRate": 34.6
+        "housingUnaffordabilityRate": 34.6,
+        "programTargetingEfficiency": 56.8
     },
     {
         "country": "South Africa",
@@ -1861,7 +1904,8 @@ const housingData = [
         "homeownershipRate": 53.4,
         "housingStockAtRisk": 32.5,
         "affordabilityTrend": -4.6,
-        "housingUnaffordabilityRate": 56.2
+        "housingUnaffordabilityRate": 56.2,
+        "programTargetingEfficiency": 72.8
     },
     {
         "country": "Egypt",
@@ -1895,7 +1939,8 @@ const housingData = [
         "homeownershipRate": 72.8,
         "housingStockAtRisk": 46.3,
         "affordabilityTrend": -5.4,
-        "housingUnaffordabilityRate": 64.2
+        "housingUnaffordabilityRate": 64.2,
+        "programTargetingEfficiency": 58.4
     },
     {
         "country": "Morocco",
@@ -1929,7 +1974,8 @@ const housingData = [
         "homeownershipRate": 63.2,
         "housingStockAtRisk": 38.4,
         "affordabilityTrend": -4.2,
-        "housingUnaffordabilityRate": 54.6
+        "housingUnaffordabilityRate": 54.6,
+        "programTargetingEfficiency": 62.6
     },
     {
         "country": "Kenya",
@@ -1963,7 +2009,8 @@ const housingData = [
         "homeownershipRate": 71.2,
         "housingStockAtRisk": 47.8,
         "affordabilityTrend": -4.8,
-        "housingUnaffordabilityRate": 78.6
+        "housingUnaffordabilityRate": 78.6,
+        "programTargetingEfficiency": 38.4
     },
     {
         "country": "Nigeria",
@@ -1997,7 +2044,8 @@ const housingData = [
         "homeownershipRate": 78.5,
         "housingStockAtRisk": 51.6,
         "affordabilityTrend": -5.2,
-        "housingUnaffordabilityRate": 84.2
+        "housingUnaffordabilityRate": 84.2,
+        "programTargetingEfficiency": 36.8
     },
     {
         "country": "Ghana",
@@ -2031,7 +2079,8 @@ const housingData = [
         "homeownershipRate": 72.5,
         "housingStockAtRisk": 39.8,
         "affordabilityTrend": -4.4,
-        "housingUnaffordabilityRate": 72.4
+        "housingUnaffordabilityRate": 72.4,
+        "programTargetingEfficiency": 42.6
     },
     {
         "country": "Ethiopia",
@@ -2065,7 +2114,8 @@ const housingData = [
         "homeownershipRate": 86.3,
         "housingStockAtRisk": 63.7,
         "affordabilityTrend": -3.8,
-        "housingUnaffordabilityRate": 85.2
+        "housingUnaffordabilityRate": 85.2,
+        "programTargetingEfficiency": 38.6
     },
     {
         "country": "Tanzania",
@@ -2099,7 +2149,8 @@ const housingData = [
         "homeownershipRate": 79.8,
         "housingStockAtRisk": 45.7,
         "affordabilityTrend": -4.2,
-        "housingUnaffordabilityRate": 81.4
+        "housingUnaffordabilityRate": 81.4,
+        "programTargetingEfficiency": 37.8
     },
     {
         "country": "Uganda",
@@ -2133,7 +2184,8 @@ const housingData = [
         "homeownershipRate": 82.4,
         "housingStockAtRisk": 44.3,
         "affordabilityTrend": -3.8,
-        "housingUnaffordabilityRate": 82.6
+        "housingUnaffordabilityRate": 82.6,
+        "programTargetingEfficiency": 36.4
     },
     {
         "country": "Rwanda",
@@ -2199,7 +2251,8 @@ const housingData = [
         "homeownershipRate": 73.2,
         "housingStockAtRisk": 43.5,
         "affordabilityTrend": -3.6,
-        "housingUnaffordabilityRate": 79.6
+        "housingUnaffordabilityRate": 79.6,
+        "programTargetingEfficiency": 38.2
     },
     {
         "country": "Namibia",
@@ -2297,7 +2350,8 @@ const housingData = [
         "homeownershipRate": 68.3,
         "housingStockAtRisk": 40.2,
         "affordabilityTrend": -3.6,
-        "housingUnaffordabilityRate": 70.6
+        "housingUnaffordabilityRate": 70.6,
+        "programTargetingEfficiency": 44.2
     },
     {
         "country": "Tunisia",
@@ -2363,7 +2417,8 @@ const housingData = [
         "homeownershipRate": 70.6,
         "housingStockAtRisk": 42.6,
         "affordabilityTrend": -3.8,
-        "housingUnaffordabilityRate": 76.2
+        "housingUnaffordabilityRate": 76.2,
+        "programTargetingEfficiency": 39.6
     },
     {
         "country": "Ivory Coast",
@@ -2397,7 +2452,8 @@ const housingData = [
         "homeownershipRate": 65.8,
         "housingStockAtRisk": 41.5,
         "affordabilityTrend": -4.2,
-        "housingUnaffordabilityRate": 73.8
+        "housingUnaffordabilityRate": 73.8,
+        "programTargetingEfficiency": 41.8
     },
     {
         "country": "Mozambique",
@@ -2431,7 +2487,8 @@ const housingData = [
         "homeownershipRate": 77.4,
         "housingStockAtRisk": 53.4,
         "affordabilityTrend": -3.2,
-        "housingUnaffordabilityRate": 84.8
+        "housingUnaffordabilityRate": 84.8,
+        "programTargetingEfficiency": 35.2
     },
     {
         "country": "Angola",
@@ -2465,7 +2522,8 @@ const housingData = [
         "homeownershipRate": 69.2,
         "housingStockAtRisk": 44.6,
         "affordabilityTrend": -2.8,
-        "housingUnaffordabilityRate": 74.8
+        "housingUnaffordabilityRate": 74.8,
+        "programTargetingEfficiency": 34.2
     },
     {
         "country": "Zimbabwe",
@@ -2499,7 +2557,8 @@ const housingData = [
         "homeownershipRate": 66.8,
         "housingStockAtRisk": 42.1,
         "affordabilityTrend": -4.8,
-        "housingUnaffordabilityRate": 78.4
+        "housingUnaffordabilityRate": 78.4,
+        "programTargetingEfficiency": 34.8
     },
     {
         "country": "Algeria",
@@ -2628,7 +2687,8 @@ const housingData = [
         "homeownershipRate": 80.4,
         "housingStockAtRisk": 46.9,
         "affordabilityTrend": -3.4,
-        "housingUnaffordabilityRate": 83.2
+        "housingUnaffordabilityRate": 83.2,
+        "programTargetingEfficiency": 36.6
     },
     {
         "country": "Benin",
@@ -2770,7 +2830,8 @@ const housingData = [
         "homeownershipRate": 81.6,
         "housingStockAtRisk": 56.8,
         "affordabilityTrend": -3.2,
-        "housingUnaffordabilityRate": 86.4
+        "housingUnaffordabilityRate": 86.4,
+        "programTargetingEfficiency": 33.4
     },
     {
         "country": "Congo",
@@ -2961,7 +3022,8 @@ const housingData = [
         "homeownershipRate": 79.4,
         "housingStockAtRisk": 54.6,
         "affordabilityTrend": -4.2,
-        "housingUnaffordabilityRate": 72.8
+        "housingUnaffordabilityRate": 72.8,
+        "programTargetingEfficiency": 48.6
     },
     {
         "country": "Nepal",
@@ -2995,7 +3057,8 @@ const housingData = [
         "homeownershipRate": 88.5,
         "housingStockAtRisk": 76.3,
         "affordabilityTrend": -3.6,
-        "housingUnaffordabilityRate": 74.2
+        "housingUnaffordabilityRate": 74.2,
+        "programTargetingEfficiency": 50.4
     },
     {
         "country": "Myanmar",
@@ -3029,7 +3092,8 @@ const housingData = [
         "homeownershipRate": 82.1,
         "housingStockAtRisk": 69.4,
         "affordabilityTrend": -2.8,
-        "housingUnaffordabilityRate": 76.4
+        "housingUnaffordabilityRate": 76.4,
+        "programTargetingEfficiency": 44.2
     },
     {
         "country": "Guatemala",
@@ -3063,7 +3127,8 @@ const housingData = [
         "homeownershipRate": 68.3,
         "housingStockAtRisk": 49.5,
         "affordabilityTrend": -3.4,
-        "housingUnaffordabilityRate": 68.2
+        "housingUnaffordabilityRate": 68.2,
+        "programTargetingEfficiency": 52.8
     },
 
     {
@@ -3098,7 +3163,8 @@ const housingData = [
         "homeownershipRate": 64.8,
         "housingStockAtRisk": 48.7,
         "affordabilityTrend": -3.6,
-        "housingUnaffordabilityRate": 71.4
+        "housingUnaffordabilityRate": 71.4,
+        "programTargetingEfficiency": 51.6
     },
 
     {
@@ -3133,7 +3199,8 @@ const housingData = [
         "homeownershipRate": 66.2,
         "housingStockAtRisk": 47.3,
         "affordabilityTrend": -2.8,
-        "housingUnaffordabilityRate": 66.8
+        "housingUnaffordabilityRate": 66.8,
+        "programTargetingEfficiency": 49.8
     },
 
     {
@@ -3168,7 +3235,8 @@ const housingData = [
         "homeownershipRate": 68.9,
         "housingStockAtRisk": 46.2,
         "affordabilityTrend": -3.2,
-        "housingUnaffordabilityRate": 62.4
+        "housingUnaffordabilityRate": 62.4,
+        "programTargetingEfficiency": 54.2
     },
 
     {
@@ -3203,7 +3271,8 @@ const housingData = [
         "homeownershipRate": 71.4,
         "housingStockAtRisk": 43.8,
         "affordabilityTrend": -3.8,
-        "housingUnaffordabilityRate": 59.6
+        "housingUnaffordabilityRate": 59.6,
+        "programTargetingEfficiency": 70.2
     },
 
     {
@@ -3238,7 +3307,8 @@ const housingData = [
         "homeownershipRate": 69.8,
         "housingStockAtRisk": 41.4,
         "affordabilityTrend": -3.2,
-        "housingUnaffordabilityRate": 64.8
+        "housingUnaffordabilityRate": 64.8,
+        "programTargetingEfficiency": 53.4
     },
 
     {
@@ -3273,7 +3343,8 @@ const housingData = [
         "homeownershipRate": 70.6,
         "housingStockAtRisk": 37.2,
         "affordabilityTrend": -2.8,
-        "housingUnaffordabilityRate": 56.4
+        "housingUnaffordabilityRate": 56.4,
+        "programTargetingEfficiency": 55.2
     },
 
     {
@@ -3308,7 +3379,8 @@ const housingData = [
         "homeownershipRate": 67.8,
         "housingStockAtRisk": 45.1,
         "affordabilityTrend": 2.4,
-        "housingUnaffordabilityRate": 64.2
+        "housingUnaffordabilityRate": 64.2,
+        "programTargetingEfficiency": 32.4
     },
 
     {
@@ -3343,7 +3415,8 @@ const housingData = [
         "homeownershipRate": 82.1,
         "housingStockAtRisk": 69.4,
         "affordabilityTrend": -2.8,
-        "housingUnaffordabilityRate": 76.4
+        "housingUnaffordabilityRate": 76.4,
+        "programTargetingEfficiency": 44.2
     },
 
     {
@@ -3378,7 +3451,8 @@ const housingData = [
         "homeownershipRate": 79.4,
         "housingStockAtRisk": 54.6,
         "affordabilityTrend": -4.2,
-        "housingUnaffordabilityRate": 72.8
+        "housingUnaffordabilityRate": 72.8,
+        "programTargetingEfficiency": 48.6
     },
 
     {
@@ -3413,7 +3487,8 @@ const housingData = [
         "homeownershipRate": 83.6,
         "housingStockAtRisk": 51.3,
         "affordabilityTrend": -3.6,
-        "housingUnaffordabilityRate": 70.2
+        "housingUnaffordabilityRate": 70.2,
+        "programTargetingEfficiency": 46.8
     },
 
     {
@@ -3448,7 +3523,8 @@ const housingData = [
         "homeownershipRate": 88.5,
         "housingStockAtRisk": 76.3,
         "affordabilityTrend": -3.6,
-        "housingUnaffordabilityRate": 74.2
+        "housingUnaffordabilityRate": 74.2,
+        "programTargetingEfficiency": 50.4
     },
 
     {
@@ -3483,7 +3559,8 @@ const housingData = [
         "homeownershipRate": 76.9,
         "housingStockAtRisk": 47.2,
         "affordabilityTrend": -3.6,
-        "housingUnaffordabilityRate": 54.2
+        "housingUnaffordabilityRate": 54.2,
+        "programTargetingEfficiency": 54.8
     },
 
     {
@@ -3518,7 +3595,8 @@ const housingData = [
         "homeownershipRate": 74.2,
         "housingStockAtRisk": 78.2,
         "affordabilityTrend": 1.2,
-        "housingUnaffordabilityRate": 82.8
+        "housingUnaffordabilityRate": 82.8,
+        "programTargetingEfficiency": 31.2
     },
 
     {
@@ -3553,7 +3631,8 @@ const housingData = [
         "homeownershipRate": 68.4,
         "housingStockAtRisk": 49.8,
         "affordabilityTrend": -3.6,
-        "housingUnaffordabilityRate": 62.6
+        "housingUnaffordabilityRate": 62.6,
+        "programTargetingEfficiency": 45.2
     },
 
     {
@@ -3588,7 +3667,8 @@ const housingData = [
         "homeownershipRate": 72.6,
         "housingStockAtRisk": 14.3,
         "affordabilityTrend": -4.2,
-        "housingUnaffordabilityRate": 46.8
+        "housingUnaffordabilityRate": 46.8,
+        "programTargetingEfficiency": 64.8
     },
 
     {
@@ -3623,7 +3703,8 @@ const housingData = [
         "homeownershipRate": 71.3,
         "housingStockAtRisk": 32.4,
         "affordabilityTrend": -1.2,
-        "housingUnaffordabilityRate": 54.2
+        "housingUnaffordabilityRate": 54.2,
+        "programTargetingEfficiency": 38.6
     },
 
     {
@@ -3658,7 +3739,8 @@ const housingData = [
         "homeownershipRate": 72.5,
         "housingStockAtRisk": 39.8,
         "affordabilityTrend": -4.4,
-        "housingUnaffordabilityRate": 72.4
+        "housingUnaffordabilityRate": 72.4,
+        "programTargetingEfficiency": 42.6
     },
 
     {
@@ -3693,7 +3775,8 @@ const housingData = [
         "homeownershipRate": 68.3,
         "housingStockAtRisk": 40.2,
         "affordabilityTrend": -3.6,
-        "housingUnaffordabilityRate": 70.6
+        "housingUnaffordabilityRate": 70.6,
+        "programTargetingEfficiency": 44.2
     },
 
     {
@@ -3728,7 +3811,8 @@ const housingData = [
         "homeownershipRate": 65.8,
         "housingStockAtRisk": 41.5,
         "affordabilityTrend": -4.2,
-        "housingUnaffordabilityRate": 73.8
+        "housingUnaffordabilityRate": 73.8,
+        "programTargetingEfficiency": 41.8
     },
 
     {
@@ -3763,7 +3847,8 @@ const housingData = [
         "homeownershipRate": 70.6,
         "housingStockAtRisk": 42.6,
         "affordabilityTrend": -3.8,
-        "housingUnaffordabilityRate": 76.2
+        "housingUnaffordabilityRate": 76.2,
+        "programTargetingEfficiency": 39.6
     },
 
     {
@@ -3798,7 +3883,8 @@ const housingData = [
         "homeownershipRate": 69.2,
         "housingStockAtRisk": 44.6,
         "affordabilityTrend": -2.8,
-        "housingUnaffordabilityRate": 74.8
+        "housingUnaffordabilityRate": 74.8,
+        "programTargetingEfficiency": 34.2
     },
 
     {
@@ -3833,7 +3919,8 @@ const housingData = [
         "homeownershipRate": 77.4,
         "housingStockAtRisk": 53.4,
         "affordabilityTrend": -3.2,
-        "housingUnaffordabilityRate": 84.8
+        "housingUnaffordabilityRate": 84.8,
+        "programTargetingEfficiency": 35.2
     },
 
     {
@@ -3868,7 +3955,8 @@ const housingData = [
         "homeownershipRate": 81.6,
         "housingStockAtRisk": 56.8,
         "affordabilityTrend": -3.2,
-        "housingUnaffordabilityRate": 86.4
+        "housingUnaffordabilityRate": 86.4,
+        "programTargetingEfficiency": 33.4
     },
 
     {
@@ -3903,7 +3991,8 @@ const housingData = [
         "homeownershipRate": 73.2,
         "housingStockAtRisk": 43.5,
         "affordabilityTrend": -3.6,
-        "housingUnaffordabilityRate": 79.6
+        "housingUnaffordabilityRate": 79.6,
+        "programTargetingEfficiency": 38.2
     },
 
     {
@@ -3938,7 +4027,8 @@ const housingData = [
         "homeownershipRate": 66.8,
         "housingStockAtRisk": 42.1,
         "affordabilityTrend": -4.8,
-        "housingUnaffordabilityRate": 78.4
+        "housingUnaffordabilityRate": 78.4,
+        "programTargetingEfficiency": 34.8
     },
 
     {
@@ -3973,7 +4063,8 @@ const housingData = [
         "homeownershipRate": 80.4,
         "housingStockAtRisk": 46.9,
         "affordabilityTrend": -3.4,
-        "housingUnaffordabilityRate": 83.2
+        "housingUnaffordabilityRate": 83.2,
+        "programTargetingEfficiency": 36.6
     },
 
 ];
