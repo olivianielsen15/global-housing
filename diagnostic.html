@@ -3,48 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Housing Affordability Diagnostic Tool</title>
+    <title>Home Remedy — Prescriptions for Housing Affordability</title>
     <link rel="stylesheet" href="diagnostic.css">
-    <meta name="description" content="Interactive diagnostic tool for housing affordability — tailored strategies for policymakers, developers, and community organizations.">
+    <meta name="description" content="Home Remedy: Answer 5 quick questions about your housing market and get tailored, actionable strategies to improve affordability. Built for policymakers, developers, and communities.">
+    <meta property="og:title" content="Home Remedy — Housing Affordability Diagnostic">
+    <meta property="og:description" content="5 questions. Tailored strategies. Take the free housing affordability diagnostic.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <a href="index.html" class="back-link">&larr; Back to Globe</a>
-        <h1>Housing Affordability Diagnostic</h1>
-        <p class="subtitle">Answer a few questions. Get tailored strategies for your market.</p>
-    </header>
 
-    <main>
-        <!-- Progress Bar -->
-        <div class="progress-bar">
-            <div class="progress-fill" id="progressFill"></div>
-            <span class="progress-label" id="progressLabel">Step 1 of 5</span>
+    <!-- ── Navigation ── -->
+    <nav class="site-nav">
+        <a href="diagnostic.html" class="nav-logo">
+            <svg class="logo-icon" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M14 3L3 12v13h8v-8h6v8h8V12L14 3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+                <path d="M12 11h4M14 9v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+            Home Remedy
+        </a>
+        <div class="nav-links">
+            <a href="#how-it-works">How It Works</a>
+            <a href="#diagnostic" class="nav-cta">Start Diagnosis</a>
         </div>
+    </nav>
 
-        <!-- Question Card Container -->
-        <div class="card" id="questionCard">
-            <!-- Step content injected by JS -->
-        </div>
-
-        <!-- Navigation -->
-        <div class="nav-buttons">
-            <button id="btnBack" class="btn btn-secondary" onclick="goBack()" style="display:none;">Back</button>
-            <button id="btnNext" class="btn btn-primary" onclick="goNext()">Next</button>
-        </div>
-
-        <!-- Results Panel (hidden until complete) -->
-        <div id="resultsPanel" class="results-panel" style="display:none;">
-            <h2>Your Diagnostic Results</h2>
-            <div id="resultsContent"></div>
-            <div class="results-actions">
-                <button class="btn btn-primary" onclick="restartDiagnostic()">Start Over</button>
-                <a href="index.html" class="btn btn-secondary">Explore the Globe</a>
+    <!-- ── Hero ── -->
+    <section class="hero" id="hero">
+        <div class="hero-inner">
+            <p class="hero-eyebrow">Free diagnostic tool</p>
+            <h1>Your housing market<br>needs a checkup.</h1>
+            <p class="hero-sub">Answer 5 quick questions about your market, your role, and your constraints. We'll prescribe tailored, evidence-based strategies to make housing more affordable.</p>
+            <div class="hero-actions">
+                <a href="#diagnostic" class="btn btn-primary btn-lg" onclick="startDiagnostic()">Start Your Diagnosis</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-number">18</span>
+                    <span class="stat-label">Strategies</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Questions</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="stat-number">2 min</span>
+                    <span class="stat-label">To complete</span>
+                </div>
             </div>
         </div>
-    </main>
+        <div class="hero-bg-glow"></div>
+    </section>
 
-    <footer>
-        <p>Part of the <a href="index.html">Global Housing Data Platform</a></p>
+    <!-- ── How It Works ── -->
+    <section class="how-section" id="how-it-works">
+        <h2>How it works</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Tell us who you are</h3>
+                <p>Policymaker? Developer? Nonprofit? Your levers of influence shape which strategies will actually work.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Describe your market</h3>
+                <p>High-cost city or informal settlement? We match strategies to the realities on the ground.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Get your prescription</h3>
+                <p>Ranked, actionable strategies with concrete next steps — tailored to your barriers, income targets, and resources.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Who It's For ── -->
+    <section class="audience-section">
+        <h2>Built for people who build housing solutions</h2>
+        <div class="audience-grid">
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4L4 14v14h24V14L16 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 28v-8h8v8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                </div>
+                <h3>Policymakers</h3>
+                <p>Zoning reforms, tax tools, and funding strategies matched to your jurisdiction.</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="6" y="12" width="20" height="16" rx="1" stroke="currentColor" stroke-width="2"/><path d="M10 12V8a6 6 0 0112 0v4" stroke="currentColor" stroke-width="2"/><path d="M12 20h8M12 24h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <h3>Developers</h3>
+                <p>Construction methods, financing models, and partnership structures to reduce costs.</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="5" stroke="currentColor" stroke-width="2"/><path d="M8 28c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 10a5 5 0 014 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <h3>Nonprofits & Communities</h3>
+                <p>Land trusts, co-ops, self-build programs, and advocacy strategies.</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 26l6-8 5 4 4-6 5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="24" height="24" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <h3>Investors</h3>
+                <p>Impact funds, employer-assisted housing, and microfinance opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Diagnostic Tool ── -->
+    <section class="diagnostic-section" id="diagnostic">
+        <div class="diagnostic-container">
+            <!-- Progress Bar -->
+            <div class="progress-bar" id="progressBar" style="display:none;">
+                <div class="progress-fill" id="progressFill"></div>
+                <span class="progress-label" id="progressLabel">Step 1 of 5</span>
+            </div>
+
+            <!-- Question Card -->
+            <div class="card" id="questionCard" style="display:none;"></div>
+
+            <!-- Navigation -->
+            <div class="nav-buttons" id="navButtons" style="display:none;">
+                <button id="btnBack" class="btn btn-secondary" onclick="goBack()" style="display:none;">Back</button>
+                <button id="btnNext" class="btn btn-primary" onclick="goNext()">Next</button>
+            </div>
+
+            <!-- Results -->
+            <div id="resultsPanel" class="results-panel" style="display:none;">
+                <h2>Your Prescription</h2>
+                <p class="results-subtitle">Based on your answers, here are the strategies most likely to move the needle.</p>
+                <div id="resultsContent"></div>
+                <div class="results-actions">
+                    <button class="btn btn-primary" onclick="restartDiagnostic()">Run Again</button>
+                    <a href="index.html" class="btn btn-outline">Explore Global Data</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <svg class="logo-icon" width="22" height="22" viewBox="0 0 28 28" fill="none">
+                    <path d="M14 3L3 12v13h8v-8h6v8h8V12L14 3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+                    <path d="M12 11h4M14 9v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                </svg>
+                Home Remedy
+            </div>
+            <p class="footer-note">Open-source housing affordability diagnostic. Part of the <a href="index.html">Global Housing Data</a> project by Olivia Nielsen.</p>
+        </div>
     </footer>
 
     <script src="diagnostic.js"></script>

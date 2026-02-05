@@ -1,5 +1,5 @@
 // ──────────────────────────────────────────────
-//  Housing Affordability Diagnostic Tool
+//  Home Remedy — Prescriptions for Housing Affordability
 // ──────────────────────────────────────────────
 
 const STEPS = [
@@ -393,6 +393,17 @@ const STRATEGIES = [
 // ── State ──
 let currentStep = 0;
 const answers = {};
+let diagnosticStarted = false;
+
+// ── Start the diagnostic (called from hero CTA) ──
+function startDiagnostic() {
+    if (diagnosticStarted) return;
+    diagnosticStarted = true;
+    document.getElementById('progressBar').style.display = '';
+    document.getElementById('questionCard').style.display = '';
+    document.getElementById('navButtons').style.display = '';
+    render();
+}
 
 // ── Rendering ──
 function render() {
@@ -410,7 +421,7 @@ function render() {
 
     // Back button
     btnBack.style.display = currentStep > 0 ? 'inline-block' : 'none';
-    btnNext.textContent = currentStep === STEPS.length - 1 ? 'See Results' : 'Next';
+    btnNext.textContent = currentStep === STEPS.length - 1 ? 'Get My Prescription' : 'Next';
 
     // Card content
     let html = '<h2>' + step.title + '</h2>';
@@ -525,8 +536,8 @@ function labelFor(stepId, value) {
 function showResults() {
     // Hide question UI
     document.getElementById('questionCard').style.display = 'none';
-    document.querySelector('.nav-buttons').style.display = 'none';
-    document.querySelector('.progress-bar').style.display = 'none';
+    document.getElementById('navButtons').style.display = 'none';
+    document.getElementById('progressBar').style.display = 'none';
 
     const panel = document.getElementById('resultsPanel');
     panel.style.display = 'block';
@@ -576,11 +587,8 @@ function restartDiagnostic() {
         if (answers.hasOwnProperty(key)) delete answers[key];
     }
     document.getElementById('questionCard').style.display = '';
-    document.querySelector('.nav-buttons').style.display = '';
-    document.querySelector('.progress-bar').style.display = '';
+    document.getElementById('navButtons').style.display = '';
+    document.getElementById('progressBar').style.display = '';
     document.getElementById('resultsPanel').style.display = 'none';
     render();
 }
-
-// ── Init ──
-render();
