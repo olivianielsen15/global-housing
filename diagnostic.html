@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Affordability Diagnostic Tool</title>
+    <link rel="stylesheet" href="diagnostic.css">
+    <meta name="description" content="Interactive diagnostic tool for housing affordability — tailored strategies for policymakers, developers, and community organizations.">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-link">&larr; Back to Globe</a>
+        <h1>Housing Affordability Diagnostic</h1>
+        <p class="subtitle">Answer a few questions. Get tailored strategies for your market.</p>
+    </header>
+
+    <main>
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+            <span class="progress-label" id="progressLabel">Step 1 of 5</span>
+        </div>
+
+        <!-- Question Card Container -->
+        <div class="card" id="questionCard">
+            <!-- Step content injected by JS -->
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <button id="btnBack" class="btn btn-secondary" onclick="goBack()" style="display:none;">Back</button>
+            <button id="btnNext" class="btn btn-primary" onclick="goNext()">Next</button>
+        </div>
+
+        <!-- Results Panel (hidden until complete) -->
+        <div id="resultsPanel" class="results-panel" style="display:none;">
+            <h2>Your Diagnostic Results</h2>
+            <div id="resultsContent"></div>
+            <div class="results-actions">
+                <button class="btn btn-primary" onclick="restartDiagnostic()">Start Over</button>
+                <a href="index.html" class="btn btn-secondary">Explore the Globe</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Part of the <a href="index.html">Global Housing Data Platform</a></p>
+    </footer>
+
+    <script src="diagnostic.js"></script>
+</body>
+</html>
