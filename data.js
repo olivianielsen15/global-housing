@@ -75,7 +75,14 @@ const housingData = [
         "housingStockAtRisk": 24.7,
         "affordabilityTrend": -8.8,
         "housingUnaffordabilityRate": 48.4,
-        "programTargetingEfficiency": 66.4
+        "programTargetingEfficiency": 66.4,
+        "housingRecommendations": [
+            "Social housing investment - 4% stock vs 20% OECD avg, build 30k units/yr (ACOSS 2024)",
+            "Negative gearing reform - Tax concession inflates investor demand, cap to 2 properties (Grattan Institute)",
+            "State planning reform - NIMBYism blocks density, override local councils (NSW Productivity)",
+            "First Home Super Saver expansion - $50k cap too low, increase to $100k (Treasury)",
+            "Climate adaptation - Bushfire zones (NSW/VIC/SA) need BAL-FZ construction (CSIRO)"
+        ]
     },
     {
         "country": "Denmark",
@@ -175,7 +182,14 @@ const housingData = [
         "housingStockAtRisk": 15.2,
         "affordabilityTrend": -7.6,
         "housingUnaffordabilityRate": 36.4,
-        "programTargetingEfficiency": 84.8
+        "programTargetingEfficiency": 84.8,
+        "housingRecommendations": [
+            "Housing crisis emergency - 390k shortage, declare national emergency (Rijksoverheid 2024)",
+            "Stikstof (nitrogen) exemption - Environmental rules block 75k homes, exempt housing (Ministerie LNV)",
+            "Corporatie vrije sector - Housing associations lost 50% stock via privatization, restore (Aedes)",
+            "Scheefwoners eviction - High-income in social housing, enforce means-testing (Woonbond)",
+            "Randstad densification - Amsterdam/Rotterdam/Utrecht sprawl limits, build up (PBL)"
+        ]
     },
     {
         "country": "Canada",
@@ -210,7 +224,14 @@ const housingData = [
         "housingStockAtRisk": 16.8,
         "affordabilityTrend": -9.2,
         "housingUnaffordabilityRate": 46.2,
-        "programTargetingEfficiency": 67.8
+        "programTargetingEfficiency": 67.8,
+        "housingRecommendations": [
+            "Federal housing strategy scaling - $70B over 10yr insufficient, double to 0.5% GDP (CMHC 2024)",
+            "Vacancy tax expansion - Vancouver/Toronto/Victoria models work, apply nationally (BCNPHA)",
+            "Zoning reform - Single-family exclusive zoning in cities, allow missing middle (Pembina Institute)",
+            "Non-resident speculation tax - 20-30% Vancouver sales foreign, need enforcement (BC Ministry)",
+            "Indigenous housing - On-reserve housing crisis (0.5M need), increase CMHC allocation (AFN)"
+        ]
     },
     {
         "country": "South Korea",
@@ -245,7 +266,14 @@ const housingData = [
         "housingStockAtRisk": 12.6,
         "affordabilityTrend": -6.6,
         "housingUnaffordabilityRate": 42.8,
-        "programTargetingEfficiency": 73.2
+        "programTargetingEfficiency": 73.2,
+        "housingRecommendations": [
+            "Jeonse deposit system reform - Landlords using deposits for speculation, regulate (FSC 2024)",
+            "Public rental expansion - 7% stock vs 20% OECD, build via LH Corporation (MOLIT)",
+            "Speculation tax enforcement - Multiple home ownership drives prices, tax at 70%+ (Ministry Economy)",
+            "New town development - Bundang/Ilsan models worked, replicate near Seoul/Busan (K-Water)",
+            "Earthquake preparedness - Gyeongju/Pohang quakes revealed poor codes, upgrade (MOIS)"
+        ]
     },
     {
         "country": "Norway",
@@ -350,7 +378,14 @@ const housingData = [
         "housingStockAtRisk": 19.3,
         "affordabilityTrend": -9.6,
         "housingUnaffordabilityRate": 54.8,
-        "programTargetingEfficiency": 65.2
+        "programTargetingEfficiency": 65.2,
+        "housingRecommendations": [
+            "Kāinga Ora scaling - 2,000 units/yr too slow, need 10k/yr for 20 years (Salvation Army 2024)",
+            "Resource Management Act reform - Consenting takes 2+ years, streamline to 6 months (Productivity Commission)",
+            "Foreign buyer ban enforcement - Loopholes remain, close (Treasury)",
+            "Build-to-rent incentives - 5% rental stock vs 30% Germany, tax breaks for institutional landlords (MBIE)",
+            "Earthquake resilience - Wellington/Christchurch unreinforced masonry retrofits (EQC)"
+        ]
     },
     {
         "country": "Luxembourg",
@@ -420,7 +455,14 @@ const housingData = [
         "housingStockAtRisk": 16.3,
         "affordabilityTrend": -7.8,
         "housingUnaffordabilityRate": 42.6,
-        "programTargetingEfficiency": 71.6
+        "programTargetingEfficiency": 71.6,
+        "housingRecommendations": [
+            "Planning reform - NPPF needs teeth, mandate 300k units/yr local targets (Letwin Review 2024)",
+            "Social housing investment - Right to Buy depleted stock, build 100k council homes/yr (Shelter)",
+            "Leasehold abolition - Feudal system blocks ownership, convert to commonhold (Law Commission)",
+            "Help to Buy reform - Inflates prices, redirect to supply-side grants (IFS/Resolution Foundation)",
+            "Cladding remediation - Post-Grenfell crisis affects 700k flats, accelerate funding (MHCLG)"
+        ]
     },
     {
         "country": "Finland",
@@ -490,7 +532,14 @@ const housingData = [
         "housingStockAtRisk": 22.8,
         "affordabilityTrend": -8.4,
         "housingUnaffordabilityRate": 38.4,
-        "programTargetingEfficiency": 58.2
+        "programTargetingEfficiency": 58.2,
+        "housingRecommendations": [
+            "Zoning reform - Single-family exclusive zoning blocks density, upzone (Furman Center/Brookings)",
+            "Section 8 voucher expansion - 10M eligible, 2.5M served, triple funding (CBPP/HUD)",
+            "Mortgage interest deduction cap - $10k SALT cap worked, cap MID at $15k (Tax Policy Center)",
+            "Social housing creation - 0.5% stock vs 30% Netherlands, build (Peoples Policy Project)",
+            "Climate resilience - Wildfire (CA) / hurricane (FL/TX/LA) zones need fortified construction (FEMA)"
+        ]
     },
     {
         "country": "Belgium",
@@ -560,7 +609,14 @@ const housingData = [
         "housingStockAtRisk": 18.6,
         "affordabilityTrend": -5.4,
         "housingUnaffordabilityRate": 32.8,
-        "programTargetingEfficiency": 73.8
+        "programTargetingEfficiency": 73.8,
+        "housingRecommendations": [
+            "HLM social housing maintenance - 5M units aging, need €50B renovation (Union Sociale pour l'Habitat 2024)",
+            "Loi SRU enforcement - Mandate 25% social housing in all communes, penalize non-compliance (ANRU)",
+            "Vacancy tax expansion - Paris/Lyon/Bordeaux have 300k empty, tax at 20%/yr (Fondation Abbé Pierre)",
+            "Banlieue regeneration - NPNRU works (Clichy-sous-Bois/Saint-Denis), expand (ANRU)",
+            "Energy retrofitting - 4.8M passoires thermiques (energy sieves), mandate upgrades (Ministère Transition Écologique)"
+        ]
     },
     {
         "country": "Japan",
@@ -595,7 +651,14 @@ const housingData = [
         "housingStockAtRisk": 14.2,
         "affordabilityTrend": -1.2,
         "housingUnaffordabilityRate": 28.4,
-        "programTargetingEfficiency": 75.6
+        "programTargetingEfficiency": 75.6,
+        "housingRecommendations": [
+            "Vacant home activation - Akiya bank 8.5M empty homes, offer free + renovation grants (MLIT 2024)",
+            "Senior housing downsizing - Aging owners in large homes, incentivize moves to apartments (MHLW)",
+            "Inheritance tax reform - Abandoned homes from unclear ownership, streamline probate (MOJ)",
+            "Earthquake retrofitting - Pre-1981 buildings lack seismic codes, mandate upgrades (MLIT)",
+            "Rural revitalization - Limit/Marginal Settlement Initiative for villages (Somu-sho)"
+        ]
     },
     {
         "country": "Spain",
@@ -770,7 +833,14 @@ const housingData = [
         "housingStockAtRisk": 12.3,
         "affordabilityTrend": -6.4,
         "housingUnaffordabilityRate": 34.8,
-        "programTargetingEfficiency": 70.6
+        "programTargetingEfficiency": 70.6,
+        "housingRecommendations": [
+            "Mietpreisbremse enforcement - Rent brake has loopholes, strengthen + penalties (Deutscher Mieterbund)",
+            "Social housing expansion - Stock fell from 30% to 3%, reverse via non-profit Wohnungsbaugenossenschaften (GdW 2024)",
+            "Building code simplification - Regulations add 30% to costs, streamline (BMWSB)",
+            "Berlin expropriation - Referendum to socialize Deutsche Wohnen, implement (Deutsche Wohnen Enteignen)",
+            "Refugee housing - 2M+ Ukrainians/Syrians need permanent homes (BAMF)"
+        ]
     },
     {
         "country": "Estonia",
@@ -1011,7 +1081,14 @@ const housingData = [
         "housingStockAtRisk": 15.4,
         "affordabilityTrend": -5.2,
         "housingUnaffordabilityRate": 38.2,
-        "programTargetingEfficiency": 64.2
+        "programTargetingEfficiency": 64.2,
+        "housingRecommendations": [
+            "Social housing creation - 0.3% stock (EU lowest), build via TBS/SIM models (NBP 2024)",
+            "Rodzina 500+ housing - Child benefit increased demand, need supply response (GUS)",
+            "Renovation fund - Communist-era bloki need thermal upgrades, EU funds (NFOŚiGW)",
+            "Rental market formalization - 80% ownership unsustainable for youth, incentivize rentals (PIE)",
+            "Ukrainian refugee integration - 3M+ Ukrainians need permanent housing (UNHCR)"
+        ]
     },
     {
         "country": "Slovakia",
@@ -1080,7 +1157,14 @@ const housingData = [
         "housingStockAtRisk": 18.4,
         "affordabilityTrend": -5.8,
         "housingUnaffordabilityRate": 46.2,
-        "programTargetingEfficiency": 87.4
+        "programTargetingEfficiency": 87.4,
+        "housingRecommendations": [
+            "Subsidio Habitacional increase - Waiting list 400k, need budget boost (IDB 2023)",
+            "Densification policy - Santiago sprawl extreme, upzone metro corridors (OECD)",
+            "Rental market regulation - 20% rent, need tenant protections + supply incentives (World Bank)",
+            "Reconstruction standards - Post-earthquake codes work, apply nationwide (UN-Habitat)",
+            "Social housing integration - Reduce spatial segregation of subsidized housing (IDB)"
+        ]
     },
     {
         "country": "Hungary",
@@ -1218,7 +1302,14 @@ const housingData = [
         "housingStockAtRisk": 54.8,
         "affordabilityTrend": -6.8,
         "housingUnaffordabilityRate": 52.6,
-        "programTargetingEfficiency": 58.6
+        "programTargetingEfficiency": 58.6,
+        "housingRecommendations": [
+            "TOKİ social housing - 1M units delivered, but earthquake destroyed 300k, rebuild (UN-Habitat 2024)",
+            "Earthquake retrofit mandatory - 2023 Kahramanmaraş killed 59k, enforce codes (GFDRR/World Bank)",
+            "Mortgage market revival - Lira crisis crashed loans, need FX-indexed products (World Bank)",
+            "Syrian refugee housing - 3.6M refugees in tent cities, need permanent (UNHCR)",
+            "Rent control reform - Controls block investment, need balanced tenant/landlord law (OECD)"
+        ]
     },
     {
         "country": "Mexico",
@@ -1253,7 +1344,14 @@ const housingData = [
         "housingStockAtRisk": 42.3,
         "affordabilityTrend": -5.4,
         "housingUnaffordabilityRate": 62.8,
-        "programTargetingEfficiency": 68.6
+        "programTargetingEfficiency": 68.6,
+        "housingRecommendations": [
+            "Infonavit subsidy expansion - Target <4 minimum wages (60% workers), increase UMA (IDB 2024)",
+            "Vertical housing incentives - Sprawl crisis (Mexicali/Tijuana), densify cores (UN-Habitat)",
+            "Ejido land reform - 50% urban periphery ejido blocks formal development (World Bank)",
+            "Rental housing development - 80% ownership unsustainable, need institutional rental (IDB)",
+            "Earthquake retrofitting - CDMX/Oaxaca/Guerrero need seismic upgrades (World Bank)"
+        ]
     },
     {
         "country": "Costa Rica",
@@ -1288,7 +1386,14 @@ const housingData = [
         "housingStockAtRisk": 34.8,
         "affordabilityTrend": -5.2,
         "housingUnaffordabilityRate": 42.8,
-        "programTargetingEfficiency": 76.2
+        "programTargetingEfficiency": 76.2,
+        "housingRecommendations": [
+            "BANHVI subsidy expansion - ₡7M cap excludes middle class (\"clase media aplastada\") (IDB 2024)",
+            "Densification - San José sprawl unsustainable, upzone GAM (Gran Área Metropolitana) (World Bank)",
+            "Social housing targets - New developments need affordable quotas (UN-Habitat)",
+            "Rental market formalization - High informality, need registration/protections (IDB)",
+            "Coastal resilience - Caribbean/Pacific flood risks need elevated construction (World Bank)"
+        ]
     },
     {
         "country": "Colombia",
@@ -1323,7 +1428,14 @@ const housingData = [
         "housingStockAtRisk": 39.7,
         "affordabilityTrend": -4.8,
         "housingUnaffordabilityRate": 61.2,
-        "programTargetingEfficiency": 69.8
+        "programTargetingEfficiency": 69.8,
+        "housingRecommendations": [
+            "Vivienda de Interés Social expansion - 130 UVT threshold reaches 70%, maintain (IDB 2024)",
+            "Land value capture - Contribute valorización works but needs scaling (World Bank/Lincoln Institute)",
+            "Informal settlement legalization - 50% Bogotá/Medellín/Cali informal, title urgently (UN-Habitat)",
+            "CAMACOL partnership - Builder association can deliver affordable at scale (IDB)",
+            "Climate adaptation - Flooding Barranquilla/Cartagena, hurricanes San Andrés (World Bank)"
+        ]
     },
     {
         "country": "Brazil",
@@ -1358,7 +1470,14 @@ const housingData = [
         "housingStockAtRisk": 28.9,
         "affordabilityTrend": -4.6,
         "housingUnaffordabilityRate": 58.4,
-        "programTargetingEfficiency": 72.4
+        "programTargetingEfficiency": 72.4,
+        "housingRecommendations": [
+            "Minha Casa Minha Vida continuation - 6M units delivered since 2009, maintain (IDB 2024)",
+            "Favela upgrading at scale - PAC works, need $10B+/yr Rio/São Paulo/Salvador (UN-Habitat)",
+            "Property tax reform - IPTU rates 0.5% vs 2% OECD, revenue needed (World Bank)",
+            "Rental law modernization - Locação law restrictive, blocks institutional investment (IDB)",
+            "Climate-resilient retrofitting - Flood/landslide risk São Paulo/Rio (World Bank Climate)"
+        ]
     },
     {
         "country": "Russia",
@@ -1423,7 +1542,14 @@ const housingData = [
         "housingStockAtRisk": 31.5,
         "affordabilityTrend": -4.8,
         "housingUnaffordabilityRate": 52.4,
-        "programTargetingEfficiency": 56.4
+        "programTargetingEfficiency": 56.4,
+        "housingRecommendations": [
+            "Affordable rental housing - 40M migrants in urban villages, need formal rentals (World Bank 2024)",
+            "Hukou reform - 290M migrants lack urban residency blocks housing access (UN-Habitat)",
+            "Social housing expansion - 10% stock vs 30% Netherlands, increase (OECD)",
+            "Property market stabilization - Evergrande crisis, need demand-side support (IMF/World Bank)",
+            "Vacancy tax - 22% vacancy rate, activate empty stock before building (China Household Finance Survey)"
+        ]
     },
     {
         "country": "Thailand",
@@ -1454,7 +1580,14 @@ const housingData = [
         "mortgagePenetrationPerCapita": 7,
         "homeInsurancePenetration": 18,
         "dataMismatchIndex": 56,
-        "homeownershipRate": 81.6
+        "homeownershipRate": 81.6,
+        "housingRecommendations": [
+            "CAGR housing fund expansion - Cooperative members access NHB loans, scale (World Bank 2023)",
+            "Slum upgrading - Baan Mankong community-led model is global best practice, fund more (UN-Habitat)",
+            "Migrant worker housing - 3M+ Myanmar/Cambodia workers in slums, formalize (ILO)",
+            "Flood-resilient housing - Bangkok subsidence + climate, elevate new construction (GFDRR)",
+            "Condo glut conversion - 50k+ empty condos, convert to affordable rental (Bank of Thailand)"
+        ]
     },
     {
         "country": "Malaysia",
@@ -1520,7 +1653,14 @@ const housingData = [
         "housingStockAtRisk": 8.2,
         "affordabilityTrend": -7.8,
         "housingUnaffordabilityRate": 24.2,
-        "programTargetingEfficiency": 91.2
+        "programTargetingEfficiency": 91.2,
+        "housingRecommendations": [
+            "HDB resale levy reform - Levy blocks downsizing, reduce for seniors (HDB 2024)",
+            "Private rental regulation - 20% rent in condos, need tenancy protections (MND)",
+            "Lease decay addressing - 99yr leases depreciating, SERS insufficient coverage (HDB)",
+            "Sandbanking limits - Land reclamation constrained, maximize density (MND)",
+            "Climate adaptation - Sea level rise threatens 30% island, elevate new towns (PUB/MND)"
+        ]
     },
     {
         "country": "Philippines",
@@ -1555,7 +1695,14 @@ const housingData = [
         "housingStockAtRisk": 58.4,
         "affordabilityTrend": -5.4,
         "housingUnaffordabilityRate": 72.6,
-        "programTargetingEfficiency": 67.2
+        "programTargetingEfficiency": 67.2,
+        "housingRecommendations": [
+            "Pag-IBIG Fund expansion - 18% mortgage penetration is high regionally, maintain (SHFDA 2024)",
+            "Informal settlement upgrading - NCHS shows 5.5M deficit, need Community Mortgage Program scale (UN-Habitat)",
+            "Typhoon-resilient construction - Build Back Better post-Haiyan worked, enforce (GFDRR/World Bank)",
+            "Rental housing incentives - Metro Manila 30% rent, need landlord formalization (World Bank)",
+            "Land title digitization - LRA backlog 18+ months blocks deals (World Bank)"
+        ]
     },
     {
         "country": "Vietnam",
@@ -1590,7 +1737,14 @@ const housingData = [
         "housingStockAtRisk": 52.8,
         "affordabilityTrend": -5.8,
         "housingUnaffordabilityRate": 58.6,
-        "programTargetingEfficiency": 66.8
+        "programTargetingEfficiency": 66.8,
+        "housingRecommendations": [
+            "Social housing expansion - Decision 2127 (workers earning <VND15M), increase (World Bank 2024)",
+            "Red book digitization - Land use certificates still paper-based, blockchain pilot (ADB)",
+            "Rental law modernization - Landlord-dominated market needs tenant protections (UN-Habitat)",
+            "Mekong Delta resilience - Sea level rise threatens 40% southern housing (World Bank Climate)",
+            "Industrial zone housing - FDI workers in dormitories, need proper apartments (ILO)"
+        ]
     },
     {
         "country": "Indonesia",
@@ -1625,7 +1779,14 @@ const housingData = [
         "housingStockAtRisk": 56.2,
         "affordabilityTrend": -5.2,
         "housingUnaffordabilityRate": 69.8,
-        "programTargetingEfficiency": 82.6
+        "programTargetingEfficiency": 82.6,
+        "housingRecommendations": [
+            "BSPS home improvement scaling - Rp15M grants work, increase budget (World Bank 2023)",
+            "KPR subsidy expansion - Mortgage subsidy (5% vs 9-11% market) reaches 20%, expand (UN-Habitat)",
+            "Land certification - 50% parcels uncertified blocks collateral, accelerate BPN digitization (World Bank)",
+            "Kampung upgrading - Jakarta/Surabaya/Medan informal 50-60%, regularize (UN-Habitat)",
+            "Disaster-resilient codes - Earthquake/tsunami/flood zones need enforcement (GFDRR/World Bank)"
+        ]
     },
     {
         "country": "India",
@@ -1660,7 +1821,14 @@ const housingData = [
         "housingStockAtRisk": 48.6,
         "affordabilityTrend": -6.2,
         "housingUnaffordabilityRate": 68.4,
-        "programTargetingEfficiency": 64.6
+        "programTargetingEfficiency": 64.6,
+        "housingRecommendations": [
+            "PMAY continuation post-2024 - 29M urban + 30M rural target, extend to 2030 (UN-Habitat)",
+            "Rental housing policy implementation - Model Tenancy Act passed, states must adopt (World Bank 2024)",
+            "Slum rehabilitation at scale - RAY/BSUP delivered 1.5M, need 10M+ (UN-Habitat)",
+            "Mortgage penetration - 4% penetration, need NHB refinancing + longer terms (World Bank)",
+            "Stamp duty reduction - 5-10% land registration kills deals, cap at 2% (NITI Aayog)"
+        ]
     },
     {
         "country": "Argentina",
@@ -1695,7 +1863,14 @@ const housingData = [
         "housingStockAtRisk": 26.8,
         "affordabilityTrend": -2.2,
         "housingUnaffordabilityRate": 48.4,
-        "programTargetingEfficiency": 56.8
+        "programTargetingEfficiency": 56.8,
+        "housingRecommendations": [
+            "Procrear mortgage subsidy restoration - Macri cut, Fernández revived, stabilize (IDB 2024)",
+            "Inflation-indexed mortgages - UVA loans failed 2018, need better design (World Bank)",
+            "Villa upgrading - PROMEBA works in 22 provinces, double funding (UN-Habitat)",
+            "Rental law reform - 2020 controls crashed supply, need balance (IDB)",
+            "Provincial coordination - Federal-provincial housing finance fragmented (World Bank)"
+        ]
     },
     {
         "country": "Pakistan",
@@ -1730,7 +1905,14 @@ const housingData = [
         "housingStockAtRisk": 59.7,
         "affordabilityTrend": -4.2,
         "housingUnaffordabilityRate": 76.8,
-        "programTargetingEfficiency": 46.8
+        "programTargetingEfficiency": 46.8,
+        "housingRecommendations": [
+            "Naya Pakistan Housing - 5M units target stalled at 0.3M, need execution (UN-Habitat 2024)",
+            "Katchi abadi regularization - 50% Karachi/Lahore informal, provide titles (World Bank)",
+            "Mortgage market creation - 2% penetration, need Pakistan Mortgage Refinance Company (State Bank)",
+            "EOBI/GEPCO schemes - Employer housing associations work, replicate (ILO)",
+            "Flood-resilient housing - 2022 floods destroyed 2M homes, rebuild better (GFDRR)"
+        ]
     },
     {
         "country": "Bangladesh",
@@ -1765,7 +1947,14 @@ const housingData = [
         "housingStockAtRisk": 71.8,
         "affordabilityTrend": -4.8,
         "housingUnaffordabilityRate": 82.4,
-        "programTargetingEfficiency": 52.6
+        "programTargetingEfficiency": 52.6,
+        "housingRecommendations": [
+            "National Housing Policy implementation - 2016 policy unfunded, allocate budget (UN-Habitat 2023)",
+            "Slum upgrading - Dhaka/Chittagong 50-60% informal, land tenure first (World Bank)",
+            "Microfinance housing - Grameen model works, need $1-5k construction loans (BRAC/World Bank)",
+            "Climate adaptation - Cyclone/flood resilient housing (elevated, storm shutters) (GFDRR)",
+            "Garment worker housing - 4M RMG workers in slums, employer schemes (ILO)"
+        ]
     },
     {
         "country": "United Arab Emirates",
@@ -1835,7 +2024,14 @@ const housingData = [
         "housingStockAtRisk": 7.4,
         "affordabilityTrend": -3.4,
         "housingUnaffordabilityRate": 34.6,
-        "programTargetingEfficiency": 62.8
+        "programTargetingEfficiency": 62.8,
+        "housingRecommendations": [
+            "Sakani mortgage subsidy continuation - 70% subsidy delivered 1M+ homes, maintain (World Bank 2024)",
+            "Rental housing development - 40% rent, need White Land Tax enforcement (vacant plots) (IMF)",
+            "Expat housing formalization - 13M migrants in labor camps, need standards (ILO)",
+            "Women's housing access - Guardianship reforms help, but banks still restrictive (World Bank)",
+            "NEOM affordable housing - New cities need worker housing, not just luxury (UN-Habitat)"
+        ]
     },
     {
         "country": "Iceland",
@@ -1905,7 +2101,13 @@ const housingData = [
         "housingStockAtRisk": 32.5,
         "affordabilityTrend": -4.6,
         "housingUnaffordabilityRate": 56.2,
-        "programTargetingEfficiency": 72.8
+        "programTargetingEfficiency": 72.8,
+        "housingRecommendations": [
+            "Scale Breaking New Ground program - deliver 300k+ subsidized homes annually (CAHF 2024)",
+            "Reform spatial planning - densify urban cores, reduce apartheid-era sprawl (World Bank)",
+            "Expand FLISP finance-linked subsidy (R3.5k-R22k income) - gap housing critical (CAHF)",
+            "Title deed backlog clearance - 1M+ RDP homes untitled blocks wealth/credit (UN-Habitat)"
+        ]
     },
     {
         "country": "Egypt",
@@ -1940,7 +2142,14 @@ const housingData = [
         "housingStockAtRisk": 46.3,
         "affordabilityTrend": -5.4,
         "housingUnaffordabilityRate": 64.2,
-        "programTargetingEfficiency": 58.4
+        "programTargetingEfficiency": 58.4,
+        "housingRecommendations": [
+            "Social housing continuation - Sisi's 1M units succeeded, maintain momentum (UN-Habitat 2024)",
+            "Informal settlement upgrading - ashwaiyyat house 60% urban, need legalization (World Bank)",
+            "Mortgage interest subsidies - 3-5% rates for low-income critical (Egypt Mortgage Refinance)",
+            "New cities affordable quota - Mandate 30% affordable in new capitals/compounds (UN-Habitat)",
+            "Rental law reform - tenant protections block investment, need balanced framework (World Bank)"
+        ]
     },
     {
         "country": "Morocco",
@@ -1975,7 +2184,14 @@ const housingData = [
         "housingStockAtRisk": 38.4,
         "affordabilityTrend": -4.2,
         "housingUnaffordabilityRate": 54.6,
-        "programTargetingEfficiency": 62.6
+        "programTargetingEfficiency": 62.6,
+        "housingRecommendations": [
+            "Villes Sans Bidonvilles continuation - Slum-free cities cleared 50+ settlements, finish (UN-Habitat)",
+            "Affordable land banking - ERAC land agency needs more urban parcels (World Bank)",
+            "Mortgage market deepening - 7% penetration low for middle-income country (CAHF 2024)",
+            "Rental housing incentives - 60% rent but landlord formalization low (tax breaks needed)",
+            "Regional development - Focus Casablanca/Rabat crowds out Fes/Marrakech (World Bank)"
+        ]
     },
     {
         "country": "Kenya",
@@ -2010,7 +2226,14 @@ const housingData = [
         "housingStockAtRisk": 47.8,
         "affordabilityTrend": -4.8,
         "housingUnaffordabilityRate": 78.6,
-        "programTargetingEfficiency": 38.4
+        "programTargetingEfficiency": 38.4,
+        "housingRecommendations": [
+            "Implement Affordable Housing Program - 500k units/5yrs, use Article 43 constitutional housing right (UN-Habitat 2023)",
+            "Land title digitization - 30% urban land untitled blocks mortgage finance (World Bank)",
+            "Slum upgrading at scale - KENSUP/KISIP models work, need $500M+/yr funding (UN-Habitat)",
+            "Housing levy restructuring - 1.5% employer/employee contributions need transparency (CAHF 2024)",
+            "Rental housing incentives - 80% Nairobi rents, need landlord registration/tax breaks (World Bank)"
+        ]
     },
     {
         "country": "Nigeria",
@@ -2045,7 +2268,14 @@ const housingData = [
         "housingStockAtRisk": 51.6,
         "affordabilityTrend": -5.2,
         "housingUnaffordabilityRate": 84.2,
-        "programTargetingEfficiency": 36.8
+        "programTargetingEfficiency": 36.8,
+        "housingRecommendations": [
+            "Pass National Housing Bill - establish National Housing Fund at scale (CAHF 2024)",
+            "Land title reform - Governor's Consent process takes 18-36 months, blocks formalization (World Bank)",
+            "Primary mortgage market development - <2% penetration, need refinancing facility (CAHF)",
+            "Incremental housing finance - 70% build informally, need construction microloans (UN-Habitat)",
+            "Building materials localization - reduce cement costs (₦5,500/bag prohibitive) (World Bank)"
+        ]
     },
     {
         "country": "Ghana",
@@ -2080,7 +2310,14 @@ const housingData = [
         "housingStockAtRisk": 39.8,
         "affordabilityTrend": -4.4,
         "housingUnaffordabilityRate": 72.4,
-        "programTargetingEfficiency": 42.6
+        "programTargetingEfficiency": 42.6,
+        "housingRecommendations": [
+            "Rent-to-own programs - High down payments (20-30%) block access, need graduated equity (CAHF 2024)",
+            "Land title registration - Lands Commission backlog 18+ months blocks deals (World Bank)",
+            "Local materials promotion - Compressed earth blocks 40% cheaper than cement (UN-Habitat)",
+            "Teacher/nurse housing schemes - Public sector guaranteed income enables finance (CAHF)",
+            "Municipal bond issuance - Accra/Kumasi can borrow for infrastructure (World Bank)"
+        ]
     },
     {
         "country": "Ethiopia",
@@ -2115,7 +2352,14 @@ const housingData = [
         "housingStockAtRisk": 63.7,
         "affordabilityTrend": -3.8,
         "housingUnaffordabilityRate": 85.2,
-        "programTargetingEfficiency": 38.6
+        "programTargetingEfficiency": 38.6,
+        "housingRecommendations": [
+            "Expand Integrated Housing Development Programme - 175k condos delivered, continue (UN-Habitat)",
+            "Mortgage finance creation - zero penetration, need Ethiopia Housing Finance Corp capitalization (CAHF 2024)",
+            "Land lease reform - 99yr urban leases unclear, blocks collateral (World Bank)",
+            "Cooperative housing scaling - 20/80 model (20% down, 80% public land) works (UN-Habitat)",
+            "Construction sector training - skilled labor shortage constrains supply (ILO/World Bank)"
+        ]
     },
     {
         "country": "Tanzania",
@@ -2150,7 +2394,14 @@ const housingData = [
         "housingStockAtRisk": 45.7,
         "affordabilityTrend": -4.2,
         "housingUnaffordabilityRate": 81.4,
-        "programTargetingEfficiency": 37.8
+        "programTargetingEfficiency": 37.8,
+        "housingRecommendations": [
+            "National Housing Corporation recapitalization - NHC dormant since 1990s privatization (CAHF 2024)",
+            "Mortgage refinancing facility - Primary lenders need liquidity (rates 18-22%) (World Bank)",
+            "Informal settlement upgrading - 70% Dar es Salaam informal, TSHS model works (UN-Habitat)",
+            "Pension fund housing investment - NSSF/PPF can provide patient capital (CAHF)",
+            "Building code simplification - Reduce costs, enable incremental construction (World Bank)"
+        ]
     },
     {
         "country": "Uganda",
@@ -2185,7 +2436,14 @@ const housingData = [
         "housingStockAtRisk": 44.3,
         "affordabilityTrend": -3.8,
         "housingUnaffordabilityRate": 82.6,
-        "programTargetingEfficiency": 36.4
+        "programTargetingEfficiency": 36.4,
+        "housingRecommendations": [
+            "National Housing Policy implementation - Approved 2016 never funded (UN-Habitat 2023)",
+            "Land tenure security - Mailo/customary systems block mortgage collateral (World Bank)",
+            "Microfinance housing products - 80% build incrementally, need $500-5k loans (CAHF 2024)",
+            "Municipal infrastructure bonds - Kampala needs trunk services for densification (World Bank)",
+            "Social housing pilot - Zero stock, need demonstration projects (UN-Habitat)"
+        ]
     },
     {
         "country": "Rwanda",
@@ -2558,7 +2816,14 @@ const housingData = [
         "housingStockAtRisk": 42.1,
         "affordabilityTrend": -4.8,
         "housingUnaffordabilityRate": 78.4,
-        "programTargetingEfficiency": 34.8
+        "programTargetingEfficiency": 34.8,
+        "housingRecommendations": [
+            "Informal settlement upgrading - 70% Harare/Bulawayo informal, provide tenure (UN-Habitat 2024)",
+            "Currency stabilization - ZWL volatility kills mortgages, dollarize housing finance (World Bank)",
+            "Local authority capacity - Harare broke, cannot deliver services, fiscal reform (World Bank)",
+            "Cooperative housing - Savings clubs work, formalize + link to banks (CAHF)",
+            "Diaspora investment - $1B+ remittances, create diaspora bonds for housing (AfDB)"
+        ]
     },
     {
         "country": "Algeria",
@@ -2888,7 +3153,14 @@ const housingData = [
         "municipalSpendingEfficiency": 352.9,
         "mortgagePenetrationPerCapita": 8,
         "homeInsurancePenetration": 22,
-        "dataMismatchIndex": 51
+        "dataMismatchIndex": 51,
+        "housingRecommendations": [
+            "ANL social housing expansion - 2% stock insufficient despite 96% ownership (INS 2024)",
+            "Roma housing integration - 500k+ Roma in slums (Ferentari/Cluj), title + upgrade (World Bank)",
+            "Energy efficiency - Worst EU thermal performance, renovate blocks (MDLPA)",
+            "Rental law creation - Virtually no protections, need framework (EC)",
+            "Rural depopulation - Villages emptying, offer free homes + internet (Guvernul României)"
+        ]
     },
     {
         "country": "Bulgaria",
@@ -2988,7 +3260,14 @@ const housingData = [
         "homeInsurancePenetration": 19,
         "dataMismatchIndex": 54,
         "homeownershipRate": 73.4,
-        "housingStockAtRisk": 38.6
+        "housingStockAtRisk": 38.6,
+        "housingRecommendations": [
+            "Techo Propio subsidy increase - S/8,100-35,900 insufficient for Lima prices (IDB 2023)",
+            "Land titling completion - COFOPRI titled 1.5M, 500k remain in pueblos jóvenes (World Bank)",
+            "Mortgage market development - 8% penetration low, need MiVivienda liquidity (CAHF analog)",
+            "Earthquake-resistant construction - 2007 Pisco lessons, enforce nationwide (UN-Habitat)",
+            "Rural housing programs - Andean communities need altitude-appropriate designs (IDB)"
+        ]
     },
     {
         "country": "Cambodia",
@@ -3380,7 +3659,14 @@ const housingData = [
         "housingStockAtRisk": 45.1,
         "affordabilityTrend": 2.4,
         "housingUnaffordabilityRate": 64.2,
-        "programTargetingEfficiency": 32.4
+        "programTargetingEfficiency": 32.4,
+        "housingRecommendations": [
+            "GMVV reform - Gran Misión delivered 4M units but political allocation, depoliticize (IDB 2023)",
+            "Currency stabilization - Hyperinflation destroyed mortgages, need USD-denominated finance (IMF)",
+            "Informal settlement legalization - Barrios house 60% Caracas, provide titles (UN-Habitat)",
+            "Maintenance fund - GMVV buildings deteriorating rapidly, establish reserves (World Bank)",
+            "Migration impact - 7.7M fled, empty homes in crisis areas, repurpose (UNHCR)"
+        ]
     },
 
     {
@@ -3668,7 +3954,14 @@ const housingData = [
         "housingStockAtRisk": 14.3,
         "affordabilityTrend": -4.2,
         "housingUnaffordabilityRate": 46.8,
-        "programTargetingEfficiency": 64.8
+        "programTargetingEfficiency": 64.8,
+        "housingRecommendations": [
+            "Syrian refugee integration - 1.3M refugees (Za'atari/Azraq camps), need urban housing (UNHCR/World Bank)",
+            "Affordable housing targets - Amman prices exclude middle class, mandate 20% quotas (UN-Habitat 2024)",
+            "Water-efficient housing - Severe scarcity, mandate graywater recycling/low-flow (World Bank Water)",
+            "Mortgage market deepening - 15% penetration moderate, need longer terms (>15 yr) (Central Bank)",
+            "Palestinian refugee camps - UNRWA camps need upgrading (1948 refugees) (UNRWA)"
+        ]
     },
 
     {
@@ -3740,7 +4033,14 @@ const housingData = [
         "housingStockAtRisk": 39.8,
         "affordabilityTrend": -4.4,
         "housingUnaffordabilityRate": 72.4,
-        "programTargetingEfficiency": 42.6
+        "programTargetingEfficiency": 42.6,
+        "housingRecommendations": [
+            "Rent-to-own programs - High down payments (20-30%) block access, need graduated equity (CAHF 2024)",
+            "Land title registration - Lands Commission backlog 18+ months blocks deals (World Bank)",
+            "Local materials promotion - Compressed earth blocks 40% cheaper than cement (UN-Habitat)",
+            "Teacher/nurse housing schemes - Public sector guaranteed income enables finance (CAHF)",
+            "Municipal bond issuance - Accra/Kumasi can borrow for infrastructure (World Bank)"
+        ]
     },
 
     {
@@ -4028,7 +4328,14 @@ const housingData = [
         "housingStockAtRisk": 42.1,
         "affordabilityTrend": -4.8,
         "housingUnaffordabilityRate": 78.4,
-        "programTargetingEfficiency": 34.8
+        "programTargetingEfficiency": 34.8,
+        "housingRecommendations": [
+            "Informal settlement upgrading - 70% Harare/Bulawayo informal, provide tenure (UN-Habitat 2024)",
+            "Currency stabilization - ZWL volatility kills mortgages, dollarize housing finance (World Bank)",
+            "Local authority capacity - Harare broke, cannot deliver services, fiscal reform (World Bank)",
+            "Cooperative housing - Savings clubs work, formalize + link to banks (CAHF)",
+            "Diaspora investment - $1B+ remittances, create diaspora bonds for housing (AfDB)"
+        ]
     },
 
     {

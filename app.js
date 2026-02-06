@@ -265,6 +265,14 @@ const layerConfig = {
         scale: [28, 92],
         unit: ' targeting score',
         reversed: true  // Higher is better - better targeting to poor/middle class
+    },
+    housingRecommendations: {
+        title: 'Policy Recommendations',
+        description: 'Evidence-based housing policy recommendations from UN-Habitat, World Bank, IDB, and CAHF reports (2020-2025). Country-specific actionable interventions based on national housing sector assessments, regional reviews, and best practice evaluations. Green indicates countries with available recommendations from authoritative sources.',
+        dataKey: 'housingRecommendations',
+        scale: [0, 1],  // Binary: has recommendations or not
+        unit: '',
+        isTextLayer: true  // Special flag for non-numeric data
     }
 };
 
@@ -565,6 +573,12 @@ function initGlobe() {
 
                     const config = layerConfig[currentLayer];
                     const value = countryData[config.dataKey];
+
+                    // Special handling for text layers (like recommendations)
+                    if (config.isTextLayer) {
+                        return (value && Array.isArray(value) && value.length > 0) ? '#00cc66' : '#555555';
+                    }
+
                     return getColor(value, config.scale[0], config.scale[1], config.reversed);
                 })
                 .polygonSideColor(() => 'rgba(0, 0, 0, 0.2)')
@@ -747,6 +761,44 @@ function updateStatsPanel(countryData) {
     const policyLabel = getPolicyActivityLabel(countryData.policyActivityScore);
 
     statsPanel.classList.add('has-data');
+
+    // Special handling for text layers (recommendations)
+    if (config.isTextLayer && currentLayer === 'housingRecommendations') {
+        if (currentValue && Array.isArray(currentValue) && currentValue.length > 0) {
+            const recommendationsList = currentValue.map(rec => `<li style="margin-bottom: 12px; line-height: 1.5;">${rec}</li>`).join('');
+            statsPanel.innerHTML = `
+                <h4>${countryData.country}</h4>
+                <div class="country-stats">
+                    <p style="color: #00f2fe; font-weight: 600; margin-bottom: 15px; font-size: 15px;">
+                        📋 Evidence-Based Housing Policy Recommendations
+                    </p>
+                    <p style="font-size: 12px; color: #aaa; margin-bottom: 15px;">
+                        Sources: UN-Habitat, World Bank, IDB, CAHF (2020-2025)
+                    </p>
+                    <ul style="margin: 0; padding-left: 20px; color: #fff; font-size: 13px;">
+                        ${recommendationsList}
+                    </ul>
+                </div>
+                <button onclick="showDesignModal('${countryData.iso}')" style="width: 100%; margin-top: 15px; padding: 12px; background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                    🏠 View Resilient Home Design
+                </button>
+            `;
+        } else {
+            statsPanel.innerHTML = `
+                <h4>${countryData.country}</h4>
+                <div class="country-stats">
+                    <p style="color: #ff9500; margin-bottom: 10px;">
+                        No policy recommendations available yet for this country.
+                    </p>
+                    <p style="font-size: 12px; color: #aaa;">
+                        Recommendations are being compiled from UN-Habitat, World Bank, IDB, and CAHF reports.
+                    </p>
+                </div>
+            `;
+        }
+        return;
+    }
+
     statsPanel.innerHTML = `
         <h4>${countryData.country}</h4>
         <div class="country-stats">
@@ -863,7 +915,11 @@ function updateLayer(layer) {
     // Update UI
     document.getElementById('current-layer-title').textContent = config.title;
     document.getElementById('current-layer-description').textContent = config.description;
-    document.getElementById('detailed-definition').textContent = config.detailedDefinition;
+    if (config.detailedDefinition) {
+        document.getElementById('detailed-definition').textContent = config.detailedDefinition;
+    } else {
+        document.getElementById('detailed-definition').textContent = config.description;
+    }
 
     // Update legend based on metric type
     updateLegend(config.reversed);
@@ -888,6 +944,12 @@ function updateLayer(layer) {
             }
 
             const value = countryData[config.dataKey];
+
+            // Special handling for text layers (like recommendations)
+            if (config.isTextLayer) {
+                return (value && Array.isArray(value) && value.length > 0) ? '#00cc66' : '#555555';
+            }
+
             const color = getColor(value, config.scale[0], config.scale[1], config.reversed);
             return color;
         });
