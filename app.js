@@ -686,11 +686,21 @@ function initGlobe() {
                     globe.controls().autoRotate = false;
                 }
 
-                // Zoom into the country and show cities
+                // Get country data and show stats panel
                 const numericId = String(feat.id).padStart(3, '0');
                 const iso = numericToISO[numericId];
-                if (iso) {
-                    zoomToCountry(iso, feat);
+                const countryData = iso ? dataByISO[iso] : null;
+
+                if (countryData) {
+                    // Show country-level stats (including recommendations)
+                    updateStatsPanel(countryData);
+
+                    // Optional: If not on recommendations layer, zoom to cities after a delay
+                    if (currentLayer !== 'housingRecommendations') {
+                        setTimeout(() => {
+                            zoomToCountry(iso, feat);
+                        }, 500);
+                    }
                 }
             });
 
