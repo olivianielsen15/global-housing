@@ -273,6 +273,14 @@ const layerConfig = {
         scale: [0, 1],  // Binary: has recommendations or not
         unit: '',
         isTextLayer: true  // Special flag for non-numeric data
+    },
+    uninsurableHomes: {
+        title: 'Uninsurable Homes',
+        description: 'Percentage of homes that cannot obtain standard private insurance and must rely on government last-resort programs (FAIR plans, Citizens Insurance, NFIP) or go completely uninsured. Very High (red): Haiti 96%, Bangladesh 92%, Ethiopia 95% - virtually no insurance market. High: India 86%, Philippines 79%, Nigeria 92%. Moderate: USA 14.2%, Italy 18.5%. Low (green): Denmark 0.8%, Switzerland 1.2%, Norway 1.1%. Click USA for state-level breakdown. Sources: Swiss Re Sigma, FEMA, III, Lloyd\'s, World Bank (2024).',
+        dataKey: 'uninsurableHomesPercent',
+        scale: [0, 96],
+        unit: '% uninsurable',
+        reversed: false  // Higher is worse - more homes cannot get insurance
     }
 };
 
@@ -508,6 +516,55 @@ function updateCityListPanel(cities) {
     `;
 }
 
+// Show US state-level insurability data
+function showUSStateInsurability() {
+    const statsPanel = document.getElementById('stats-panel');
+    statsPanel.classList.add('has-data');
+
+    // Sort states by uninsurable percentage (worst first)
+    const sortedStates = Object.entries(usStateInsurabilityData)
+        .sort((a, b) => b[1].pct - a[1].pct);
+
+    const stateRows = sortedStates.map(([state, data]) => {
+        let color = '#00cc66';
+        if (data.pct > 20) color = '#cc0000';
+        else if (data.pct > 15) color = '#ff4500';
+        else if (data.pct > 10) color = '#ff9933';
+        else if (data.pct > 7) color = '#ffff00';
+        else if (data.pct > 4) color = '#66ff66';
+
+        return `
+            <div style="margin-bottom: 10px; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 6px; border-left: 3px solid ${color};">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <strong style="color: #fff;">${state}</strong>
+                    <span style="color: ${color}; font-weight: 700; font-size: 15px;">${data.pct}%</span>
+                </div>
+                <p style="margin: 6px 0 0; font-size: 12px; color: #bbb; line-height: 1.5;">${data.reason}</p>
+            </div>
+        `;
+    }).join('');
+
+    statsPanel.innerHTML = `
+        <h4>United States - Uninsurable Homes by State</h4>
+        <p style="color: #ff9500; font-weight: 600; margin-bottom: 5px; font-size: 14px;">
+            National Average: 14.2% of homes cannot get standard private insurance
+        </p>
+        <p style="font-size: 12px; color: #aaa; margin-bottom: 15px;">
+            Sources: FEMA NFIP, CA FAIR Plan, FL Citizens, III, state insurance commissioners (2024)
+        </p>
+        <div class="country-stats" style="max-height: 600px; overflow-y: auto;">
+            ${stateRows}
+        </div>
+        <button onclick="resetGlobeView()" style="
+            margin-top: 12px; padding: 10px 16px; background: #4facfe; color: white;
+            border: none; border-radius: 6px; cursor: pointer; font-size: 13px; width: 100%;
+        ">← Back to Global View</button>
+    `;
+
+    // Zoom to US
+    globe.pointOfView({ lat: 39.8, lng: -98.5, altitude: 1.2 }, 1500);
+}
+
 // Reset to global view
 function resetGlobeView() {
     cityViewActive = false;
@@ -695,8 +752,14 @@ function initGlobe() {
                     // Show country-level stats (including recommendations)
                     updateStatsPanel(countryData);
 
-                    // Optional: If not on recommendations layer, zoom to cities after a delay
-                    if (currentLayer !== 'housingRecommendations') {
+                    // Special handling: US states on uninsurable homes layer
+                    if (currentLayer === 'uninsurableHomes' && iso === 'USA') {
+                        showUSStateInsurability();
+                        return;
+                    }
+
+                    // Stay at country level for text layers
+                    if (currentLayer !== 'housingRecommendations' && currentLayer !== 'uninsurableHomes') {
                         setTimeout(() => {
                             zoomToCountry(iso, feat);
                         }, 500);
@@ -843,8 +906,10 @@ function updateStatsPanel(countryData) {
             <p><strong>Affordability Trend (2019-2025):</strong> ${countryData.affordabilityTrend ? (countryData.affordabilityTrend > 0 ? '+' : '') + countryData.affordabilityTrend.toFixed(1) + (countryData.affordabilityTrend < -5 ? ' (severe worsening)' : countryData.affordabilityTrend < 0 ? ' (worsening)' : countryData.affordabilityTrend > 0 ? ' (improving)' : ' (stable)') : 'N/A'}</p>
             <p><strong>Cannot Afford Basic Housing:</strong> ${countryData.housingUnaffordabilityRate ? countryData.housingUnaffordabilityRate.toFixed(1) + '% of households' : 'N/A'}</p>
             <p><strong>Program Targeting Efficiency:</strong> ${countryData.programTargetingEfficiency ? countryData.programTargetingEfficiency.toFixed(1) + '/100 (' + (countryData.programTargetingEfficiency >= 75 ? 'excellent' : countryData.programTargetingEfficiency >= 60 ? 'good' : countryData.programTargetingEfficiency >= 45 ? 'moderate' : countryData.programTargetingEfficiency >= 30 ? 'poor' : 'very poor') + ')' : 'N/A'}</p>
+            <p><strong>Uninsurable Homes:</strong> ${countryData.uninsurableHomesPercent ? countryData.uninsurableHomesPercent.toFixed(1) + '% cannot get standard insurance' : 'N/A'}</p>
+            ${countryData.iso === 'USA' && currentLayer === 'uninsurableHomes' ? '<p style="color: #4facfe; font-size: 12px; margin-top: 6px; padding: 6px; background: rgba(79,172,254,0.1); border-radius: 4px;">Click USA on the globe for state-by-state breakdown</p>' : ''}
             <p style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
-                <strong style="color: #00f2fe;">Current Metric:</strong> ${currentValue.toFixed(2)}${config.unit}
+                <strong style="color: #00f2fe;">Current Metric:</strong> ${typeof currentValue === 'number' ? currentValue.toFixed(2) : (currentValue ? 'Available' : 'N/A')}${config.unit}
             </p>
         </div>
         <button onclick="showDesignModal('${countryData.iso}')" style="width: 100%; margin-top: 15px; padding: 12px; background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">

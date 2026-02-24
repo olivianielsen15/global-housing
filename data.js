@@ -40,7 +40,8 @@ const housingData = [
         "housingStockAtRisk": 9.8,
         "affordabilityTrend": -5.2,
         "housingUnaffordabilityRate": 24.8,
-        "programTargetingEfficiency": 54.6
+        "programTargetingEfficiency": 54.6,
+        "uninsurableHomesPercent": 1.2
     },
     {
         "country": "Australia",
@@ -82,7 +83,8 @@ const housingData = [
             "State planning reform - NIMBYism blocks density, override local councils (NSW Productivity)",
             "First Home Super Saver expansion - $50k cap too low, increase to $100k (Treasury)",
             "Climate adaptation - Bushfire zones (NSW/VIC/SA) need BAL-FZ construction (CSIRO)"
-        ]
+        ],
+        "uninsurableHomesPercent": 8.4
     },
     {
         "country": "Denmark",
@@ -117,7 +119,8 @@ const housingData = [
         "housingStockAtRisk": 12.1,
         "affordabilityTrend": -5.8,
         "housingUnaffordabilityRate": 31.8,
-        "programTargetingEfficiency": 83.2
+        "programTargetingEfficiency": 83.2,
+        "uninsurableHomesPercent": 0.8
     },
     {
         "country": "Cyprus",
@@ -189,7 +192,8 @@ const housingData = [
             "Corporatie vrije sector - Housing associations lost 50% stock via privatization, restore (Aedes)",
             "Scheefwoners eviction - High-income in social housing, enforce means-testing (Woonbond)",
             "Randstad densification - Amsterdam/Rotterdam/Utrecht sprawl limits, build up (PBL)"
-        ]
+        ],
+        "uninsurableHomesPercent": 1.8
     },
     {
         "country": "Canada",
@@ -231,7 +235,8 @@ const housingData = [
             "Zoning reform - Single-family exclusive zoning in cities, allow missing middle (Pembina Institute)",
             "Non-resident speculation tax - 20-30% Vancouver sales foreign, need enforcement (BC Ministry)",
             "Indigenous housing - On-reserve housing crisis (0.5M need), increase CMHC allocation (AFN)"
-        ]
+        ],
+        "uninsurableHomesPercent": 6.8
     },
     {
         "country": "South Korea",
@@ -273,7 +278,8 @@ const housingData = [
             "Speculation tax enforcement - Multiple home ownership drives prices, tax at 70%+ (Ministry Economy)",
             "New town development - Bundang/Ilsan models worked, replicate near Seoul/Busan (K-Water)",
             "Earthquake preparedness - Gyeongju/Pohang quakes revealed poor codes, upgrade (MOIS)"
-        ]
+        ],
+        "uninsurableHomesPercent": 12.6
     },
     {
         "country": "Norway",
@@ -308,7 +314,8 @@ const housingData = [
         "housingStockAtRisk": 11.2,
         "affordabilityTrend": -6.2,
         "housingUnaffordabilityRate": 32.4,
-        "programTargetingEfficiency": 74.2
+        "programTargetingEfficiency": 74.2,
+        "uninsurableHomesPercent": 1.1
     },
     {
         "country": "Sweden",
@@ -343,7 +350,8 @@ const housingData = [
         "housingStockAtRisk": 10.7,
         "affordabilityTrend": -6.8,
         "housingUnaffordabilityRate": 36.2,
-        "programTargetingEfficiency": 81.6
+        "programTargetingEfficiency": 81.6,
+        "uninsurableHomesPercent": 1.4
     },
     {
         "country": "New Zealand",
@@ -385,7 +393,8 @@ const housingData = [
             "Foreign buyer ban enforcement - Loopholes remain, close (Treasury)",
             "Build-to-rent incentives - 5% rental stock vs 30% Germany, tax breaks for institutional landlords (MBIE)",
             "Earthquake resilience - Wellington/Christchurch unreinforced masonry retrofits (EQC)"
-        ]
+        ],
+        "uninsurableHomesPercent": 4.8
     },
     {
         "country": "Luxembourg",
@@ -462,7 +471,8 @@ const housingData = [
             "Leasehold abolition - Feudal system blocks ownership, convert to commonhold (Law Commission)",
             "Help to Buy reform - Inflates prices, redirect to supply-side grants (IFS/Resolution Foundation)",
             "Cladding remediation - Post-Grenfell crisis affects 700k flats, accelerate funding (MHCLG)"
-        ]
+        ],
+        "uninsurableHomesPercent": 3.2
     },
     {
         "country": "Finland",
@@ -497,7 +507,8 @@ const housingData = [
         "housingStockAtRisk": 9.4,
         "affordabilityTrend": -4.2,
         "housingUnaffordabilityRate": 28.6,
-        "programTargetingEfficiency": 80.4
+        "programTargetingEfficiency": 80.4,
+        "uninsurableHomesPercent": 1.3
     },
     {
         "country": "United States",
@@ -539,7 +550,8 @@ const housingData = [
             "Mortgage interest deduction cap - $10k SALT cap worked, cap MID at $15k (Tax Policy Center)",
             "Social housing creation - 0.5% stock vs 30% Netherlands, build (Peoples Policy Project)",
             "Climate resilience - Wildfire (CA) / hurricane (FL/TX/LA) zones need fortified construction (FEMA)"
-        ]
+        ],
+        "uninsurableHomesPercent": 14.2
     },
     {
         "country": "Belgium",
@@ -574,7 +586,8 @@ const housingData = [
         "housingStockAtRisk": 14.6,
         "affordabilityTrend": -4.8,
         "housingUnaffordabilityRate": 32.6,
-        "programTargetingEfficiency": 72.2
+        "programTargetingEfficiency": 72.2,
+        "uninsurableHomesPercent": 3.4
     },
     {
         "country": "France",
@@ -616,7 +629,8 @@ const housingData = [
             "Vacancy tax expansion - Paris/Lyon/Bordeaux have 300k empty, tax at 20%/yr (Fondation Abbé Pierre)",
             "Banlieue regeneration - NPNRU works (Clichy-sous-Bois/Saint-Denis), expand (ANRU)",
             "Energy retrofitting - 4.8M passoires thermiques (energy sieves), mandate upgrades (Ministère Transition Écologique)"
-        ]
+        ],
+        "uninsurableHomesPercent": 2.1
     },
     {
         "country": "Japan",
@@ -658,7 +672,8 @@ const housingData = [
             "Inheritance tax reform - Abandoned homes from unclear ownership, streamline probate (MOJ)",
             "Earthquake retrofitting - Pre-1981 buildings lack seismic codes, mandate upgrades (MLIT)",
             "Rural revitalization - Limit/Marginal Settlement Initiative for villages (Somu-sho)"
-        ]
+        ],
+        "uninsurableHomesPercent": 8.4
     },
     {
         "country": "Spain",
@@ -693,7 +708,8 @@ const housingData = [
         "housingStockAtRisk": 24.3,
         "affordabilityTrend": -4.2,
         "housingUnaffordabilityRate": 36.8,
-        "programTargetingEfficiency": 68.2
+        "programTargetingEfficiency": 68.2,
+        "uninsurableHomesPercent": 4.2
     },
     {
         "country": "Portugal",
@@ -728,7 +744,8 @@ const housingData = [
         "housingStockAtRisk": 28.7,
         "affordabilityTrend": -6.8,
         "housingUnaffordabilityRate": 42.4,
-        "programTargetingEfficiency": 66.8
+        "programTargetingEfficiency": 66.8,
+        "uninsurableHomesPercent": 8.5
     },
     {
         "country": "Ireland",
@@ -763,7 +780,8 @@ const housingData = [
         "housingStockAtRisk": 17.8,
         "affordabilityTrend": -8.2,
         "housingUnaffordabilityRate": 44.8,
-        "programTargetingEfficiency": 68.4
+        "programTargetingEfficiency": 68.4,
+        "uninsurableHomesPercent": 5.2
     },
     {
         "country": "Austria",
@@ -798,7 +816,8 @@ const housingData = [
         "housingStockAtRisk": 13.7,
         "affordabilityTrend": -4.6,
         "housingUnaffordabilityRate": 26.4,
-        "programTargetingEfficiency": 82.8
+        "programTargetingEfficiency": 82.8,
+        "uninsurableHomesPercent": 2.8
     },
     {
         "country": "Germany",
@@ -840,7 +859,8 @@ const housingData = [
             "Building code simplification - Regulations add 30% to costs, streamline (BMWSB)",
             "Berlin expropriation - Referendum to socialize Deutsche Wohnen, implement (Deutsche Wohnen Enteignen)",
             "Refugee housing - 2M+ Ukrainians/Syrians need permanent homes (BAMF)"
-        ]
+        ],
+        "uninsurableHomesPercent": 4.5
     },
     {
         "country": "Estonia",
@@ -874,7 +894,8 @@ const housingData = [
         "homeownershipRate": 81.5,
         "housingStockAtRisk": 13.8,
         "affordabilityTrend": -5.8,
-        "housingUnaffordabilityRate": 34.2
+        "housingUnaffordabilityRate": 34.2,
+        "uninsurableHomesPercent": 5.4
     },
     {
         "country": "Slovenia",
@@ -908,7 +929,8 @@ const housingData = [
         "homeownershipRate": 76.3,
         "housingStockAtRisk": 21.3,
         "affordabilityTrend": -4.2,
-        "housingUnaffordabilityRate": 31.4
+        "housingUnaffordabilityRate": 31.4,
+        "uninsurableHomesPercent": 7.2
     },
     {
         "country": "Italy",
@@ -943,7 +965,8 @@ const housingData = [
         "housingStockAtRisk": 34.2,
         "affordabilityTrend": -3.4,
         "housingUnaffordabilityRate": 34.2,
-        "programTargetingEfficiency": 62.4
+        "programTargetingEfficiency": 62.4,
+        "uninsurableHomesPercent": 18.5
     },
     {
         "country": "Israel",
@@ -977,7 +1000,8 @@ const housingData = [
         "homeownershipRate": 66.8,
         "housingStockAtRisk": 11.6,
         "affordabilityTrend": -7.2,
-        "housingUnaffordabilityRate": 44.6
+        "housingUnaffordabilityRate": 44.6,
+        "uninsurableHomesPercent": 22.4
     },
     {
         "country": "Czech Republic",
@@ -1012,7 +1036,8 @@ const housingData = [
         "housingStockAtRisk": 16.8,
         "affordabilityTrend": -4.4,
         "housingUnaffordabilityRate": 36.4,
-        "programTargetingEfficiency": 66.6
+        "programTargetingEfficiency": 66.6,
+        "uninsurableHomesPercent": 6.4
     },
     {
         "country": "Greece",
@@ -1046,7 +1071,8 @@ const housingData = [
         "homeownershipRate": 72.4,
         "housingStockAtRisk": 35.6,
         "affordabilityTrend": -2.8,
-        "housingUnaffordabilityRate": 38.6
+        "housingUnaffordabilityRate": 38.6,
+        "uninsurableHomesPercent": 22.4
     },
     {
         "country": "Poland",
@@ -1088,7 +1114,8 @@ const housingData = [
             "Renovation fund - Communist-era bloki need thermal upgrades, EU funds (NFOŚiGW)",
             "Rental market formalization - 80% ownership unsustainable for youth, incentivize rentals (PIE)",
             "Ukrainian refugee integration - 3M+ Ukrainians need permanent housing (UNHCR)"
-        ]
+        ],
+        "uninsurableHomesPercent": 12.8
     },
     {
         "country": "Slovakia",
@@ -1122,7 +1149,8 @@ const housingData = [
         "homeownershipRate": 90.3,
         "housingStockAtRisk": 18.2,
         "affordabilityTrend": -3.8,
-        "housingUnaffordabilityRate": 33.6
+        "housingUnaffordabilityRate": 33.6,
+        "uninsurableHomesPercent": 9.8
     },
     {
         "country": "Chile",
@@ -1164,7 +1192,8 @@ const housingData = [
             "Rental market regulation - 20% rent, need tenant protections + supply incentives (World Bank)",
             "Reconstruction standards - Post-earthquake codes work, apply nationwide (UN-Habitat)",
             "Social housing integration - Reduce spatial segregation of subsidized housing (IDB)"
-        ]
+        ],
+        "uninsurableHomesPercent": 24.6
     },
     {
         "country": "Hungary",
@@ -1199,7 +1228,8 @@ const housingData = [
         "housingStockAtRisk": 17.5,
         "affordabilityTrend": -4.6,
         "housingUnaffordabilityRate": 34.8,
-        "programTargetingEfficiency": 61.8
+        "programTargetingEfficiency": 61.8,
+        "uninsurableHomesPercent": 8.2
     },
     {
         "country": "Latvia",
@@ -1233,7 +1263,8 @@ const housingData = [
         "homeownershipRate": 81.4,
         "housingStockAtRisk": 14.9,
         "affordabilityTrend": -4.6,
-        "housingUnaffordabilityRate": 36.8
+        "housingUnaffordabilityRate": 36.8,
+        "uninsurableHomesPercent": 8.6
     },
     {
         "country": "Lithuania",
@@ -1267,7 +1298,8 @@ const housingData = [
         "homeownershipRate": 90.6,
         "housingStockAtRisk": 15.6,
         "affordabilityTrend": -4.8,
-        "housingUnaffordabilityRate": 35.4
+        "housingUnaffordabilityRate": 35.4,
+        "uninsurableHomesPercent": 7.8
     },
     {
         "country": "Turkey",
@@ -1309,7 +1341,8 @@ const housingData = [
             "Mortgage market revival - Lira crisis crashed loans, need FX-indexed products (World Bank)",
             "Syrian refugee housing - 3.6M refugees in tent cities, need permanent (UNHCR)",
             "Rent control reform - Controls block investment, need balanced tenant/landlord law (OECD)"
-        ]
+        ],
+        "uninsurableHomesPercent": 52.4
     },
     {
         "country": "Mexico",
@@ -1351,7 +1384,8 @@ const housingData = [
             "Ejido land reform - 50% urban periphery ejido blocks formal development (World Bank)",
             "Rental housing development - 80% ownership unsustainable, need institutional rental (IDB)",
             "Earthquake retrofitting - CDMX/Oaxaca/Guerrero need seismic upgrades (World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 68.4
     },
     {
         "country": "Costa Rica",
@@ -1393,7 +1427,8 @@ const housingData = [
             "Social housing targets - New developments need affordable quotas (UN-Habitat)",
             "Rental market formalization - High informality, need registration/protections (IDB)",
             "Coastal resilience - Caribbean/Pacific flood risks need elevated construction (World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 38.2
     },
     {
         "country": "Colombia",
@@ -1435,7 +1470,8 @@ const housingData = [
             "Informal settlement legalization - 50% Bogotá/Medellín/Cali informal, title urgently (UN-Habitat)",
             "CAMACOL partnership - Builder association can deliver affordable at scale (IDB)",
             "Climate adaptation - Flooding Barranquilla/Cartagena, hurricanes San Andrés (World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 62.4
     },
     {
         "country": "Brazil",
@@ -1477,7 +1513,8 @@ const housingData = [
             "Property tax reform - IPTU rates 0.5% vs 2% OECD, revenue needed (World Bank)",
             "Rental law modernization - Locação law restrictive, blocks institutional investment (IDB)",
             "Climate-resilient retrofitting - Flood/landslide risk São Paulo/Rio (World Bank Climate)"
-        ]
+        ],
+        "uninsurableHomesPercent": 54.2
     },
     {
         "country": "Russia",
@@ -1549,7 +1586,8 @@ const housingData = [
             "Social housing expansion - 10% stock vs 30% Netherlands, increase (OECD)",
             "Property market stabilization - Evergrande crisis, need demand-side support (IMF/World Bank)",
             "Vacancy tax - 22% vacancy rate, activate empty stock before building (China Household Finance Survey)"
-        ]
+        ],
+        "uninsurableHomesPercent": 48.2
     },
     {
         "country": "Thailand",
@@ -1587,7 +1625,8 @@ const housingData = [
             "Migrant worker housing - 3M+ Myanmar/Cambodia workers in slums, formalize (ILO)",
             "Flood-resilient housing - Bangkok subsidence + climate, elevate new construction (GFDRR)",
             "Condo glut conversion - 50k+ empty condos, convert to affordable rental (Bank of Thailand)"
-        ]
+        ],
+        "uninsurableHomesPercent": 62.4
     },
     {
         "country": "Malaysia",
@@ -1618,7 +1657,8 @@ const housingData = [
         "mortgagePenetrationPerCapita": 24,
         "homeInsurancePenetration": 48,
         "dataMismatchIndex": 46,
-        "homeownershipRate": 76.2
+        "homeownershipRate": 76.2,
+        "uninsurableHomesPercent": 42.5
     },
     {
         "country": "Singapore",
@@ -1660,7 +1700,8 @@ const housingData = [
             "Lease decay addressing - 99yr leases depreciating, SERS insufficient coverage (HDB)",
             "Sandbanking limits - Land reclamation constrained, maximize density (MND)",
             "Climate adaptation - Sea level rise threatens 30% island, elevate new towns (PUB/MND)"
-        ]
+        ],
+        "uninsurableHomesPercent": 2.4
     },
     {
         "country": "Philippines",
@@ -1702,7 +1743,8 @@ const housingData = [
             "Typhoon-resilient construction - Build Back Better post-Haiyan worked, enforce (GFDRR/World Bank)",
             "Rental housing incentives - Metro Manila 30% rent, need landlord formalization (World Bank)",
             "Land title digitization - LRA backlog 18+ months blocks deals (World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 78.5
     },
     {
         "country": "Vietnam",
@@ -1744,7 +1786,8 @@ const housingData = [
             "Rental law modernization - Landlord-dominated market needs tenant protections (UN-Habitat)",
             "Mekong Delta resilience - Sea level rise threatens 40% southern housing (World Bank Climate)",
             "Industrial zone housing - FDI workers in dormitories, need proper apartments (ILO)"
-        ]
+        ],
+        "uninsurableHomesPercent": 76.8
     },
     {
         "country": "Indonesia",
@@ -1786,7 +1829,8 @@ const housingData = [
             "Land certification - 50% parcels uncertified blocks collateral, accelerate BPN digitization (World Bank)",
             "Kampung upgrading - Jakarta/Surabaya/Medan informal 50-60%, regularize (UN-Habitat)",
             "Disaster-resilient codes - Earthquake/tsunami/flood zones need enforcement (GFDRR/World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 84.2
     },
     {
         "country": "India",
@@ -1828,7 +1872,8 @@ const housingData = [
             "Slum rehabilitation at scale - RAY/BSUP delivered 1.5M, need 10M+ (UN-Habitat)",
             "Mortgage penetration - 4% penetration, need NHB refinancing + longer terms (World Bank)",
             "Stamp duty reduction - 5-10% land registration kills deals, cap at 2% (NITI Aayog)"
-        ]
+        ],
+        "uninsurableHomesPercent": 86.4
     },
     {
         "country": "Argentina",
@@ -1870,7 +1915,8 @@ const housingData = [
             "Villa upgrading - PROMEBA works in 22 provinces, double funding (UN-Habitat)",
             "Rental law reform - 2020 controls crashed supply, need balance (IDB)",
             "Provincial coordination - Federal-provincial housing finance fragmented (World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 42.8
     },
     {
         "country": "Pakistan",
@@ -1912,7 +1958,8 @@ const housingData = [
             "Mortgage market creation - 2% penetration, need Pakistan Mortgage Refinance Company (State Bank)",
             "EOBI/GEPCO schemes - Employer housing associations work, replicate (ILO)",
             "Flood-resilient housing - 2022 floods destroyed 2M homes, rebuild better (GFDRR)"
-        ]
+        ],
+        "uninsurableHomesPercent": 88.6
     },
     {
         "country": "Bangladesh",
@@ -1954,7 +2001,8 @@ const housingData = [
             "Microfinance housing - Grameen model works, need $1-5k construction loans (BRAC/World Bank)",
             "Climate adaptation - Cyclone/flood resilient housing (elevated, storm shutters) (GFDRR)",
             "Garment worker housing - 4M RMG workers in slums, employer schemes (ILO)"
-        ]
+        ],
+        "uninsurableHomesPercent": 92.4
     },
     {
         "country": "United Arab Emirates",
@@ -1989,7 +2037,8 @@ const housingData = [
         "housingStockAtRisk": 6.8,
         "affordabilityTrend": -4.6,
         "housingUnaffordabilityRate": 32.4,
-        "programTargetingEfficiency": 58.4
+        "programTargetingEfficiency": 58.4,
+        "uninsurableHomesPercent": 18.2
     },
     {
         "country": "Saudi Arabia",
@@ -2031,7 +2080,8 @@ const housingData = [
             "Expat housing formalization - 13M migrants in labor camps, need standards (ILO)",
             "Women's housing access - Guardianship reforms help, but banks still restrictive (World Bank)",
             "NEOM affordable housing - New cities need worker housing, not just luxury (UN-Habitat)"
-        ]
+        ],
+        "uninsurableHomesPercent": 28.5
     },
     {
         "country": "Iceland",
@@ -2066,7 +2116,8 @@ const housingData = [
         "housingStockAtRisk": 18.5,
         "affordabilityTrend": -7.4,
         "housingUnaffordabilityRate": 34.6,
-        "programTargetingEfficiency": 56.8
+        "programTargetingEfficiency": 56.8,
+        "uninsurableHomesPercent": 1.5
     },
     {
         "country": "South Africa",
@@ -2107,7 +2158,8 @@ const housingData = [
             "Reform spatial planning - densify urban cores, reduce apartheid-era sprawl (World Bank)",
             "Expand FLISP finance-linked subsidy (R3.5k-R22k income) - gap housing critical (CAHF)",
             "Title deed backlog clearance - 1M+ RDP homes untitled blocks wealth/credit (UN-Habitat)"
-        ]
+        ],
+        "uninsurableHomesPercent": 52.8
     },
     {
         "country": "Egypt",
@@ -2149,7 +2201,8 @@ const housingData = [
             "Mortgage interest subsidies - 3-5% rates for low-income critical (Egypt Mortgage Refinance)",
             "New cities affordable quota - Mandate 30% affordable in new capitals/compounds (UN-Habitat)",
             "Rental law reform - tenant protections block investment, need balanced framework (World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 72.8
     },
     {
         "country": "Morocco",
@@ -2191,7 +2244,8 @@ const housingData = [
             "Mortgage market deepening - 7% penetration low for middle-income country (CAHF 2024)",
             "Rental housing incentives - 60% rent but landlord formalization low (tax breaks needed)",
             "Regional development - Focus Casablanca/Rabat crowds out Fes/Marrakech (World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 56.4
     },
     {
         "country": "Kenya",
@@ -2233,7 +2287,8 @@ const housingData = [
             "Slum upgrading at scale - KENSUP/KISIP models work, need $500M+/yr funding (UN-Habitat)",
             "Housing levy restructuring - 1.5% employer/employee contributions need transparency (CAHF 2024)",
             "Rental housing incentives - 80% Nairobi rents, need landlord registration/tax breaks (World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 88.2
     },
     {
         "country": "Nigeria",
@@ -2275,7 +2330,8 @@ const housingData = [
             "Primary mortgage market development - <2% penetration, need refinancing facility (CAHF)",
             "Incremental housing finance - 70% build informally, need construction microloans (UN-Habitat)",
             "Building materials localization - reduce cement costs (₦5,500/bag prohibitive) (World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 92.4
     },
     {
         "country": "Ghana",
@@ -2317,7 +2373,8 @@ const housingData = [
             "Local materials promotion - Compressed earth blocks 40% cheaper than cement (UN-Habitat)",
             "Teacher/nurse housing schemes - Public sector guaranteed income enables finance (CAHF)",
             "Municipal bond issuance - Accra/Kumasi can borrow for infrastructure (World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 82.4
     },
     {
         "country": "Ethiopia",
@@ -2359,7 +2416,8 @@ const housingData = [
             "Land lease reform - 99yr urban leases unclear, blocks collateral (World Bank)",
             "Cooperative housing scaling - 20/80 model (20% down, 80% public land) works (UN-Habitat)",
             "Construction sector training - skilled labor shortage constrains supply (ILO/World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 94.8
     },
     {
         "country": "Tanzania",
@@ -2401,7 +2459,8 @@ const housingData = [
             "Informal settlement upgrading - 70% Dar es Salaam informal, TSHS model works (UN-Habitat)",
             "Pension fund housing investment - NSSF/PPF can provide patient capital (CAHF)",
             "Building code simplification - Reduce costs, enable incremental construction (World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 90.2
     },
     {
         "country": "Uganda",
@@ -2443,7 +2502,8 @@ const housingData = [
             "Microfinance housing products - 80% build incrementally, need $500-5k loans (CAHF 2024)",
             "Municipal infrastructure bonds - Kampala needs trunk services for densification (World Bank)",
             "Social housing pilot - Zero stock, need demonstration projects (UN-Habitat)"
-        ]
+        ],
+        "uninsurableHomesPercent": 91.4
     },
     {
         "country": "Rwanda",
@@ -2510,7 +2570,8 @@ const housingData = [
         "housingStockAtRisk": 43.5,
         "affordabilityTrend": -3.6,
         "housingUnaffordabilityRate": 79.6,
-        "programTargetingEfficiency": 38.2
+        "programTargetingEfficiency": 38.2,
+        "uninsurableHomesPercent": 88.4
     },
     {
         "country": "Namibia",
@@ -2609,7 +2670,8 @@ const housingData = [
         "housingStockAtRisk": 40.2,
         "affordabilityTrend": -3.6,
         "housingUnaffordabilityRate": 70.6,
-        "programTargetingEfficiency": 44.2
+        "programTargetingEfficiency": 44.2,
+        "uninsurableHomesPercent": 84.6
     },
     {
         "country": "Tunisia",
@@ -2676,7 +2738,8 @@ const housingData = [
         "housingStockAtRisk": 42.6,
         "affordabilityTrend": -3.8,
         "housingUnaffordabilityRate": 76.2,
-        "programTargetingEfficiency": 39.6
+        "programTargetingEfficiency": 39.6,
+        "uninsurableHomesPercent": 88.4
     },
     {
         "country": "Ivory Coast",
@@ -2711,7 +2774,8 @@ const housingData = [
         "housingStockAtRisk": 41.5,
         "affordabilityTrend": -4.2,
         "housingUnaffordabilityRate": 73.8,
-        "programTargetingEfficiency": 41.8
+        "programTargetingEfficiency": 41.8,
+        "uninsurableHomesPercent": 86.2
     },
     {
         "country": "Mozambique",
@@ -2746,7 +2810,8 @@ const housingData = [
         "housingStockAtRisk": 53.4,
         "affordabilityTrend": -3.2,
         "housingUnaffordabilityRate": 84.8,
-        "programTargetingEfficiency": 35.2
+        "programTargetingEfficiency": 35.2,
+        "uninsurableHomesPercent": 90.6
     },
     {
         "country": "Angola",
@@ -2781,7 +2846,8 @@ const housingData = [
         "housingStockAtRisk": 44.6,
         "affordabilityTrend": -2.8,
         "housingUnaffordabilityRate": 74.8,
-        "programTargetingEfficiency": 34.2
+        "programTargetingEfficiency": 34.2,
+        "uninsurableHomesPercent": 86.8
     },
     {
         "country": "Zimbabwe",
@@ -2823,7 +2889,8 @@ const housingData = [
             "Local authority capacity - Harare broke, cannot deliver services, fiscal reform (World Bank)",
             "Cooperative housing - Savings clubs work, formalize + link to banks (CAHF)",
             "Diaspora investment - $1B+ remittances, create diaspora bonds for housing (AfDB)"
-        ]
+        ],
+        "uninsurableHomesPercent": 84.6
     },
     {
         "country": "Algeria",
@@ -2953,7 +3020,8 @@ const housingData = [
         "housingStockAtRisk": 46.9,
         "affordabilityTrend": -3.4,
         "housingUnaffordabilityRate": 83.2,
-        "programTargetingEfficiency": 36.6
+        "programTargetingEfficiency": 36.6,
+        "uninsurableHomesPercent": 91.2
     },
     {
         "country": "Benin",
@@ -3096,7 +3164,8 @@ const housingData = [
         "housingStockAtRisk": 56.8,
         "affordabilityTrend": -3.2,
         "housingUnaffordabilityRate": 86.4,
-        "programTargetingEfficiency": 33.4
+        "programTargetingEfficiency": 33.4,
+        "uninsurableHomesPercent": 92.8
     },
     {
         "country": "Congo",
@@ -3160,7 +3229,8 @@ const housingData = [
             "Energy efficiency - Worst EU thermal performance, renovate blocks (MDLPA)",
             "Rental law creation - Virtually no protections, need framework (EC)",
             "Rural depopulation - Villages emptying, offer free homes + internet (Guvernul României)"
-        ]
+        ],
+        "uninsurableHomesPercent": 38.5
     },
     {
         "country": "Bulgaria",
@@ -3194,7 +3264,8 @@ const housingData = [
         "homeownershipRate": 87.5,
         "housingStockAtRisk": 24.8,
         "affordabilityTrend": -4.2,
-        "housingUnaffordabilityRate": 38.4
+        "housingUnaffordabilityRate": 38.4,
+        "uninsurableHomesPercent": 34.2
     },
     {
         "country": "Croatia",
@@ -3228,7 +3299,8 @@ const housingData = [
         "homeownershipRate": 89.7,
         "housingStockAtRisk": 26.4,
         "affordabilityTrend": -3.6,
-        "housingUnaffordabilityRate": 32.8
+        "housingUnaffordabilityRate": 32.8,
+        "uninsurableHomesPercent": 28.4
     },
     {
         "country": "Peru",
@@ -3267,7 +3339,8 @@ const housingData = [
             "Mortgage market development - 8% penetration low, need MiVivienda liquidity (CAHF analog)",
             "Earthquake-resistant construction - 2007 Pisco lessons, enforce nationwide (UN-Habitat)",
             "Rural housing programs - Andean communities need altitude-appropriate designs (IDB)"
-        ]
+        ],
+        "uninsurableHomesPercent": 68.5
     },
     {
         "country": "Cambodia",
@@ -3302,7 +3375,8 @@ const housingData = [
         "housingStockAtRisk": 54.6,
         "affordabilityTrend": -4.2,
         "housingUnaffordabilityRate": 72.8,
-        "programTargetingEfficiency": 48.6
+        "programTargetingEfficiency": 48.6,
+        "uninsurableHomesPercent": 85.6
     },
     {
         "country": "Nepal",
@@ -3337,7 +3411,8 @@ const housingData = [
         "housingStockAtRisk": 76.3,
         "affordabilityTrend": -3.6,
         "housingUnaffordabilityRate": 74.2,
-        "programTargetingEfficiency": 50.4
+        "programTargetingEfficiency": 50.4,
+        "uninsurableHomesPercent": 82.4
     },
     {
         "country": "Myanmar",
@@ -3372,7 +3447,8 @@ const housingData = [
         "housingStockAtRisk": 69.4,
         "affordabilityTrend": -2.8,
         "housingUnaffordabilityRate": 76.4,
-        "programTargetingEfficiency": 44.2
+        "programTargetingEfficiency": 44.2,
+        "uninsurableHomesPercent": 88.2
     },
     {
         "country": "Guatemala",
@@ -3407,7 +3483,8 @@ const housingData = [
         "housingStockAtRisk": 49.5,
         "affordabilityTrend": -3.4,
         "housingUnaffordabilityRate": 68.2,
-        "programTargetingEfficiency": 52.8
+        "programTargetingEfficiency": 52.8,
+        "uninsurableHomesPercent": 72.8
     },
 
     {
@@ -3443,7 +3520,8 @@ const housingData = [
         "housingStockAtRisk": 48.7,
         "affordabilityTrend": -3.6,
         "housingUnaffordabilityRate": 71.4,
-        "programTargetingEfficiency": 51.6
+        "programTargetingEfficiency": 51.6,
+        "uninsurableHomesPercent": 78.4
     },
 
     {
@@ -3479,7 +3557,8 @@ const housingData = [
         "housingStockAtRisk": 47.3,
         "affordabilityTrend": -2.8,
         "housingUnaffordabilityRate": 66.8,
-        "programTargetingEfficiency": 49.8
+        "programTargetingEfficiency": 49.8,
+        "uninsurableHomesPercent": 76.2
     },
 
     {
@@ -3515,7 +3594,8 @@ const housingData = [
         "housingStockAtRisk": 46.2,
         "affordabilityTrend": -3.2,
         "housingUnaffordabilityRate": 62.4,
-        "programTargetingEfficiency": 54.2
+        "programTargetingEfficiency": 54.2,
+        "uninsurableHomesPercent": 68.4
     },
 
     {
@@ -3551,7 +3631,8 @@ const housingData = [
         "housingStockAtRisk": 43.8,
         "affordabilityTrend": -3.8,
         "housingUnaffordabilityRate": 59.6,
-        "programTargetingEfficiency": 70.2
+        "programTargetingEfficiency": 70.2,
+        "uninsurableHomesPercent": 64.8
     },
 
     {
@@ -3587,7 +3668,8 @@ const housingData = [
         "housingStockAtRisk": 41.4,
         "affordabilityTrend": -3.2,
         "housingUnaffordabilityRate": 64.8,
-        "programTargetingEfficiency": 53.4
+        "programTargetingEfficiency": 53.4,
+        "uninsurableHomesPercent": 72.4
     },
 
     {
@@ -3623,7 +3705,8 @@ const housingData = [
         "housingStockAtRisk": 37.2,
         "affordabilityTrend": -2.8,
         "housingUnaffordabilityRate": 56.4,
-        "programTargetingEfficiency": 55.2
+        "programTargetingEfficiency": 55.2,
+        "uninsurableHomesPercent": 58.6
     },
 
     {
@@ -3666,7 +3749,8 @@ const housingData = [
             "Informal settlement legalization - Barrios house 60% Caracas, provide titles (UN-Habitat)",
             "Maintenance fund - GMVV buildings deteriorating rapidly, establish reserves (World Bank)",
             "Migration impact - 7.7M fled, empty homes in crisis areas, repurpose (UNHCR)"
-        ]
+        ],
+        "uninsurableHomesPercent": 82.4
     },
 
     {
@@ -3702,7 +3786,8 @@ const housingData = [
         "housingStockAtRisk": 69.4,
         "affordabilityTrend": -2.8,
         "housingUnaffordabilityRate": 76.4,
-        "programTargetingEfficiency": 44.2
+        "programTargetingEfficiency": 44.2,
+        "uninsurableHomesPercent": 88.2
     },
 
     {
@@ -3738,7 +3823,8 @@ const housingData = [
         "housingStockAtRisk": 54.6,
         "affordabilityTrend": -4.2,
         "housingUnaffordabilityRate": 72.8,
-        "programTargetingEfficiency": 48.6
+        "programTargetingEfficiency": 48.6,
+        "uninsurableHomesPercent": 85.6
     },
 
     {
@@ -3774,7 +3860,8 @@ const housingData = [
         "housingStockAtRisk": 51.3,
         "affordabilityTrend": -3.6,
         "housingUnaffordabilityRate": 70.2,
-        "programTargetingEfficiency": 46.8
+        "programTargetingEfficiency": 46.8,
+        "uninsurableHomesPercent": 86.8
     },
 
     {
@@ -3810,7 +3897,8 @@ const housingData = [
         "housingStockAtRisk": 76.3,
         "affordabilityTrend": -3.6,
         "housingUnaffordabilityRate": 74.2,
-        "programTargetingEfficiency": 50.4
+        "programTargetingEfficiency": 50.4,
+        "uninsurableHomesPercent": 82.4
     },
 
     {
@@ -3846,7 +3934,8 @@ const housingData = [
         "housingStockAtRisk": 47.2,
         "affordabilityTrend": -3.6,
         "housingUnaffordabilityRate": 54.2,
-        "programTargetingEfficiency": 54.8
+        "programTargetingEfficiency": 54.8,
+        "uninsurableHomesPercent": 74.2
     },
 
     {
@@ -3882,7 +3971,8 @@ const housingData = [
         "housingStockAtRisk": 78.2,
         "affordabilityTrend": 1.2,
         "housingUnaffordabilityRate": 82.8,
-        "programTargetingEfficiency": 31.2
+        "programTargetingEfficiency": 31.2,
+        "uninsurableHomesPercent": 94.2
     },
 
     {
@@ -3918,7 +4008,8 @@ const housingData = [
         "housingStockAtRisk": 49.8,
         "affordabilityTrend": -3.6,
         "housingUnaffordabilityRate": 62.6,
-        "programTargetingEfficiency": 45.2
+        "programTargetingEfficiency": 45.2,
+        "uninsurableHomesPercent": 82.5
     },
 
     {
@@ -3961,7 +4052,8 @@ const housingData = [
             "Water-efficient housing - Severe scarcity, mandate graywater recycling/low-flow (World Bank Water)",
             "Mortgage market deepening - 15% penetration moderate, need longer terms (>15 yr) (Central Bank)",
             "Palestinian refugee camps - UNRWA camps need upgrading (1948 refugees) (UNRWA)"
-        ]
+        ],
+        "uninsurableHomesPercent": 58.4
     },
 
     {
@@ -3997,7 +4089,8 @@ const housingData = [
         "housingStockAtRisk": 32.4,
         "affordabilityTrend": -1.2,
         "housingUnaffordabilityRate": 54.2,
-        "programTargetingEfficiency": 38.6
+        "programTargetingEfficiency": 38.6,
+        "uninsurableHomesPercent": 68.5
     },
 
     {
@@ -4040,7 +4133,8 @@ const housingData = [
             "Local materials promotion - Compressed earth blocks 40% cheaper than cement (UN-Habitat)",
             "Teacher/nurse housing schemes - Public sector guaranteed income enables finance (CAHF)",
             "Municipal bond issuance - Accra/Kumasi can borrow for infrastructure (World Bank)"
-        ]
+        ],
+        "uninsurableHomesPercent": 82.4
     },
 
     {
@@ -4076,7 +4170,8 @@ const housingData = [
         "housingStockAtRisk": 40.2,
         "affordabilityTrend": -3.6,
         "housingUnaffordabilityRate": 70.6,
-        "programTargetingEfficiency": 44.2
+        "programTargetingEfficiency": 44.2,
+        "uninsurableHomesPercent": 84.6
     },
 
     {
@@ -4112,7 +4207,8 @@ const housingData = [
         "housingStockAtRisk": 41.5,
         "affordabilityTrend": -4.2,
         "housingUnaffordabilityRate": 73.8,
-        "programTargetingEfficiency": 41.8
+        "programTargetingEfficiency": 41.8,
+        "uninsurableHomesPercent": 86.2
     },
 
     {
@@ -4148,7 +4244,8 @@ const housingData = [
         "housingStockAtRisk": 42.6,
         "affordabilityTrend": -3.8,
         "housingUnaffordabilityRate": 76.2,
-        "programTargetingEfficiency": 39.6
+        "programTargetingEfficiency": 39.6,
+        "uninsurableHomesPercent": 88.4
     },
 
     {
@@ -4184,7 +4281,8 @@ const housingData = [
         "housingStockAtRisk": 44.6,
         "affordabilityTrend": -2.8,
         "housingUnaffordabilityRate": 74.8,
-        "programTargetingEfficiency": 34.2
+        "programTargetingEfficiency": 34.2,
+        "uninsurableHomesPercent": 86.8
     },
 
     {
@@ -4220,7 +4318,8 @@ const housingData = [
         "housingStockAtRisk": 53.4,
         "affordabilityTrend": -3.2,
         "housingUnaffordabilityRate": 84.8,
-        "programTargetingEfficiency": 35.2
+        "programTargetingEfficiency": 35.2,
+        "uninsurableHomesPercent": 90.6
     },
 
     {
@@ -4256,7 +4355,8 @@ const housingData = [
         "housingStockAtRisk": 56.8,
         "affordabilityTrend": -3.2,
         "housingUnaffordabilityRate": 86.4,
-        "programTargetingEfficiency": 33.4
+        "programTargetingEfficiency": 33.4,
+        "uninsurableHomesPercent": 92.8
     },
 
     {
@@ -4292,7 +4392,8 @@ const housingData = [
         "housingStockAtRisk": 43.5,
         "affordabilityTrend": -3.6,
         "housingUnaffordabilityRate": 79.6,
-        "programTargetingEfficiency": 38.2
+        "programTargetingEfficiency": 38.2,
+        "uninsurableHomesPercent": 88.4
     },
 
     {
@@ -4335,7 +4436,8 @@ const housingData = [
             "Local authority capacity - Harare broke, cannot deliver services, fiscal reform (World Bank)",
             "Cooperative housing - Savings clubs work, formalize + link to banks (CAHF)",
             "Diaspora investment - $1B+ remittances, create diaspora bonds for housing (AfDB)"
-        ]
+        ],
+        "uninsurableHomesPercent": 84.6
     },
 
     {
@@ -4371,7 +4473,8 @@ const housingData = [
         "housingStockAtRisk": 46.9,
         "affordabilityTrend": -3.4,
         "housingUnaffordabilityRate": 83.2,
-        "programTargetingEfficiency": 36.6
+        "programTargetingEfficiency": 36.6,
+        "uninsurableHomesPercent": 91.2
     },
 
 ];
@@ -4387,3 +4490,58 @@ const housingData = [
 // - Eastern European data from Eurostat 2024-2025 (Romania, Bulgaria, Croatia)
 // - CAHF provides the most comprehensive and reliable housing data for African countries
 // - Some values are estimates where direct data is unavailable
+
+
+const usStateInsurabilityData = {
+    "California": {"pct": 22.8, "reason": "Wildfire - FAIR Plan grew to 400k+ policies (2024). State Farm/Allstate stopped writing new policies. WUI (Wildland-Urban Interface) 4.5M homes at risk. Paradise fire destroyed 19k structures. Insurance crisis worst in nation."},
+    "Florida": {"pct": 24.6, "reason": "Hurricane - Citizens Property Insurance 1.4M policies (insurer of last resort). 12 private insurers left since 2020. Roof age restrictions. 40% homeowners face non-renewal. Reinsurance costs doubled."},
+    "Louisiana": {"pct": 19.8, "reason": "Hurricane/flood - Post-Hurricane Ida (2021) insurer exodus. Citizens LA has 170k+ policies. Coastal erosion losing 25-35 sq mi/yr. 500k+ in NFIP flood zones."},
+    "Texas": {"pct": 12.4, "reason": "Hurricane coast + hail/tornado interior. TWIA (Texas Windstorm Insurance) 200k+ coastal policies. Dallas/Fort Worth severe hail drives non-renewals. Winter Storm Uri exposed gaps."},
+    "Colorado": {"pct": 10.2, "reason": "Wildfire (Marshall Fire 2021 - $2B, 1,000+ homes) + severe hail (costliest state). Boulder/Fort Collins WUI zones. Some areas losing coverage."},
+    "Oregon": {"pct": 9.8, "reason": "Wildfire - 2020 Labor Day fires burned 1M+ acres. WUI expansion in Bend, Medford, Eugene areas. Some rural areas losing private options."},
+    "Mississippi": {"pct": 14.6, "reason": "Hurricane coast + tornado alley. MWUA (Mississippi Windstorm Underwriting Association) for coast. Flood zones along Mississippi River."},
+    "South Carolina": {"pct": 11.8, "reason": "Hurricane coast (Charleston/Myrtle Beach). SC Wind and Hail Underwriting Association. Sea-level rise threatens Lowcountry."},
+    "North Carolina": {"pct": 10.4, "reason": "Hurricane coast (Outer Banks extremely vulnerable). NC Beach Plan (NCIUA). Flood zones expanding inland (Hurricane Florence 2018)."},
+    "New York": {"pct": 7.2, "reason": "Coastal flood (Long Island/NYC post-Sandy). NFIP dependency. Some brownfield/Superfund sites near uninsurable. NYC co-op gaps."},
+    "New Jersey": {"pct": 8.4, "reason": "Coastal flood (Sandy devastation). Shore towns face rising premiums. NFIP reform hitting hard. Some barrier island homes uninsurable."},
+    "Hawaii": {"pct": 16.8, "reason": "Wildfire (Lahaina 2023 - deadliest US fire in century, 2,200+ structures). Volcanic/lava zones (Big Island Leilani Estates). Hurricane exposure. Lahaina rebuilding faces coverage crisis."},
+    "Alaska": {"pct": 18.2, "reason": "Permafrost thaw/subsidence (Shishmaref, Newtok relocating). Coastal erosion. Earthquake zone. Remote communities with no insurers willing to write."},
+    "Washington": {"pct": 7.8, "reason": "Wildfire east of Cascades. Earthquake (Seattle fault/Cascadia subduction). Lahar zones (Mt. Rainier threatens 80k homes)."},
+    "Arizona": {"pct": 6.2, "reason": "Wildfire (Yarnell Hill, Telegraph Fire). Flash flooding. Some desert areas with limited options."},
+    "Nevada": {"pct": 5.8, "reason": "Lake Mead area wildfire. Flash flooding Las Vegas. Limited exposure compared to coastal states."},
+    "Montana": {"pct": 8.6, "reason": "Wildfire (2023 season severe). Yellowstone flooding 2022. Rural areas with limited market options."},
+    "Oklahoma": {"pct": 9.4, "reason": "Tornado Alley (Moore tornados). Earthquake from fracking (wastewater injection). Hail damage increasing."},
+    "Nebraska": {"pct": 6.8, "reason": "Tornado/hail. 2019 bomb cyclone flooding. Agricultural areas with limited options."},
+    "Kansas": {"pct": 7.4, "reason": "Tornado Alley core. Severe hail. Greensburg tornado (2007) showed rebuilding challenges."},
+    "Iowa": {"pct": 5.6, "reason": "Derecho 2020 ($11B damage). River flooding. Agricultural structures."},
+    "Alabama": {"pct": 11.2, "reason": "Tornado (Tuscaloosa 2011) + hurricane coast (Mobile/Gulf Shores). Limited beach coverage options."},
+    "Georgia": {"pct": 8.8, "reason": "Hurricane coast (Savannah). Tornado exposure. Some inland flooding."},
+    "Virginia": {"pct": 6.4, "reason": "Hampton Roads sea-level rise (fastest on East Coast). Hurricane exposure. Norfolk naval area flooding."},
+    "Maryland": {"pct": 6.2, "reason": "Chesapeake Bay flooding. Ellicott City flash floods. Eastern Shore hurricane/sea-level risk."},
+    "Connecticut": {"pct": 5.8, "reason": "Coastal flooding (Long Island Sound). Some Hurricane Sandy-affected areas."},
+    "Massachusetts": {"pct": 5.4, "reason": "Coastal flood (Cape Cod, Nantucket erosion). Nor\'easters. MPIUA fair plan."},
+    "Rhode Island": {"pct": 5.2, "reason": "Coastal flooding. Hurricane vulnerability (1938 hurricane devastated). Small market."},
+    "Vermont": {"pct": 4.8, "reason": "Flooding (2023 historic floods). Tropical Storm Irene 2011. Mountain runoff increasing."},
+    "Maine": {"pct": 4.2, "reason": "Coastal erosion. Nor\'easter exposure. Rural areas with limited options."},
+    "New Hampshire": {"pct": 3.8, "reason": "Some flood zones. Winter storm damage. Relatively low risk."},
+    "Pennsylvania": {"pct": 5.6, "reason": "Flood zones (Hurricane Ida remnants 2021). Mine subsidence in coal country."},
+    "Ohio": {"pct": 4.8, "reason": "Tornado exposure. River flooding. Mine subsidence in SE Ohio."},
+    "Michigan": {"pct": 4.2, "reason": "Detroit urban blight (some blocks uninsurable). Great Lakes flooding increasing."},
+    "Wisconsin": {"pct": 3.6, "reason": "Flooding. Tornado exposure. Relatively low overall risk."},
+    "Minnesota": {"pct": 3.4, "reason": "Flooding (Red River). Tornado exposure. Generally good insurability."},
+    "Illinois": {"pct": 5.2, "reason": "Tornado/hail. Chicago flood zones. Some South/West side neighborhoods with limited options."},
+    "Indiana": {"pct": 4.6, "reason": "Tornado exposure. Flooding. Moderate overall risk."},
+    "Missouri": {"pct": 7.6, "reason": "New Madrid seismic zone (no mandatory EQ coverage). Tornado (Joplin 2011). Flooding."},
+    "Tennessee": {"pct": 7.2, "reason": "Tornado (Nashville 2020). Flash flooding (Waverly 2021 - 20 deaths). New Madrid seismic zone."},
+    "Kentucky": {"pct": 6.8, "reason": "Flash flooding (2022 Eastern KY - 44 deaths). Tornado (Dec 2021). Mine subsidence."},
+    "West Virginia": {"pct": 7.4, "reason": "Flash flooding (2016 devastating). Mine subsidence. Remote hollows with limited options."},
+    "Arkansas": {"pct": 7.2, "reason": "Tornado. New Madrid seismic. River flooding. Limited market in rural areas."},
+    "Idaho": {"pct": 6.4, "reason": "Wildfire (growing rapidly). Boise WUI expansion. Limited rural options."},
+    "Wyoming": {"pct": 4.8, "reason": "Wildfire. Some flood zones. Sparse population limits market options."},
+    "New Mexico": {"pct": 6.8, "reason": "Wildfire (Hermits Peak/Calf Canyon 2022 - largest in state history). Flash flooding post-fire."},
+    "Utah": {"pct": 4.4, "reason": "Wildfire risk growing. Great Salt Lake dust/subsidence. Wasatch fault earthquake."},
+    "North Dakota": {"pct": 3.8, "reason": "Red River flooding. Severe winter. Limited exposure overall."},
+    "South Dakota": {"pct": 4.2, "reason": "Tornado/hail. Rapid City flood risk. Moderate overall."},
+    "Delaware": {"pct": 5.8, "reason": "Coastal flooding/sea-level rise. Small state with concentrated risk."},
+    "District of Columbia": {"pct": 4.8, "reason": "Potomac/Anacostia flooding. Urban density challenges."}
+};
