@@ -4,6 +4,8 @@ const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/
 // Initialize the globe
 let globe;
 let currentLayer = 'deficit';
+let usStatesGeoJSON = null;  // Will hold US states geography
+let countriesGeoJSON = null;  // Will hold countries geography
 
 // Layer configurations
 const layerConfig = {
@@ -283,6 +285,21 @@ const layerConfig = {
         reversed: false  // Higher is worse - more homes cannot get insurance
     }
 };
+
+// Function to get polygons based on current layer
+function getPolygonsForLayer() {
+    if (!countriesGeoJSON) return [];
+
+    if (currentLayer === 'uninsurableHomes' && usStatesGeoJSON) {
+        // Show US states + other countries (exclude USA country polygon)
+        const nonUSCountries = countriesGeoJSON.features.filter(feat => {
+            const numericId = String(feat.id).padStart(3, '0');
+            return numericToISO[numericId] !== 'USA';
+        });
+        return [...nonUSCountries, ...usStatesGeoJSON.features];
+    }
+    return countriesGeoJSON.features;
+}
 
 // Color scale function - vibrant heat map colors with full opacity
 // For negative indicators: green = low (good), red = high (bad)
@@ -604,22 +621,42 @@ function initGlobe() {
         ? 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'  // Lower res for mobile
         : 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json';  // Higher res for desktop
 
+    // Also fetch US states TopoJSON for state-level display
+    fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json')
+        .then(res => res.json())
+        .then(statesTopology => {
+            usStatesGeoJSON = topojson.feature(statesTopology, statesTopology.objects.states);
+            console.log('Loaded US states:', usStatesGeoJSON.features.length);
+        })
+        .catch(err => console.log('Could not load US states:', err));
+
     fetch(topoJsonUrl)
         .then(res => res.json())
         .then(topology => {
             console.log('Loaded TopoJSON data');
 
             // Convert TopoJSON to GeoJSON
-            const countries = topojson.feature(topology, topology.objects.countries);
-            console.log('Feature count:', countries.features.length);
+            countriesGeoJSON = topojson.feature(topology, topology.objects.countries);
+            console.log('Feature count:', countriesGeoJSON.features.length);
             console.log('Our data coverage:', Object.keys(dataByISO).length, 'countries');
 
             // Set all polygon properties together (reduce altitude on mobile for performance)
             globe
-                .polygonsData(countries.features)
+                .polygonsData(getPolygonsForLayer())
                 .polygonAltitude(isMobile ? 0.005 : 0.01)
                 .polygonCapColor(feat => {
-                    // Convert numeric ID to ISO code
+                    // Check if this is a US state (has name property from us-atlas)
+                    if (feat.properties && feat.properties.name) {
+                        const stateName = feat.properties.name;
+                        const stateData = usStateInsurabilityData[stateName];
+
+                        if (stateData && currentLayer === 'uninsurableHomes') {
+                            return getColor(stateData.pct, 0, 96, false);
+                        }
+                        return '#555555';
+                    }
+
+                    // Convert numeric ID to ISO code (for countries)
                     const numericId = String(feat.id).padStart(3, '0');
                     const iso = numericToISO[numericId];
                     const countryData = iso ? dataByISO[iso] : null;
@@ -641,6 +678,36 @@ function initGlobe() {
                 .polygonSideColor(() => 'rgba(0, 0, 0, 0.2)')
                 .polygonStrokeColor(() => '#111')
                 .polygonLabel(feat => {
+                    // Check if this is a US state
+                    if (feat.properties && feat.properties.name) {
+                        const stateName = feat.properties.name;
+                        const stateData = usStateInsurabilityData[stateName];
+
+                        if (stateData) {
+                            return `
+                                <div style="
+                                    background: rgba(0, 0, 0, 0.95);
+                                    padding: 12px 16px;
+                                    border-radius: 8px;
+                                    border: 2px solid #4facfe;
+                                    color: white;
+                                    font-family: 'Segoe UI', sans-serif;
+                                    max-width: 350px;
+                                ">
+                                    <div style="font-size: 16px; font-weight: bold; color: #00f2fe; margin-bottom: 8px;">
+                                        ${stateName}
+                                    </div>
+                                    <div style="font-size: 14px; margin-bottom: 6px;">
+                                        <strong style="color: #ff9500;">Uninsurable:</strong> ${stateData.pct}%
+                                    </div>
+                                    <div style="font-size: 12px; color: #bbb; line-height: 1.4;">
+                                        ${stateData.reason}
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    }
+
                     const numericId = String(feat.id).padStart(3, '0');
                     const iso = numericToISO[numericId];
                     const countryData = iso ? dataByISO[iso] : null;
@@ -1007,9 +1074,24 @@ function updateLayer(layer) {
         }
     });
 
-    // Update globe colors
+    // Update globe polygons and colors
     if (globe) {
+        // Update polygons data (this will add US states on uninsurable homes layer)
+        globe.polygonsData(getPolygonsForLayer());
+
+        // Update colors
         globe.polygonCapColor(feat => {
+            // Check if this is a US state
+            if (feat.properties && feat.properties.name) {
+                const stateName = feat.properties.name;
+                const stateData = usStateInsurabilityData[stateName];
+
+                if (stateData && currentLayer === 'uninsurableHomes') {
+                    return getColor(stateData.pct, 0, 96, false);
+                }
+                return '#555555';
+            }
+
             const numericId = String(feat.id).padStart(3, '0');
             const iso = numericToISO[numericId];
             const countryData = iso ? dataByISO[iso] : null;
