@@ -1285,6 +1285,7 @@ document.addEventListener('DOMContentLoaded', () => {
 let selectedExportFormat = null;
 let selectedExportScope = 'current-layer';
 let selectedCitationFormat = 'apa';
+let selectedCountriesForComparison = [];
 
 // Show export modal
 function showExportModal() {
@@ -1308,8 +1309,74 @@ function showExportModal() {
     // Set up event listeners for format buttons
     setupExportListeners();
 
+    // Initialize country comparison list
+    populateCountryList();
+
     // Log current selection for debugging
     console.log('Export modal opened. Selected country:', window.selectedCountryName || 'None');
+}
+
+// Populate country list for comparison
+function populateCountryList() {
+    const countryList = document.getElementById('country-list');
+    if (!countryList) return;
+
+    countryList.innerHTML = '';
+
+    // Sort countries alphabetically
+    const sortedCountries = [...housingData].sort((a, b) => a.country.localeCompare(b.country));
+
+    sortedCountries.forEach(country => {
+        const label = document.createElement('label');
+        label.style.display = 'block';
+        label.style.padding = '6px';
+        label.style.cursor = 'pointer';
+        label.style.borderRadius = '4px';
+        label.style.marginBottom = '2px';
+        label.style.transition = 'background 0.2s';
+        label.onmouseover = () => label.style.background = 'rgba(79, 172, 254, 0.2)';
+        label.onmouseout = () => label.style.background = 'transparent';
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = country.iso;
+        checkbox.dataset.countryName = country.country;
+        checkbox.style.marginRight = '8px';
+        checkbox.onchange = updateSelectedCountries;
+
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(country.country));
+        countryList.appendChild(label);
+    });
+}
+
+// Update selected countries for comparison
+function updateSelectedCountries() {
+    const checkboxes = document.querySelectorAll('#country-list input[type="checkbox"]');
+    selectedCountriesForComparison = Array.from(checkboxes)
+        .filter(cb => cb.checked)
+        .map(cb => ({
+            iso: cb.value,
+            name: cb.dataset.countryName
+        }));
+
+    document.getElementById('selected-count').textContent = selectedCountriesForComparison.length;
+
+    // Update preview if format is already selected
+    if (selectedExportFormat) {
+        updateExportPreview();
+    }
+}
+
+// Search/filter countries
+function filterCountryList(searchTerm) {
+    const labels = document.querySelectorAll('#country-list label');
+    const term = searchTerm.toLowerCase();
+
+    labels.forEach(label => {
+        const countryName = label.textContent.toLowerCase();
+        label.style.display = countryName.includes(term) ? 'block' : 'none';
+    });
 }
 
 // Close export modal
@@ -1378,10 +1445,27 @@ function setupExportListeners() {
     // Scope selector listener
     document.getElementById('export-scope').addEventListener('change', function() {
         selectedExportScope = this.value;
+
+        // Show/hide country selector based on scope
+        const countrySelectorSection = document.getElementById('country-selector-section');
+        if (selectedExportScope === 'compare-countries') {
+            countrySelectorSection.style.display = 'block';
+        } else {
+            countrySelectorSection.style.display = 'none';
+        }
+
         if (selectedExportFormat) {
             updateExportPreview();
         }
     });
+
+    // Country search listener
+    const countrySearch = document.getElementById('country-search');
+    if (countrySearch) {
+        countrySearch.addEventListener('input', function() {
+            filterCountryList(this.value);
+        });
+    }
 
     // Citation format listener
     document.getElementById('citation-format').addEventListener('change', function() {
@@ -1446,6 +1530,18 @@ function getCSVPreview() {
             preview += 'Household Debt to GDP,121,%<br/>';
             preview += '...<br/><br/>';
         }
+    } else if (selectedExportScope === 'compare-countries') {
+        if (selectedCountriesForComparison.length === 0) {
+            preview += '<span style="color: #ff9500;">⚠️ Please select countries to compare</span><br/><br/>';
+            preview += '<em style="color: #b0c4d4;">Check the boxes next to countries you want to compare.</em>';
+        } else {
+            const countryNames = selectedCountriesForComparison.map(c => c.name).join(', ');
+            preview += `<em style="color: #00f2fe;">Comparing: ${countryNames}</em><br/><br/>`;
+            preview += 'Metric,' + selectedCountriesForComparison.map(c => c.name).join(',') + '<br/>';
+            preview += 'Housing Deficit per Capita,1.2,4.2,3.1<br/>';
+            preview += 'Household Debt to GDP,130,121,95<br/>';
+            preview += '...<br/><br/>';
+        }
     } else {
         preview += '<em style="color: #00f2fe;">All countries, all metrics</em><br/><br/>';
         preview += 'Country,ISO,Deficit,Debt,Expenditure,...<br/>';
@@ -1468,11 +1564,16 @@ function getJSONPreview() {
     if (selectedExportScope === 'current-country' && !window.selectedCountryName) {
         preview += '<span style="color: #ff9500;">⚠️ Please click on a country on the globe first</span><br/><br/>';
         preview += '<em style="color: #b0c4d4;">Click any country on the 3D globe to select it, then return here to export its data.</em>';
+    } else if (selectedExportScope === 'compare-countries' && selectedCountriesForComparison.length === 0) {
+        preview += '<span style="color: #ff9500;">⚠️ Please select countries to compare</span><br/><br/>';
+        preview += '<em style="color: #b0c4d4;">Check the boxes next to countries you want to compare.</em>';
     } else {
         const scopeDesc = selectedExportScope === 'current-country'
             ? `Selected Country: ${window.selectedCountryName}`
             : selectedExportScope === 'current-layer'
             ? `Current Layer: ${layerConfig[currentLayer]?.title}`
+            : selectedExportScope === 'compare-countries'
+            ? `Comparing ${selectedCountriesForComparison.length} Countries`
             : 'Complete Dataset';
 
         preview += `<em style="color: #00f2fe;">${scopeDesc}</em><br/><br/>`;
@@ -1499,11 +1600,16 @@ function getPDFPreview() {
     if (selectedExportScope === 'current-country' && !window.selectedCountryName) {
         preview += '<span style="color: #ff9500;">⚠️ Please click on a country on the globe first</span><br/><br/>';
         preview += '<em style="color: #b0c4d4;">Click any country on the 3D globe to select it, then return here to export its data.</em>';
+    } else if (selectedExportScope === 'compare-countries' && selectedCountriesForComparison.length === 0) {
+        preview += '<span style="color: #ff9500;">⚠️ Please select countries to compare</span><br/><br/>';
+        preview += '<em style="color: #b0c4d4;">Check the boxes next to countries you want to compare.</em>';
     } else {
         const scopeDesc = selectedExportScope === 'current-country'
             ? window.selectedCountryName
             : selectedExportScope === 'current-layer'
             ? layerConfig[currentLayer]?.title
+            : selectedExportScope === 'compare-countries'
+            ? `${selectedCountriesForComparison.length} Countries Comparison`
             : 'Complete Dataset';
 
         preview += '📄 <strong>Global Housing Data Report</strong><br/>';
@@ -1580,6 +1686,12 @@ function downloadExport() {
         return;
     }
 
+    // Validate that countries are selected for comparison
+    if (scope === 'compare-countries' && selectedCountriesForComparison.length === 0) {
+        alert('Please select at least one country to compare.\n\nTip: Check the boxes next to the countries you want to include in your comparison report.');
+        return;
+    }
+
     switch (selectedExportFormat) {
         case 'csv':
             exportToCSV(scope);
@@ -1636,6 +1748,34 @@ function exportToCSV(scope) {
                 }
             });
         }
+
+    } else if (scope === 'compare-countries') {
+        filename = `housing-comparison-${new Date().toISOString().split('T')[0]}.csv`;
+
+        // Get selected countries data
+        const selectedCountries = selectedCountriesForComparison.map(c =>
+            housingData.find(country => country.iso === c.iso)
+        ).filter(c => c);
+
+        // Header with country names
+        csv += 'Metric';
+        selectedCountries.forEach(country => {
+            csv += `,"${country.country}"`;
+        });
+        csv += '\n';
+
+        // Data rows for each metric
+        Object.keys(layerConfig).forEach(layerKey => {
+            const config = layerConfig[layerKey];
+            if (!config.isTextLayer) {
+                csv += `"${config.title}"`;
+                selectedCountries.forEach(country => {
+                    const value = country[config.dataKey];
+                    csv += `,${value !== undefined && value !== null ? value : 'N/A'}`;
+                });
+                csv += '\n';
+            }
+        });
 
     } else {
         // All data
@@ -1706,6 +1846,13 @@ function exportToJSON(scope) {
             data.data = country;
             data.metricDefinitions = layerConfig;
         }
+
+    } else if (scope === 'compare-countries') {
+        data.metadata.countries = selectedCountriesForComparison.map(c => c.name);
+        data.data = selectedCountriesForComparison.map(c =>
+            housingData.find(country => country.iso === c.iso)
+        ).filter(c => c);
+        data.metricDefinitions = layerConfig;
 
     } else {
         // All data
@@ -1811,6 +1958,64 @@ function generatePDFReport(scope) {
                 }
             });
         }
+
+    } else if (scope === 'compare-countries') {
+        // Get selected countries data
+        const selectedCountries = selectedCountriesForComparison.map(c =>
+            housingData.find(country => country.iso === c.iso)
+        ).filter(c => c);
+
+        yPos += 10;
+        doc.setFontSize(16);
+        doc.setTextColor(0, 0, 0);
+        doc.text('Country Comparison Report', margin, yPos);
+
+        yPos += 10;
+        doc.setFontSize(10);
+        doc.setTextColor(60, 60, 60);
+        const countryNames = selectedCountries.map(c => c.country).join(', ');
+        const nameLines = doc.splitTextToSize(`Comparing: ${countryNames}`, pageWidth - 2 * margin);
+        doc.text(nameLines, margin, yPos);
+        yPos += nameLines.length * 5 + 15;
+
+        // Create comparison table
+        doc.setFontSize(9);
+
+        Object.keys(layerConfig).forEach(layerKey => {
+            const config = layerConfig[layerKey];
+            if (config.isTextLayer) return;
+
+            // Check if we need a new page
+            if (yPos > 260) {
+                doc.addPage();
+                yPos = 20;
+            }
+
+            // Metric name
+            doc.setFontSize(10);
+            doc.setTextColor(79, 172, 254);
+            const metricLines = doc.splitTextToSize(config.title, pageWidth - 2 * margin);
+            doc.text(metricLines, margin, yPos);
+            yPos += metricLines.length * 5 + 3;
+
+            // Country values
+            doc.setFontSize(9);
+            doc.setTextColor(0, 0, 0);
+            selectedCountries.forEach(country => {
+                const value = country[config.dataKey];
+                const displayValue = value !== undefined && value !== null ? `${value}${config.unit || ''}` : 'N/A';
+
+                if (yPos > 270) {
+                    doc.addPage();
+                    yPos = 20;
+                }
+
+                doc.text(`  ${country.country}: ${displayValue}`, margin + 5, yPos);
+                yPos += 5;
+            });
+
+            yPos += 3;
+        });
     }
 
     // Add new page for sources

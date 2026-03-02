@@ -360,8 +360,23 @@
                 <select id="export-scope" class="export-select">
                     <option value="current-layer">Current Layer (All Countries)</option>
                     <option value="current-country">Current Country (All Metrics)</option>
+                    <option value="compare-countries">Compare Multiple Countries</option>
                     <option value="all-data">Complete Dataset</option>
                 </select>
+            </div>
+
+            <div class="export-section" id="country-selector-section" style="display: none;">
+                <h3>Select Countries to Compare</h3>
+                <div style="margin-bottom: 10px;">
+                    <input type="text" id="country-search" placeholder="Search countries..."
+                           style="width: 100%; padding: 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(79, 172, 254, 0.3); border-radius: 4px; color: #fff; font-size: 14px;">
+                </div>
+                <div id="country-list" style="max-height: 200px; overflow-y: auto; background: rgba(0,0,0,0.3); border-radius: 4px; padding: 10px;">
+                    <!-- Countries will be populated here -->
+                </div>
+                <p style="font-size: 12px; color: #4facfe; margin-top: 8px;">
+                    <span id="selected-count">0</span> countries selected
+                </p>
             </div>
 
             <div class="export-section">
