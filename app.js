@@ -833,6 +833,13 @@ function updateStatsPanel(countryData) {
     const currentValue = countryData[config.dataKey];
     const policyLabel = getPolicyActivityLabel(countryData.policyActivityScore);
 
+    // Track selected country for export functionality
+    window.selectedCountryISO = countryData.iso;
+    window.selectedCountryName = countryData.country;
+
+    // Update export scope selector if modal is open
+    updateExportScopeSelector();
+
     statsPanel.classList.add('has-data');
 
     // Special handling for text layers (recommendations)
@@ -1273,6 +1280,9 @@ function showExportModal() {
     const modal = document.getElementById('export-modal');
     modal.classList.remove('hidden');
 
+    // Update scope selector with current country
+    updateExportScopeSelector();
+
     // Set up event listeners for format buttons
     setupExportListeners();
 }
@@ -1284,6 +1294,35 @@ function closeExportModal() {
     selectedExportFormat = null;
     document.getElementById('export-preview').innerHTML = '<p style="color: #b0c4d4; text-align: center; padding: 40px 20px;">Select an export format to preview</p>';
     document.getElementById('export-download-btn').disabled = true;
+}
+
+// Update export scope selector with current country
+function updateExportScopeSelector() {
+    const scopeSelect = document.getElementById('export-scope');
+    if (!scopeSelect) return;
+
+    const currentLayerOption = scopeSelect.querySelector('option[value="current-layer"]');
+    const currentCountryOption = scopeSelect.querySelector('option[value="current-country"]');
+
+    if (currentLayerOption) {
+        const layerTitle = layerConfig[currentLayer]?.title || 'Current Layer';
+        currentLayerOption.textContent = `Current Layer: ${layerTitle}`;
+    }
+
+    if (currentCountryOption) {
+        if (window.selectedCountryName) {
+            currentCountryOption.textContent = `Selected Country: ${window.selectedCountryName}`;
+            currentCountryOption.disabled = false;
+        } else {
+            currentCountryOption.textContent = 'Current Country (Click a country first)';
+            currentCountryOption.disabled = true;
+            // If this option was selected, switch to current-layer
+            if (selectedExportScope === 'current-country') {
+                selectedExportScope = 'current-layer';
+                scopeSelect.value = 'current-layer';
+            }
+        }
+    }
 }
 
 // Set up export modal event listeners
@@ -1366,22 +1405,32 @@ function getCSVPreview() {
 
     if (selectedExportScope === 'current-layer') {
         const config = layerConfig[currentLayer];
+        preview += `<em style="color: #00f2fe;">Layer: ${config.title}</em><br/><br/>`;
         preview += `Country,ISO Code,${config.title}<br/>`;
         preview += 'Switzerland,CHE,1.2<br/>';
         preview += 'Australia,AUS,4.2<br/>';
         preview += '...<br/><br/>';
     } else if (selectedExportScope === 'current-country') {
-        preview += 'Metric,Value,Unit<br/>';
-        preview += 'Housing Deficit per Capita,4.2,units/1000<br/>';
-        preview += 'Household Debt to GDP,121,%<br/>';
-        preview += '...<br/><br/>';
+        if (!window.selectedCountryName) {
+            preview += '<span style="color: #ff9500;">⚠️ Please click on a country on the globe first</span><br/><br/>';
+            preview += '<em style="color: #b0c4d4;">Click any country on the 3D globe to select it, then return here to export its data.</em>';
+        } else {
+            preview += `<em style="color: #00f2fe;">Country: ${window.selectedCountryName}</em><br/><br/>`;
+            preview += 'Metric,Value,Unit<br/>';
+            preview += 'Housing Deficit per Capita,4.2,units/1000<br/>';
+            preview += 'Household Debt to GDP,121,%<br/>';
+            preview += '...<br/><br/>';
+        }
     } else {
+        preview += '<em style="color: #00f2fe;">All countries, all metrics</em><br/><br/>';
         preview += 'Country,ISO,Deficit,Debt,Expenditure,...<br/>';
         preview += 'Switzerland,CHE,1.2,130,0.3,...<br/>';
         preview += '...<br/><br/>';
     }
 
-    preview += '<br/><em style="color: #00f2fe;">Includes source citations footer</em>';
+    if (selectedExportScope !== 'current-country' || window.selectedCountryName) {
+        preview += '<br/><em style="color: #00f2fe;">Includes source citations footer</em>';
+    }
     preview += '</div>';
     return preview;
 }
@@ -1391,15 +1440,27 @@ function getJSONPreview() {
     let preview = '<div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; font-family: monospace; font-size: 12px; max-height: 300px; overflow: auto;">';
     preview += '<strong style="color: #4facfe;">JSON Export Preview:</strong><br/><br/>';
 
-    preview += '<pre style="margin: 0; color: #b0c4d4;">{<br/>';
-    preview += '  "metadata": {<br/>';
-    preview += '    "tool": "Global Housing Data Visualization",<br/>';
-    preview += '    "exportDate": "' + new Date().toISOString() + '",<br/>';
-    preview += '    "scope": "' + selectedExportScope + '"<br/>';
-    preview += '  },<br/>';
-    preview += '  "data": [ ... ],<br/>';
-    preview += '  "sources": [ ... ]<br/>';
-    preview += '}</pre>';
+    if (selectedExportScope === 'current-country' && !window.selectedCountryName) {
+        preview += '<span style="color: #ff9500;">⚠️ Please click on a country on the globe first</span><br/><br/>';
+        preview += '<em style="color: #b0c4d4;">Click any country on the 3D globe to select it, then return here to export its data.</em>';
+    } else {
+        const scopeDesc = selectedExportScope === 'current-country'
+            ? `Selected Country: ${window.selectedCountryName}`
+            : selectedExportScope === 'current-layer'
+            ? `Current Layer: ${layerConfig[currentLayer]?.title}`
+            : 'Complete Dataset';
+
+        preview += `<em style="color: #00f2fe;">${scopeDesc}</em><br/><br/>`;
+        preview += '<pre style="margin: 0; color: #b0c4d4;">{<br/>';
+        preview += '  "metadata": {<br/>';
+        preview += '    "tool": "Global Housing Data Visualization",<br/>';
+        preview += '    "exportDate": "' + new Date().toISOString() + '",<br/>';
+        preview += '    "scope": "' + selectedExportScope + '"<br/>';
+        preview += '  },<br/>';
+        preview += '  "data": [ ... ],<br/>';
+        preview += '  "sources": [ ... ]<br/>';
+        preview += '}</pre>';
+    }
 
     preview += '</div>';
     return preview;
@@ -1410,16 +1471,27 @@ function getPDFPreview() {
     let preview = '<div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; font-size: 13px; max-height: 300px; overflow: auto;">';
     preview += '<strong style="color: #4facfe;">PDF Report Preview:</strong><br/><br/>';
 
-    preview += '📄 <strong>Global Housing Data Report</strong><br/>';
-    preview += '📅 Export Date: ' + new Date().toLocaleDateString() + '<br/>';
-    preview += '🌍 Scope: ' + selectedExportScope.replace(/-/g, ' ') + '<br/>';
-    preview += '📚 Citation Format: ' + selectedCitationFormat.toUpperCase() + '<br/><br/>';
+    if (selectedExportScope === 'current-country' && !window.selectedCountryName) {
+        preview += '<span style="color: #ff9500;">⚠️ Please click on a country on the globe first</span><br/><br/>';
+        preview += '<em style="color: #b0c4d4;">Click any country on the 3D globe to select it, then return here to export its data.</em>';
+    } else {
+        const scopeDesc = selectedExportScope === 'current-country'
+            ? window.selectedCountryName
+            : selectedExportScope === 'current-layer'
+            ? layerConfig[currentLayer]?.title
+            : 'Complete Dataset';
 
-    preview += '<em style="color: #00f2fe;">Report includes:</em><br/>';
-    preview += '• Data tables with all metrics<br/>';
-    preview += '• Metric definitions<br/>';
-    preview += '• Source citations<br/>';
-    preview += '• Methodology notes<br/>';
+        preview += '📄 <strong>Global Housing Data Report</strong><br/>';
+        preview += '📅 Export Date: ' + new Date().toLocaleDateString() + '<br/>';
+        preview += '🌍 Scope: ' + scopeDesc + '<br/>';
+        preview += '📚 Citation Format: ' + selectedCitationFormat.toUpperCase() + '<br/><br/>';
+
+        preview += '<em style="color: #00f2fe;">Report includes:</em><br/>';
+        preview += '• Data tables with all metrics<br/>';
+        preview += '• Metric definitions<br/>';
+        preview += '• Source citations<br/>';
+        preview += '• Methodology notes<br/>';
+    }
 
     preview += '</div>';
     return preview;
@@ -1476,6 +1548,12 @@ function downloadExport() {
     if (!selectedExportFormat) return;
 
     const scope = selectedExportScope;
+
+    // Validate that a country is selected when needed
+    if (scope === 'current-country' && !window.selectedCountryName) {
+        alert('Please click on a country on the globe first to export its data.\n\nTip: Click any country on the 3D globe, then return to the export modal.');
+        return;
+    }
 
     switch (selectedExportFormat) {
         case 'csv':
