@@ -1720,14 +1720,19 @@ function exportToJSON(scope) {
 
 // Generate PDF Report
 function generatePDFReport(scope) {
-    // Check if jsPDF is loaded
-    if (typeof window.jspdf === 'undefined' || !window.jspdf.jsPDF) {
+    // Check if jsPDF is loaded - handle both possible global variable names
+    let jsPDF;
+    if (window.jspdf && window.jspdf.jsPDF) {
+        jsPDF = window.jspdf.jsPDF;
+    } else if (window.jsPDF) {
+        jsPDF = window.jsPDF;
+    } else {
         alert('PDF library failed to load. Please refresh the page and try again.\n\nIf the issue persists, check your browser console for errors or try disabling browser extensions that might block CDN scripts.');
-        console.error('jsPDF library not loaded. window.jspdf:', window.jspdf);
+        console.error('jsPDF library not loaded. Checked window.jspdf and window.jsPDF');
         return;
     }
 
-    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
     const doc = new jsPDF();
 
     let yPos = 20;
