@@ -770,6 +770,32 @@ function initGlobe() {
             // Add city markers
             addCityMarkers();
 
+            // Configure globe controls for better navigation
+            const controls = globe.controls();
+
+            // Auto-rotate (slower on mobile to reduce GPU load)
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = isMobile ? 0.15 : 0.25;
+
+            // Enable full vertical and horizontal rotation
+            controls.enableRotate = true;
+            controls.enableZoom = true;
+            controls.enablePan = isMobile ? false : true;  // Disable pan on mobile to avoid conflicts
+
+            // Allow full vertical rotation (no limits)
+            controls.minPolarAngle = 0;  // Allow rotation to north pole
+            controls.maxPolarAngle = Math.PI;  // Allow rotation to south pole
+
+            // Set zoom limits
+            controls.minDistance = 150;  // Minimum zoom distance
+            controls.maxDistance = 800;  // Maximum zoom distance
+
+            // Smooth damping for better feel
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+            controls.rotateSpeed = 0.5;
+            controls.zoomSpeed = 0.8;
+
             // Hide loading screen once globe is ready
             setTimeout(() => {
                 hideLoadingScreen();
@@ -779,32 +805,6 @@ function initGlobe() {
             console.error('Error loading country data:', error);
             hideLoadingScreen(); // Hide loading screen even on error
         });
-
-    // Configure globe controls for better navigation
-    const controls = globe.controls();
-
-    // Auto-rotate (slower on mobile to reduce GPU load)
-    controls.autoRotate = true;
-    controls.autoRotateSpeed = isMobile ? 0.15 : 0.25;
-
-    // Enable full vertical and horizontal rotation
-    controls.enableRotate = true;
-    controls.enableZoom = true;
-    controls.enablePan = isMobile ? false : true;  // Disable pan on mobile to avoid conflicts
-
-    // Allow full vertical rotation (no limits)
-    controls.minPolarAngle = 0;  // Allow rotation to north pole
-    controls.maxPolarAngle = Math.PI;  // Allow rotation to south pole
-
-    // Set zoom limits
-    controls.minDistance = 150;  // Minimum zoom distance
-    controls.maxDistance = 800;  // Maximum zoom distance
-
-    // Smooth damping for better feel
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
-    controls.rotateSpeed = 0.5;
-    controls.zoomSpeed = 0.8;
 
     // Handle window resize
     window.addEventListener('resize', () => {
