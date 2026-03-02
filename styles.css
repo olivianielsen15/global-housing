@@ -969,3 +969,262 @@ header h1 {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================
+   EXPORT MODAL & BUTTON STYLES
+   ============================================ */
+
+/* Export Button */
+.export-btn {
+    width: 100%;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+}
+
+.export-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(106, 17, 203, 0.5);
+}
+
+.export-btn:active {
+    transform: translateY(0);
+}
+
+.export-btn .btn-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Export Modal */
+.export-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+}
+
+.export-modal.hidden {
+    display: none;
+}
+
+.export-modal-content {
+    background: linear-gradient(135deg, #1a1f3a 0%, #0f1419 100%);
+    border: 1px solid rgba(79, 172, 254, 0.3);
+    border-radius: 16px;
+    padding: 35px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.4s ease;
+}
+
+.export-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.export-modal-close:hover {
+    background: rgba(255, 50, 50, 0.8);
+    transform: rotate(90deg);
+}
+
+/* Export Sections */
+.export-section {
+    margin-bottom: 25px;
+}
+
+.export-section h3 {
+    color: #4facfe;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.export-select {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(79, 172, 254, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.export-select:hover {
+    border-color: #4facfe;
+    background: rgba(79, 172, 254, 0.1);
+}
+
+.export-select:focus {
+    outline: none;
+    border-color: #00f2fe;
+    box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.1);
+}
+
+/* Format Buttons */
+.format-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+}
+
+.format-btn {
+    padding: 14px;
+    background: rgba(79, 172, 254, 0.1);
+    border: 1px solid rgba(79, 172, 254, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.format-btn svg {
+    width: 24px;
+    height: 24px;
+    stroke: #4facfe;
+}
+
+.format-btn:hover {
+    background: rgba(79, 172, 254, 0.2);
+    border-color: #4facfe;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 172, 254, 0.2);
+}
+
+.format-btn.active {
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+    border-color: #00f2fe;
+    box-shadow: 0 4px 20px rgba(79, 172, 254, 0.4);
+}
+
+.format-btn.active svg {
+    stroke: white;
+}
+
+/* Export Preview */
+.export-preview {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(79, 172, 254, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 150px;
+    margin-bottom: 25px;
+    color: #b0c4d4;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Export Download Button */
+.export-download-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+}
+
+.export-download-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(79, 172, 254, 0.5);
+}
+
+.export-download-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.export-download-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Scrollbar for Export Modal */
+.export-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.export-modal-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.export-modal-content::-webkit-scrollbar-thumb {
+    background: rgba(79, 172, 254, 0.5);
+    border-radius: 10px;
+}
+
+.export-modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(79, 172, 254, 0.7);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .export-modal-content {
+        padding: 25px;
+        margin: 20px;
+    }
+
+    .format-buttons {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .export-btn {
+        font-size: 13px;
+        padding: 12px 16px;
+    }
+}

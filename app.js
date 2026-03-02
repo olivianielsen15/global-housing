@@ -1260,3 +1260,593 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// ============================================
+// EXPORT & SHARING FUNCTIONALITY
+// ============================================
+
+let selectedExportFormat = null;
+let selectedExportScope = 'current-layer';
+let selectedCitationFormat = 'apa';
+
+// Show export modal
+function showExportModal() {
+    const modal = document.getElementById('export-modal');
+    modal.classList.remove('hidden');
+
+    // Set up event listeners for format buttons
+    setupExportListeners();
+}
+
+// Close export modal
+function closeExportModal() {
+    const modal = document.getElementById('export-modal');
+    modal.classList.add('hidden');
+    selectedExportFormat = null;
+    document.getElementById('export-preview').innerHTML = '<p style="color: #b0c4d4; text-align: center; padding: 40px 20px;">Select an export format to preview</p>';
+    document.getElementById('export-download-btn').disabled = true;
+}
+
+// Set up export modal event listeners
+function setupExportListeners() {
+    // Format button listeners
+    const formatBtns = document.querySelectorAll('.format-btn');
+    formatBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            formatBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+
+            selectedExportFormat = this.dataset.format;
+            updateExportPreview();
+            document.getElementById('export-download-btn').disabled = false;
+
+            // Show/hide citation section based on format
+            const citationSection = document.getElementById('citation-section');
+            if (selectedExportFormat === 'pdf' || selectedExportFormat === 'csv') {
+                citationSection.style.display = 'block';
+            } else {
+                citationSection.style.display = 'none';
+            }
+        });
+    });
+
+    // Scope selector listener
+    document.getElementById('export-scope').addEventListener('change', function() {
+        selectedExportScope = this.value;
+        if (selectedExportFormat) {
+            updateExportPreview();
+        }
+    });
+
+    // Citation format listener
+    document.getElementById('citation-format').addEventListener('change', function() {
+        selectedCitationFormat = this.value;
+        if (selectedExportFormat && (selectedExportFormat === 'pdf' || selectedExportFormat === 'csv')) {
+            updateExportPreview();
+        }
+    });
+
+    // Modal background click to close
+    const modal = document.getElementById('export-modal');
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeExportModal();
+        }
+    });
+}
+
+// Update export preview
+function updateExportPreview() {
+    const preview = document.getElementById('export-preview');
+
+    switch (selectedExportFormat) {
+        case 'csv':
+            preview.innerHTML = getCSVPreview();
+            break;
+        case 'json':
+            preview.innerHTML = getJSONPreview();
+            break;
+        case 'pdf':
+            preview.innerHTML = getPDFPreview();
+            break;
+        case 'link':
+            preview.innerHTML = getLinkPreview();
+            break;
+        case 'screenshot':
+            preview.innerHTML = getScreenshotPreview();
+            break;
+    }
+}
+
+// Get CSV preview
+function getCSVPreview() {
+    let preview = '<div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; font-family: monospace; font-size: 12px; max-height: 300px; overflow: auto;">';
+    preview += '<strong style="color: #4facfe;">CSV Export Preview:</strong><br/><br/>';
+
+    if (selectedExportScope === 'current-layer') {
+        const config = layerConfig[currentLayer];
+        preview += `Country,ISO Code,${config.title}<br/>`;
+        preview += 'Switzerland,CHE,1.2<br/>';
+        preview += 'Australia,AUS,4.2<br/>';
+        preview += '...<br/><br/>';
+    } else if (selectedExportScope === 'current-country') {
+        preview += 'Metric,Value,Unit<br/>';
+        preview += 'Housing Deficit per Capita,4.2,units/1000<br/>';
+        preview += 'Household Debt to GDP,121,%<br/>';
+        preview += '...<br/><br/>';
+    } else {
+        preview += 'Country,ISO,Deficit,Debt,Expenditure,...<br/>';
+        preview += 'Switzerland,CHE,1.2,130,0.3,...<br/>';
+        preview += '...<br/><br/>';
+    }
+
+    preview += '<br/><em style="color: #00f2fe;">Includes source citations footer</em>';
+    preview += '</div>';
+    return preview;
+}
+
+// Get JSON preview
+function getJSONPreview() {
+    let preview = '<div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; font-family: monospace; font-size: 12px; max-height: 300px; overflow: auto;">';
+    preview += '<strong style="color: #4facfe;">JSON Export Preview:</strong><br/><br/>';
+
+    preview += '<pre style="margin: 0; color: #b0c4d4;">{<br/>';
+    preview += '  "metadata": {<br/>';
+    preview += '    "tool": "Global Housing Data Visualization",<br/>';
+    preview += '    "exportDate": "' + new Date().toISOString() + '",<br/>';
+    preview += '    "scope": "' + selectedExportScope + '"<br/>';
+    preview += '  },<br/>';
+    preview += '  "data": [ ... ],<br/>';
+    preview += '  "sources": [ ... ]<br/>';
+    preview += '}</pre>';
+
+    preview += '</div>';
+    return preview;
+}
+
+// Get PDF preview
+function getPDFPreview() {
+    let preview = '<div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; font-size: 13px; max-height: 300px; overflow: auto;">';
+    preview += '<strong style="color: #4facfe;">PDF Report Preview:</strong><br/><br/>';
+
+    preview += '📄 <strong>Global Housing Data Report</strong><br/>';
+    preview += '📅 Export Date: ' + new Date().toLocaleDateString() + '<br/>';
+    preview += '🌍 Scope: ' + selectedExportScope.replace(/-/g, ' ') + '<br/>';
+    preview += '📚 Citation Format: ' + selectedCitationFormat.toUpperCase() + '<br/><br/>';
+
+    preview += '<em style="color: #00f2fe;">Report includes:</em><br/>';
+    preview += '• Data tables with all metrics<br/>';
+    preview += '• Metric definitions<br/>';
+    preview += '• Source citations<br/>';
+    preview += '• Methodology notes<br/>';
+
+    preview += '</div>';
+    return preview;
+}
+
+// Get shareable link preview
+function getLinkPreview() {
+    const link = generateShareableLink();
+    let preview = '<div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; font-size: 13px;">';
+    preview += '<strong style="color: #4facfe;">Shareable Link:</strong><br/><br/>';
+    preview += '<input type="text" value="' + link + '" readonly style="width: 100%; padding: 10px; background: rgba(0,0,0,0.5); border: 1px solid #4facfe; border-radius: 4px; color: #fff; font-family: monospace; font-size: 12px;" onclick="this.select()"/>';
+    preview += '<br/><br/><em style="color: #00f2fe;">Link preserves current view: layer, country, globe position</em>';
+    preview += '</div>';
+    return preview;
+}
+
+// Get screenshot preview
+function getScreenshotPreview() {
+    let preview = '<div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; font-size: 13px;">';
+    preview += '<strong style="color: #4facfe;">Screenshot Capture:</strong><br/><br/>';
+    preview += '📸 Captures current globe view<br/>';
+    preview += '🏷️ Includes layer title and date<br/>';
+    preview += '🔗 Adds source attribution<br/>';
+    preview += '💾 Downloads as PNG image<br/><br/>';
+    preview += '<em style="color: #00f2fe;">Click download to capture</em>';
+    preview += '</div>';
+    return preview;
+}
+
+// Generate shareable link
+function generateShareableLink() {
+    const params = new URLSearchParams();
+    params.set('layer', currentLayer);
+
+    // Get current globe position if available
+    if (globe) {
+        const controls = globe.controls();
+        if (controls) {
+            // Get approximate lat/lon from camera position
+            params.set('view', 'saved');
+        }
+    }
+
+    // Add selected country if any
+    if (window.selectedCountryISO) {
+        params.set('country', window.selectedCountryISO);
+    }
+
+    return window.location.origin + window.location.pathname + '?' + params.toString();
+}
+
+// Download export
+function downloadExport() {
+    if (!selectedExportFormat) return;
+
+    const scope = selectedExportScope;
+
+    switch (selectedExportFormat) {
+        case 'csv':
+            exportToCSV(scope);
+            break;
+        case 'json':
+            exportToJSON(scope);
+            break;
+        case 'pdf':
+            generatePDFReport(scope);
+            break;
+        case 'link':
+            copyShareableLink();
+            break;
+        case 'screenshot':
+            captureGlobeScreenshot();
+            break;
+    }
+}
+
+// Export to CSV
+function exportToCSV(scope) {
+    let csv = '';
+    let filename = 'housing-data';
+
+    if (scope === 'current-layer') {
+        const config = layerConfig[currentLayer];
+        filename = `housing-${currentLayer}-${new Date().toISOString().split('T')[0]}.csv`;
+
+        // Header
+        csv += `Country,ISO Code,${config.title}\n`;
+
+        // Data rows
+        housingData.forEach(country => {
+            const value = country[config.dataKey];
+            if (value !== undefined && value !== null) {
+                csv += `"${country.country}",${country.iso},${value}\n`;
+            }
+        });
+
+    } else if (scope === 'current-country' && window.selectedCountryISO) {
+        const country = housingData.find(c => c.iso === window.selectedCountryISO);
+        if (country) {
+            filename = `housing-${country.iso}-${new Date().toISOString().split('T')[0]}.csv`;
+
+            // Header
+            csv += 'Metric,Value,Unit\n';
+
+            // Data rows for each metric
+            Object.keys(layerConfig).forEach(layerKey => {
+                const config = layerConfig[layerKey];
+                const value = country[config.dataKey];
+                if (value !== undefined && value !== null && !config.isTextLayer) {
+                    csv += `"${config.title}",${value},"${config.unit || ''}"\n`;
+                }
+            });
+        }
+
+    } else {
+        // All data
+        filename = `housing-complete-dataset-${new Date().toISOString().split('T')[0]}.csv`;
+
+        // Header with all metrics
+        csv += 'Country,ISO Code';
+        Object.keys(layerConfig).forEach(layerKey => {
+            const config = layerConfig[layerKey];
+            if (!config.isTextLayer) {
+                csv += `,${config.title}`;
+            }
+        });
+        csv += '\n';
+
+        // Data rows
+        housingData.forEach(country => {
+            csv += `"${country.country}",${country.iso}`;
+            Object.keys(layerConfig).forEach(layerKey => {
+                const config = layerConfig[layerKey];
+                if (!config.isTextLayer) {
+                    const value = country[config.dataKey];
+                    csv += `,${value !== undefined && value !== null ? value : ''}`;
+                }
+            });
+            csv += '\n';
+        });
+    }
+
+    // Add source citations
+    csv += '\n\n';
+    csv += dataSources.getExportCitationBlock(dataSources.getAllMetrics(), selectedCitationFormat);
+
+    // Download CSV
+    downloadFile(csv, filename, 'text/csv');
+}
+
+// Export to JSON
+function exportToJSON(scope) {
+    let data = {
+        metadata: {
+            tool: 'Global Housing Data Visualization',
+            url: window.location.href,
+            exportDate: new Date().toISOString(),
+            scope: scope
+        },
+        data: null,
+        metricDefinitions: {},
+        sources: dataSources.getSourcesForMetrics(dataSources.getAllMetrics())
+    };
+
+    if (scope === 'current-layer') {
+        const config = layerConfig[currentLayer];
+        data.metadata.layer = currentLayer;
+        data.metadata.layerTitle = config.title;
+        data.data = housingData.map(country => ({
+            country: country.country,
+            iso: country.iso,
+            value: country[config.dataKey]
+        })).filter(c => c.value !== undefined && c.value !== null);
+        data.metricDefinitions[currentLayer] = config;
+
+    } else if (scope === 'current-country' && window.selectedCountryISO) {
+        const country = housingData.find(c => c.iso === window.selectedCountryISO);
+        if (country) {
+            data.metadata.country = country.country;
+            data.metadata.iso = country.iso;
+            data.data = country;
+            data.metricDefinitions = layerConfig;
+        }
+
+    } else {
+        // All data
+        data.data = housingData;
+        data.metricDefinitions = layerConfig;
+    }
+
+    const filename = `housing-data-${scope}-${new Date().toISOString().split('T')[0]}.json`;
+    const json = JSON.stringify(data, null, 2);
+    downloadFile(json, filename, 'application/json');
+}
+
+// Generate PDF Report
+function generatePDFReport(scope) {
+    // Check if jsPDF is loaded
+    if (typeof window.jspdf === 'undefined') {
+        alert('PDF library is loading. Please try again in a moment.');
+        return;
+    }
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    let yPos = 20;
+    const margin = 20;
+    const pageWidth = doc.internal.pageSize.getWidth();
+
+    // Title
+    doc.setFontSize(20);
+    doc.setTextColor(79, 172, 254);
+    doc.text('Global Housing Data Report', margin, yPos);
+
+    yPos += 15;
+    doc.setFontSize(10);
+    doc.setTextColor(100, 100, 100);
+    doc.text(`Export Date: ${new Date().toLocaleString()}`, margin, yPos);
+
+    yPos += 10;
+
+    if (scope === 'current-layer') {
+        const config = layerConfig[currentLayer];
+
+        yPos += 10;
+        doc.setFontSize(16);
+        doc.setTextColor(0, 0, 0);
+        doc.text(config.title, margin, yPos);
+
+        yPos += 10;
+        doc.setFontSize(10);
+        doc.setTextColor(60, 60, 60);
+        const descLines = doc.splitTextToSize(config.description, pageWidth - 2 * margin);
+        doc.text(descLines, margin, yPos);
+        yPos += descLines.length * 5 + 10;
+
+        // Data table
+        doc.setFontSize(12);
+        doc.setTextColor(0, 0, 0);
+        doc.text('Data by Country:', margin, yPos);
+        yPos += 10;
+
+        doc.setFontSize(9);
+        housingData.forEach(country => {
+            const value = country[config.dataKey];
+            if (value !== undefined && value !== null) {
+                if (yPos > 270) {
+                    doc.addPage();
+                    yPos = 20;
+                }
+                doc.text(`${country.country}: ${value}${config.unit || ''}`, margin + 5, yPos);
+                yPos += 6;
+            }
+        });
+
+    } else if (scope === 'current-country' && window.selectedCountryISO) {
+        const country = housingData.find(c => c.iso === window.selectedCountryISO);
+        if (country) {
+            yPos += 10;
+            doc.setFontSize(16);
+            doc.setTextColor(0, 0, 0);
+            doc.text(`${country.country} Housing Profile`, margin, yPos);
+
+            yPos += 15;
+            doc.setFontSize(10);
+
+            Object.keys(layerConfig).forEach(layerKey => {
+                const config = layerConfig[layerKey];
+                const value = country[config.dataKey];
+                if (value !== undefined && value !== null && !config.isTextLayer) {
+                    if (yPos > 270) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+                    doc.setTextColor(79, 172, 254);
+                    doc.text(`${config.title}:`, margin, yPos);
+                    doc.setTextColor(0, 0, 0);
+                    doc.text(`${value}${config.unit || ''}`, margin + 80, yPos);
+                    yPos += 8;
+                }
+            });
+        }
+    }
+
+    // Add new page for sources
+    doc.addPage();
+    yPos = 20;
+
+    doc.setFontSize(16);
+    doc.setTextColor(79, 172, 254);
+    doc.text('Data Sources', margin, yPos);
+
+    yPos += 15;
+    doc.setFontSize(9);
+    doc.setTextColor(0, 0, 0);
+
+    const citations = dataSources.generateCitations(dataSources.getAllMetrics(), selectedCitationFormat);
+    const citationLines = citations.split('\n');
+
+    citationLines.forEach(line => {
+        if (yPos > 270) {
+            doc.addPage();
+            yPos = 20;
+        }
+        if (line.trim()) {
+            const wrappedLines = doc.splitTextToSize(line, pageWidth - 2 * margin);
+            doc.text(wrappedLines, margin, yPos);
+            yPos += wrappedLines.length * 5 + 3;
+        } else {
+            yPos += 3;
+        }
+    });
+
+    // Save PDF
+    const filename = `housing-report-${scope}-${new Date().toISOString().split('T')[0]}.pdf`;
+    doc.save(filename);
+}
+
+// Copy shareable link to clipboard
+function copyShareableLink() {
+    const link = generateShareableLink();
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(() => {
+            alert('Link copied to clipboard!\n\n' + link);
+        }).catch(err => {
+            promptCopyLink(link);
+        });
+    } else {
+        promptCopyLink(link);
+    }
+}
+
+// Fallback for clipboard copy
+function promptCopyLink(link) {
+    const textarea = document.createElement('textarea');
+    textarea.value = link;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+        document.execCommand('copy');
+        alert('Link copied to clipboard!\n\n' + link);
+    } catch (err) {
+        alert('Please copy this link manually:\n\n' + link);
+    }
+    document.body.removeChild(textarea);
+}
+
+// Capture globe screenshot
+function captureGlobeScreenshot() {
+    if (typeof html2canvas === 'undefined') {
+        alert('Screenshot library is loading. Please try again in a moment.');
+        return;
+    }
+
+    const globeContainer = document.getElementById('globeViz');
+    if (!globeContainer) return;
+
+    html2canvas(globeContainer, {
+        backgroundColor: '#0f2027',
+        scale: 2
+    }).then(canvas => {
+        // Add attribution footer
+        const ctx = canvas.getContext('2d');
+        const footerHeight = 60;
+        const newCanvas = document.createElement('canvas');
+        newCanvas.width = canvas.width;
+        newCanvas.height = canvas.height + footerHeight;
+
+        const newCtx = newCanvas.getContext('2d');
+        newCtx.fillStyle = '#0a0e27';
+        newCtx.fillRect(0, 0, newCanvas.width, newCanvas.height);
+
+        // Draw original canvas
+        newCtx.drawImage(canvas, 0, 0);
+
+        // Draw footer
+        newCtx.fillStyle = 'rgba(79, 172, 254, 0.2)';
+        newCtx.fillRect(0, canvas.height, newCanvas.width, footerHeight);
+
+        newCtx.fillStyle = '#4facfe';
+        newCtx.font = 'bold 24px Arial';
+        newCtx.fillText(layerConfig[currentLayer].title, 20, canvas.height + 30);
+
+        newCtx.fillStyle = '#b0c4d4';
+        newCtx.font = '18px Arial';
+        newCtx.fillText(`${new Date().toLocaleDateString()} • Global Housing Data Visualization`, 20, canvas.height + 50);
+
+        // Download
+        newCanvas.toBlob(blob => {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `housing-globe-${currentLayer}-${new Date().toISOString().split('T')[0]}.png`;
+            link.click();
+            URL.revokeObjectURL(url);
+        });
+    });
+}
+
+// Helper function to download files
+function downloadFile(content, filename, mimeType) {
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.click();
+    URL.revokeObjectURL(url);
+}
+
+// Parse URL parameters on page load to restore state
+window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+
+    const layer = params.get('layer');
+    if (layer && layerConfig[layer]) {
+        updateLayer(layer);
+    }
+
+    const country = params.get('country');
+    if (country) {
+        // Store for potential use
+        window.selectedCountryISO = country;
+    }
+});
+
