@@ -1733,7 +1733,6 @@ function generatePDFReport(scope) {
     }
 
     const doc = new jsPDF();
-    const doc = new jsPDF();
 
     let yPos = 20;
     const margin = 20;
