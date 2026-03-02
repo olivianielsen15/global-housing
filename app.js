@@ -833,12 +833,23 @@ function updateStatsPanel(countryData) {
     const currentValue = countryData[config.dataKey];
     const policyLabel = getPolicyActivityLabel(countryData.policyActivityScore);
 
-    // Track selected country for export functionality
+    // Track selected country for export functionality - use global persistent storage
     window.selectedCountryISO = countryData.iso;
     window.selectedCountryName = countryData.country;
+    window.selectedCountryData = countryData;
+
+    // Also store in sessionStorage for persistence
+    try {
+        sessionStorage.setItem('selectedCountryISO', countryData.iso);
+        sessionStorage.setItem('selectedCountryName', countryData.country);
+    } catch (e) {
+        console.log('sessionStorage not available');
+    }
 
     // Update export scope selector if modal is open
     updateExportScopeSelector();
+
+    console.log('Country selected:', countryData.country, countryData.iso);
 
     statsPanel.classList.add('has-data');
 
@@ -1280,11 +1291,25 @@ function showExportModal() {
     const modal = document.getElementById('export-modal');
     modal.classList.remove('hidden');
 
+    // Restore country selection from sessionStorage if needed
+    if (!window.selectedCountryISO && sessionStorage.getItem('selectedCountryISO')) {
+        try {
+            window.selectedCountryISO = sessionStorage.getItem('selectedCountryISO');
+            window.selectedCountryName = sessionStorage.getItem('selectedCountryName');
+            console.log('Restored country from session:', window.selectedCountryName);
+        } catch (e) {
+            console.log('Could not restore from sessionStorage');
+        }
+    }
+
     // Update scope selector with current country
     updateExportScopeSelector();
 
     // Set up event listeners for format buttons
     setupExportListeners();
+
+    // Log current selection for debugging
+    console.log('Export modal opened. Selected country:', window.selectedCountryName || 'None');
 }
 
 // Close export modal
@@ -1696,8 +1721,9 @@ function exportToJSON(scope) {
 // Generate PDF Report
 function generatePDFReport(scope) {
     // Check if jsPDF is loaded
-    if (typeof window.jspdf === 'undefined') {
-        alert('PDF library is loading. Please try again in a moment.');
+    if (typeof window.jspdf === 'undefined' || !window.jspdf.jsPDF) {
+        alert('PDF library failed to load. Please refresh the page and try again.\n\nIf the issue persists, check your browser console for errors or try disabling browser extensions that might block CDN scripts.');
+        console.error('jsPDF library not loaded. window.jspdf:', window.jspdf);
         return;
     }
 

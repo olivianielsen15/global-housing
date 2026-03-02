@@ -429,8 +429,29 @@
     </div>
 
     <!-- Export Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+            integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+            onerror="console.error('Failed to load jsPDF library from CDN')"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+            integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+            onerror="console.error('Failed to load html2canvas library from CDN')"></script>
+
+    <!-- Verify libraries loaded -->
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            if (typeof window.jspdf === 'undefined' || !window.jspdf.jsPDF) {
+                console.error('jsPDF library did not load. PDF export functionality will not work.');
+                console.warn('This might be caused by: ad blockers, browser extensions, network/firewall issues, or CORS restrictions.');
+            }
+            if (typeof html2canvas === 'undefined') {
+                console.error('html2canvas library did not load. Screenshot functionality may not work.');
+            }
+        });
+    </script>
 
     <script src="data.js"></script>
     <script src="cities.js"></script>
